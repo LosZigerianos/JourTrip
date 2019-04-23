@@ -8,8 +8,16 @@
 
 import Foundation
 import RealmSwift
+import ObjectMapper
 
-class Comment: Object {
+class Comment: Object, Mappable {
+    required init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        <#code#>
+    }
+    
     var commentId: String = ""
     var message: String = ""
     
