@@ -11,16 +11,19 @@ import RealmSwift
 import ObjectMapper
 
 class Comment: Object, Mappable {
-    required init?(map: Map) {
-    }
-    
-    mutating func mapping(map: Map) {
-        <#code#>
-    }
     
     var commentId: String = ""
     var message: String = ""
     
+    // TODO: match with json data
+    func mapping(map: Map) {
+        commentId <- map["id"]
+        message <- map["message"]
+    }
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
     override static func primaryKey() -> String? {
         return "userId"
     }
