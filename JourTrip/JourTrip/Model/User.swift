@@ -11,7 +11,7 @@ import RealmSwift
 import ObjectMapper
 
 class User: Object, Mappable {
-    
+
     @objc dynamic var name: String = ""
     @objc dynamic var email: String = ""
     @objc dynamic var userImage: String?

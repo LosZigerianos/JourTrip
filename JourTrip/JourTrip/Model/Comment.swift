@@ -12,8 +12,8 @@ import ObjectMapper
 
 class Comment: Object, Mappable {
     
-    var commentId: String = ""
-    var message: String = ""
+    @objc dynamic var commentId: String = ""
+    @objc dynamic var message: String = ""
     
     // TODO: match with json data
     func mapping(map: Map) {

@@ -11,7 +11,7 @@ import RealmSwift
 import ObjectMapper
 
 class Location: Object, Mappable {
-    
+
     @objc dynamic var addressId: String?
     @objc dynamic var name: String?
     @objc dynamic var fullAddress: String?
