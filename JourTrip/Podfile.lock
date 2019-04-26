@@ -9,12 +9,14 @@ PODS:
   - Realm/Headers (3.14.1)
   - RealmSwift (3.14.1):
     - Realm (= 3.14.1)
+  - Simple-KeychainSwift (4.0.1)
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
   - RealmSwift
+  - Simple-KeychainSwift
   - SwiftLint
 
 SPEC REPOS:
@@ -24,6 +26,7 @@ SPEC REPOS:
     - ObjectMapper
     - Realm
     - RealmSwift
+    - Simple-KeychainSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -32,8 +35,9 @@ SPEC CHECKSUMS:
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Realm: e12c9c2387d05c5bba3a9c394838f5870e85763b
   RealmSwift: a82eab9b04c3e1616082c7e17aa300740847769c
+  Simple-KeychainSwift: b13dbd5a2ef596892dab650478d02a341a996bac
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 629b628e3b3d8bfe1dd4351f4a18542bf11e3103
+PODFILE CHECKSUM: 72ec331f3f7d2171fedf5f853d1e93eae46702b7
 
 COCOAPODS: 1.5.3

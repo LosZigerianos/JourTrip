@@ -16,6 +16,8 @@
 		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
 		AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929B2272528600BB6F0E /* ServiceProxy.swift */; };
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
+		ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31122735A6F006EB545 /* BaseViewController.swift */; };
+		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACDF9A54226FA44800B65291 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* User.swift */; };
 		ACDF9A56226FA48000B65291 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A55226FA48000B65291 /* Location.swift */; };
 		ACDF9A58226FA86800B65291 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A57226FA86800B65291 /* Comment.swift */; };
@@ -35,6 +37,8 @@
 		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
 		AC40929B2272528600BB6F0E /* ServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProxy.swift; sourceTree = "<group>"; };
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		ACB0F31122735A6F006EB545 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACDF9A53226FA44800B65291 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACDF9A55226FA48000B65291 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		ACDF9A57226FA86800B65291 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -81,8 +85,10 @@
 		AC127E70226F9CEB0004C0F1 /* JourTrip */ = {
 			isa = PBXGroup;
 			children = (
+				ACB0F31022735A49006EB545 /* ViewController */,
 				ACDF9A52226FA3E900B65291 /* Network */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
+				ACB0F31322735D5B006EB545 /* Util */,
 				AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */,
 				AC127E73226F9CEB0004C0F1 /* ViewController.swift */,
 				AC127E75226F9CEB0004C0F1 /* Main.storyboard */,
@@ -91,6 +97,30 @@
 				AC127E7D226F9CED0004C0F1 /* Info.plist */,
 			);
 			path = JourTrip;
+			sourceTree = "<group>";
+		};
+		ACB0F31022735A49006EB545 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ACB0F31322735D5B006EB545 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0F31422735D6F006EB545 /* DataManager */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		ACB0F31422735D6F006EB545 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0F31522735D9A006EB545 /* DataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		ACDF9A51226FA3DF00B65291 /* Model */ = {
@@ -227,6 +257,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Simple-KeychainSwift/Simple_KeychainSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -237,6 +268,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Simple_KeychainSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -251,8 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
+				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				ACDF9A58226FA86800B65291 /* Comment.swift in Sources */,
 				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
+				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
