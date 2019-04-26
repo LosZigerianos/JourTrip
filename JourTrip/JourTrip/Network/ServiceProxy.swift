@@ -8,22 +8,40 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
+
+/*
+ Alamofire.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate().responseJSON  { (response) in
+ 
+ switch response.result {
+ case .success:
+ if let data = response.data {
+ completion(data, nil)
+ }
+ case .failure(_ as NSError):
+ completion(nil, self.failureRequest(url: url, response: response))
+ default:
+ break
+ }
+ }
+ */
 
 class ServiceProxy: NSObject {
     fileprivate func request(url: String, method: HTTPMethod, headers: HTTPHeaders?, parameters: Parameters?, completion:@escaping (_ response:Any?, _ error:NSError?) -> Void) {
-        Alamofire.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate().responseJSON  { (response) in
+        
+        Alamofire.request(url).responseObject { (response: DataResponse<User>) in
             
-            switch response.result {
-            case .success:
-                if let data = response.data {
-                    completion(data, nil)
-                }
-            case .failure(_ as NSError):
-                completion(nil, self.failureRequest(url: url, response: response))
-            default:
-                break
-            }
+            let weatherResponse = response.result.value
+            print(weatherResponse?.email as Any)
+            //TODO: handle json
+//            if let threeDayForecast = weatherResponse?.threeDayForecast {
+//                for forecast in threeDayForecast {
+//                    print(forecast.day)
+//                    print(forecast.temperature)
+//                }
+//            }
         }
+        
     }
     
     fileprivate func failureRequest(url:String, response:DataResponse<Any>) -> NSError {
@@ -47,9 +65,9 @@ class ServiceProxy: NSObject {
         return NSError(domain: url, code: statusCode, userInfo: dictionary)
     }
     
-    func login(user: String, password: String, completion:@escaping (_ response:User?, _ error:NSError?) -> Void) {
+    func login(email: String, password: String, completion:@escaping (_ response:User?, _ error:NSError?) -> Void) {
         let parameters : Parameters = [
-            "email": user,
+            "email": email,
             "password": password
         ]
         
