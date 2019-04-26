@@ -9,4 +9,4 @@ pod install
 
 ```
 
-Open `JourTrip.xcworkspace` with XCode > 10.2
+Open `JourTrip.xcworkspace` with XCode 10.2 or greater
