@@ -1,35 +1,48 @@
 //
-//  User.swift
+//  UserResponse.swift
 //  JourTrip
 //
-//  Created by Alexandre on 23/4/19.
+//  Created by Alexandre on 27/04/2019.
 //  Copyright © 2019 Los Zigerianos. All rights reserved.
 //
 
-import Foundation
-import RealmSwift
 import ObjectMapper
 
-class User: Object, Mappable {
+final class UserLogin: Mappable {
+    var success : String?
+    var token : String?
     
-    @objc dynamic var name: String = ""
-    @objc dynamic var email: String = ""
-    @objc dynamic var userImage: String?
-    @objc dynamic var userId: String?
+    required init?(map: Map){
+    }
     
-    // TODO: match with json data
     func mapping(map: Map) {
-        name <- map["name"]
-        email <- map["email"]
-        userImage <- map["image"]
-        userId <- map["id"]
+        success <- map["success"]
+        token <- map["token"]
+    }
+}
+
+final class UserResponse: Mappable {
+    var success: Bool?
+    var result: UserModel?
+    
+    required init?(map: Map){
     }
     
-    required convenience init?(map: Map) {
-        self.init()
+    func mapping(map: Map) {
+        success <- map["success"]
+        result <- map["result"]
     }
-    override static func primaryKey() -> String? {
-        return "userId"
-    }
+}
 
+final class UserModel: Mappable {
+    var email: String?
+    var password: String?
+    
+    required init?(map: Map){
+    }
+    
+    func mapping(map: Map) {
+        email <- map["email"]
+        password <- map["password"]
+    }
 }

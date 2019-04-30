@@ -18,10 +18,9 @@
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
 		ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31122735A6F006EB545 /* BaseViewController.swift */; };
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
-		ACB0F31822747C41006EB545 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* UserResponse.swift */; };
-		ACB0F31A2277A030006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F3192277A030006EB545 /* Locations.swift */; };
-		ACB0F31C2277A1CA006EB545 /* LocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* LocationsResponse.swift */; };
-		ACDF9A54226FA44800B65291 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* User.swift */; };
+		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
+		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
+		ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
 		ACDF9A56226FA48000B65291 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A55226FA48000B65291 /* Location.swift */; };
 		ACDF9A58226FA86800B65291 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A57226FA86800B65291 /* Comment.swift */; };
 /* End PBXBuildFile section */
@@ -42,10 +41,9 @@
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		ACB0F31122735A6F006EB545 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		ACB0F31722747C41006EB545 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
-		ACB0F3192277A030006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
-		ACB0F31B2277A1CA006EB545 /* LocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsResponse.swift; sourceTree = "<group>"; };
-		ACDF9A53226FA44800B65291 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		ACDF9A53226FA44800B65291 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 		ACDF9A55226FA48000B65291 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		ACDF9A57226FA86800B65291 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,12 +130,11 @@
 		ACDF9A51226FA3DF00B65291 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACDF9A53226FA44800B65291 /* User.swift */,
+				ACDF9A53226FA44800B65291 /* UserRealm.swift */,
 				ACDF9A55226FA48000B65291 /* Location.swift */,
-				ACB0F3192277A030006EB545 /* Locations.swift */,
 				ACDF9A57226FA86800B65291 /* Comment.swift */,
-				ACB0F31722747C41006EB545 /* UserResponse.swift */,
-				ACB0F31B2277A1CA006EB545 /* LocationsResponse.swift */,
+				ACB0F31722747C41006EB545 /* User.swift */,
+				ACB0F31B2277A1CA006EB545 /* Locations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,13 +294,12 @@
 				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
 				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
-				ACB0F31C2277A1CA006EB545 /* LocationsResponse.swift in Sources */,
-				ACB0F31A2277A030006EB545 /* Locations.swift in Sources */,
+				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
 				ACDF9A56226FA48000B65291 /* Location.swift in Sources */,
-				ACDF9A54226FA44800B65291 /* User.swift in Sources */,
-				ACB0F31822747C41006EB545 /* UserResponse.swift in Sources */,
+				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
+				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

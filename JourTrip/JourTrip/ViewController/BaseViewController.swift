@@ -9,8 +9,8 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    //TODO: lazy
-    var serviceProxy: ServiceProxy = {
+    
+    lazy var serviceProxy: ServiceProxy = {
         return ServiceProxy()
     }()
     
