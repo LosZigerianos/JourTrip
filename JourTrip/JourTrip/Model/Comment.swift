@@ -15,7 +15,6 @@ class Comment: Object, Mappable {
     var commentId: String = ""
     var message: String = ""
     
-    // TODO: match with json data
     func mapping(map: Map) {
         commentId <- map["id"]
         message <- map["message"]
