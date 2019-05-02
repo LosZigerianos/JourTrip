@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import AlamofireObjectMapper
 
 class ViewController: BaseViewController {
     
