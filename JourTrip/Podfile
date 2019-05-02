@@ -11,4 +11,6 @@ target 'JourTrip' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'Simple-KeychainSwift'
+  pod 'RxSwift', '~> 4.5'
+  pod 'RxCocoa', '~> 4.5'
 end
