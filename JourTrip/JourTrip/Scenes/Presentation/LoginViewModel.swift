@@ -7,3 +7,70 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+struct LoginViewModel {
+    private let loginService: LoginServiceType
+
+    init(loginService: LoginServiceType) {
+        self.loginService = loginService
+    }
+
+    /// Transforms the ViewModel inputs into Outputs
+    func transform(inputs: LoginViewModel.Inputs) -> LoginViewModel.Outputs {
+        // Check if the email text is valid
+        // Email is valid if it has > 2 characters
+        let emailValid = inputs.emailText
+            .distinctUntilChanged()
+            .throttle(0.2, scheduler: MainScheduler.instance)
+            .map { $0.utf8.count > 2 }
+            .asDriver(onErrorDriveWith: .empty())
+
+        // Check if the password text is valid
+        // Password is valid if it has > 2 characters
+        let passwordValid = inputs.passwordText
+            .distinctUntilChanged()
+            .throttle(0.2, scheduler: MainScheduler.instance)
+            .map { $0.utf8.count > 2 }
+            .asDriver(onErrorDriveWith: .empty())
+
+        // Combine the results of valid operations
+        // If email and password are valid, login button is enabled
+        let buttonEnabled = Driver
+            .combineLatest(emailValid, passwordValid) { $0 && $1 }
+
+        // (email: EmailText, password: PasswordText)
+        let credentials = Observable
+            .combineLatest(inputs.emailText, inputs.passwordText)
+
+        // When the button is tapped, we check the credentials
+        // Then the login service is fired
+        // If the login is successful it will throw a Void value
+        // Otherwise the sequence won't emit any value
+        let loginSuccessful = inputs.buttonTap
+            .withLatestFrom(credentials)
+            .flatMap { self.loginService.login(with: $0, password: $1) }
+            .asDriver(onErrorDriveWith: .never())
+
+        return Outputs(buttonEnabled: buttonEnabled, loginSuccessful: loginSuccessful)
+    }
+}
+
+extension LoginViewModel {
+    struct Inputs {
+        /// A sequence with the email text
+        let emailText: Observable<String>
+        /// A sequence with the password text
+        let passwordText: Observable<String>
+        /// A sequence that executes a Void value when the user presses the button
+        let buttonTap: Observable<Void>
+    }
+
+    struct Outputs {
+        /// A sequence with true in case of enabled and false otherwise
+        let buttonEnabled: Driver<Bool>
+        /// A sequence with a Void value when the login is successful
+        let loginSuccessful: Driver<Void>
+    }
+}

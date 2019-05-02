@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1EE889FD9EB3C7A5751E9DC5 /* Pods_JourTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */; };
+		20392471227B777D0061E59B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20392470227B777D0061E59B /* LoginViewController.xib */; };
+		20392473227B81330061E59B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20392472227B81320061E59B /* LoginViewModel.swift */; };
+		208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A16F1227B761B00E36CDF /* LoginViewController.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
-		AC127E77226F9CEB0004C0F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E75226F9CEB0004C0F1 /* Main.storyboard */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
 		AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */; };
 		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
@@ -21,18 +23,19 @@
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
 		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
 		ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
-		ACDF9A56226FA48000B65291 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A55226FA48000B65291 /* Location.swift */; };
 		ACDF9A58226FA86800B65291 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A57226FA86800B65291 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20392470227B777D0061E59B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		20392472227B81320061E59B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		208A16F1227B761B00E36CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC127E6E226F9CEB0004C0F1 /* JourTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC127E73226F9CEB0004C0F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AC127E76226F9CEB0004C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC127E78226F9CED0004C0F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC127E7B226F9CED0004C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC127E7D226F9CED0004C0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,7 +47,6 @@
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		ACDF9A53226FA44800B65291 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
-		ACDF9A55226FA48000B65291 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		ACDF9A57226FA86800B65291 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		208A16EE227B75E000E36CDF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				208A16EF227B75EF00E36CDF /* Presentation */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		208A16EF227B75EF00E36CDF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				208A16F1227B761B00E36CDF /* LoginViewController.swift */,
+				20392470227B777D0061E59B /* LoginViewController.xib */,
+				20392472227B81320061E59B /* LoginViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,12 +109,12 @@
 		AC127E70226F9CEB0004C0F1 /* JourTrip */ = {
 			isa = PBXGroup;
 			children = (
+				208A16EE227B75E000E36CDF /* Scenes */,
 				ACB0F31022735A49006EB545 /* ViewController */,
 				ACDF9A52226FA3E900B65291 /* Network */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
 				ACB0F31322735D5B006EB545 /* Util */,
 				AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */,
-				AC127E75226F9CEB0004C0F1 /* Main.storyboard */,
 				AC127E78226F9CED0004C0F1 /* Assets.xcassets */,
 				AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */,
 				AC127E7D226F9CED0004C0F1 /* Info.plist */,
@@ -131,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				ACDF9A53226FA44800B65291 /* UserRealm.swift */,
-				ACDF9A55226FA48000B65291 /* Location.swift */,
 				ACDF9A57226FA86800B65291 /* Comment.swift */,
 				ACB0F31722747C41006EB545 /* User.swift */,
 				ACB0F31B2277A1CA006EB545 /* Locations.swift */,
@@ -218,9 +237,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20392471227B777D0061E59B /* LoginViewController.xib in Resources */,
 				AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */,
 				AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */,
-				AC127E77226F9CEB0004C0F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +282,8 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Simple-KeychainSwift/Simple_KeychainSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -274,6 +295,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Simple_KeychainSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */,
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				ACDF9A58226FA86800B65291 /* Comment.swift in Sources */,
@@ -295,9 +319,9 @@
 				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
+				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
-				ACDF9A56226FA48000B65291 /* Location.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 			);
@@ -306,14 +330,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AC127E75226F9CEB0004C0F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC127E76226F9CEB0004C0F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
