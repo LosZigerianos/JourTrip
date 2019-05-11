@@ -9,7 +9,15 @@
 import Foundation
 
 protocol LoginValidatorType {
+    /// Validates the email.
+    ///
+    /// - Parameter email: The given email.
+    /// - Returns: A boolean value. True when valid, false otherwise.
     func validate(email: String) -> Bool
+    /// Validates the password.
+    ///
+    /// - Parameter password: The given password.
+    /// - Returns: A boolean value. True when valid, false otherwise.
     func validate(password: String) -> Bool
 }
 

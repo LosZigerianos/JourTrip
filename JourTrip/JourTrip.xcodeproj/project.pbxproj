@@ -13,6 +13,8 @@
 		208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A16F1227B761B00E36CDF /* LoginViewController.swift */; };
 		2099536E2286D0DD006D6346 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536D2286D0DD006D6346 /* LoginService.swift */; };
 		209953702286D10D006D6346 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536F2286D10D006D6346 /* LoginValidator.swift */; };
+		209953782286D374006D6346 /* JourTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953772286D374006D6346 /* JourTripTests.swift */; };
+		209953802286D403006D6346 /* LoginValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099537F2286D403006D6346 /* LoginValidatorTests.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
@@ -28,12 +30,26 @@
 		ACDF9A58226FA86800B65291 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A57226FA86800B65291 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2099537A2286D374006D6346 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC127E66226F9CEB0004C0F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC127E6D226F9CEB0004C0F1;
+			remoteInfo = JourTrip;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		20392470227B777D0061E59B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		20392472227B81320061E59B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		208A16F1227B761B00E36CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2099536D2286D0DD006D6346 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		2099536F2286D10D006D6346 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
+		209953752286D374006D6346 /* JourTripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourTripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		209953772286D374006D6346 /* JourTripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripTests.swift; sourceTree = "<group>"; };
+		209953792286D374006D6346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2099537F2286D403006D6346 /* LoginValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidatorTests.swift; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		209953722286D374006D6346 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC127E6B226F9CEB0004C0F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +125,16 @@
 			path = "Use Cases";
 			sourceTree = "<group>";
 		};
+		209953762286D374006D6346 /* JourTripTests */ = {
+			isa = PBXGroup;
+			children = (
+				209953772286D374006D6346 /* JourTripTests.swift */,
+				209953792286D374006D6346 /* Info.plist */,
+				2099537F2286D403006D6346 /* LoginValidatorTests.swift */,
+			);
+			path = JourTripTests;
+			sourceTree = "<group>";
+		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				AC127E70226F9CEB0004C0F1 /* JourTrip */,
+				209953762286D374006D6346 /* JourTripTests */,
 				AC127E6F226F9CEB0004C0F1 /* Products */,
 				CC01FF3739B721C82441008E /* Pods */,
 				6839240370A0464BF606CDBB /* Frameworks */,
@@ -124,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AC127E6E226F9CEB0004C0F1 /* JourTrip.app */,
+				209953752286D374006D6346 /* JourTripTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +237,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		209953742286D374006D6346 /* JourTripTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2099537C2286D374006D6346 /* Build configuration list for PBXNativeTarget "JourTripTests" */;
+			buildPhases = (
+				209953712286D374006D6346 /* Sources */,
+				209953722286D374006D6346 /* Frameworks */,
+				209953732286D374006D6346 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2099537B2286D374006D6346 /* PBXTargetDependency */,
+			);
+			name = JourTripTests;
+			productName = JourTripTests;
+			productReference = 209953752286D374006D6346 /* JourTripTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AC127E6D226F9CEB0004C0F1 /* JourTrip */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC127E80226F9CED0004C0F1 /* Build configuration list for PBXNativeTarget "JourTrip" */;
@@ -227,10 +280,14 @@
 		AC127E66226F9CEB0004C0F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Los Zigerianos";
 				TargetAttributes = {
+					209953742286D374006D6346 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = AC127E6D226F9CEB0004C0F1;
+					};
 					AC127E6D226F9CEB0004C0F1 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -250,11 +307,19 @@
 			projectRoot = "";
 			targets = (
 				AC127E6D226F9CEB0004C0F1 /* JourTrip */,
+				209953742286D374006D6346 /* JourTripTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		209953732286D374006D6346 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC127E6C226F9CEB0004C0F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,6 +394,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		209953712286D374006D6346 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				209953802286D403006D6346 /* LoginValidatorTests.swift in Sources */,
+				209953782286D374006D6346 /* JourTripTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC127E6A226F9CEB0004C0F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,6 +427,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2099537B2286D374006D6346 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC127E6D226F9CEB0004C0F1 /* JourTrip */;
+			targetProxy = 2099537A2286D374006D6346 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -365,6 +447,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2099537D2286D374006D6346 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SZ9MGTL76;
+				INFOPLIST_FILE = JourTripTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adsilva.JourTripTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JourTrip.app/JourTrip";
+			};
+			name = Debug;
+		};
+		2099537E2286D374006D6346 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SZ9MGTL76;
+				INFOPLIST_FILE = JourTripTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adsilva.JourTripTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JourTrip.app/JourTrip";
+			};
+			name = Release;
+		};
 		AC127E7E226F9CED0004C0F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -522,6 +646,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2099537C2286D374006D6346 /* Build configuration list for PBXNativeTarget "JourTripTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2099537D2286D374006D6346 /* Debug */,
+				2099537E2286D374006D6346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AC127E69226F9CEB0004C0F1 /* Build configuration list for PBXProject "JourTrip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
