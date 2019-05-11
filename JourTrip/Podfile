@@ -8,9 +8,9 @@ target 'JourTrip' do
   # Pods for JourTrip
   pod 'RealmSwift'
   pod 'SwiftLint'
-  pod 'Alamofire'
+  pod 'Alamofire', '5.0.0-beta.3'
   pod 'AlamofireObjectMapper'
   pod 'Simple-KeychainSwift'
-  pod 'RxSwift', '~> 4.5'
-  pod 'RxCocoa', '~> 4.5'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

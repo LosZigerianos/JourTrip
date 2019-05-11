@@ -11,16 +11,8 @@ import Alamofire
 import AlamofireObjectMapper
 import RxSwift
 
-protocol LoginServiceType {
-    func login(email: String,
-               password: String,
-               completion: @escaping (_ response: UserLogin?, _ error: Error?) -> Void)
-    func login(with email: String, password: String) -> Single<Void>
-}
-
 protocol RegisterServiceType {
-    func register(email: String,
-                  password: String,
+    func register(with credentials: Credentials,
                   completion: @escaping (_ response: UserResponse?, _ error: Error?) -> Void)
 }
 
@@ -31,14 +23,13 @@ protocol LocationsServiceType {
 
 class ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType {
 
-    func register(email: String,
-                  password: String,
+    func register(with credentials: Credentials,
                   completion: @escaping (_ response: UserResponse?, _ error: Error?) -> Void) {
-        let parameters: Parameters = ["email": email, "password": password]
+        let parameters: Parameters = ["email": credentials.email, "password": credentials.password]
         
         let url = ConstantNetworking.localUrl + ConstantNetworking.signup
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseObject  { (response: DataResponse<UserResponse>) in
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseObject  { (response: DataResponse<UserResponse>) in
             if response.result.isSuccess {
                 let userResponse = response.result.value
                 completion(userResponse, nil)
@@ -46,14 +37,13 @@ class ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType 
         }
     }
     
-    func login(email: String,
-               password: String,
+    func login(with credentials: Credentials,
                completion: @escaping (_ response: UserLogin?, _ error: Error?) -> Void) {
-        let parameters: Parameters = ["email": email, "password": password]
+        let parameters: Parameters = ["email": credentials.email, "password": credentials.password]
         
         let url = ConstantNetworking.localUrl + ConstantNetworking.login
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseObject  { (response: DataResponse<UserLogin>) in
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseObject  { (response: DataResponse<UserLogin>) in
             if response.result.isSuccess {
                 let json = response.result.value
                 completion(json, nil)
@@ -61,9 +51,9 @@ class ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType 
         }
     }
 
-    func login(with email: String, password: String) -> Single<Void> {
+    func login(with credentials: Credentials) -> Single<Void> {
         return Single.create { observer in
-            self.login(email: email, password: password) { response, error in
+            self.login(with: credentials) { response, error in
                 if let error = error {
                     observer(.error(error))
                 }
@@ -80,7 +70,7 @@ class ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType 
                       completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
         let url = ConstantNetworking.localUrl + ConstantNetworking.locations + "?name=Ayuntamiento&token=\(token)"
         
-        Alamofire.request(url).responseObject { (response: DataResponse<LocationsResponse>) in
+        AF.request(url).responseObject { (response: DataResponse<LocationsResponse>) in
             if let locationsResponse = response.result.value as LocationsResponse? {
                 completion(locationsResponse, nil)
             }

@@ -11,10 +11,14 @@ import RxSwift
 import RxCocoa
 
 struct LoginViewModel {
-    private let loginService: LoginServiceType
 
-    init(loginService: LoginServiceType) {
+    private let loginService: LoginServiceType
+    private let loginValidator: LoginValidatorType
+
+    init(loginService: LoginServiceType,
+         loginValidator: LoginValidatorType) {
         self.loginService = loginService
+        self.loginValidator = loginValidator
     }
 
     /// Transforms the ViewModel inputs into Outputs
@@ -24,7 +28,7 @@ struct LoginViewModel {
         let emailValid = inputs.emailText
             .distinctUntilChanged()
             .throttle(0.2, scheduler: MainScheduler.instance)
-            .map { $0.utf8.count > 2 }
+            .map(loginValidator.validate(email:))
             .asDriver(onErrorDriveWith: .empty())
 
         // Check if the password text is valid
@@ -32,7 +36,7 @@ struct LoginViewModel {
         let passwordValid = inputs.passwordText
             .distinctUntilChanged()
             .throttle(0.2, scheduler: MainScheduler.instance)
-            .map { $0.utf8.count > 2 }
+            .map(loginValidator.validate(password:))
             .asDriver(onErrorDriveWith: .empty())
 
         // Combine the results of valid operations
@@ -50,7 +54,7 @@ struct LoginViewModel {
         // Otherwise the sequence won't emit any value
         let loginSuccessful = inputs.buttonTap
             .withLatestFrom(credentials)
-            .flatMap { self.loginService.login(with: $0, password: $1) }
+            .flatMap(loginService.login(with:))
             .asDriver(onErrorDriveWith: .never())
 
         return Outputs(buttonEnabled: buttonEnabled, loginSuccessful: loginSuccessful)

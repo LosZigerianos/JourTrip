@@ -18,22 +18,22 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // register example
-        self.serviceProxy.register(email: email, password: password) { (response, error) in
-            guard let email = response?.result?.email else {
-                    fatalError("email or password error")
-            }
-            self.login(email: email, password: self.password)
-        }
+//        // register example
+//        self.serviceProxy.register(email: email, password: password) { (response, error) in
+//            guard let email = response?.result?.email else {
+//                    fatalError("email or password error")
+//            }
+//            self.login(email: email, password: self.password)
+//        }
     }
     
     fileprivate func login(email: String, password: String) {
-        // login example
-        self.serviceProxy.login(email: email, password: password) { (response, error) in
-            if let token = response?.token {
-                self.getSomeLocations(with: token)
-            }
-        }
+//        // login example
+//        self.serviceProxy.login(email: email, password: password) { (response, error) in
+//            if let token = response?.token {
+//                self.getSomeLocations(with: token)
+//            }
+//        }
     }
     
     fileprivate func getSomeLocations(with token: String) {

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let serviceProxy = ServiceProxy()
-        let loginViewModel = LoginViewModel(loginService: serviceProxy)
+        let loginViewModel = LoginViewModel(loginService: serviceProxy, loginValidator: LoginValidator())
         let loginViewController = LoginViewController(viewModel: loginViewModel)
 
         window?.rootViewController = loginViewController
