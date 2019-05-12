@@ -38,6 +38,11 @@
 		209953B02288941C006D6346 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953AF2288941C006D6346 /* LoginNavigator.swift */; };
 		209953B22288965C006D6346 /* InitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B12288965C006D6346 /* InitialViewModel.swift */; };
 		209953B422889872006D6346 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B322889872006D6346 /* App.swift */; };
+		209953B72288A619006D6346 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B62288A619006D6346 /* AppAssembly.swift */; };
+		209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B92288A641006D6346 /* InitialAssembly.swift */; };
+		209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953BC2288A7B0006D6346 /* LoginAssembly.swift */; };
+		209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C22288AAAE006D6346 /* SignUpViewController.swift */; };
+		209953C52288AAAE006D6346 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209953C32288AAAE006D6346 /* SignUpViewController.xib */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
@@ -96,6 +101,11 @@
 		209953AF2288941C006D6346 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		209953B12288965C006D6346 /* InitialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModel.swift; sourceTree = "<group>"; };
 		209953B322889872006D6346 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		209953B62288A619006D6346 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		209953B92288A641006D6346 /* InitialAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialAssembly.swift; sourceTree = "<group>"; };
+		209953BC2288A7B0006D6346 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		209953C22288AAAE006D6346 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		209953C32288AAAE006D6346 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +150,7 @@
 			children = (
 				20995381228880EB006D6346 /* Initial */,
 				2099536B2286CE18006D6346 /* Login */,
+				209953BE2288AA72006D6346 /* SignUp */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -157,6 +168,7 @@
 		2099536B2286CE18006D6346 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				209953BB2288A7A6006D6346 /* DI */,
 				2099536C2286D0BA006D6346 /* Use Cases */,
 				208A16EF227B75EF00E36CDF /* Presentation */,
 				209953AE22889405006D6346 /* Navigator */,
@@ -186,6 +198,7 @@
 		20995381228880EB006D6346 /* Initial */ = {
 			isa = PBXGroup;
 			children = (
+				209953B82288A638006D6346 /* DI */,
 				20995382228880F3006D6346 /* Presentation */,
 			);
 			path = Initial;
@@ -234,6 +247,63 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
+		209953B52288A5F7006D6346 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				209953B62288A619006D6346 /* AppAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		209953B82288A638006D6346 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				209953B92288A641006D6346 /* InitialAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		209953BB2288A7A6006D6346 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				209953BC2288A7B0006D6346 /* LoginAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		209953BE2288AA72006D6346 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				209953BF2288AA87006D6346 /* DI */,
+				209953C02288AA8B006D6346 /* Presentation */,
+				209953C12288AA91006D6346 /* Navigator */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		209953BF2288AA87006D6346 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		209953C02288AA8B006D6346 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				209953C22288AAAE006D6346 /* SignUpViewController.swift */,
+				209953C32288AAAE006D6346 /* SignUpViewController.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		209953C12288AA91006D6346 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,12 +335,13 @@
 		AC127E70226F9CEB0004C0F1 /* JourTrip */ = {
 			isa = PBXGroup;
 			children = (
-				2099538722888E1B006D6346 /* Fonts */,
+				209953B52288A5F7006D6346 /* DI */,
 				208A16EE227B75E000E36CDF /* Scenes */,
 				ACB0F31022735A49006EB545 /* ViewController */,
 				ACDF9A52226FA3E900B65291 /* Network */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
 				ACB0F31322735D5B006EB545 /* Util */,
+				2099538722888E1B006D6346 /* Fonts */,
 				AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */,
 				209953B322889872006D6346 /* App.swift */,
 				AC127E78226F9CED0004C0F1 /* Assets.xcassets */,
@@ -430,6 +501,7 @@
 				209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */,
 				209953A822888E77006D6346 /* Apercu Pro Medium.otf in Resources */,
 				AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */,
+				209953C52288AAAE006D6346 /* SignUpViewController.xib in Resources */,
 				2099539C22888E77006D6346 /* Apercu Italic.otf in Resources */,
 				AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */,
 				209953A722888E77006D6346 /* Apercu Pro Medium Italic.otf in Resources */,
@@ -533,6 +605,7 @@
 				209953B422889872006D6346 /* App.swift in Sources */,
 				ACDF9A58226FA86800B65291 /* Comment.swift in Sources */,
 				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
+				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,
 				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
 				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
@@ -544,8 +617,11 @@
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
+				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
+				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
+				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

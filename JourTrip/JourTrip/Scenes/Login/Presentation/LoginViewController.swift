@@ -9,6 +9,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
+protocol LoginViewControllerProvider: class {
+    func loginViewController() -> LoginViewController
+}
 
 final class LoginViewController: UIViewController {
     // MARK: - Private properties

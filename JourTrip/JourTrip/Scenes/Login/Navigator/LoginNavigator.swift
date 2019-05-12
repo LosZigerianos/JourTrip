@@ -11,17 +11,16 @@ import UIKit
 class LoginNavigator {
 
     private let navigationController: UINavigationController
+    private let loginViewControllerProvider: LoginViewControllerProvider
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController,
+         loginViewControllerProvider: LoginViewControllerProvider) {
         self.navigationController = navigationController
+        self.loginViewControllerProvider = loginViewControllerProvider
     }
 
     func navigateToLogin() {
-        let serviceProxy = ServiceProxy()
-        let loginValidator = LoginValidator()
-        let loginViewModel = LoginViewModel(loginService: serviceProxy,
-                                            loginValidator: loginValidator)
-        let loginViewController = LoginViewController(viewModel: loginViewModel)
+        let loginViewController = loginViewControllerProvider.loginViewController()
         navigationController.pushViewController(loginViewController, animated: true)
     }
 }
