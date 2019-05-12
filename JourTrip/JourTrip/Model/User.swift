@@ -12,9 +12,6 @@ final class UserLogin: Mappable {
     var success : String?
     var token : String?
     
-    required init?(map: Map){
-    }
-    
     func mapping(map: Map) {
         success <- map["success"]
         token <- map["token"]

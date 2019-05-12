@@ -12,8 +12,8 @@ import ObjectMapper
 
 class Comment: Object, Mappable {
     
-    var commentId: String = ""
-    var message: String = ""
+    @objc dynamic var commentId: String = ""
+    @objc dynamic var message: String = ""
     
     func mapping(map: Map) {
         commentId <- map["id"]

@@ -2,11 +2,19 @@
 
 This project uses Swift and RealmSwift fw
 
-To setup the project use:
+### Install dependencies
 
 ```
 pod install
 
 ```
 
-Open `JourTrip.xcworkspace` with XCode > 10.2
+### Frameworks and libraries
+- RealmSwift
+- Alamofire
+- ObjectMapper
+
+Open `JourTrip.xcworkspace` with XCode 10.2 or greater
+
+### Swift style and conventions
+- SwiftLint
