@@ -9,10 +9,11 @@
 import UIKit
 
 final class AppAssembly {
-    private(set) lazy var initialAssembly: InitialAssembly = InitialAssembly(loginAssembly: loginAssembly)
-    
+    private(set) lazy var initialAssembly: InitialAssembly = InitialAssembly(loginAssembly: loginAssembly,
+                                                                             signUpAssembly: signUpAssembly)
     private lazy var loginAssembly: LoginAssembly = LoginAssembly(navigationController: navigationController,
                                                                   loginService: serviceProxy)
+    private lazy var signUpAssembly: SignUpAssembly = SignUpAssembly(navigationController: navigationController)
     private lazy var serviceProxy: ServiceProxy = ServiceProxy()
 
     private let navigationController: UINavigationController

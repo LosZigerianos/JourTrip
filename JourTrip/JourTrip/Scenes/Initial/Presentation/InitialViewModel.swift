@@ -13,9 +13,12 @@ import RxCocoa
 struct InitialViewModel {
 
     private let loginNavigator: LoginNavigator
+    private let signUpNavigator: SignUpNavigator
 
-    init(loginNavigator: LoginNavigator) {
+    init(loginNavigator: LoginNavigator,
+         signUpNavigator: SignUpNavigator) {
         self.loginNavigator = loginNavigator
+        self.signUpNavigator = signUpNavigator
     }
 
     func loginTapped() {
@@ -23,7 +26,6 @@ struct InitialViewModel {
     }
 
     func signupTapped() {
-
+        signUpNavigator.navigateToSignUp()
     }
-
 }

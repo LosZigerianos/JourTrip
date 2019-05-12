@@ -21,14 +21,14 @@ final class LoginAssembly {
 
     func viewModel() -> LoginViewModel {
         return LoginViewModel(loginService: loginService,
-                              loginValidator: loginValidator())
+                              loginValidator: validator())
     }
 
-    func loginValidator() -> LoginValidator {
+    func validator() -> LoginValidator {
         return LoginValidator()
     }
 
-    func loginNavigator() -> LoginNavigator {
+    func navigator() -> LoginNavigator {
         return LoginNavigator(navigationController: navigationController,
                               loginViewControllerProvider: self)
     }

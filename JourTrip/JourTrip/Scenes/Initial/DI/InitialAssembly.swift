@@ -11,9 +11,12 @@ import Foundation
 final class InitialAssembly {
 
     private let loginAssembly: LoginAssembly
+    private let signUpAssembly: SignUpAssembly
 
-    init(loginAssembly: LoginAssembly) {
+    init(loginAssembly: LoginAssembly,
+         signUpAssembly: SignUpAssembly) {
         self.loginAssembly = loginAssembly
+        self.signUpAssembly = signUpAssembly
     }
 
     func initialViewController() -> InitialViewController {
@@ -21,6 +24,7 @@ final class InitialAssembly {
     }
 
     private func viewModel() -> InitialViewModel {
-        return InitialViewModel(loginNavigator: loginAssembly.loginNavigator())
+        return InitialViewModel(loginNavigator: loginAssembly.navigator(),
+                                signUpNavigator: signUpAssembly.navigator())
     }
 }

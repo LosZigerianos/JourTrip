@@ -29,18 +29,8 @@ final class LoginViewController: UIViewController {
     }
 
     // MARK: - IBOutlets
-    @IBOutlet weak var emailTextField: UITextField! {
-        didSet {
-            emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 17, height: 0))
-            emailTextField.leftViewMode = .always
-        }
-    }
-    @IBOutlet weak var passwordTextField: UITextField! {
-        didSet {
-            passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 17, height: 0))
-            passwordTextField.leftViewMode = .always
-        }
-    }
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var googleLoginButton: UIButton!
 

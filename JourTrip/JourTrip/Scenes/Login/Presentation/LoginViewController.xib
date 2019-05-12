@@ -37,7 +37,7 @@
                         <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FtN-UX-n3b">
                             <rect key="frame" x="0.0" y="0.0" width="323" height="88"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27n-E0-bHg">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27n-E0-bHg" customClass="CustomTextField" customModule="JourTrip" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="323" height="38"/>
                                     <color key="backgroundColor" red="0.94501131772994995" green="0.94124573469161987" blue="0.91605859994888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" red="0.73724162578582764" green="0.73335081338882446" blue="0.73736697435379028" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,20 +45,20 @@
                                         <constraint firstAttribute="height" constant="38" id="Aj8-JH-sCG"/>
                                     </constraints>
                                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="ApercuPro-Medium" family="Apercu Pro" pointSize="17"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" textContentType="email"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Umm-fd-KMk">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Umm-fd-KMk" customClass="CustomTextField" customModule="JourTrip" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="50" width="323" height="38"/>
                                     <color key="backgroundColor" red="0.94501131772994995" green="0.94124573469161987" blue="0.91605859994888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" red="0.73724162578582764" green="0.73335081338882446" blue="0.73736697435379028" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="lJe-O6-rei"/>
                                     </constraints>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="ApercuPro-Medium" family="Apercu Pro" pointSize="17"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                             </subviews>
                         </stackView>

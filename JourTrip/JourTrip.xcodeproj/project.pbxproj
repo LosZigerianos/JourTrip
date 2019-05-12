@@ -43,6 +43,9 @@
 		209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953BC2288A7B0006D6346 /* LoginAssembly.swift */; };
 		209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C22288AAAE006D6346 /* SignUpViewController.swift */; };
 		209953C52288AAAE006D6346 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209953C32288AAAE006D6346 /* SignUpViewController.xib */; };
+		209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C62288AB1F006D6346 /* CustomTextField.swift */; };
+		209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C82288AE0A006D6346 /* SignUpNavigator.swift */; };
+		209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953CA2288AE8A006D6346 /* SignUpAssembly.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
@@ -106,6 +109,9 @@
 		209953BC2288A7B0006D6346 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		209953C22288AAAE006D6346 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		209953C32288AAAE006D6346 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		209953C62288AB1F006D6346 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		209953C82288AE0A006D6346 /* SignUpNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigator.swift; sourceTree = "<group>"; };
+		209953CA2288AE8A006D6346 /* SignUpAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAssembly.swift; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +157,7 @@
 				20995381228880EB006D6346 /* Initial */,
 				2099536B2286CE18006D6346 /* Login */,
 				209953BE2288AA72006D6346 /* SignUp */,
+				209953C62288AB1F006D6346 /* CustomTextField.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 		209953BF2288AA87006D6346 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				209953CA2288AE8A006D6346 /* SignUpAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 		209953C12288AA91006D6346 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				209953C82288AE0A006D6346 /* SignUpNavigator.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -605,10 +614,12 @@
 				209953B422889872006D6346 /* App.swift in Sources */,
 				ACDF9A58226FA86800B65291 /* Comment.swift in Sources */,
 				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
+				209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */,
 				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,
 				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
 				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
+				209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
@@ -619,6 +630,7 @@
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
+				209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */,
 				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
 				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
