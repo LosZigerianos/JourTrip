@@ -21,7 +21,7 @@ protocol LocationsServiceType {
                       completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void)
 }
 
-class ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType {
+struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType {
 
     func register(with credentials: Credentials,
                   completion: @escaping (_ response: UserResponse?, _ error: Error?) -> Void) {

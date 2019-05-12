@@ -15,6 +15,29 @@
 		209953702286D10D006D6346 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536F2286D10D006D6346 /* LoginValidator.swift */; };
 		209953782286D374006D6346 /* JourTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953772286D374006D6346 /* JourTripTests.swift */; };
 		209953802286D403006D6346 /* LoginValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099537F2286D403006D6346 /* LoginValidatorTests.swift */; };
+		2099538522888114006D6346 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099538322888114006D6346 /* InitialViewController.swift */; };
+		2099538622888114006D6346 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2099538422888114006D6346 /* InitialViewController.xib */; };
+		2099539A22888E77006D6346 /* Apercu Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539122888E6F006D6346 /* Apercu Bold Italic.otf */; };
+		2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538E22888E6E006D6346 /* Apercu Bold.otf */; };
+		2099539C22888E77006D6346 /* Apercu Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538F22888E6E006D6346 /* Apercu Italic.otf */; };
+		2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539422888E6F006D6346 /* Apercu Light Italic.otf */; };
+		2099539E22888E77006D6346 /* Apercu Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538C22888E6E006D6346 /* Apercu Light.otf */; };
+		2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539722888E6F006D6346 /* Apercu Medium Italic.otf */; };
+		209953A022888E77006D6346 /* Apercu Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539322888E6F006D6346 /* Apercu Medium.otf */; };
+		209953A122888E77006D6346 /* Apercu Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538D22888E6E006D6346 /* Apercu Mono.otf */; };
+		209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539522888E6F006D6346 /* Apercu Pro Bold Italic.otf */; };
+		209953A322888E77006D6346 /* Apercu Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539922888E6F006D6346 /* Apercu Pro Bold.otf */; };
+		209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539222888E6F006D6346 /* Apercu Pro Italic.otf */; };
+		209953A522888E77006D6346 /* Apercu Pro Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538A22888E6E006D6346 /* Apercu Pro Light Italic.otf */; };
+		209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538B22888E6E006D6346 /* Apercu Pro Light.otf */; };
+		209953A722888E77006D6346 /* Apercu Pro Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539022888E6E006D6346 /* Apercu Pro Medium Italic.otf */; };
+		209953A822888E77006D6346 /* Apercu Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538922888E6E006D6346 /* Apercu Pro Medium.otf */; };
+		209953A922888E77006D6346 /* Apercu Pro Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538822888E6E006D6346 /* Apercu Pro Mono.otf */; };
+		209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539622888E6F006D6346 /* Apercu Pro Regular.otf */; };
+		209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539822888E6F006D6346 /* Apercu Regular.otf */; };
+		209953B02288941C006D6346 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953AF2288941C006D6346 /* LoginNavigator.swift */; };
+		209953B22288965C006D6346 /* InitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B12288965C006D6346 /* InitialViewModel.swift */; };
+		209953B422889872006D6346 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B322889872006D6346 /* App.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
@@ -50,6 +73,29 @@
 		209953772286D374006D6346 /* JourTripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripTests.swift; sourceTree = "<group>"; };
 		209953792286D374006D6346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2099537F2286D403006D6346 /* LoginValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidatorTests.swift; sourceTree = "<group>"; };
+		2099538322888114006D6346 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		2099538422888114006D6346 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
+		2099538822888E6E006D6346 /* Apercu Pro Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Mono.otf"; sourceTree = "<group>"; };
+		2099538922888E6E006D6346 /* Apercu Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Medium.otf"; sourceTree = "<group>"; };
+		2099538A22888E6E006D6346 /* Apercu Pro Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Light Italic.otf"; sourceTree = "<group>"; };
+		2099538B22888E6E006D6346 /* Apercu Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Light.otf"; sourceTree = "<group>"; };
+		2099538C22888E6E006D6346 /* Apercu Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Light.otf"; sourceTree = "<group>"; };
+		2099538D22888E6E006D6346 /* Apercu Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Mono.otf"; sourceTree = "<group>"; };
+		2099538E22888E6E006D6346 /* Apercu Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Bold.otf"; sourceTree = "<group>"; };
+		2099538F22888E6E006D6346 /* Apercu Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Italic.otf"; sourceTree = "<group>"; };
+		2099539022888E6E006D6346 /* Apercu Pro Medium Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Medium Italic.otf"; sourceTree = "<group>"; };
+		2099539122888E6F006D6346 /* Apercu Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Bold Italic.otf"; sourceTree = "<group>"; };
+		2099539222888E6F006D6346 /* Apercu Pro Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Italic.otf"; sourceTree = "<group>"; };
+		2099539322888E6F006D6346 /* Apercu Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Medium.otf"; sourceTree = "<group>"; };
+		2099539422888E6F006D6346 /* Apercu Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Light Italic.otf"; sourceTree = "<group>"; };
+		2099539522888E6F006D6346 /* Apercu Pro Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Bold Italic.otf"; sourceTree = "<group>"; };
+		2099539622888E6F006D6346 /* Apercu Pro Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Regular.otf"; sourceTree = "<group>"; };
+		2099539722888E6F006D6346 /* Apercu Medium Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Medium Italic.otf"; sourceTree = "<group>"; };
+		2099539822888E6F006D6346 /* Apercu Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Regular.otf"; sourceTree = "<group>"; };
+		2099539922888E6F006D6346 /* Apercu Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Bold.otf"; sourceTree = "<group>"; };
+		209953AF2288941C006D6346 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
+		209953B12288965C006D6346 /* InitialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModel.swift; sourceTree = "<group>"; };
+		209953B322889872006D6346 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +138,7 @@
 		208A16EE227B75E000E36CDF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				20995381228880EB006D6346 /* Initial */,
 				2099536B2286CE18006D6346 /* Login */,
 			);
 			path = Scenes;
@@ -112,6 +159,7 @@
 			children = (
 				2099536C2286D0BA006D6346 /* Use Cases */,
 				208A16EF227B75EF00E36CDF /* Presentation */,
+				209953AE22889405006D6346 /* Navigator */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -133,6 +181,57 @@
 				2099537F2286D403006D6346 /* LoginValidatorTests.swift */,
 			);
 			path = JourTripTests;
+			sourceTree = "<group>";
+		};
+		20995381228880EB006D6346 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				20995382228880F3006D6346 /* Presentation */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		20995382228880F3006D6346 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2099538322888114006D6346 /* InitialViewController.swift */,
+				2099538422888114006D6346 /* InitialViewController.xib */,
+				209953B12288965C006D6346 /* InitialViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2099538722888E1B006D6346 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2099539122888E6F006D6346 /* Apercu Bold Italic.otf */,
+				2099538E22888E6E006D6346 /* Apercu Bold.otf */,
+				2099538F22888E6E006D6346 /* Apercu Italic.otf */,
+				2099539422888E6F006D6346 /* Apercu Light Italic.otf */,
+				2099538C22888E6E006D6346 /* Apercu Light.otf */,
+				2099539722888E6F006D6346 /* Apercu Medium Italic.otf */,
+				2099539322888E6F006D6346 /* Apercu Medium.otf */,
+				2099538D22888E6E006D6346 /* Apercu Mono.otf */,
+				2099539522888E6F006D6346 /* Apercu Pro Bold Italic.otf */,
+				2099539922888E6F006D6346 /* Apercu Pro Bold.otf */,
+				2099539222888E6F006D6346 /* Apercu Pro Italic.otf */,
+				2099538A22888E6E006D6346 /* Apercu Pro Light Italic.otf */,
+				2099538B22888E6E006D6346 /* Apercu Pro Light.otf */,
+				2099539022888E6E006D6346 /* Apercu Pro Medium Italic.otf */,
+				2099538922888E6E006D6346 /* Apercu Pro Medium.otf */,
+				2099538822888E6E006D6346 /* Apercu Pro Mono.otf */,
+				2099539622888E6F006D6346 /* Apercu Pro Regular.otf */,
+				2099539822888E6F006D6346 /* Apercu Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		209953AE22889405006D6346 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				209953AF2288941C006D6346 /* LoginNavigator.swift */,
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
@@ -166,12 +265,14 @@
 		AC127E70226F9CEB0004C0F1 /* JourTrip */ = {
 			isa = PBXGroup;
 			children = (
+				2099538722888E1B006D6346 /* Fonts */,
 				208A16EE227B75E000E36CDF /* Scenes */,
 				ACB0F31022735A49006EB545 /* ViewController */,
 				ACDF9A52226FA3E900B65291 /* Network */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
 				ACB0F31322735D5B006EB545 /* Util */,
 				AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */,
+				209953B322889872006D6346 /* App.swift */,
 				AC127E78226F9CED0004C0F1 /* Assets.xcassets */,
 				AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */,
 				AC127E7D226F9CED0004C0F1 /* Info.plist */,
@@ -325,8 +426,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				20392471227B777D0061E59B /* LoginViewController.xib in Resources */,
+				209953A522888E77006D6346 /* Apercu Pro Light Italic.otf in Resources */,
+				209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */,
+				209953A822888E77006D6346 /* Apercu Pro Medium.otf in Resources */,
 				AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */,
+				2099539C22888E77006D6346 /* Apercu Italic.otf in Resources */,
 				AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */,
+				209953A722888E77006D6346 /* Apercu Pro Medium Italic.otf in Resources */,
+				209953A322888E77006D6346 /* Apercu Pro Bold.otf in Resources */,
+				209953A922888E77006D6346 /* Apercu Pro Mono.otf in Resources */,
+				2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */,
+				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
+				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
+				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
+				209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */,
+				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
+				2099539E22888E77006D6346 /* Apercu Light.otf in Resources */,
+				209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */,
+				209953A022888E77006D6346 /* Apercu Medium.otf in Resources */,
+				2099538622888114006D6346 /* InitialViewController.xib in Resources */,
+				2099539A22888E77006D6346 /* Apercu Bold Italic.otf in Resources */,
+				209953A122888E77006D6346 /* Apercu Mono.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,8 +530,10 @@
 				208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */,
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
+				209953B422889872006D6346 /* App.swift in Sources */,
 				ACDF9A58226FA86800B65291 /* Comment.swift in Sources */,
 				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
+				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
 				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
@@ -420,8 +542,10 @@
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
+				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
+				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+struct InitialViewModel {
+
+    private let loginNavigator: LoginNavigator
+
+    init(loginNavigator: LoginNavigator) {
+        self.loginNavigator = loginNavigator
+    }
+
+    func loginTapped() {
+        loginNavigator.navigateToLogin()
+    }
+
+    func signupTapped() {
+
+    }
+
+}

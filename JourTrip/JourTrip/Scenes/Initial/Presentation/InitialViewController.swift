@@ -9,22 +9,35 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var signUpButton: UIButton! {
+        didSet {
+            signUpButton.layer.cornerRadius = 18
+        }
+    }
+    @IBOutlet weak var loginButton: UIButton! {
+        didSet {
+            loginButton.layer.cornerRadius = 18
+            loginButton.layer.borderWidth = 2
+            loginButton.layer.borderColor = #colorLiteral(red: 0.3527634144, green: 0.3804193735, blue: 0.4549338222, alpha: 1)
+        }
     }
 
+    private let viewModel: InitialViewModel
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    init(viewModel: InitialViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
-    */
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    @IBAction func signUpAction(_ sender: UIButton) {
+        viewModel.signupTapped()
+    }
+
+    @IBAction func loginAction(_ sender: UIButton) {
+        viewModel.loginTapped()
+    }
 }

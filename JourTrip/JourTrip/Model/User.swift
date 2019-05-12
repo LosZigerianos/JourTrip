@@ -9,6 +9,11 @@
 import ObjectMapper
 
 final class UserLogin: Mappable {
+    init?(map: Map) {
+        self.success <- map["success"]
+        self.token <- map["token"]
+    }
+
     var success : String?
     var token : String?
     
