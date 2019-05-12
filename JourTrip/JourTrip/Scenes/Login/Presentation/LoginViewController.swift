@@ -44,7 +44,7 @@ final class LoginViewController: UIViewController {
     // MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("Welcome Back", comment: "")
+        setupNavigationControllerAppareance()
         setupButtonAppareance()
         viewModelBindings()
     }
@@ -55,6 +55,18 @@ private extension LoginViewController {
     func setupButtonAppareance() {
         loginButton.layer.cornerRadius = 18
         googleLoginButton.layer.cornerRadius = 18
+    }
+
+    func setupNavigationControllerAppareance() {
+        let titleLabel = UILabel()
+        titleLabel.text = NSLocalizedString("Welcome Back", comment: "")
+        titleLabel.font = UIFont(name: "Apercu Pro Bold", size: 18)
+        titleLabel.textColor = #colorLiteral(red: 0.4117260575, green: 0.4117894173, blue: 0.4117122293, alpha: 1)
+        navigationItem.titleView = titleLabel
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.4117260575, green: 0.4117894173, blue: 0.4117122293, alpha: 1)
     }
 
     /// Binds the View with the ViewModel
