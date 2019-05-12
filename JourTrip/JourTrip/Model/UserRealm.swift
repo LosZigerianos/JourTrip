@@ -1,5 +1,5 @@
 //
-//  Comment.swift
+//  User.swift
 //  JourTrip
 //
 //  Created by Alexandre on 23/4/19.
@@ -9,15 +9,19 @@
 import Foundation
 import RealmSwift
 import ObjectMapper
-
-class Comment: Object, Mappable {
+// With realm example
+final class UserRealm: Object, Mappable {
     
-    @objc dynamic var commentId: String = ""
-    @objc dynamic var message: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var email: String = ""
+    @objc dynamic var userImage: String?
+    @objc dynamic var userId: String?
     
     func mapping(map: Map) {
-        commentId <- map["id"]
-        message <- map["message"]
+        name <- map["name"]
+        email <- map["email"]
+        userImage <- map["image"]
+        userId <- map["id"]
     }
     
     required convenience init?(map: Map) {
@@ -26,4 +30,5 @@ class Comment: Object, Mappable {
     override static func primaryKey() -> String? {
         return "userId"
     }
+
 }

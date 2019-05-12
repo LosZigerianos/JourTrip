@@ -8,33 +8,76 @@
 
 /* Begin PBXBuildFile section */
 		1EE889FD9EB3C7A5751E9DC5 /* Pods_JourTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */; };
+		20392471227B777D0061E59B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20392470227B777D0061E59B /* LoginViewController.xib */; };
+		20392473227B81330061E59B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20392472227B81320061E59B /* LoginViewModel.swift */; };
+		208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A16F1227B761B00E36CDF /* LoginViewController.swift */; };
+		2099536E2286D0DD006D6346 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536D2286D0DD006D6346 /* LoginService.swift */; };
+		209953702286D10D006D6346 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536F2286D10D006D6346 /* LoginValidator.swift */; };
+		209953782286D374006D6346 /* JourTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953772286D374006D6346 /* JourTripTests.swift */; };
+		209953802286D403006D6346 /* LoginValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099537F2286D403006D6346 /* LoginValidatorTests.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
-		AC127E77226F9CEB0004C0F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E75226F9CEB0004C0F1 /* Main.storyboard */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
 		AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */; };
-		ACDF9A54226FA44800B65291 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* User.swift */; };
-		ACDF9A56226FA48000B65291 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A55226FA48000B65291 /* Location.swift */; };
+		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
+		AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929B2272528600BB6F0E /* ServiceProxy.swift */; };
+		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
+		ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31122735A6F006EB545 /* BaseViewController.swift */; };
+		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
+		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
+		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
+		ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
 		ACDF9A58226FA86800B65291 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A57226FA86800B65291 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2099537A2286D374006D6346 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC127E66226F9CEB0004C0F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC127E6D226F9CEB0004C0F1;
+			remoteInfo = JourTrip;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		20392470227B777D0061E59B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		20392472227B81320061E59B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		208A16F1227B761B00E36CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2099536D2286D0DD006D6346 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		2099536F2286D10D006D6346 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
+		209953752286D374006D6346 /* JourTripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourTripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		209953772286D374006D6346 /* JourTripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripTests.swift; sourceTree = "<group>"; };
+		209953792286D374006D6346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2099537F2286D403006D6346 /* LoginValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidatorTests.swift; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC127E6E226F9CEB0004C0F1 /* JourTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC127E73226F9CEB0004C0F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AC127E76226F9CEB0004C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC127E78226F9CED0004C0F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC127E7B226F9CED0004C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC127E7D226F9CED0004C0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACDF9A53226FA44800B65291 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		ACDF9A55226FA48000B65291 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
+		AC40929B2272528600BB6F0E /* ServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProxy.swift; sourceTree = "<group>"; };
+		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		ACB0F31122735A6F006EB545 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		ACDF9A53226FA44800B65291 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 		ACDF9A57226FA86800B65291 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		209953722286D374006D6346 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC127E6B226F9CEB0004C0F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +89,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		208A16EE227B75E000E36CDF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2099536B2286CE18006D6346 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		208A16EF227B75EF00E36CDF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				208A16F1227B761B00E36CDF /* LoginViewController.swift */,
+				20392470227B777D0061E59B /* LoginViewController.xib */,
+				20392472227B81320061E59B /* LoginViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2099536B2286CE18006D6346 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2099536C2286D0BA006D6346 /* Use Cases */,
+				208A16EF227B75EF00E36CDF /* Presentation */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2099536C2286D0BA006D6346 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				2099536D2286D0DD006D6346 /* LoginService.swift */,
+				2099536F2286D10D006D6346 /* LoginValidator.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		209953762286D374006D6346 /* JourTripTests */ = {
+			isa = PBXGroup;
+			children = (
+				209953772286D374006D6346 /* JourTripTests.swift */,
+				209953792286D374006D6346 /* Info.plist */,
+				2099537F2286D403006D6346 /* LoginValidatorTests.swift */,
+			);
+			path = JourTripTests;
+			sourceTree = "<group>";
+		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				AC127E70226F9CEB0004C0F1 /* JourTrip */,
+				209953762286D374006D6346 /* JourTripTests */,
 				AC127E6F226F9CEB0004C0F1 /* Products */,
 				CC01FF3739B721C82441008E /* Pods */,
 				6839240370A0464BF606CDBB /* Frameworks */,
@@ -68,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AC127E6E226F9CEB0004C0F1 /* JourTrip.app */,
+				209953752286D374006D6346 /* JourTripTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,11 +166,12 @@
 		AC127E70226F9CEB0004C0F1 /* JourTrip */ = {
 			isa = PBXGroup;
 			children = (
+				208A16EE227B75E000E36CDF /* Scenes */,
+				ACB0F31022735A49006EB545 /* ViewController */,
 				ACDF9A52226FA3E900B65291 /* Network */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
+				ACB0F31322735D5B006EB545 /* Util */,
 				AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */,
-				AC127E73226F9CEB0004C0F1 /* ViewController.swift */,
-				AC127E75226F9CEB0004C0F1 /* Main.storyboard */,
 				AC127E78226F9CED0004C0F1 /* Assets.xcassets */,
 				AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */,
 				AC127E7D226F9CED0004C0F1 /* Info.plist */,
@@ -87,12 +179,38 @@
 			path = JourTrip;
 			sourceTree = "<group>";
 		};
+		ACB0F31022735A49006EB545 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC127E73226F9CEB0004C0F1 /* ViewController.swift */,
+				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ACB0F31322735D5B006EB545 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0F31422735D6F006EB545 /* DataManager */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		ACB0F31422735D6F006EB545 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0F31522735D9A006EB545 /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		ACDF9A51226FA3DF00B65291 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACDF9A53226FA44800B65291 /* User.swift */,
-				ACDF9A55226FA48000B65291 /* Location.swift */,
+				ACDF9A53226FA44800B65291 /* UserRealm.swift */,
 				ACDF9A57226FA86800B65291 /* Comment.swift */,
+				ACB0F31722747C41006EB545 /* User.swift */,
+				ACB0F31B2277A1CA006EB545 /* Locations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +218,9 @@
 		ACDF9A52226FA3E900B65291 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AC4092992272517200BB6F0E /* ConstantNetworking.swift */,
+				AC40929B2272528600BB6F0E /* ServiceProxy.swift */,
+				AC40929D2272530200BB6F0E /* ServiceError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -116,6 +237,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		209953742286D374006D6346 /* JourTripTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2099537C2286D374006D6346 /* Build configuration list for PBXNativeTarget "JourTripTests" */;
+			buildPhases = (
+				209953712286D374006D6346 /* Sources */,
+				209953722286D374006D6346 /* Frameworks */,
+				209953732286D374006D6346 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2099537B2286D374006D6346 /* PBXTargetDependency */,
+			);
+			name = JourTripTests;
+			productName = JourTripTests;
+			productReference = 209953752286D374006D6346 /* JourTripTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AC127E6D226F9CEB0004C0F1 /* JourTrip */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC127E80226F9CED0004C0F1 /* Build configuration list for PBXNativeTarget "JourTrip" */;
@@ -141,10 +280,14 @@
 		AC127E66226F9CEB0004C0F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Los Zigerianos";
 				TargetAttributes = {
+					209953742286D374006D6346 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = AC127E6D226F9CEB0004C0F1;
+					};
 					AC127E6D226F9CEB0004C0F1 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -164,18 +307,26 @@
 			projectRoot = "";
 			targets = (
 				AC127E6D226F9CEB0004C0F1 /* JourTrip */,
+				209953742286D374006D6346 /* JourTripTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		209953732286D374006D6346 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC127E6C226F9CEB0004C0F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20392471227B777D0061E59B /* LoginViewController.xib in Resources */,
 				AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */,
 				AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */,
-				AC127E77226F9CEB0004C0F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +369,9 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Simple-KeychainSwift/Simple_KeychainSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -228,6 +382,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Simple_KeychainSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -237,29 +394,48 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		209953712286D374006D6346 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				209953802286D403006D6346 /* LoginValidatorTests.swift in Sources */,
+				209953782286D374006D6346 /* JourTripTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AC127E6A226F9CEB0004C0F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */,
+				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
+				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				ACDF9A58226FA86800B65291 /* Comment.swift in Sources */,
 				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
+				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
-				ACDF9A56226FA48000B65291 /* Location.swift in Sources */,
-				ACDF9A54226FA44800B65291 /* User.swift in Sources */,
+				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
+				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
+				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
+				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
+				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
+				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
+				ACB0F31822747C41006EB545 /* User.swift in Sources */,
+				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		AC127E75226F9CEB0004C0F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC127E76226F9CEB0004C0F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		2099537B2286D374006D6346 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC127E6D226F9CEB0004C0F1 /* JourTrip */;
+			targetProxy = 2099537A2286D374006D6346 /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -271,6 +447,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2099537D2286D374006D6346 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SZ9MGTL76;
+				INFOPLIST_FILE = JourTripTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adsilva.JourTripTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JourTrip.app/JourTrip";
+			};
+			name = Debug;
+		};
+		2099537E2286D374006D6346 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SZ9MGTL76;
+				INFOPLIST_FILE = JourTripTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adsilva.JourTripTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JourTrip.app/JourTrip";
+			};
+			name = Release;
+		};
 		AC127E7E226F9CED0004C0F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -428,6 +646,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2099537C2286D374006D6346 /* Build configuration list for PBXNativeTarget "JourTripTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2099537D2286D374006D6346 /* Debug */,
+				2099537E2286D374006D6346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AC127E69226F9CEB0004C0F1 /* Build configuration list for PBXProject "JourTrip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
