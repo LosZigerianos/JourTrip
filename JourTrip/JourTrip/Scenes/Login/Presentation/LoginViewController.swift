@@ -40,6 +40,9 @@ final class LoginViewController: UIViewController {
         setupNavigationControllerAppareance()
         setupButtonAppareance()
         viewModelBindings()
+        // test purposes
+        self.emailTextField.text = "invitasdo@example.com"
+        self.passwordTextField.text = "1234"
     }
 }
 
@@ -76,7 +79,11 @@ private extension LoginViewController {
 
         outputs.loginSuccessful
             .drive(onNext: { _ in
-                print("Login Successful")
+                    UIView.transition(with: self.view, duration: 1, options: .showHideTransitionViews, animations: {
+                        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+                        self.navigationController?.isNavigationBarHidden = true
+                        self.navigationController?.viewControllers = [MainTabBarController()]
+                    }, completion: nil)
             })
             .disposed(by: disposeBag)
     }

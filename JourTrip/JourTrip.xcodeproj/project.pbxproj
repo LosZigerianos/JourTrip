@@ -53,6 +53,8 @@
 		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
 		AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929B2272528600BB6F0E /* ServiceProxy.swift */; };
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
+		AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42435E2291F83E008111FB /* MainTabBarController.swift */; };
+		AC42437922934139008111FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42437822934139008111FB /* SearchViewController.swift */; };
 		ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31122735A6F006EB545 /* BaseViewController.swift */; };
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
@@ -124,6 +126,8 @@
 		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
 		AC40929B2272528600BB6F0E /* ServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProxy.swift; sourceTree = "<group>"; };
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		AC42435E2291F83E008111FB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		AC42437822934139008111FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ACB0F31122735A6F006EB545 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
