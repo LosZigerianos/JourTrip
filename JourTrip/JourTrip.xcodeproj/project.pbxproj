@@ -364,11 +364,30 @@
 			path = JourTrip;
 			sourceTree = "<group>";
 		};
+		AC4243602292013F008111FB /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				AC42436122920177008111FB /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		AC42437722934126008111FB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AC42437822934139008111FB /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		ACB0F31022735A49006EB545 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AC42437722934126008111FB /* Search */,
+				AC4243602292013F008111FB /* Feed */,
 				AC127E73226F9CEB0004C0F1 /* ViewController.swift */,
 				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
+				AC42435E2291F83E008111FB /* MainTabBarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -626,12 +645,14 @@
 				209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
+				AC42437922934139008111FB /* SearchViewController.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
+				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
 				209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */,
