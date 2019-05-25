@@ -16,11 +16,14 @@ protocol LoginViewControllerProvider: class {
 final class LoginViewController: UIViewController {
     // MARK: - Private properties
     private let viewModel: LoginViewModel
+	private let navigator: TabBarNavigatorProtocol
     private let disposeBag = DisposeBag()
 
     // MARK: - Initializers
-    init(viewModel: LoginViewModel) {
+    init(viewModel: LoginViewModel,
+		 navigator: TabBarNavigatorProtocol) {
         self.viewModel = viewModel
+		self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -40,9 +43,6 @@ final class LoginViewController: UIViewController {
         setupNavigationControllerAppareance()
         setupButtonAppareance()
         viewModelBindings()
-        // test purposes
-        self.emailTextField.text = "invitasdo@example.com"
-        self.passwordTextField.text = "1234"
     }
 }
 
@@ -78,12 +78,8 @@ private extension LoginViewController {
             .disposed(by: disposeBag)
 
         outputs.loginSuccessful
-            .drive(onNext: { _ in
-                    UIView.transition(with: self.view, duration: 1, options: .showHideTransitionViews, animations: {
-                        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-                        self.navigationController?.isNavigationBarHidden = true
-                        self.navigationController?.viewControllers = [MainTabBarController()]
-                    }, completion: nil)
+            .drive(onNext: { [weak self] _ in
+				self?.navigator.navigateToTabBar()
             })
             .disposed(by: disposeBag)
     }

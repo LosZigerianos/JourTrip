@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TabBarViewControllerProvider: class {
+	func viewController() -> MainTabBarController
+}
+
 final class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {

@@ -12,11 +12,14 @@ final class LoginAssembly {
 
     private let loginService: LoginServiceType
     private let navigationController: UINavigationController
+	private let tabBarAssembly: TabBarAssembly
 
     init(navigationController: UINavigationController,
-         loginService: LoginServiceType) {
+         loginService: LoginServiceType,
+		 tabBarAssembly: TabBarAssembly) {
         self.navigationController = navigationController
         self.loginService = loginService
+		self.tabBarAssembly = tabBarAssembly
     }
 
     func viewModel() -> LoginViewModel {
@@ -36,6 +39,7 @@ final class LoginAssembly {
 
 extension LoginAssembly: LoginViewControllerProvider {
     func loginViewController() -> LoginViewController {
-        return LoginViewController(viewModel: viewModel())
+        return LoginViewController(viewModel: viewModel(),
+								   navigator: tabBarAssembly.navigator())
     }
 }

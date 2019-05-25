@@ -46,6 +46,8 @@
 		209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C62288AB1F006D6346 /* CustomTextField.swift */; };
 		209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C82288AE0A006D6346 /* SignUpNavigator.swift */; };
 		209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953CA2288AE8A006D6346 /* SignUpAssembly.swift */; };
+		20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */; };
+		20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D222295DE7700D06660 /* TabBarNavigator.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
@@ -114,6 +116,8 @@
 		209953C62288AB1F006D6346 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		209953C82288AE0A006D6346 /* SignUpNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigator.swift; sourceTree = "<group>"; };
 		209953CA2288AE8A006D6346 /* SignUpAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAssembly.swift; sourceTree = "<group>"; };
+		20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
+		20A10D222295DE7700D06660 /* TabBarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigator.swift; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,9 +159,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2050BE8A2295DD980031B903 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				20A10D212295DE6A00D06660 /* Navigator */,
+				20A10D1D2295DDF900D06660 /* DI */,
+				20A10D1E2295DDFF00D06660 /* Presentation */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
 		208A16EE227B75E000E36CDF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2050BE8A2295DD980031B903 /* Tab Bar */,
 				20995381228880EB006D6346 /* Initial */,
 				2099536B2286CE18006D6346 /* Login */,
 				209953BE2288AA72006D6346 /* SignUp */,
@@ -317,6 +332,30 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
+		20A10D1D2295DDF900D06660 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		20A10D1E2295DDFF00D06660 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AC42435E2291F83E008111FB /* MainTabBarController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		20A10D212295DE6A00D06660 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				20A10D222295DE7700D06660 /* TabBarNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,7 +406,6 @@
 		AC4243602292013F008111FB /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				AC42436122920177008111FB /* FeedViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -387,7 +425,6 @@
 				AC4243602292013F008111FB /* Feed */,
 				AC127E73226F9CEB0004C0F1 /* ViewController.swift */,
 				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
-				AC42435E2291F83E008111FB /* MainTabBarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -654,8 +691,10 @@
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
+				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
 				209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */,
+				20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */,
 				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
 				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,

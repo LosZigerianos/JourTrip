@@ -25,7 +25,7 @@ struct LoginViewModel {
     func transform(inputs: LoginViewModel.Inputs) -> LoginViewModel.Outputs {
         // Check if the email text is valid
         // Email is valid if it has > 2 characters
-        let emailValid = inputs.emailText
+        let emailValid = inputs.emailText // a
             .distinctUntilChanged()
             .throttle(0.2, scheduler: MainScheduler.instance)
             .map(loginValidator.validate(email:))
