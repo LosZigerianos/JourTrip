@@ -9,17 +9,31 @@
 import ObjectMapper
 
 final class UserLogin: Mappable {
-    init?(map: Map) {
-        self.success <- map["success"]
-        self.token <- map["token"]
+    var success: Bool?
+    var metadata: Metadata?
+    var token: String?
+    
+    required init?(map: Map){
     }
-
-    var success : String?
-    var token : String?
     
     func mapping(map: Map) {
         success <- map["success"]
-        token <- map["token"]
+        metadata <- map["metadata"]
+        token <- map["data"]
+    }
+}
+
+final class Metadata: Mappable {
+    var success: String?
+    var metadata: Metadata?
+    var data: String?
+    
+    required init?(map: Map){
+    }
+    
+    func mapping(map: Map) {
+        success <- map["success"]
+        data <- map["data"]
     }
 }
 

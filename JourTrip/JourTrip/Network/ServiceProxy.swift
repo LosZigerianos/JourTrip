@@ -54,6 +54,7 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
         let url = ConstantNetworking.localUrl + ConstantNetworking.login
         
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseObject  { (response: DataResponse<UserLogin>) in
+            // todo: check error
             if response.result.isSuccess {
                 let json = response.result.value
                 completion(json, nil)

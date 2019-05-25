@@ -44,6 +44,9 @@ final class LoginViewController: UIViewController {
         setupNavigationControllerAppareance()
         setupButtonAppareance()
         viewModelBindings()
+        // test purposes
+        self.emailTextField.text = "invitasdo@example.com"
+        self.passwordTextField.text = "123"
     }
 }
 
