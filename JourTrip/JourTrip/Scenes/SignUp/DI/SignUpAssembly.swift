@@ -11,19 +11,35 @@ import UIKit
 final class SignUpAssembly {
 
     private let navigationController: UINavigationController
+	private let service: RegisterServiceType
+	private let tabBarAssembly: TabBarAssembly
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController,
+		 service: RegisterServiceType,
+		 tabBarAssembly: TabBarAssembly) {
         self.navigationController = navigationController
+		self.service = service
+		self.tabBarAssembly = tabBarAssembly
     }
 
     func navigator() -> SignUpNavigator {
         return SignUpNavigator(navigationController: navigationController,
                                signUpViewControllerProvider: self)
     }
+
+	func viewModel() -> SignUpViewModel {
+		return SignUpViewModel(validator: validator(),
+							   service: service)
+	}
+
+	func validator() -> SignUpValidator {
+		return SignUpValidator()
+	}
 }
 
 extension SignUpAssembly: SignUpViewControllerProvider {
     func signUpViewController() -> SignUpViewController {
-        return SignUpViewController()
+        return SignUpViewController(viewModel: viewModel(),
+									navigator: tabBarAssembly.navigator())
     }
 }

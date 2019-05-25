@@ -15,7 +15,9 @@ final class AppAssembly {
 																  loginService: serviceProxy,
 																  tabBarAssembly: tabBarAssembly)
 	private lazy var tabBarAssembly: TabBarAssembly = TabBarAssembly(navigationController: navigationController)
-	private lazy var signUpAssembly: SignUpAssembly = SignUpAssembly(navigationController: navigationController)
+	private lazy var signUpAssembly: SignUpAssembly = SignUpAssembly(navigationController: navigationController,
+																	 service: serviceProxy,
+																	 tabBarAssembly: tabBarAssembly)
     private lazy var serviceProxy: ServiceProxy = ServiceProxy()
 
     private let navigationController: UINavigationController

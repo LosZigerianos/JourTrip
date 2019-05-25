@@ -11,11 +11,6 @@ import Alamofire
 import AlamofireObjectMapper
 import RxSwift
 
-protocol RegisterServiceType {
-    func register(with credentials: Credentials,
-                  completion: @escaping (_ response: UserResponse?, _ error: Error?) -> Void)
-}
-
 protocol LocationsServiceType {
     func getLocations(token: String,
                       completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void)
@@ -36,6 +31,21 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
             }
         }
     }
+
+	func register(with credentials: Credentials) -> Single<Void> {
+		return Single.create { observer in
+			self.login(with: credentials) { response, error in
+				if let error = error {
+					observer(.error(error))
+				}
+
+				if let _ = response {
+					observer(.success(()))
+				}
+			}
+			return Disposables.create()
+		}
+	}
     
     func login(with credentials: Credentials,
                completion: @escaping (_ response: UserLogin?, _ error: Error?) -> Void) {

@@ -48,6 +48,9 @@
 		209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953CA2288AE8A006D6346 /* SignUpAssembly.swift */; };
 		20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */; };
 		20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D222295DE7700D06660 /* TabBarNavigator.swift */; };
+		20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D242299E71100D06660 /* SignUpViewModel.swift */; };
+		20A10D282299E7B700D06660 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D272299E7B700D06660 /* RegisterService.swift */; };
+		20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D292299E7D600D06660 /* SignUpValidator.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
@@ -118,6 +121,9 @@
 		209953CA2288AE8A006D6346 /* SignUpAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAssembly.swift; sourceTree = "<group>"; };
 		20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
 		20A10D222295DE7700D06660 /* TabBarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigator.swift; sourceTree = "<group>"; };
+		20A10D242299E71100D06660 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		20A10D272299E7B700D06660 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		20A10D292299E7D600D06660 /* SignUpValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidator.swift; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,8 +168,8 @@
 		2050BE8A2295DD980031B903 /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
-				20A10D212295DE6A00D06660 /* Navigator */,
 				20A10D1D2295DDF900D06660 /* DI */,
+				20A10D212295DE6A00D06660 /* Navigator */,
 				20A10D1E2295DDFF00D06660 /* Presentation */,
 			);
 			path = "Tab Bar";
@@ -301,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				209953BF2288AA87006D6346 /* DI */,
+				20A10D262299E75300D06660 /* New Group */,
 				209953C02288AA8B006D6346 /* Presentation */,
 				209953C12288AA91006D6346 /* Navigator */,
 			);
@@ -320,6 +327,7 @@
 			children = (
 				209953C22288AAAE006D6346 /* SignUpViewController.swift */,
 				209953C32288AAAE006D6346 /* SignUpViewController.xib */,
+				20A10D242299E71100D06660 /* SignUpViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -354,6 +362,15 @@
 				20A10D222295DE7700D06660 /* TabBarNavigator.swift */,
 			);
 			path = Navigator;
+			sourceTree = "<group>";
+		};
+		20A10D262299E75300D06660 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				20A10D272299E7B700D06660 /* RegisterService.swift */,
+				20A10D292299E7D600D06660 /* SignUpValidator.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
@@ -674,8 +691,10 @@
 				209953B422889872006D6346 /* App.swift in Sources */,
 				ACDF9A58226FA86800B65291 /* Comment.swift in Sources */,
 				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
+				20A10D282299E7B700D06660 /* RegisterService.swift in Sources */,
 				209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */,
 				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,
+				20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */,
 				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
 				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
@@ -686,6 +705,7 @@
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
+				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
