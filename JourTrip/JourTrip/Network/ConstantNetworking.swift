@@ -16,5 +16,6 @@ struct ConstantNetworking {
     static let login = "users/login"
     static let locations = "locations"
     static let allMessages = "/all/messages"
+    static let locationsNear = locations + "/near"
     static let emailAlreadyRegisteredMessage = "Email already registered"
 }

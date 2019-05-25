@@ -12,27 +12,28 @@ import UIKit
 import RealmSwift
 
 class Wrapper: NSObject {
-    func userToDBFrom(userModel: Metadata) -> UserRealm {
+    func userToDBFrom(userModel: UserModel) -> UserRealm {
         let realmUser = UserRealm()
         
-        realmUser.email = userModel.email ?? "test"
-        realmUser.id = userModel.id ?? "test"
-        realmUser.name = userModel.fullname ?? "test"
+        realmUser.email = userModel.email ?? "fail"
+        realmUser.id = userModel.id ?? "fail"
+        realmUser.name = userModel.fullname ?? "fail"
         realmUser.userImage = "todo"
         
         return realmUser
     }
-    
-//    func userModelFrom(userRealm: UserRealm) -> Metadata {
-////        guard let userModel = Metadata(fullname: userRealm.name,
-////                                  following: [],
-////                                  provider: "",
-////                                  id: userRealm.id,
-////                                  email: userRealm.email,
-////                                  creationDate: "",
-////                                  updatedAt: "") else {
-////                                    fatalError("UserModel Error")
-////        }
-//        return userModel(9)
-//    }
+    //userSendFrom
+    func userModelFrom(userRealm: UserRealm) -> UserModel {
+        guard let userModel = UserModel(fullname: userRealm.name,
+                                        following: [],
+                                        provider: "",
+                                        id: userRealm.id,
+                                        email: userRealm.email,
+                                        creationDate: "",
+                                        updatedAt: "") else {
+                                            fatalError("UserModel Error")
+        }
+        return userModel
+    }
 }
+

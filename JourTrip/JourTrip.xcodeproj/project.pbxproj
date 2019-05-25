@@ -55,6 +55,9 @@
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
 		AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */; };
+		AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */; };
+		AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E59229A02320006F2AC /* RealmManager.swift */; };
+		AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5B229A026E0006F2AC /* Wrapper.swift */; };
 		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
 		AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929B2272528600BB6F0E /* ServiceProxy.swift */; };
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
@@ -133,6 +136,9 @@
 		AC127E78226F9CED0004C0F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC127E7B226F9CED0004C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC127E7D226F9CED0004C0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsDataManager.swift; sourceTree = "<group>"; };
+		AC347E59229A02320006F2AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		AC347E5B229A026E0006F2AC /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
 		AC40929B2272528600BB6F0E /* ServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProxy.swift; sourceTree = "<group>"; };
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
@@ -458,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB0F31522735D9A006EB545 /* DataManager.swift */,
+				AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -469,6 +476,8 @@
 				ACDF9A57226FA86800B65291 /* Comment.swift */,
 				ACB0F31722747C41006EB545 /* User.swift */,
 				ACB0F31B2277A1CA006EB545 /* Locations.swift */,
+				AC347E59229A02320006F2AC /* RealmManager.swift */,
+				AC347E5B229A026E0006F2AC /* Wrapper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -697,6 +706,7 @@
 				20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */,
 				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
 				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
+				AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
 				209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
@@ -713,11 +723,13 @@
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
+				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,
 				209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */,
 				20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */,
 				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
 				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
+				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

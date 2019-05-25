@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 import RxSwift
+import Simple_KeychainSwift
 
 protocol LocationsServiceType {
     func getLocations(token: String,
@@ -56,6 +57,16 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseObject  { (response: DataResponse<UserLogin>) in
             // todo: check error
             if response.result.isSuccess {
+                guard let userLogin = response.result.value,
+                    let metadata = userLogin.metadata,
+                    let userID = metadata.id,
+                    let token = response.data else {
+                        fatalError("no token provided")
+                }
+                _ = DataManager.sharedInstance.saveSecure(value: "\(token)", key: ConstantsDataManager.token)
+                _ = DataManager.sharedInstance.saveSecure(value: "\(token)", key: ConstantsDataManager.id)
+                RealmManager.sharedInstance.save(user: userLogin)
+                
                 let json = response.result.value
                 completion(json, nil)
             }

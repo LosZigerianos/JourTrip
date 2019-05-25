@@ -24,16 +24,25 @@ final class UserLogin: Mappable {
 }
 
 final class Metadata: Mappable {
-    var success: String?
-    var metadata: Metadata?
-    var data: String?
-    
+    var fullname: String?
+    var following: [String]?
+    var provider: String?
+    var id: String?
+    var email: String?
+    var creationDate: String?
+    var updatedAt: String?
+
     required init?(map: Map){
     }
     
     func mapping(map: Map) {
-        success <- map["success"]
-        data <- map["data"]
+        fullname <- map["fullname"]
+        following <- map["following"]
+        provider <- map["provider"]
+        id <- map["_id"]
+        email <- map["email"]
+        creationDate <- map["creation_date"]
+        updatedAt <- map["updated_at"]
     }
 }
 

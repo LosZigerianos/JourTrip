@@ -25,13 +25,14 @@ class RealmManager: NSObject {
         }
     }
     // TODO: userId
-//    func getUser(userID: String?) -> Metadata {
-//        let userID = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id)
-//        
-//        let realmUser : Results<UserRealm> = {
-//            realm.objects(UserRealm.self).filter("id == %@", userID)
-//        }()
-//        
-//        return wrapper.userModelFrom(userRealm: realmUser.first!)
-//    }
+    func getUser(userID: String?) -> UserModel {
+        let userID = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id)
+        
+        let realmUser : Results<UserRealm> = {
+            realm.objects(UserRealm.self).filter("id == %@", userID)
+        }()
+        
+        return wrapper.userModelFrom(userRealm: realmUser.first!)
+    }
 }
+
