@@ -58,11 +58,14 @@
 		AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */; };
 		AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E59229A02320006F2AC /* RealmManager.swift */; };
 		AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5B229A026E0006F2AC /* Wrapper.swift */; };
+		AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */; };
 		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
 		AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929B2272528600BB6F0E /* ServiceProxy.swift */; };
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
 		AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42435E2291F83E008111FB /* MainTabBarController.swift */; };
 		AC42437922934139008111FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42437822934139008111FB /* SearchViewController.swift */; };
+		AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */; };
+		AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */; };
 		ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31122735A6F006EB545 /* BaseViewController.swift */; };
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
@@ -138,11 +141,14 @@
 		AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsDataManager.swift; sourceTree = "<group>"; };
 		AC347E59229A02320006F2AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		AC347E5B229A026E0006F2AC /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
+		AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
 		AC40929B2272528600BB6F0E /* ServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProxy.swift; sourceTree = "<group>"; };
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		AC42435E2291F83E008111FB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AC42437822934139008111FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearCollectionViewCell.xib; sourceTree = "<group>"; };
+		AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		ACB0F31122735A6F006EB545 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -435,6 +441,9 @@
 			isa = PBXGroup;
 			children = (
 				AC42437822934139008111FB /* SearchViewController.swift */,
+				AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */,
+				AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */,
+				AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -599,7 +608,9 @@
 				209953A722888E77006D6346 /* Apercu Pro Medium Italic.otf in Resources */,
 				209953A322888E77006D6346 /* Apercu Pro Bold.otf in Resources */,
 				209953A922888E77006D6346 /* Apercu Pro Mono.otf in Resources */,
+				AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */,
 				2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */,
+				AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */,
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
 				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
@@ -650,6 +661,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -663,6 +675,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -706,6 +719,7 @@
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
 				209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
+				AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
 				AC42437922934139008111FB /* SearchViewController.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,

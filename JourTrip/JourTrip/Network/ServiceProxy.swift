@@ -63,7 +63,6 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
                     let token = userLogin.token else {
                         fatalError("no token provided")
                 }
-//                _ = DataManager.sharedInstance.saveSecure(value: token, key: ConstantsDataManager.token)
                 DataManager.sharedInstance.save(value: token, key: "token")
                 _ = DataManager.sharedInstance.saveSecure(value: userID, key: ConstantsDataManager.id)
                 RealmManager.sharedInstance.save(user: userLogin)
@@ -102,21 +101,17 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
     
     func getNearLocations(token: String, latitude: Double, longitude: Double,
                           completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
-        let parameters: Parameters = ["latitude": latitude,
-                                      "longitude": longitude,
-                                      "token": token]
-
-        let url = ConstantNetworking.localUrl +
-        ConstantNetworking.locationsNear +
-        "?latitude=\(latitude)&longitude=\(longitude)&token=\(token)"
         
-       // let url = "http://localhost:3000/apiv1/locations/near?latitude=41.6560593&longitude=-0.87734&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWNlOWMwODg5OTZlMmQxMDE1MTNhZDFkIiwiaWF0IjoxNTU4ODMwMDY0LCJleHAiOjE1NTg5MTY0NjR9.b71ajXvIVmW2nnwO80rXlOaJsmtGdcsLsX79vYRt9n8"
+        let url = ConstantNetworking.localUrl
+            + ConstantNetworking.locationsNear
+            + "?latitude=\(latitude)&longitude=\(longitude)&token=\(token)&skip=3&limit=2"
         
         AF.request(url).responseObject { (response: DataResponse<LocationsResponse>) in
             if let locationsResponse = response.result.value as LocationsResponse? {
                 completion(locationsResponse, nil)
+            } else {
+                completion(nil, response.error as NSError?)
             }
-            completion(nil, response.error as NSError?)
         }
     }
 }
