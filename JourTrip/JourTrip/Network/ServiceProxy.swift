@@ -60,15 +60,15 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
                 guard let userLogin = response.result.value,
                     let metadata = userLogin.metadata,
                     let userID = metadata.id,
-                    let token = response.data else {
+                    let token = userLogin.token else {
                         fatalError("no token provided")
                 }
-                _ = DataManager.sharedInstance.saveSecure(value: "\(token)", key: ConstantsDataManager.token)
-                _ = DataManager.sharedInstance.saveSecure(value: "\(token)", key: ConstantsDataManager.id)
+//                _ = DataManager.sharedInstance.saveSecure(value: token, key: ConstantsDataManager.token)
+                DataManager.sharedInstance.save(value: token, key: "token")
+                _ = DataManager.sharedInstance.saveSecure(value: userID, key: ConstantsDataManager.id)
                 RealmManager.sharedInstance.save(user: userLogin)
                 
-                let json = response.result.value
-                completion(json, nil)
+                completion(userLogin, nil)
             }
         }
     }
@@ -87,10 +87,30 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
             return Disposables.create()
         }
     }
-    
+    // TODO: Separate to locationService
     func getLocations(token: String,
                       completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
         let url = ConstantNetworking.localUrl + ConstantNetworking.locations + "?name=Ayuntamiento&token=\(token)"
+        
+        AF.request(url).responseObject { (response: DataResponse<LocationsResponse>) in
+            if let locationsResponse = response.result.value as LocationsResponse? {
+                completion(locationsResponse, nil)
+            }
+            completion(nil, response.error as NSError?)
+        }
+    }
+    
+    func getNearLocations(token: String, latitude: Double, longitude: Double,
+                          completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
+        let parameters: Parameters = ["latitude": latitude,
+                                      "longitude": longitude,
+                                      "token": token]
+
+        let url = ConstantNetworking.localUrl +
+        ConstantNetworking.locationsNear +
+        "?latitude=\(latitude)&longitude=\(longitude)&token=\(token)"
+        
+       // let url = "http://localhost:3000/apiv1/locations/near?latitude=41.6560593&longitude=-0.87734&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWNlOWMwODg5OTZlMmQxMDE1MTNhZDFkIiwiaWF0IjoxNTU4ODMwMDY0LCJleHAiOjE1NTg5MTY0NjR9.b71ajXvIVmW2nnwO80rXlOaJsmtGdcsLsX79vYRt9n8"
         
         AF.request(url).responseObject { (response: DataResponse<LocationsResponse>) in
             if let locationsResponse = response.result.value as LocationsResponse? {

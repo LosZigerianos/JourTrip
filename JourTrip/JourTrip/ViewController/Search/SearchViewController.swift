@@ -9,6 +9,10 @@
 import UIKit
 
 final class SearchViewController: BaseViewController {
+    // TODO: set from tabbar
+    var userID = "5ce9c088996e2d101513ad1d"
+    var user: Metadata?
+    var locations: [Location] = []
     
     lazy var collectionView : UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -24,12 +28,34 @@ final class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(userID)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.dataSource = self
         collectionView.delegate = self
         
         //configureTopView()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getNearLocations()
+    }
+    
+    private func getNearLocations() {
+//        user = RealmManager.sharedInstance.getUser(with: userID)
+        let token = DataManager.sharedInstance.loadValue(key: "token") as! String
+        
+        self.serviceProxy.getNearLocations(token: token, latitude: 41.6560593, longitude: -0.87734) { (locationResponse, error) in
+            if error != nil {
+                fatalError("no locations provided")
+            }
+            guard let locations = locationResponse?.data else {
+                return
+            }
+            self.locations = locations
+        }
     }
     
     private func configureTopView() {
@@ -43,7 +69,7 @@ final class SearchViewController: BaseViewController {
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return locations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,5 +81,4 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("User tapped on row \(indexPath.row)")
     }
-    
 }

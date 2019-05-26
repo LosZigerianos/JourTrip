@@ -18,21 +18,21 @@ class RealmManager: NSObject {
     
     func save(user: UserLogin) -> Void {
         guard let userModel = user.metadata else { fatalError("no user metadata") }
-        let realmUser: UserRealm = wrapper.userToDBFrom(userModel: userModel)
+        let realmUser: UserRealm = wrapper.userToDB(from: userModel)
         
         try! realm.write { () -> Void in
             realm.add(realmUser, update: true)
         }
     }
     // TODO: userId
-    func getUser(userID: String?) -> UserModel {
+    func getUser(with userID: String?) -> Metadata {
         let userID = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id)
         
         let realmUser : Results<UserRealm> = {
             realm.objects(UserRealm.self).filter("id == %@", userID)
         }()
         
-        return wrapper.userModelFrom(userRealm: realmUser.first!)
+        return wrapper.userMetadata(from: realmUser.first!)
     }
 }
 
