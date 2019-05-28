@@ -10,14 +10,21 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol LoginViewControllerProvider: class {
+    func loginViewController() -> LoginViewController
+}
+
 final class LoginViewController: UIViewController {
     // MARK: - Private properties
     private let viewModel: LoginViewModel
+	private let navigator: TabBarNavigatorProtocol
     private let disposeBag = DisposeBag()
 
     // MARK: - Initializers
-    init(viewModel: LoginViewModel) {
+    init(viewModel: LoginViewModel,
+		 navigator: TabBarNavigatorProtocol) {
         self.viewModel = viewModel
+		self.navigator = navigator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -34,8 +41,12 @@ final class LoginViewController: UIViewController {
     // MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationControllerAppareance()
         setupButtonAppareance()
         viewModelBindings()
+        // test purposes
+        self.emailTextField.text = "invitasdo@example.com"
+        self.passwordTextField.text = "123"
     }
 }
 
@@ -44,6 +55,18 @@ private extension LoginViewController {
     func setupButtonAppareance() {
         loginButton.layer.cornerRadius = 18
         googleLoginButton.layer.cornerRadius = 18
+    }
+
+    func setupNavigationControllerAppareance() {
+        let titleLabel = UILabel()
+        titleLabel.text = NSLocalizedString("Welcome Back", comment: "")
+        titleLabel.font = UIFont(name: "Apercu Pro Bold", size: 18)
+        titleLabel.textColor = #colorLiteral(red: 0.4117260575, green: 0.4117894173, blue: 0.4117122293, alpha: 1)
+        navigationItem.titleView = titleLabel
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.4117260575, green: 0.4117894173, blue: 0.4117122293, alpha: 1)
     }
 
     /// Binds the View with the ViewModel
@@ -59,8 +82,8 @@ private extension LoginViewController {
             .disposed(by: disposeBag)
 
         outputs.loginSuccessful
-            .drive(onNext: { _ in
-                print("Login Successful")
+            .drive(onNext: { [weak self] _ in
+				self?.navigator.navigateToTabBar()
             })
             .disposed(by: disposeBag)
     }

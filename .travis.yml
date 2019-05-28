@@ -5,3 +5,6 @@ xcode_project: ./JourTrip/JourTrip.xcodeproj # path to your xcodeproj folder
 xcode_scheme: JourTrip
 xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
 podfile: ./JourTrip/Podfile
+branches:
+  only:
+    - develop

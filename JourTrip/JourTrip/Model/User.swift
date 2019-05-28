@@ -9,12 +9,40 @@
 import ObjectMapper
 
 final class UserLogin: Mappable {
-    var success : String?
-    var token : String?
+    var success: Bool?
+    var metadata: Metadata?
+    var token: String?
+    
+    required init?(map: Map){
+    }
     
     func mapping(map: Map) {
         success <- map["success"]
-        token <- map["token"]
+        metadata <- map["metadata"]
+        token <- map["data"]
+    }
+}
+
+final class Metadata: Mappable {
+    var fullname: String?
+    var following: [String]?
+    var provider: String?
+    var id: String?
+    var email: String?
+    var creationDate: String?
+    var updatedAt: String?
+
+    required init?(map: Map){
+    }
+    
+    func mapping(map: Map) {
+        fullname <- map["fullname"]
+        following <- map["following"]
+        provider <- map["provider"]
+        id <- map["_id"]
+        email <- map["email"]
+        creationDate <- map["creation_date"]
+        updatedAt <- map["updated_at"]
     }
 }
 

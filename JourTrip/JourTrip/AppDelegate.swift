@@ -11,15 +11,11 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    let app = App()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let serviceProxy = ServiceProxy()
-        let loginViewModel = LoginViewModel(loginService: serviceProxy, loginValidator: LoginValidator())
-        let loginViewController = LoginViewController(viewModel: loginViewModel)
-
-        window?.rootViewController = loginViewController
+        app.setupRootViewController()
 
         return true
     }

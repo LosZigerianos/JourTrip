@@ -15,13 +15,54 @@
 		209953702286D10D006D6346 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536F2286D10D006D6346 /* LoginValidator.swift */; };
 		209953782286D374006D6346 /* JourTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953772286D374006D6346 /* JourTripTests.swift */; };
 		209953802286D403006D6346 /* LoginValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099537F2286D403006D6346 /* LoginValidatorTests.swift */; };
+		2099538522888114006D6346 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099538322888114006D6346 /* InitialViewController.swift */; };
+		2099538622888114006D6346 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2099538422888114006D6346 /* InitialViewController.xib */; };
+		2099539A22888E77006D6346 /* Apercu Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539122888E6F006D6346 /* Apercu Bold Italic.otf */; };
+		2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538E22888E6E006D6346 /* Apercu Bold.otf */; };
+		2099539C22888E77006D6346 /* Apercu Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538F22888E6E006D6346 /* Apercu Italic.otf */; };
+		2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539422888E6F006D6346 /* Apercu Light Italic.otf */; };
+		2099539E22888E77006D6346 /* Apercu Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538C22888E6E006D6346 /* Apercu Light.otf */; };
+		2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539722888E6F006D6346 /* Apercu Medium Italic.otf */; };
+		209953A022888E77006D6346 /* Apercu Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539322888E6F006D6346 /* Apercu Medium.otf */; };
+		209953A122888E77006D6346 /* Apercu Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538D22888E6E006D6346 /* Apercu Mono.otf */; };
+		209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539522888E6F006D6346 /* Apercu Pro Bold Italic.otf */; };
+		209953A322888E77006D6346 /* Apercu Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539922888E6F006D6346 /* Apercu Pro Bold.otf */; };
+		209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539222888E6F006D6346 /* Apercu Pro Italic.otf */; };
+		209953A522888E77006D6346 /* Apercu Pro Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538A22888E6E006D6346 /* Apercu Pro Light Italic.otf */; };
+		209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538B22888E6E006D6346 /* Apercu Pro Light.otf */; };
+		209953A722888E77006D6346 /* Apercu Pro Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539022888E6E006D6346 /* Apercu Pro Medium Italic.otf */; };
+		209953A822888E77006D6346 /* Apercu Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538922888E6E006D6346 /* Apercu Pro Medium.otf */; };
+		209953A922888E77006D6346 /* Apercu Pro Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538822888E6E006D6346 /* Apercu Pro Mono.otf */; };
+		209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539622888E6F006D6346 /* Apercu Pro Regular.otf */; };
+		209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539822888E6F006D6346 /* Apercu Regular.otf */; };
+		209953B02288941C006D6346 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953AF2288941C006D6346 /* LoginNavigator.swift */; };
+		209953B22288965C006D6346 /* InitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B12288965C006D6346 /* InitialViewModel.swift */; };
+		209953B422889872006D6346 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B322889872006D6346 /* App.swift */; };
+		209953B72288A619006D6346 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B62288A619006D6346 /* AppAssembly.swift */; };
+		209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B92288A641006D6346 /* InitialAssembly.swift */; };
+		209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953BC2288A7B0006D6346 /* LoginAssembly.swift */; };
+		209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C22288AAAE006D6346 /* SignUpViewController.swift */; };
+		209953C52288AAAE006D6346 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209953C32288AAAE006D6346 /* SignUpViewController.xib */; };
+		209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C62288AB1F006D6346 /* CustomTextField.swift */; };
+		209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C82288AE0A006D6346 /* SignUpNavigator.swift */; };
+		209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953CA2288AE8A006D6346 /* SignUpAssembly.swift */; };
+		20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */; };
+		20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D222295DE7700D06660 /* TabBarNavigator.swift */; };
+		20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D242299E71100D06660 /* SignUpViewModel.swift */; };
+		20A10D282299E7B700D06660 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D272299E7B700D06660 /* RegisterService.swift */; };
+		20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D292299E7D600D06660 /* SignUpValidator.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
 		AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */; };
+		AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */; };
+		AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E59229A02320006F2AC /* RealmManager.swift */; };
+		AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5B229A026E0006F2AC /* Wrapper.swift */; };
 		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
 		AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929B2272528600BB6F0E /* ServiceProxy.swift */; };
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
+		AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42435E2291F83E008111FB /* MainTabBarController.swift */; };
+		AC42437922934139008111FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42437822934139008111FB /* SearchViewController.swift */; };
 		ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31122735A6F006EB545 /* BaseViewController.swift */; };
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
@@ -50,6 +91,42 @@
 		209953772286D374006D6346 /* JourTripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripTests.swift; sourceTree = "<group>"; };
 		209953792286D374006D6346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2099537F2286D403006D6346 /* LoginValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidatorTests.swift; sourceTree = "<group>"; };
+		2099538322888114006D6346 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		2099538422888114006D6346 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
+		2099538822888E6E006D6346 /* Apercu Pro Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Mono.otf"; sourceTree = "<group>"; };
+		2099538922888E6E006D6346 /* Apercu Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Medium.otf"; sourceTree = "<group>"; };
+		2099538A22888E6E006D6346 /* Apercu Pro Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Light Italic.otf"; sourceTree = "<group>"; };
+		2099538B22888E6E006D6346 /* Apercu Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Light.otf"; sourceTree = "<group>"; };
+		2099538C22888E6E006D6346 /* Apercu Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Light.otf"; sourceTree = "<group>"; };
+		2099538D22888E6E006D6346 /* Apercu Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Mono.otf"; sourceTree = "<group>"; };
+		2099538E22888E6E006D6346 /* Apercu Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Bold.otf"; sourceTree = "<group>"; };
+		2099538F22888E6E006D6346 /* Apercu Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Italic.otf"; sourceTree = "<group>"; };
+		2099539022888E6E006D6346 /* Apercu Pro Medium Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Medium Italic.otf"; sourceTree = "<group>"; };
+		2099539122888E6F006D6346 /* Apercu Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Bold Italic.otf"; sourceTree = "<group>"; };
+		2099539222888E6F006D6346 /* Apercu Pro Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Italic.otf"; sourceTree = "<group>"; };
+		2099539322888E6F006D6346 /* Apercu Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Medium.otf"; sourceTree = "<group>"; };
+		2099539422888E6F006D6346 /* Apercu Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Light Italic.otf"; sourceTree = "<group>"; };
+		2099539522888E6F006D6346 /* Apercu Pro Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Bold Italic.otf"; sourceTree = "<group>"; };
+		2099539622888E6F006D6346 /* Apercu Pro Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Regular.otf"; sourceTree = "<group>"; };
+		2099539722888E6F006D6346 /* Apercu Medium Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Medium Italic.otf"; sourceTree = "<group>"; };
+		2099539822888E6F006D6346 /* Apercu Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Regular.otf"; sourceTree = "<group>"; };
+		2099539922888E6F006D6346 /* Apercu Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apercu Pro Bold.otf"; sourceTree = "<group>"; };
+		209953AF2288941C006D6346 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
+		209953B12288965C006D6346 /* InitialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModel.swift; sourceTree = "<group>"; };
+		209953B322889872006D6346 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		209953B62288A619006D6346 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		209953B92288A641006D6346 /* InitialAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialAssembly.swift; sourceTree = "<group>"; };
+		209953BC2288A7B0006D6346 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		209953C22288AAAE006D6346 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		209953C32288AAAE006D6346 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		209953C62288AB1F006D6346 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		209953C82288AE0A006D6346 /* SignUpNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigator.swift; sourceTree = "<group>"; };
+		209953CA2288AE8A006D6346 /* SignUpAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAssembly.swift; sourceTree = "<group>"; };
+		20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
+		20A10D222295DE7700D06660 /* TabBarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigator.swift; sourceTree = "<group>"; };
+		20A10D242299E71100D06660 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		20A10D272299E7B700D06660 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		20A10D292299E7D600D06660 /* SignUpValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidator.swift; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,9 +136,14 @@
 		AC127E78226F9CED0004C0F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC127E7B226F9CED0004C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC127E7D226F9CED0004C0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsDataManager.swift; sourceTree = "<group>"; };
+		AC347E59229A02320006F2AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		AC347E5B229A026E0006F2AC /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
 		AC40929B2272528600BB6F0E /* ServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProxy.swift; sourceTree = "<group>"; };
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		AC42435E2291F83E008111FB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		AC42437822934139008111FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ACB0F31122735A6F006EB545 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -89,10 +171,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2050BE8A2295DD980031B903 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				20A10D1D2295DDF900D06660 /* DI */,
+				20A10D212295DE6A00D06660 /* Navigator */,
+				20A10D1E2295DDFF00D06660 /* Presentation */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
 		208A16EE227B75E000E36CDF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2050BE8A2295DD980031B903 /* Tab Bar */,
+				20995381228880EB006D6346 /* Initial */,
 				2099536B2286CE18006D6346 /* Login */,
+				209953BE2288AA72006D6346 /* SignUp */,
+				209953C62288AB1F006D6346 /* CustomTextField.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -110,8 +206,10 @@
 		2099536B2286CE18006D6346 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				209953BB2288A7A6006D6346 /* DI */,
 				2099536C2286D0BA006D6346 /* Use Cases */,
 				208A16EF227B75EF00E36CDF /* Presentation */,
+				209953AE22889405006D6346 /* Navigator */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -133,6 +231,152 @@
 				2099537F2286D403006D6346 /* LoginValidatorTests.swift */,
 			);
 			path = JourTripTests;
+			sourceTree = "<group>";
+		};
+		20995381228880EB006D6346 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				209953B82288A638006D6346 /* DI */,
+				20995382228880F3006D6346 /* Presentation */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		20995382228880F3006D6346 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2099538322888114006D6346 /* InitialViewController.swift */,
+				2099538422888114006D6346 /* InitialViewController.xib */,
+				209953B12288965C006D6346 /* InitialViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2099538722888E1B006D6346 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2099539122888E6F006D6346 /* Apercu Bold Italic.otf */,
+				2099538E22888E6E006D6346 /* Apercu Bold.otf */,
+				2099538F22888E6E006D6346 /* Apercu Italic.otf */,
+				2099539422888E6F006D6346 /* Apercu Light Italic.otf */,
+				2099538C22888E6E006D6346 /* Apercu Light.otf */,
+				2099539722888E6F006D6346 /* Apercu Medium Italic.otf */,
+				2099539322888E6F006D6346 /* Apercu Medium.otf */,
+				2099538D22888E6E006D6346 /* Apercu Mono.otf */,
+				2099539522888E6F006D6346 /* Apercu Pro Bold Italic.otf */,
+				2099539922888E6F006D6346 /* Apercu Pro Bold.otf */,
+				2099539222888E6F006D6346 /* Apercu Pro Italic.otf */,
+				2099538A22888E6E006D6346 /* Apercu Pro Light Italic.otf */,
+				2099538B22888E6E006D6346 /* Apercu Pro Light.otf */,
+				2099539022888E6E006D6346 /* Apercu Pro Medium Italic.otf */,
+				2099538922888E6E006D6346 /* Apercu Pro Medium.otf */,
+				2099538822888E6E006D6346 /* Apercu Pro Mono.otf */,
+				2099539622888E6F006D6346 /* Apercu Pro Regular.otf */,
+				2099539822888E6F006D6346 /* Apercu Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		209953AE22889405006D6346 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				209953AF2288941C006D6346 /* LoginNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		209953B52288A5F7006D6346 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				209953B62288A619006D6346 /* AppAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		209953B82288A638006D6346 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				209953B92288A641006D6346 /* InitialAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		209953BB2288A7A6006D6346 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				209953BC2288A7B0006D6346 /* LoginAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		209953BE2288AA72006D6346 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				209953BF2288AA87006D6346 /* DI */,
+				20A10D262299E75300D06660 /* New Group */,
+				209953C02288AA8B006D6346 /* Presentation */,
+				209953C12288AA91006D6346 /* Navigator */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		209953BF2288AA87006D6346 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				209953CA2288AE8A006D6346 /* SignUpAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		209953C02288AA8B006D6346 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				209953C22288AAAE006D6346 /* SignUpViewController.swift */,
+				209953C32288AAAE006D6346 /* SignUpViewController.xib */,
+				20A10D242299E71100D06660 /* SignUpViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		209953C12288AA91006D6346 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				209953C82288AE0A006D6346 /* SignUpNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		20A10D1D2295DDF900D06660 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		20A10D1E2295DDFF00D06660 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AC42435E2291F83E008111FB /* MainTabBarController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		20A10D212295DE6A00D06660 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				20A10D222295DE7700D06660 /* TabBarNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		20A10D262299E75300D06660 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				20A10D272299E7B700D06660 /* RegisterService.swift */,
+				20A10D292299E7D600D06660 /* SignUpValidator.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
@@ -166,12 +410,15 @@
 		AC127E70226F9CEB0004C0F1 /* JourTrip */ = {
 			isa = PBXGroup;
 			children = (
+				209953B52288A5F7006D6346 /* DI */,
 				208A16EE227B75E000E36CDF /* Scenes */,
 				ACB0F31022735A49006EB545 /* ViewController */,
 				ACDF9A52226FA3E900B65291 /* Network */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
 				ACB0F31322735D5B006EB545 /* Util */,
+				2099538722888E1B006D6346 /* Fonts */,
 				AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */,
+				209953B322889872006D6346 /* App.swift */,
 				AC127E78226F9CED0004C0F1 /* Assets.xcassets */,
 				AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */,
 				AC127E7D226F9CED0004C0F1 /* Info.plist */,
@@ -179,9 +426,26 @@
 			path = JourTrip;
 			sourceTree = "<group>";
 		};
+		AC4243602292013F008111FB /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		AC42437722934126008111FB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AC42437822934139008111FB /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		ACB0F31022735A49006EB545 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AC42437722934126008111FB /* Search */,
+				AC4243602292013F008111FB /* Feed */,
 				AC127E73226F9CEB0004C0F1 /* ViewController.swift */,
 				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
 			);
@@ -200,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB0F31522735D9A006EB545 /* DataManager.swift */,
+				AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -211,6 +476,8 @@
 				ACDF9A57226FA86800B65291 /* Comment.swift */,
 				ACB0F31722747C41006EB545 /* User.swift */,
 				ACB0F31B2277A1CA006EB545 /* Locations.swift */,
+				AC347E59229A02320006F2AC /* RealmManager.swift */,
+				AC347E5B229A026E0006F2AC /* Wrapper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,8 +592,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				20392471227B777D0061E59B /* LoginViewController.xib in Resources */,
+				209953A522888E77006D6346 /* Apercu Pro Light Italic.otf in Resources */,
+				209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */,
+				209953A822888E77006D6346 /* Apercu Pro Medium.otf in Resources */,
 				AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */,
+				209953C52288AAAE006D6346 /* SignUpViewController.xib in Resources */,
+				2099539C22888E77006D6346 /* Apercu Italic.otf in Resources */,
 				AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */,
+				209953A722888E77006D6346 /* Apercu Pro Medium Italic.otf in Resources */,
+				209953A322888E77006D6346 /* Apercu Pro Bold.otf in Resources */,
+				209953A922888E77006D6346 /* Apercu Pro Mono.otf in Resources */,
+				2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */,
+				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
+				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
+				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
+				209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */,
+				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
+				2099539E22888E77006D6346 /* Apercu Light.otf in Resources */,
+				209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */,
+				209953A022888E77006D6346 /* Apercu Medium.otf in Resources */,
+				2099538622888114006D6346 /* InitialViewController.xib in Resources */,
+				2099539A22888E77006D6346 /* Apercu Bold Italic.otf in Resources */,
+				209953A122888E77006D6346 /* Apercu Mono.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,18 +697,39 @@
 				208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */,
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
+				209953B422889872006D6346 /* App.swift in Sources */,
 				ACDF9A58226FA86800B65291 /* Comment.swift in Sources */,
 				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
+				20A10D282299E7B700D06660 /* RegisterService.swift in Sources */,
+				209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */,
+				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,
+				20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */,
+				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
 				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
+				AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
+				209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
+				AC42437922934139008111FB /* SearchViewController.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
+				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
+				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
+				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
+				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
+				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
+				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,
+				209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */,
+				20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */,
+				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
+				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
+				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
+				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

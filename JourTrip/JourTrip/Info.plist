@@ -2,6 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Apercu Bold Italic.otf</string>
+		<string>Apercu Bol.otf</string>
+		<string>Apercu Italic.otf</string>
+		<string>Apercu Light Italic.otf</string>
+		<string>Apercu Light.otf</string>
+		<string>Apercu Medium Italic.otf</string>
+		<string>Apercu Medium.otf</string>
+		<string>Apercu Mono.otf</string>
+		<string>Apercu Pro Bold Italic.otf</string>
+		<string>Apercu Pro Bold.otf</string>
+		<string>Apercu Pro Italic.otf</string>
+		<string>Apercu Pro Light Italic.otf</string>
+		<string>Apercu Pro Light.otf</string>
+		<string>Apercu Pro Medium Italic.otf</string>
+		<string>Apercu Pro Medium.otf</string>
+		<string>Apercu Pro Mono.otf</string>
+		<string>Apercu Pro Regular.otf</string>
+		<string>Apercu Regular.otf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
