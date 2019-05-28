@@ -52,7 +52,6 @@
 		20A10D282299E7B700D06660 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D272299E7B700D06660 /* RegisterService.swift */; };
 		20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D292299E7D600D06660 /* SignUpValidator.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
-		AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E73226F9CEB0004C0F1 /* ViewController.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
 		AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */; };
 		AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */; };
@@ -135,7 +134,6 @@
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC127E6E226F9CEB0004C0F1 /* JourTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC127E73226F9CEB0004C0F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC127E78226F9CED0004C0F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC127E7B226F9CED0004C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC127E7D226F9CED0004C0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -420,12 +418,12 @@
 				208A16EE227B75E000E36CDF /* Scenes */,
 				ACB0F31022735A49006EB545 /* ViewController */,
 				ACDF9A52226FA3E900B65291 /* Network */,
+				ACCE2DD4229DD40700A9EE20 /* Resources */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
 				ACB0F31322735D5B006EB545 /* Util */,
 				2099538722888E1B006D6346 /* Fonts */,
 				AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */,
 				209953B322889872006D6346 /* App.swift */,
-				AC127E78226F9CED0004C0F1 /* Assets.xcassets */,
 				AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */,
 				AC127E7D226F9CED0004C0F1 /* Info.plist */,
 			);
@@ -456,7 +454,6 @@
 			children = (
 				AC42437722934126008111FB /* Search */,
 				AC4243602292013F008111FB /* Feed */,
-				AC127E73226F9CEB0004C0F1 /* ViewController.swift */,
 				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
 			);
 			path = ViewController;
@@ -477,6 +474,15 @@
 				AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		ACCE2DD4229DD40700A9EE20 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC127E78226F9CED0004C0F1 /* Assets.xcassets */,
+			);
+			name = Resources;
+			path = "Scenes/Tab Bar/Presentation/Resources";
 			sourceTree = "<group>";
 		};
 		ACDF9A51226FA3DF00B65291 /* Model */ = {
@@ -711,7 +717,6 @@
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				209953B422889872006D6346 /* App.swift in Sources */,
-				AC127E74226F9CEB0004C0F1 /* ViewController.swift in Sources */,
 				20A10D282299E7B700D06660 /* RegisterService.swift in Sources */,
 				209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */,
 				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,

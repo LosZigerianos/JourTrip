@@ -44,6 +44,24 @@ final class Metadata: Mappable {
         creationDate <- map["creation_date"]
         updatedAt <- map["updated_at"]
     }
+    
+    convenience init?(fullname: String,
+                      following: [String],
+                      provider: String,
+                      id: String,
+                      email: String,
+                      creationDate: String,
+                      updatedAt: String) {
+        self.init(map: Map(mappingType: .fromJSON, JSON: [:]))
+        self.fullname = fullname
+        self.following = following
+        self.provider = provider
+        self.id = id
+        self.email = email
+        self.creationDate = creationDate
+        self.updatedAt = updatedAt
+    }
+
 }
 
 final class UserResponse: Mappable {
