@@ -104,7 +104,7 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
         
         let url = ConstantNetworking.localUrl
             + ConstantNetworking.locationsNear
-            + "?latitude=\(latitude)&longitude=\(longitude)&token=\(token)&skip=3&limit=2"
+            + "?latitude=\(latitude)&longitude=\(longitude)&token=\(token)&limit=10"
         
         AF.request(url).responseObject { (response: DataResponse<LocationsResponse>) in
             if let locationsResponse = response.result.value as LocationsResponse? {

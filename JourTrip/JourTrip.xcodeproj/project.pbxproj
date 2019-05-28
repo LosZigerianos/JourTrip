@@ -70,6 +70,7 @@
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
 		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
+		ACCE2DD3229C6F1400A9EE20 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE2DD2229C6F1400A9EE20 /* HeaderView.swift */; };
 		ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +154,7 @@
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		ACCE2DD2229C6F1400A9EE20 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		ACDF9A53226FA44800B65291 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -444,6 +446,7 @@
 				AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */,
 				AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */,
 				AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */,
+				ACCE2DD2229C6F1400A9EE20 /* HeaderView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
+				ACCE2DD3229C6F1400A9EE20 /* HeaderView.swift in Sources */,
 				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
 				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,

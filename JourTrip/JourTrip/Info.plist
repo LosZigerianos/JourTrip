@@ -35,8 +35,12 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>JourTrip need your location address</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>JourTrip need your location address</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

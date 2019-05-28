@@ -9,7 +9,9 @@
 import UIKit
 import Kingfisher
 
-final class SearchViewController: BaseViewController {
+final class SearchViewController: BaseViewController  {
+    // MARK: - IBOutlet
+    @IBOutlet weak var headerView: UIView!
     
     // MARK: - Constants
     enum Constants {
@@ -17,15 +19,32 @@ final class SearchViewController: BaseViewController {
     }
     // TODO: set from tabbar
     // MARK: - Properties
+    var isSearching = false
     var userID = "5ce9c088996e2d101513ad1d"
     var user: Metadata?
-    var locations: [Location] = []
+    var locations: [Location] = [] // location.geometry.double.first
+    var filteredLocations = [Location]()
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    
+    lazy var searchBar : UISearchBar = {
+        let bar = UISearchBar()
+        bar.placeholder = "Search Timeline"
+        bar.delegate = self
+        bar.tintColor = .white
+        bar.barTintColor = UIColor.gray // color you like
+        bar.sizeToFit()
+//        bar.translatesAutoresizingMaskIntoConstraints = false // check
+        return bar
+    }()
+    
+    //let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             let nib = UINib(nibName: "NearCollectionViewCell", bundle: nil)
+            // Setup Header
+            collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
             collectionView.register(nib, forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
         }
     }
@@ -33,10 +52,9 @@ final class SearchViewController: BaseViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userID)
+        
         setupUI()
         getNearLocations()
-        
     }
     
     // MARK: - UI
@@ -45,12 +63,22 @@ final class SearchViewController: BaseViewController {
         collectionView.dataSource = self
         
         // setup layout
-        let width = calculateItemWidth()
+        let width = calculateItemCellWidth()
         collectionViewLayout.itemSize = CGSize(width: width, height: width)
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         collectionView.collectionViewLayout = collectionViewLayout
+        collectionView.isHidden = false
+        
+        headerView.addSubview(searchBar)
+        searchBar.sizeToFit()
+        headerView.frame.size.height = searchBar.frame.size.height
+        
+        searchBar.delegate = self
+        searchBar.returnKeyType = .done
+
     }
     
-    func calculateItemWidth() -> CGFloat {
+    func calculateItemCellWidth() -> CGFloat {
         let viewWidth = view.frame.width
         let spacing = (Constants.columns - 1) *
             collectionViewLayout.minimumInteritemSpacing
@@ -59,22 +87,33 @@ final class SearchViewController: BaseViewController {
         return width
         
     }
+    // MARK: - Private instance methods
+//    func searchBarIsEmpty() -> Bool {
+//        // Returns true if the text is empty or nil
+//        return searchController.searchBar.text?.isEmpty ?? true
+//    }
+//
+//    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+//        filteredLocations = locations.filter({( location : Location) -> Bool in
+//            return (location.name?.lowercased().contains(searchText.lowercased()))!
+//        })
+//
+//        collectionView.reloadData()
+//    }
+
+    // MARK: - IBAction
+    @IBAction func filtersAction(_ sender: UIButton) {
     
-    private func configureTopView() {
-        let topView = UIView()
-        topView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 120)
-        topView.backgroundColor = .white
-        
-        self.view.addSubview(topView)
     }
     
     // MARK: - Service proxy
     private func getNearLocations() {
-//        user = RealmManager.sharedInstance.getUser(with: userID)
+        //        user = RealmManager.sharedInstance.getUser(with: userID)
         let token = DataManager.sharedInstance.loadValue(key: "token") as! String
         
         self.serviceProxy.getNearLocations(token: token, latitude: 41.6560593, longitude: -0.87734) { (locationResponse, error) in
             if error != nil {
+                // FIXME: this is only for testing purposes
                 fatalError("no locations provided")
             }
             guard let locations = locationResponse?.data else {
@@ -87,23 +126,61 @@ final class SearchViewController: BaseViewController {
 }
 
 // MARK: - Collection delegate & datasource
-extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            isSearching = false
+            view.endEditing(true)
+        } else {
+            isSearching = true
+            filteredLocations = locations.filter({( location : Location) -> Bool in
+                return (location.name?.lowercased().contains(searchText.lowercased()))!
+            })
+        }
+        collectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: searchBar.bounds.size.height)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if isSearching {
+            return filteredLocations.count
+        }
         return locations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let nearLocation = locations[indexPath.row]
+        var nearLocation = locations[indexPath.row]
+        
+        if isSearching {
+            nearLocation = filteredLocations[indexPath.row]
+        }
+        
         let nearCell = collectionView.dequeueReusableCell(withReuseIdentifier: NearCollectionViewCell.reuseIdentifier, for: indexPath) as! NearCollectionViewCell
-        nearCell.backgroundColor = UIColor.clear
-        let url = URL(string: nearLocation.photos!.first!)
-        nearCell.locationImageView.image = UIImage(named: "placeholder")
-        nearCell.cityLabel.text = nearLocation.city
-        nearCell.nameLabel.text = nearLocation.name
-
-        return nearCell
+        
+        if let photos = nearLocation.photos,
+            let photo = photos.first,
+            let url = URL(string: photo) {
+            nearCell.locationImageView.kf.setImage(with: url)
+            nearCell.cityLabel.text = nearLocation.city
+            nearCell.nameLabel.text = nearLocation.name
+            
+            return nearCell
+        }
+        
+        return NearCollectionViewCell()
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("User tapped on row \(indexPath.row)")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderView else {
+            return UICollectionReusableView()
+        }
+        return reusableView
     }
 }
