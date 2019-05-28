@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import CoreLocation
 
 final class SearchViewController: BaseViewController  {
     // MARK: - IBOutlet
@@ -19,6 +20,7 @@ final class SearchViewController: BaseViewController  {
     }
     // TODO: set from tabbar
     // MARK: - Properties
+    var locationManager: CLLocationManager?
     var isSearching = false
     var userID = "5ce9c088996e2d101513ad1d"
     var user: Metadata?
@@ -31,13 +33,11 @@ final class SearchViewController: BaseViewController  {
         bar.placeholder = "Search Timeline"
         bar.delegate = self
         bar.tintColor = .white
-        bar.barTintColor = UIColor.gray // color you like
+        bar.barTintColor = UIColor.gray
         bar.sizeToFit()
 //        bar.translatesAutoresizingMaskIntoConstraints = false // check
         return bar
     }()
-    
-    //let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -75,7 +75,6 @@ final class SearchViewController: BaseViewController  {
         
         searchBar.delegate = self
         searchBar.returnKeyType = .done
-
     }
     
     func calculateItemCellWidth() -> CGFloat {
@@ -85,25 +84,6 @@ final class SearchViewController: BaseViewController  {
         let width = (viewWidth - spacing) / Constants.columns
         
         return width
-        
-    }
-    // MARK: - Private instance methods
-//    func searchBarIsEmpty() -> Bool {
-//        // Returns true if the text is empty or nil
-//        return searchController.searchBar.text?.isEmpty ?? true
-//    }
-//
-//    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-//        filteredLocations = locations.filter({( location : Location) -> Bool in
-//            return (location.name?.lowercased().contains(searchText.lowercased()))!
-//        })
-//
-//        collectionView.reloadData()
-//    }
-
-    // MARK: - IBAction
-    @IBAction func filtersAction(_ sender: UIButton) {
-    
     }
     
     // MARK: - Service proxy
@@ -125,8 +105,8 @@ final class SearchViewController: BaseViewController  {
     }
 }
 
-// MARK: - Collection delegate & datasource
-extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+// MARK: - UISearchBarDelegate
+extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
             isSearching = false
@@ -137,9 +117,13 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
                 return (location.name?.lowercased().contains(searchText.lowercased()))!
             })
         }
+        
         collectionView.reloadData()
     }
-    
+}
+
+// MARK: - Collection delegate & datasource
+extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: searchBar.bounds.size.height)
     }
