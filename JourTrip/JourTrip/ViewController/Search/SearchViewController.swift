@@ -26,6 +26,8 @@ final class SearchViewController: BaseViewController  {
     var user: Metadata?
     var locations: [Location] = [] // location.geometry.double.first
     var filteredLocations = [Location]()
+    var latitude = 41.6560593
+    var longitude = -0.87734
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     
     lazy var searchBar : UISearchBar = {
@@ -53,6 +55,7 @@ final class SearchViewController: BaseViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initializeLocationManager()
         setupUI()
         getNearLocations()
     }
@@ -86,19 +89,38 @@ final class SearchViewController: BaseViewController  {
         return width
     }
     
+    // MARK: - Location Manager
+    func initializeLocationManager() {
+        locationManager?.distanceFilter = kCLDistanceFilterNone
+        locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager?.startUpdatingLocation()
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.requestWhenInUseAuthorization()
+    }
+    
     // MARK: - Service proxy
     private func getNearLocations() {
         //        user = RealmManager.sharedInstance.getUser(with: userID)
         let token = DataManager.sharedInstance.loadValue(key: "token") as! String
         
-        self.serviceProxy.getNearLocations(token: token, latitude: 41.6560593, longitude: -0.87734) { (locationResponse, error) in
+        if let location = locationManager?.location {
+            latitude = location.coordinate.latitude
+            longitude = location.coordinate.longitude
+        }
+        
+        print("latitude: \(latitude) longitude: \(longitude)")
+        
+        self.serviceProxy.getNearLocations(token: token, latitude: latitude, longitude: longitude) { (locationResponse, error) in
+            
             if error != nil {
                 // FIXME: this is only for testing purposes
                 fatalError("no locations provided")
             }
+            
             guard let locations = locationResponse?.data else {
                 return
             }
+            
             self.locations = locations
             self.collectionView.reloadData()
         }
