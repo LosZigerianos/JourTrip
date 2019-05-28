@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import CoreLocation
 
-final class SearchViewController: BaseViewController  {
+final class SearchViewController: BaseViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var headerView: UIView!
     
@@ -32,8 +32,7 @@ final class SearchViewController: BaseViewController  {
     
     lazy var searchBar : UISearchBar = {
         let bar = UISearchBar()
-        bar.placeholder = "Search Timeline"
-        bar.delegate = self
+        bar.placeholder = "Search for places"
         bar.tintColor = .white
         bar.barTintColor = UIColor.gray
         bar.sizeToFit()
@@ -45,7 +44,6 @@ final class SearchViewController: BaseViewController  {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             let nib = UINib(nibName: "NearCollectionViewCell", bundle: nil)
-            // Setup Header
             collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
             collectionView.register(nib, forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
         }
@@ -57,7 +55,7 @@ final class SearchViewController: BaseViewController  {
         
         initializeLocationManager()
         setupUI()
-        getNearLocations()
+        //getNearLocations()
     }
     
     // MARK: - UI
@@ -91,11 +89,13 @@ final class SearchViewController: BaseViewController  {
     
     // MARK: - Location Manager
     func initializeLocationManager() {
-        locationManager?.distanceFilter = kCLDistanceFilterNone
-        locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager?.startUpdatingLocation()
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+//        locationManager?.distanceFilter = kCLDistanceFilterNone
+//        locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
+//        locationManager?.startUpdatingLocation()
         locationManager?.requestAlwaysAuthorization()
-        locationManager?.requestWhenInUseAuthorization()
+//        locationManager?.requestWhenInUseAuthorization()
     }
     
     // MARK: - Service proxy
@@ -107,8 +107,6 @@ final class SearchViewController: BaseViewController  {
             latitude = location.coordinate.latitude
             longitude = location.coordinate.longitude
         }
-        
-        print("latitude: \(latitude) longitude: \(longitude)")
         
         self.serviceProxy.getNearLocations(token: token, latitude: latitude, longitude: longitude) { (locationResponse, error) in
             
@@ -127,8 +125,19 @@ final class SearchViewController: BaseViewController  {
     }
 }
 
+// MARK: - LocationManager Delegate
+extension SearchViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // TODO: manage when user not authorize the location
+        if status == .authorizedAlways {
+            self.getNearLocations()
+        }
+    }
+}
+
 // MARK: - UISearchBarDelegate
-extension SearchViewController: UISearchBarDelegate {
+extension SearchViewController: UISearchBarDelegate, UISearchControllerDelegate {
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
             isSearching = false

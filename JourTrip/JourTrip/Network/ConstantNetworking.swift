@@ -12,6 +12,7 @@ typealias JSONDictionary = [String: Any]
 
 struct ConstantNetworking {
     static let localUrl = "http://localhost:3000/apiv1/"
+    static let onlineUrl = "https://api.jourtrip.ml/apiv1/"
     static let signup = "users/signup"
     static let login = "users/login"
     static let locations = "locations"

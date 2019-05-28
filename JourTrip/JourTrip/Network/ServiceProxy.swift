@@ -23,7 +23,7 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
                   completion: @escaping (_ response: UserResponse?, _ error: Error?) -> Void) {
         let parameters: Parameters = ["email": credentials.email, "password": credentials.password]
         
-        let url = ConstantNetworking.localUrl + ConstantNetworking.signup
+        let url = ConstantNetworking.onlineUrl + ConstantNetworking.signup
         
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseObject  { (response: DataResponse<UserResponse>) in
             if response.result.isSuccess {
@@ -52,7 +52,7 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
                completion: @escaping (_ response: UserLogin?, _ error: Error?) -> Void) {
         let parameters: Parameters = ["email": credentials.email, "password": credentials.password]
         
-        let url = ConstantNetworking.localUrl + ConstantNetworking.login
+        let url = ConstantNetworking.onlineUrl + ConstantNetworking.login
         
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseObject  { (response: DataResponse<UserLogin>) in
             // todo: check error
@@ -89,7 +89,7 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
     // TODO: Separate to locationService
     func getLocations(token: String,
                       completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
-        let url = ConstantNetworking.localUrl + ConstantNetworking.locations + "?name=Ayuntamiento&token=\(token)"
+        let url = ConstantNetworking.onlineUrl + ConstantNetworking.locations + "?name=Ayuntamiento&token=\(token)"
         
         AF.request(url).responseObject { (response: DataResponse<LocationsResponse>) in
             if let locationsResponse = response.result.value as LocationsResponse? {
@@ -102,9 +102,9 @@ struct ServiceProxy: LoginServiceType, RegisterServiceType, LocationsServiceType
     func getNearLocations(token: String, latitude: Double, longitude: Double,
                           completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
         
-        let url = ConstantNetworking.localUrl
+        let url = ConstantNetworking.onlineUrl
             + ConstantNetworking.locationsNear
-            + "?latitude=\(latitude)&longitude=\(longitude)&token=\(token)&limit=10"
+            + "?latitude=\(latitude)&longitude=\(longitude)&token=\(token)"
         
         AF.request(url).responseObject { (response: DataResponse<LocationsResponse>) in
             if let locationsResponse = response.result.value as LocationsResponse? {
