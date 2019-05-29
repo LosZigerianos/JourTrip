@@ -194,6 +194,8 @@
 				20995381228880EB006D6346 /* Initial */,
 				2099536B2286CE18006D6346 /* Login */,
 				209953BE2288AA72006D6346 /* SignUp */,
+				AC42437722934126008111FB /* Search */,
+				AC4243602292013F008111FB /* Feed */,
 				209953C62288AB1F006D6346 /* CustomTextField.swift */,
 			);
 			path = Scenes;
@@ -385,6 +387,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		20E7F417229EEE1400814E71 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,12 +428,12 @@
 			children = (
 				209953B52288A5F7006D6346 /* DI */,
 				208A16EE227B75E000E36CDF /* Scenes */,
-				ACB0F31022735A49006EB545 /* ViewController */,
 				ACDF9A52226FA3E900B65291 /* Network */,
 				ACCE2DD4229DD40700A9EE20 /* Resources */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
 				ACB0F31322735D5B006EB545 /* Util */,
 				2099538722888E1B006D6346 /* Fonts */,
+				20E7F417229EEE1400814E71 /* Extensions */,
 				AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */,
 				209953B322889872006D6346 /* App.swift */,
 				AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */,
@@ -436,7 +446,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Feed;
+			name = Feed;
+			path = ../ViewController/Feed;
 			sourceTree = "<group>";
 		};
 		AC42437722934126008111FB /* Search */ = {
@@ -449,16 +460,6 @@
 				ACCE2DD2229C6F1400A9EE20 /* HeaderView.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		ACB0F31022735A49006EB545 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AC42437722934126008111FB /* Search */,
-				AC4243602292013F008111FB /* Feed */,
-				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		ACB0F31322735D5B006EB545 /* Util */ = {
@@ -668,36 +669,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Simple-KeychainSwift/Simple_KeychainSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JourTrip/Pods-JourTrip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Simple_KeychainSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JourTrip/Pods-JourTrip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JourTrip/Pods-JourTrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

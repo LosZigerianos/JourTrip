@@ -13,10 +13,18 @@ import CoreLocation
 final class SearchViewController: BaseViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var headerView: UIView!
+	@IBOutlet weak var collectionView: UICollectionView! {
+		didSet {
+			let nib = UINib(nibName: "NearCollectionViewCell", bundle: nil)
+			collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
+			collectionView.register(nib, forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
+		}
+	}
     
     // MARK: - Constants
     enum Constants {
         static let columns: CGFloat = 2
+		static let spacing: CGFloat = 18
     }
     // TODO: set from tabbar
     // MARK: - Properties
@@ -40,22 +48,13 @@ final class SearchViewController: BaseViewController {
         return bar
     }()
     
-    // MARK: - Outlets
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            let nib = UINib(nibName: "NearCollectionViewCell", bundle: nil)
-            collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
-            collectionView.register(nib, forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
-        }
-    }
-    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeLocationManager()
         setupUI()
-        //getNearLocations()
+        getNearLocations()
     }
     
     // MARK: - UI
@@ -80,11 +79,7 @@ final class SearchViewController: BaseViewController {
     
     func calculateItemCellWidth() -> CGFloat {
         let viewWidth = view.frame.width
-        let spacing = (Constants.columns - 1) *
-            collectionViewLayout.minimumInteritemSpacing
-        let width = (viewWidth - spacing) / Constants.columns
-        
-        return width
+        return viewWidth / Constants.columns - Constants.spacing
     }
     
     // MARK: - Location Manager

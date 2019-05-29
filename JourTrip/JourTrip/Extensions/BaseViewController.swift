@@ -17,19 +17,7 @@ class BaseViewController: UIViewController {
     lazy var contentView : UIView = {
         return self.view
     }()
-    
-//    lazy var tableView : UITableView = {
-//        var t = UITableView(frame:self.view.bounds, style: UITableView.Style.plain)
-//        
-//        t.backgroundColor = UIColor.white
-//        t.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        t.separatorStyle = UITableViewCell.SeparatorStyle.none
-//        
-//        self.view.addSubview(t)
-//        
-//        return t
-//    }()
-//    
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         
