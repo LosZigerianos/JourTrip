@@ -13,4 +13,5 @@ target 'JourTrip' do
   pod 'Simple-KeychainSwift'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Kingfisher'
 end

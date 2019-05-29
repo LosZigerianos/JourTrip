@@ -25,7 +25,7 @@ final class LocationsResponse: Mappable {
 }
 
 final class Location: Mappable {
-    var coordinates: Coordinates?
+    var geometry: Geometry?
     var rating: Rating?
     var description: String?
     var photos: [String]?
@@ -40,7 +40,7 @@ final class Location: Mappable {
     }
     
     func mapping(map: Map) {
-        coordinates <- map["coordinates"]
+        geometry <- map["geometry"]
         rating <- map["rating"]
         description <- map["description"]
         photos <- map["photos"]
@@ -58,16 +58,16 @@ final class Location: Mappable {
     }
 }
 
-final class Coordinates: Mappable {
-    var latitude: String?
-    var longitude: String?
+final class Geometry: Mappable {
+    var type: String?
+    var coordinates: [Double]?
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        latitude <- map["latitude"]
-        longitude <- map["longitude"]
+        type <- map["type"]
+        coordinates <- map["coordinates"]
     }
 }
 
