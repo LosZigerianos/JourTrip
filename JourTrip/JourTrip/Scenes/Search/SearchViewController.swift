@@ -12,11 +12,10 @@ import CoreLocation
 
 final class SearchViewController: BaseViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var headerView: UIView!
 	@IBOutlet weak var collectionView: UICollectionView! {
 		didSet {
 			let nib = UINib(nibName: "NearCollectionViewCell", bundle: nil)
-			collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
+			collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseIdentifier)
 			collectionView.register(nib, forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
 		}
 	}
@@ -24,7 +23,7 @@ final class SearchViewController: BaseViewController {
     // MARK: - Constants
     enum Constants {
         static let columns: CGFloat = 2
-		static let spacing: CGFloat = 18
+		static let spacing: CGFloat = 8
     }
     // TODO: set from tabbar
     // MARK: - Properties
@@ -32,22 +31,20 @@ final class SearchViewController: BaseViewController {
     var isSearching = false
     var userID = "5ce9c088996e2d101513ad1d"
     var user: Metadata?
-    var locations: [Location] = [] // location.geometry.double.first
-    var filteredLocations = [Location]()
+	var locations: [Location] = [] {
+		didSet {
+			collectionView.reloadData()
+		}
+	} // location.geometry.double.first
+	var filteredLocations = [Location]() {
+		didSet {
+			collectionView.reloadData()
+		}
+	}
     var latitude = 41.6560593
     var longitude = -0.87734
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    
-    lazy var searchBar : UISearchBar = {
-        let bar = UISearchBar()
-        bar.placeholder = "Search for places"
-        bar.tintColor = .white
-        bar.barTintColor = UIColor.gray
-        bar.sizeToFit()
-//        bar.translatesAutoresizingMaskIntoConstraints = false // check
-        return bar
-    }()
-    
+
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,36 +58,20 @@ final class SearchViewController: BaseViewController {
     func setupUI() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        // setup layout
-        let width = calculateItemCellWidth()
-        collectionViewLayout.itemSize = CGSize(width: width, height: width)
-        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.spacing, left: Constants.spacing, bottom: Constants.spacing, right: Constants.spacing)
+		collectionViewLayout.minimumLineSpacing = Constants.spacing
+		collectionViewLayout.minimumInteritemSpacing = Constants.spacing
+		collectionViewLayout.headerReferenceSize = .init(width: view.frame.width, height: 150)
         collectionView.collectionViewLayout = collectionViewLayout
         collectionView.isHidden = false
-        
-        headerView.addSubview(searchBar)
-        searchBar.sizeToFit()
-        headerView.frame.size.height = searchBar.frame.size.height
-        
-        searchBar.delegate = self
-        searchBar.returnKeyType = .done
-    }
-    
-    func calculateItemCellWidth() -> CGFloat {
-        let viewWidth = view.frame.width
-        return viewWidth / Constants.columns - Constants.spacing
     }
     
     // MARK: - Location Manager
     func initializeLocationManager() {
         locationManager = CLLocationManager()
         locationManager?.delegate = self
-//        locationManager?.distanceFilter = kCLDistanceFilterNone
-//        locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
-//        locationManager?.startUpdatingLocation()
         locationManager?.requestAlwaysAuthorization()
-//        locationManager?.requestWhenInUseAuthorization()
     }
     
     // MARK: - Service proxy
@@ -130,30 +111,36 @@ extension SearchViewController: CLLocationManagerDelegate {
     }
 }
 
-// MARK: - UISearchBarDelegate
-extension SearchViewController: UISearchBarDelegate, UISearchControllerDelegate {
+extension SearchViewController {
+	@objc
+	func textFieldEditingChanged(_ sender: UITextField) {
+		let text = sender.text ?? ""
+		if text.isEmpty {
+			isSearching = false
+			collectionView.reloadData()
+		}
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == "" {
-            isSearching = false
-            view.endEditing(true)
-        } else {
-            isSearching = true
-            filteredLocations = locations.filter({( location : Location) -> Bool in
-                return (location.name?.lowercased().contains(searchText.lowercased()))!
-            })
-        }
-        
-        collectionView.reloadData()
-    }
+		if text.count > 2 {
+			isSearching = true
+			filteredLocations = locations.filter { location in
+				(location.name?.lowercased().contains(text.lowercased()))!
+			}
+		}
+	}
+}
+
+// MARK: - CollectionView Delegate Flow Layout
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let totalSpacing = (2 * Constants.spacing) + ((Constants.columns - 1) * Constants.spacing)
+
+		let width = (collectionView.bounds.width - totalSpacing) / Constants.columns
+		return CGSize(width: width, height: width)
+	}
 }
 
 // MARK: - Collection delegate & datasource
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: searchBar.bounds.size.height)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if isSearching {
             return filteredLocations.count
@@ -186,11 +173,14 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("User tapped on row \(indexPath.row)")
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderView else {
+        guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseIdentifier, for: indexPath) as? HeaderView else {
             return UICollectionReusableView()
         }
+		reusableView.searchBar.addTarget(self,
+										 action: #selector(textFieldEditingChanged(_:)),
+										 for: .editingChanged)
         return reusableView
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,6 +51,9 @@
 		20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D242299E71100D06660 /* SignUpViewModel.swift */; };
 		20A10D282299E7B700D06660 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D272299E7B700D06660 /* RegisterService.swift */; };
 		20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D292299E7D600D06660 /* SignUpValidator.swift */; };
+		20E7F419229F045500814E71 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F418229F045500814E71 /* HeaderView.swift */; };
+		20E7F41D229F07E700814E71 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F41C229F07E700814E71 /* SearchBar.swift */; };
+		20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
 		AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */; };
@@ -69,7 +72,6 @@
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
 		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
-		ACCE2DD3229C6F1400A9EE20 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE2DD2229C6F1400A9EE20 /* HeaderView.swift */; };
 		ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */; };
 		ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,9 @@
 		20A10D242299E71100D06660 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		20A10D272299E7B700D06660 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		20A10D292299E7D600D06660 /* SignUpValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidator.swift; sourceTree = "<group>"; };
+		20E7F418229F045500814E71 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		20E7F41C229F07E700814E71 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +158,6 @@
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
-		ACCE2DD2229C6F1400A9EE20 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripImages.swift; sourceTree = "<group>"; };
 		ACDF9A53226FA44800B65291 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -391,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
+				20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -453,11 +458,12 @@
 		AC42437722934126008111FB /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				20E7F418229F045500814E71 /* HeaderView.swift */,
 				AC42437822934139008111FB /* SearchViewController.swift */,
 				AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */,
 				AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */,
 				AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */,
-				ACCE2DD2229C6F1400A9EE20 /* HeaderView.swift */,
+				20E7F41C229F07E700814E71 /* SearchBar.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 				ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */,
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				209953B422889872006D6346 /* App.swift in Sources */,
+				20E7F419229F045500814E71 /* HeaderView.swift in Sources */,
 				20A10D282299E7B700D06660 /* RegisterService.swift in Sources */,
 				209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */,
 				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,
@@ -710,12 +717,14 @@
 				AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
 				209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */,
+				20E7F41D229F07E700814E71 /* SearchBar.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
 				AC42437922934139008111FB /* SearchViewController.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
+				20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */,
 				AC40929C2272528600BB6F0E /* ServiceProxy.swift in Sources */,
 				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
@@ -723,7 +732,6 @@
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
-				ACCE2DD3229C6F1400A9EE20 /* HeaderView.swift in Sources */,
 				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
 				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,
