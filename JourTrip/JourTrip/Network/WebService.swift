@@ -97,31 +97,19 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 	func getLocations(byName name: String,
 					  completion: @escaping (LocationsResponse?, Error?) -> Void) {
 		let endpoint = ApiEndpoint.locations(name: name)
-		AF.request(endpoint.buildUrl(with: baseUrl, adding: webServiceParameters),
-				   method: .get,
-				   parameters: endpoint.parameters.merging(webServiceParameters) { current, _ in current },
-				   encoding: JSONEncoding.default,
-				   headers: nil)
-			.validate()
-			.responseObject { (response: DataResponse<LocationsResponse>) in
-				if let locationsResponse = response.result.value as LocationsResponse? {
-					completion(locationsResponse, nil)
-				}
-				completion(nil, response.error as NSError?)
-		}
+		request(with: endpoint, completion: completion)
 	}
 
 	func getNearLocations(latitude: Double,
 						  longitude: Double,
 						  completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
 		let endpoint = ApiEndpoint.nearLocations(latitude: latitude, longitude: longitude)
+		request(with: endpoint, completion: completion)
+	}
 
-		AF.request(endpoint.buildUrl(with: baseUrl, adding: webServiceParameters),
-				   method: .get,
-				   parameters: endpoint.parameters.merging(webServiceParameters) { current, _ in current },
-				   encoding: JSONEncoding.default,
-				   headers: nil)
-			.validate()
+	func request(with endpoint: ApiEndpoint,
+				 completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
+		AF.request(endpoint.request(with: baseUrl, adding: webServiceParameters))
 			.responseObject { (response: DataResponse<LocationsResponse>) in
 				if let locationsResponse = response.result.value as LocationsResponse? {
 					completion(locationsResponse, nil)
