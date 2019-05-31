@@ -10,8 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    lazy var serviceProxy: ServiceProxy = {
-        return ServiceProxy()
+    lazy var serviceProxy: WebService = {
+        return WebService()
     }()
     
     lazy var contentView : UIView = {

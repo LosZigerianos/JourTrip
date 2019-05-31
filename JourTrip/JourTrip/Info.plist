@@ -25,12 +25,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string> location permission text.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string> location permission text.</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string> location permission text.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string> location permission text.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string> location permission text.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string> location permission text.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Apercu Bold Italic.otf</string>

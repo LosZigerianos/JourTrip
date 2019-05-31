@@ -12,13 +12,13 @@ final class AppAssembly {
     private(set) lazy var initialAssembly: InitialAssembly = InitialAssembly(loginAssembly: loginAssembly,
                                                                              signUpAssembly: signUpAssembly)
     private lazy var loginAssembly: LoginAssembly = LoginAssembly(navigationController: navigationController,
-																  loginService: serviceProxy,
+																  loginService: webService,
 																  tabBarAssembly: tabBarAssembly)
 	private lazy var tabBarAssembly: TabBarAssembly = TabBarAssembly(navigationController: navigationController)
 	private lazy var signUpAssembly: SignUpAssembly = SignUpAssembly(navigationController: navigationController,
-																	 service: serviceProxy,
+																	 service: webService,
 																	 tabBarAssembly: tabBarAssembly)
-    private lazy var serviceProxy: ServiceProxy = ServiceProxy()
+    private lazy var webService: WebService = WebService()
 
     private let navigationController: UINavigationController
 

@@ -19,6 +19,8 @@ final class SearchViewController: BaseViewController {
 			collectionView.register(nib, forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
 		}
 	}
+
+	lazy var searchBar: SearchBar = SearchBar()
     
     // MARK: - Constants
     enum Constants {
@@ -76,19 +78,17 @@ final class SearchViewController: BaseViewController {
     
     // MARK: - Service proxy
     private func getNearLocations() {
-        //        user = RealmManager.sharedInstance.getUser(with: userID)
-        let token = DataManager.sharedInstance.loadValue(key: "token") as! String
-        
+        //        user = RealmManager.sharedInstance.getUser(with: userID)        
         if let location = locationManager?.location {
             latitude = location.coordinate.latitude
             longitude = location.coordinate.longitude
         }
         
-        self.serviceProxy.getNearLocations(token: token, latitude: latitude, longitude: longitude) { (locationResponse, error) in
+        self.serviceProxy.getNearLocations(latitude: latitude, longitude: longitude) { (locationResponse, error) in
             
             if error != nil {
                 // FIXME: this is only for testing purposes
-                fatalError("no locations provided")
+//                fatalError("no locations provided")
             }
             
             guard let locations = locationResponse?.data else {
@@ -111,10 +111,9 @@ extension SearchViewController: CLLocationManagerDelegate {
     }
 }
 
-extension SearchViewController {
-	@objc
-	func textFieldEditingChanged(_ sender: UITextField) {
-		let text = sender.text ?? ""
+extension SearchViewController: UITextFieldDelegate {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		let text = textField.text ?? ""
 		if text.isEmpty {
 			isSearching = false
 			collectionView.reloadData()
@@ -126,6 +125,8 @@ extension SearchViewController {
 				(location.name?.lowercased().contains(text.lowercased()))!
 			}
 		}
+		textField.resignFirstResponder()
+		return false
 	}
 }
 
@@ -178,9 +179,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseIdentifier, for: indexPath) as? HeaderView else {
             return UICollectionReusableView()
         }
-		reusableView.searchBar.addTarget(self,
-										 action: #selector(textFieldEditingChanged(_:)),
-										 for: .editingChanged)
+		reusableView.searchBar.delegate = self
         return reusableView
     }
 }
