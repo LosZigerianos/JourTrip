@@ -15,8 +15,11 @@ final class SearchViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView! {
 		didSet {
 			let nib = UINib(nibName: "NearCollectionViewCell", bundle: nil)
-			collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseIdentifier)
-			collectionView.register(nib, forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
+			collectionView.register(HeaderView.self,
+									forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+									withReuseIdentifier: HeaderView.reuseIdentifier)
+			collectionView.register(nib,
+									forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
 		}
 	}
     
@@ -26,55 +29,44 @@ final class SearchViewController: UIViewController {
 		static let spacing: CGFloat = 8
 	}
 
-    // MARK: - Properties
-    var locationManager: CLLocationManager?
+    // MARK: - Dependencies
 	var dataSource: SearchCollectionViewDataSource!
 	var delegate: SearchCollectionViewDelegate!
 	var getNearLocations: GetNearLocationsProtocol!
-    var latitude = 41.6560593
-    var longitude = -0.87734
+	var getCurrentLocation: GetCurrentLocationProtocol!
+
+	// MARK: - Properties
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 
-    // MARK: - Life cycle
+    // MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-		initializeLocationManager()
-		setupUI()
-		collectionView.delegate = delegate
-		collectionView.dataSource = dataSource
-		let position = Position(latitude: latitude, longitude: longitude)
-
-		getNearLocations.invoke(with: position) { locations in
-			self.dataSource.locations = locations
-			self.collectionView.reloadData()
-		}
-    }
-    
-    // MARK: - UI
-    func setupUI() {
-		collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.spacing, left: Constants.spacing, bottom: Constants.spacing, right: Constants.spacing)
-		collectionViewLayout.minimumLineSpacing = Constants.spacing
-		collectionViewLayout.minimumInteritemSpacing = Constants.spacing
-		collectionViewLayout.headerReferenceSize = .init(width: view.frame.width, height: 150)
-        collectionView.collectionViewLayout = collectionViewLayout
-    }
-    
-    // MARK: - Location Manager
-    func initializeLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
+		setupCollectionView()
+		populateSearchData()
     }
 }
 
-// MARK: - LocationManager Delegate
-extension SearchViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // TODO: manage when user not authorize the location
-        if status == .authorizedAlways {
+// MARK: - Private Methods
+private extension SearchViewController {
+	func populateSearchData() {
+		getCurrentLocation.invoke { [weak self] position in
+			guard let self = self else { return }
+			self.getNearLocations.invoke(with: position) { locations in
+				self.dataSource.locations = locations
+				self.collectionView.reloadData()
+			}
+		}
+	}
 
-        }
-    }
+	func setupCollectionView() {
+		collectionView.delegate = delegate
+		collectionView.dataSource = dataSource
+		collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.spacing, left: Constants.spacing, bottom: Constants.spacing, right: Constants.spacing)
+		collectionViewLayout.minimumLineSpacing = Constants.spacing
+		collectionViewLayout.minimumInteritemSpacing = Constants.spacing
+		collectionViewLayout.headerReferenceSize = .init(width: view.bounds.width, height: 150)
+		collectionView.collectionViewLayout = collectionViewLayout
+	}
 }
 
 extension SearchViewController: UITextFieldDelegate {

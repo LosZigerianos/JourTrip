@@ -22,15 +22,9 @@ enum ApiEndpoint {
 
 extension ApiEndpoint {
 	func request(with baseURL: URL, adding parameters: [String: String]? = nil) -> URLRequest {
-		let url = baseURL.appendingPathComponent(path)
+		let url = buildUrl(with: baseURL)
 
-		var newParameters = self.parameters
-		parameters?.forEach { newParameters.updateValue($1, forKey: $0) }
-
-		var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
-		components.queryItems = newParameters.map(URLQueryItem.init)
-
-		var request = URLRequest(url: components.url!)
+		var request = URLRequest(url: url)
 		request.httpMethod = method.rawValue
 
 		return request
@@ -48,8 +42,6 @@ extension ApiEndpoint {
 		var request = URLRequest(url: components.url!)
 		return request.url!
 	}
-
-
 }
 
 extension ApiEndpoint {

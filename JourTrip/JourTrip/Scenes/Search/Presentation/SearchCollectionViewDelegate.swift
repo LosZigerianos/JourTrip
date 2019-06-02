@@ -21,8 +21,10 @@ class SearchCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollec
 
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseIdentifier, for: indexPath) as? HeaderView else {
+			print("Reusable view")
 			return UICollectionReusableView()
 		}
+		print("HeadeView")
 //		reusableView.searchBar.delegate = self
 		return reusableView
 	}
@@ -32,5 +34,12 @@ class SearchCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollec
 
 		let width = (collectionView.bounds.width - totalSpacing) / Constants.columns
 		return CGSize(width: width, height: width)
+	}
+
+	@objc
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+		let width = UIScreen.main.bounds.width
+
+		return .init(width: width, height: 150)
 	}
 }
