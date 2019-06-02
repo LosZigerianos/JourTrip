@@ -14,3 +14,6 @@ before_install:
   - rvm use system
   - sudo gem install cocoapods
   - pod repo update
+
+script:
+    xctool -workspace JourTrip.xcworkspace -scheme JourTrip build -sdk iphonesimulator
