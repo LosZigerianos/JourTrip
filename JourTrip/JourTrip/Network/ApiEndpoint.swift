@@ -46,8 +46,6 @@ extension ApiEndpoint {
 		components.queryItems = newParameters.map(URLQueryItem.init)
 
 		var request = URLRequest(url: components.url!)
-		print(request.url!)
-		print(components.url!)
 		return request.url!
 	}
 

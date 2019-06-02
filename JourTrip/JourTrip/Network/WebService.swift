@@ -19,7 +19,6 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 
 	init() {
 		webServiceParameters = ["token": token]
-		print(token)
 	}
 
 	func login(with credentials: Credentials, completion: @escaping (UserLogin?, Error?) -> Void) {
@@ -107,8 +106,8 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 		request(with: endpoint, completion: completion)
 	}
 
-	func request(with endpoint: ApiEndpoint,
-				 completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
+	private func request(with endpoint: ApiEndpoint,
+						 completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
 		AF.request(endpoint.request(with: baseUrl, adding: webServiceParameters))
 			.responseObject { (response: DataResponse<LocationsResponse>) in
 				if let locationsResponse = response.result.value as LocationsResponse? {

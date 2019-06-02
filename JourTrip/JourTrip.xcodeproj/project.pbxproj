@@ -51,6 +51,10 @@
 		20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D242299E71100D06660 /* SignUpViewModel.swift */; };
 		20A10D282299E7B700D06660 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D272299E7B700D06660 /* RegisterService.swift */; };
 		20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D292299E7D600D06660 /* SignUpValidator.swift */; };
+		20D8656922A41458005D04FA /* GetNearLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656822A41458005D04FA /* GetNearLocations.swift */; };
+		20D8656B22A4192D005D04FA /* SearchCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656A22A4192D005D04FA /* SearchCollectionViewDataSource.swift */; };
+		20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656C22A41D9D005D04FA /* SearchCollectionViewDelegate.swift */; };
+		20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656F22A424F2005D04FA /* SearchAssembly.swift */; };
 		20E7F419229F045500814E71 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F418229F045500814E71 /* HeaderView.swift */; };
 		20E7F41D229F07E700814E71 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F41C229F07E700814E71 /* SearchBar.swift */; };
 		20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */; };
@@ -70,7 +74,6 @@
 		AC42437922934139008111FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42437822934139008111FB /* SearchViewController.swift */; };
 		AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */; };
 		AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */; };
-		ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31122735A6F006EB545 /* BaseViewController.swift */; };
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
 		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
@@ -134,6 +137,10 @@
 		20A10D242299E71100D06660 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		20A10D272299E7B700D06660 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		20A10D292299E7D600D06660 /* SignUpValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidator.swift; sourceTree = "<group>"; };
+		20D8656822A41458005D04FA /* GetNearLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearLocations.swift; sourceTree = "<group>"; };
+		20D8656A22A4192D005D04FA /* SearchCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		20D8656C22A41D9D005D04FA /* SearchCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		20D8656F22A424F2005D04FA /* SearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembly.swift; sourceTree = "<group>"; };
 		20E7F418229F045500814E71 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		20E7F41C229F07E700814E71 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
@@ -158,7 +165,6 @@
 		AC42437822934139008111FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		ACB0F31122735A6F006EB545 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
@@ -395,20 +401,43 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		20D8656722A4142A005D04FA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				20E7F418229F045500814E71 /* HeaderView.swift */,
+				AC42437822934139008111FB /* SearchViewController.swift */,
+				AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */,
+				AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */,
+				AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */,
+				20E7F41C229F07E700814E71 /* SearchBar.swift */,
+				20D8656A22A4192D005D04FA /* SearchCollectionViewDataSource.swift */,
+				20D8656C22A41D9D005D04FA /* SearchCollectionViewDelegate.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		20D8656E22A424E4005D04FA /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				20D8656F22A424F2005D04FA /* SearchAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		20E7F417229EEE1400814E71 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				ACB0F31122735A6F006EB545 /* BaseViewController.swift */,
 				20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		20E7F42622A13BB100814E71 /* New Group */ = {
+		20E7F42622A13BB100814E71 /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
+				20D8656822A41458005D04FA /* GetNearLocations.swift */,
 			);
-			path = "New Group";
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 		6839240370A0464BF606CDBB /* Frameworks */ = {
@@ -469,13 +498,9 @@
 		AC42437722934126008111FB /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				20E7F42622A13BB100814E71 /* New Group */,
-				20E7F418229F045500814E71 /* HeaderView.swift */,
-				AC42437822934139008111FB /* SearchViewController.swift */,
-				AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */,
-				AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */,
-				AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */,
-				20E7F41C229F07E700814E71 /* SearchBar.swift */,
+				20D8656E22A424E4005D04FA /* DI */,
+				20D8656722A4142A005D04FA /* Presentation */,
+				20E7F42622A13BB100814E71 /* Use Cases */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -727,7 +752,6 @@
 				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,
 				20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */,
 				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
-				ACB0F31222735A6F006EB545 /* BaseViewController.swift in Sources */,
 				AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */,
 				20E7F42522A1357E00814E71 /* WebService.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
@@ -741,10 +765,13 @@
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */,
 				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
+				20D8656922A41458005D04FA /* GetNearLocations.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */,
+				20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
+				20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
@@ -752,6 +779,7 @@
 				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,
 				209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */,
 				20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */,
+				20D8656B22A4192D005D04FA /* SearchCollectionViewDataSource.swift in Sources */,
 				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
 				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
