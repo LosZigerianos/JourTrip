@@ -41,6 +41,7 @@ final class SearchViewController: UIViewController {
     // MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+		collectionView.isHidden = true
 		setupCollectionView()
 		populateSearchData()
     }
@@ -54,6 +55,7 @@ private extension SearchViewController {
 			self.getNearLocations.invoke(with: position) { locations in
 				self.dataSource.locations = locations
 				self.collectionView.reloadData()
+				self.collectionView.isHidden = false
 			}
 		}
 	}
@@ -65,6 +67,7 @@ private extension SearchViewController {
 		collectionViewLayout.minimumLineSpacing = Constants.spacing
 		collectionViewLayout.minimumInteritemSpacing = Constants.spacing
 		collectionViewLayout.headerReferenceSize = .init(width: view.bounds.width, height: 150)
+		collectionViewLayout.footerReferenceSize = .zero
 		collectionView.collectionViewLayout = collectionViewLayout
 	}
 }

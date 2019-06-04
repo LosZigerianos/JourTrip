@@ -21,8 +21,8 @@ enum ApiEndpoint {
 }
 
 extension ApiEndpoint {
-	func request(with baseURL: URL, adding parameters: [String: String]? = nil) -> URLRequest {
-		let url = buildUrl(with: baseURL)
+	func request(with baseURL: URL, adding parameters: [String: String] = [:]) -> URLRequest {
+		let url = buildUrl(with: baseURL, adding: parameters)
 
 		var request = URLRequest(url: url)
 		request.httpMethod = method.rawValue

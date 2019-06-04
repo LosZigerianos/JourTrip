@@ -38,8 +38,6 @@ class SearchCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollec
 
 	@objc
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-		let width = UIScreen.main.bounds.width
-
-		return .init(width: width, height: 150)
+		return .init(width: collectionView.frame.width, height: 150)
 	}
 }

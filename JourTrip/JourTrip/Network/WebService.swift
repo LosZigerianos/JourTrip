@@ -13,12 +13,18 @@ import RxSwift
 import Simple_KeychainSwift
 
 final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceType {
-	let token = DataManager.sharedInstance.loadValue(key: "token") as! String
+	var token = DataManager.sharedInstance.loadValue(key: "token") as? String {
+		didSet {
+			print(token!)
+			webServiceParameters.updateValue(token!, forKey: "token")
+		}
+	}
 	let baseUrl = URL(string: "https://api.jourtrip.ml/apiv1")!
-	let webServiceParameters: [String: String]
+	var webServiceParameters: [String: String]
 
 	init() {
-		webServiceParameters = ["token": token]
+		webServiceParameters = ["token": token ?? ""]
+		print("Token on init", token)
 	}
 
 	func login(with credentials: Credentials, completion: @escaping (UserLogin?, Error?) -> Void) {
@@ -38,6 +44,8 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 					let token = userLogin.token else {
 						fatalError("no token provided")
 				}
+				print("Token on login", token)
+				self.token = token
 				DataManager.sharedInstance.save(value: token, key: "token")
 				_ = DataManager.sharedInstance.saveSecure(value: userID, key: ConstantsDataManager.id)
 				RealmManager.sharedInstance.save(user: userLogin)
