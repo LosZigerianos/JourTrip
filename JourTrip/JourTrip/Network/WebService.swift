@@ -12,7 +12,8 @@ import AlamofireObjectMapper
 import RxSwift
 import Simple_KeychainSwift
 
-final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceType {
+final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceType, ProfileService {
+    
 	let token = DataManager.sharedInstance.loadValue(key: "token") as? String
 	let baseUrl = URL(string: "https://api.jourtrip.ml/apiv1")!
 	let webServiceParameters: [String: String]
@@ -97,7 +98,15 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 			return Disposables.create()
 		}
 	}
+    
+    // MARK: - Profile Service
+    func getProfile(by userID: String,
+                    completion: @escaping (ProfileResponse?, Error?) -> Void) {
+        let endpoint = ApiEndpoint.profile(userID: userID)
+        requestProfile(with: endpoint, completion: completion)
+    }
 
+    // MARK: - Locations Service
 	func getLocations(byName name: String,
 					  completion: @escaping (LocationsResponse?, Error?) -> Void) {
 		let endpoint = ApiEndpoint.locations(name: name)
@@ -110,6 +119,19 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 		let endpoint = ApiEndpoint.nearLocations(latitude: latitude, longitude: longitude)
 		request(with: endpoint, completion: completion)
 	}
+    
+    //FIXME: testing
+    private func requestProfile(with endpoint: ApiEndpoint,
+                         completion: @escaping (_ response: ProfileResponse?, _ error: Error?) -> Void) {
+        AF.request(endpoint.request(with: baseUrl, adding: webServiceParameters))
+            .responseObject { (response: DataResponse<ProfileResponse>) in
+                if let locationsResponse = response.result.value as ProfileResponse? {
+                    completion(locationsResponse, nil)
+                } else {
+                    completion(nil, response.error as NSError?)
+                }
+        }
+    }
 
 	private func request(with endpoint: ApiEndpoint,
 						 completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {

@@ -9,11 +9,11 @@
 import Foundation
 
 
-protocol ProfileProtocol {
+protocol GetProfileProtocol {
     func invoke(with userID: String, completion: @escaping (ProfileResponse) -> ())
 }
 
-struct GetProfile: ProfileProtocol{
+struct GetProfile: GetProfileProtocol{
     private let repository: ProfileService
     
     init(repository: ProfileService) {
@@ -22,7 +22,7 @@ struct GetProfile: ProfileProtocol{
     
     func invoke(with userID: String, completion: @escaping (ProfileResponse) -> ()) {
         repository.getProfile(by: userID) { (response, error) in
-            guard let profile = response else { fatalError("") }
+            guard let profile = response else { return }
             completion(profile)
         }
     }

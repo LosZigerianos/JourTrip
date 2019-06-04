@@ -73,7 +73,7 @@ extension ApiEndpoint {
 		case .userSignUp:
 			return "/users/signup"
         case .profile:
-            return "/users/profile"
+            return "/users/profile/5ceb706146e3c87667d594c2" // FIXME: testing purposes
 		}
 	}
 

@@ -14,11 +14,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    var getProfile: ProfileProtocol!
+    var getProfile: GetProfileProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getProfile.invoke(with: "5ceb706146e3c87667d594c2") { (profile) in
+        getProfile.invoke(with: "") { (profile) in
             print(profile)
         }
     }

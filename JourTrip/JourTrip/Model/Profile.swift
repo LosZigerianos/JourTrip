@@ -11,12 +11,14 @@ import ObjectMapper
 final class ProfileResponse: Mappable {
     var success: Bool?
     var data: Profile?
+    var error: String?
     
     required init?(map: Map){}
     
     func mapping(map: Map) {
         success <- map["success"]
         data <- map["data"]
+        error <- map["error"]
     }
 }
 
@@ -37,10 +39,10 @@ final class Profile: Mappable {
         comments <- map["comments"]
         photo <- map["photo"]
         provider <- map["provider"]
-        id <- map["id"]
+        id <- map["_id"]
         email <- map["email"]
-        creationDate <- map["creationDate"]
-        updatedAt <- map["updatedAt"]
+        creationDate <- map["creation_date"]
+        updatedAt <- map["updated_at"]
         username <- map["username"]
     }
 }
@@ -53,10 +55,10 @@ final class Comment: Mappable {
     required init?(map: Map){}
     
     func mapping(map: Map) {
-        id <- map["id"]
+        id <- map["_id"]
         user <- map["user"]
         location <- map["location"]
-        commentDescription <- map["commentDescription"]
+        commentDescription <- map["description"]
         creationDate <- map["creationDate"]
     }
 }
