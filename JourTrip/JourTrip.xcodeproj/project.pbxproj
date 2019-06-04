@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EE889FD9EB3C7A5751E9DC5 /* Pods_JourTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */; };
 		20392471227B777D0061E59B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20392470227B777D0061E59B /* LoginViewController.xib */; };
 		20392473227B81330061E59B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20392472227B81320061E59B /* LoginViewModel.swift */; };
 		208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A16F1227B761B00E36CDF /* LoginViewController.swift */; };
@@ -61,9 +60,14 @@
 		20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F42022A1210900814E71 /* ApiEndpoint.swift */; };
 		20E7F42522A1357E00814E71 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F42422A1357E00814E71 /* WebService.swift */; };
 		20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F42722A13BDB00814E71 /* LocationService.swift */; };
+		A927776C2B256C4143FA00C3 /* Pods_JourTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD776594943F6E33C7AC193 /* Pods_JourTrip.framework */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
 		AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */; };
+		AC14FADF22A4437100BC6EF8 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC14FADE22A4437100BC6EF8 /* ProfileAssembly.swift */; };
+		AC14FAE222A443F600BC6EF8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC14FAE022A443F600BC6EF8 /* ProfileViewController.swift */; };
+		AC14FAE322A443F600BC6EF8 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC14FAE122A443F600BC6EF8 /* ProfileViewController.xib */; };
+		AC14FAE522A4460700BC6EF8 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC14FAE422A4460700BC6EF8 /* TableHeaderView.swift */; };
 		AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */; };
 		AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E59229A02320006F2AC /* RealmManager.swift */; };
 		AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5B229A026E0006F2AC /* Wrapper.swift */; };
@@ -77,6 +81,9 @@
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
 		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
+		ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440122A6F5A90040055B /* GetProfile.swift */; };
+		ACBA440422A6F6230040055B /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440322A6F6230040055B /* ProfileService.swift */; };
+		ACBA440622A6FA540040055B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440522A6FA540040055B /* Profile.swift */; };
 		ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */; };
 		ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
 /* End PBXBuildFile section */
@@ -147,14 +154,15 @@
 		20E7F42022A1210900814E71 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		20E7F42422A1357E00814E71 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		20E7F42722A13BDB00814E71 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
-		7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
-		96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC127E6E226F9CEB0004C0F1 /* JourTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC127E78226F9CED0004C0F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC127E7B226F9CED0004C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC127E7D226F9CED0004C0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC14FADE22A4437100BC6EF8 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		AC14FAE022A443F600BC6EF8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AC14FAE122A443F600BC6EF8 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		AC14FAE422A4460700BC6EF8 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsDataManager.swift; sourceTree = "<group>"; };
 		AC347E59229A02320006F2AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		AC347E5B229A026E0006F2AC /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
@@ -168,8 +176,14 @@
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		ACBA440122A6F5A90040055B /* GetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfile.swift; sourceTree = "<group>"; };
+		ACBA440322A6F6230040055B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		ACBA440522A6FA540040055B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripImages.swift; sourceTree = "<group>"; };
 		ACDF9A53226FA44800B65291 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
+		BCD776594943F6E33C7AC193 /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBAC084B65722BCEC28A8231 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
+		FAA2BF808463073700D880CC /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EE889FD9EB3C7A5751E9DC5 /* Pods_JourTrip.framework in Frameworks */,
+				A927776C2B256C4143FA00C3 /* Pods_JourTrip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +224,7 @@
 				209953BE2288AA72006D6346 /* SignUp */,
 				AC42437722934126008111FB /* Search */,
 				AC4243602292013F008111FB /* Feed */,
+				AC14FADA22A4430D00BC6EF8 /* Profile */,
 				209953C62288AB1F006D6346 /* CustomTextField.swift */,
 			);
 			path = Scenes;
@@ -440,12 +455,21 @@
 			path = "Use Cases";
 			sourceTree = "<group>";
 		};
-		6839240370A0464BF606CDBB /* Frameworks */ = {
+		2C2B25D431D6E617DF0D9E45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				96928EB2A9A7CEB7190FBB3B /* Pods_JourTrip.framework */,
+				BCD776594943F6E33C7AC193 /* Pods_JourTrip.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F6ECCB20EDC425A8D57DE14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAA2BF808463073700D880CC /* Pods-JourTrip.debug.xcconfig */,
+				CBAC084B65722BCEC28A8231 /* Pods-JourTrip.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		AC127E65226F9CEB0004C0F1 = {
@@ -454,8 +478,8 @@
 				AC127E70226F9CEB0004C0F1 /* JourTrip */,
 				209953762286D374006D6346 /* JourTripTests */,
 				AC127E6F226F9CEB0004C0F1 /* Products */,
-				CC01FF3739B721C82441008E /* Pods */,
-				6839240370A0464BF606CDBB /* Frameworks */,
+				6F6ECCB20EDC425A8D57DE14 /* Pods */,
+				2C2B25D431D6E617DF0D9E45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -485,6 +509,42 @@
 				AC127E7D226F9CED0004C0F1 /* Info.plist */,
 			);
 			path = JourTrip;
+			sourceTree = "<group>";
+		};
+		AC14FADA22A4430D00BC6EF8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AC14FADB22A4432400BC6EF8 /* DI */,
+				AC14FADC22A4432D00BC6EF8 /* Presentation */,
+				AC14FADD22A4433800BC6EF8 /* Use Cases */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		AC14FADB22A4432400BC6EF8 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				AC14FADE22A4437100BC6EF8 /* ProfileAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		AC14FADC22A4432D00BC6EF8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AC14FAE022A443F600BC6EF8 /* ProfileViewController.swift */,
+				AC14FAE122A443F600BC6EF8 /* ProfileViewController.xib */,
+				AC14FAE422A4460700BC6EF8 /* TableHeaderView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AC14FADD22A4433800BC6EF8 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				ACBA440122A6F5A90040055B /* GetProfile.swift */,
+			);
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 		AC4243602292013F008111FB /* Feed */ = {
@@ -540,6 +600,7 @@
 				ACB0F31B2277A1CA006EB545 /* Locations.swift */,
 				AC347E59229A02320006F2AC /* RealmManager.swift */,
 				AC347E5B229A026E0006F2AC /* Wrapper.swift */,
+				ACBA440522A6FA540040055B /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -552,17 +613,9 @@
 				20E7F42022A1210900814E71 /* ApiEndpoint.swift */,
 				20E7F42422A1357E00814E71 /* WebService.swift */,
 				20E7F42722A13BDB00814E71 /* LocationService.swift */,
+				ACBA440322A6F6230040055B /* ProfileService.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		CC01FF3739B721C82441008E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */,
-				7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -590,11 +643,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC127E80226F9CED0004C0F1 /* Build configuration list for PBXNativeTarget "JourTrip" */;
 			buildPhases = (
-				84093CED7F6EF76BE3AB458C /* [CP] Check Pods Manifest.lock */,
+				7A41715D14632F12EEE44D8A /* [CP] Check Pods Manifest.lock */,
 				AC127E6A226F9CEB0004C0F1 /* Sources */,
 				AC127E6B226F9CEB0004C0F1 /* Frameworks */,
 				AC127E6C226F9CEB0004C0F1 /* Resources */,
-				90012D5F91829D2E92F7A945 /* [CP] Embed Pods Frameworks */,
+				8AADA9FD98460ACE98974D5A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -671,6 +724,7 @@
 				AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */,
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
+				AC14FAE322A443F600BC6EF8 /* ProfileViewController.xib in Resources */,
 				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
 				209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */,
 				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
@@ -686,7 +740,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84093CED7F6EF76BE3AB458C /* [CP] Check Pods Manifest.lock */ = {
+		7A41715D14632F12EEE44D8A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -708,7 +762,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		90012D5F91829D2E92F7A945 /* [CP] Embed Pods Frameworks */ = {
+		8AADA9FD98460ACE98974D5A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -747,6 +801,7 @@
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				209953B422889872006D6346 /* App.swift in Sources */,
 				20E7F419229F045500814E71 /* HeaderView.swift in Sources */,
+				ACBA440422A6F6230040055B /* ProfileService.swift in Sources */,
 				20A10D282299E7B700D06660 /* RegisterService.swift in Sources */,
 				209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */,
 				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,
@@ -766,6 +821,7 @@
 				20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */,
 				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
 				20D8656922A41458005D04FA /* GetNearLocations.swift in Sources */,
+				ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */,
@@ -773,11 +829,15 @@
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
+				AC14FAE522A4460700BC6EF8 /* TableHeaderView.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
+				AC14FADF22A4437100BC6EF8 /* ProfileAssembly.swift in Sources */,
 				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,
 				209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */,
+				ACBA440622A6FA540040055B /* Profile.swift in Sources */,
+				AC14FAE222A443F600BC6EF8 /* ProfileViewController.swift in Sources */,
 				20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */,
 				20D8656B22A4192D005D04FA /* SearchCollectionViewDataSource.swift in Sources */,
 				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
@@ -970,17 +1030,18 @@
 		};
 		AC127E81226F9CED0004C0F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A4746DF6691D7F14CEA9756 /* Pods-JourTrip.debug.xcconfig */;
+			baseConfigurationReference = FAA2BF808463073700D880CC /* Pods-JourTrip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3NZN8QHW8P;
+				DEVELOPMENT_TEAM = QY79RGHMZT;
 				INFOPLIST_FILE = JourTrip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.loszigerianos.JourTrip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.loszigerianos.JourTrips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -989,17 +1050,18 @@
 		};
 		AC127E82226F9CED0004C0F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7601EB44264E119BE80FD9F8 /* Pods-JourTrip.release.xcconfig */;
+			baseConfigurationReference = CBAC084B65722BCEC28A8231 /* Pods-JourTrip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3NZN8QHW8P;
+				DEVELOPMENT_TEAM = QY79RGHMZT;
 				INFOPLIST_FILE = JourTrip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.loszigerianos.JourTrip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.loszigerianos.JourTrips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
