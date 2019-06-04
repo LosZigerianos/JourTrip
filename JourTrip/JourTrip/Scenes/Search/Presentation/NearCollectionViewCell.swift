@@ -15,7 +15,19 @@ class NearCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    
+
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+
+		setupLayer()
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+
+		setupLayer()
+	}
+
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -23,4 +35,11 @@ class NearCollectionViewCell: UICollectionViewCell {
         nameLabel.text = nil
         cityLabel.text = nil
     }
+
+	func setupLayer() {
+		contentView.layer.cornerRadius = 8
+		contentView.layer.borderWidth = 1.0
+		contentView.layer.borderColor = UIColor.clear.cgColor
+		contentView.layer.masksToBounds = true
+	}
 }

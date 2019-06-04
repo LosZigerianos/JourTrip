@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="JourTrip" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="4Kq-aT-xxv" id="CMj-gF-0LA"/>
-                <outlet property="headerView" destination="CPk-1g-sfC" id="5ak-fq-57I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4Kq-aT-xxv">
-                    <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bIi-im-CFw">
                         <size key="itemSize" width="50" height="50"/>
@@ -31,30 +30,13 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPk-1g-sfC">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nearby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8b-Ru-94F">
-                            <rect key="frame" x="8" y="87" width="62" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="CPk-1g-sfC" firstAttribute="leading" secondItem="4Kq-aT-xxv" secondAttribute="leading" id="0ee-iI-Y02"/>
                 <constraint firstItem="4Kq-aT-xxv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="195-kK-nVF"/>
-                <constraint firstItem="CPk-1g-sfC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-20" id="3d6-ts-ftM"/>
                 <constraint firstItem="4Kq-aT-xxv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LYd-PG-hkk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CPk-1g-sfC" secondAttribute="bottom" constant="551" id="Osf-KH-Q75"/>
-                <constraint firstItem="4Kq-aT-xxv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="116" id="PhY-co-Eo4"/>
+                <constraint firstItem="4Kq-aT-xxv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PhY-co-Eo4"/>
                 <constraint firstItem="4Kq-aT-xxv" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="e4s-zq-bvz"/>
-                <constraint firstItem="CPk-1g-sfC" firstAttribute="trailing" secondItem="4Kq-aT-xxv" secondAttribute="trailing" id="zgg-Gt-MLJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="96.799999999999997" y="85.007496251874073"/>

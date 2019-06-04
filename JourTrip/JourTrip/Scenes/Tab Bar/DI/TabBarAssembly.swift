@@ -11,9 +11,12 @@ import UIKit
 final class TabBarAssembly {
 
 	let navigationController: UINavigationController
+	let searchAssembly: SearchAssembly
 
-	init(navigationController: UINavigationController) {
+	init(navigationController: UINavigationController,
+		 searchAssembly: SearchAssembly) {
 		self.navigationController = navigationController
+		self.searchAssembly = searchAssembly
 	}
 
 	func navigator() -> TabBarNavigator {
@@ -25,6 +28,14 @@ final class TabBarAssembly {
 
 extension TabBarAssembly: TabBarViewControllerProvider {
 	func viewController() -> MainTabBarController {
-		return MainTabBarController()
+		let tabBarController = MainTabBarController()
+		let searchViewController = searchAssembly.viewController()
+		searchViewController.tabBarItem = UITabBarItem(title: "Search", image: EelpImages.searchTabBar(), selectedImage: EelpImages.searchTabBar())
+		let feedViewController = UIViewController()
+		feedViewController.tabBarItem = UITabBarItem(title: "Feed", image: EelpImages.homeTabBar(), selectedImage: EelpImages.homeTabBar())
+		let profileViewController = UIViewController()
+		profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: EelpImages.profileTabBar(), selectedImage: EelpImages.profileTabBar())
+		tabBarController.viewControllers = [feedViewController, searchViewController, profileViewController]
+		return tabBarController
 	}
 }
