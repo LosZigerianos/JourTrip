@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol ProfileService {
+    func getProfile(by userID: String,
+                    completion: @escaping (_ response: ProfileResponse?, _ error: Error?) -> Void)
+}

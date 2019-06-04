@@ -18,9 +18,11 @@ final class AppAssembly {
 																	 service: webService,
 																	 tabBarAssembly: tabBarAssembly)
 	private lazy var tabBarAssembly: TabBarAssembly = TabBarAssembly(navigationController: navigationController,
-																	 searchAssembly: searchAssembly)
+                                                                     searchAssembly: searchAssembly,
+                                                                     profileAssembly: profileAssembly)
 
 	private lazy var searchAssembly: SearchAssembly = SearchAssembly(repository: webService)
+    private lazy var profileAssembly: ProfileAssembly = ProfileAssembly(repository: webService)
     private lazy var webService: WebService = WebService()
 
     private let navigationController: UINavigationController

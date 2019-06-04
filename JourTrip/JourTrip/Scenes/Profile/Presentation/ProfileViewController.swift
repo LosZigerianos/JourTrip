@@ -9,22 +9,18 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
+    var getProfile: ProfileProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        getProfile.invoke(with: "5ceb706146e3c87667d594c2") { (profile) in
+            print(profile)
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
