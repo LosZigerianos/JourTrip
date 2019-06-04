@@ -13,11 +13,16 @@ import RxSwift
 import Simple_KeychainSwift
 
 final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceType {
-	let token = DataManager.sharedInstance.loadValue(key: "token") as! String
+	let token = DataManager.sharedInstance.loadValue(key: "token") as? String
 	let baseUrl = URL(string: "https://api.jourtrip.ml/apiv1")!
 	let webServiceParameters: [String: String]
 
 	init() {
+        guard let token = token else {
+            webServiceParameters = ["token": ""]
+            return
+        }
+
 		webServiceParameters = ["token": token]
 	}
 
