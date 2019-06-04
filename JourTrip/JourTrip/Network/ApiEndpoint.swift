@@ -18,6 +18,7 @@ enum ApiEndpoint {
 	case userSignUp(credentials: Credentials)
 	case locations(name: String)
 	case nearLocations(latitude: Double, longitude: Double)
+    case profile(userID: String)
 }
 
 extension ApiEndpoint {
@@ -48,14 +49,13 @@ extension ApiEndpoint {
 		var request = URLRequest(url: components.url!)
 		return request.url!
 	}
-
-
+    
 }
 
 extension ApiEndpoint {
 	var method: RequestType {
 		switch self {
-		case .locations, .nearLocations:
+		case .locations, .nearLocations, .profile:
 			return .get
 		case .userLogin, .userSignUp:
 			return .post
@@ -72,6 +72,8 @@ extension ApiEndpoint {
 			return "/users/login"
 		case .userSignUp:
 			return "/users/signup"
+        case .profile:
+            return "/users/profile"
 		}
 	}
 
@@ -96,6 +98,10 @@ extension ApiEndpoint {
 				"email": credentials.email,
 				"password": credentials.password
 			]
+        case .profile(let userID):
+            return [
+                "userID": userID
+            ]
 		}
 	}
 }
