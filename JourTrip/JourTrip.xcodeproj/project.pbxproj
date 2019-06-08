@@ -66,12 +66,15 @@
 		AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC127E7A226F9CED0004C0F1 /* LaunchScreen.storyboard */; };
 		AC14FADF22A4437100BC6EF8 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC14FADE22A4437100BC6EF8 /* ProfileAssembly.swift */; };
 		AC14FAE222A443F600BC6EF8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC14FAE022A443F600BC6EF8 /* ProfileViewController.swift */; };
-		AC14FAE322A443F600BC6EF8 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC14FAE122A443F600BC6EF8 /* ProfileViewController.xib */; };
-		AC14FAE522A4460700BC6EF8 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC14FAE422A4460700BC6EF8 /* TableHeaderView.swift */; };
 		AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */; };
 		AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E59229A02320006F2AC /* RealmManager.swift */; };
 		AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5B229A026E0006F2AC /* Wrapper.swift */; };
 		AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */; };
+		AC3BA0CF22ABB59500DDE88B /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BA0CE22ABB59500DDE88B /* ProfileCell.swift */; };
+		AC3BA0D122AC0E9B00DDE88B /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3BA0D022AC0E9B00DDE88B /* ProfileCell.xib */; };
+		AC3BA0D322AC13BA00DDE88B /* ProfileListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BA0D222AC13BA00DDE88B /* ProfileListCell.swift */; };
+		AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */; };
+		AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */; };
 		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
 		AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42435E2291F83E008111FB /* MainTabBarController.swift */; };
@@ -161,12 +164,15 @@
 		AC127E7D226F9CED0004C0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC14FADE22A4437100BC6EF8 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		AC14FAE022A443F600BC6EF8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		AC14FAE122A443F600BC6EF8 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		AC14FAE422A4460700BC6EF8 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		AC347E57229A016A0006F2AC /* ConstantsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsDataManager.swift; sourceTree = "<group>"; };
 		AC347E59229A02320006F2AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		AC347E5B229A026E0006F2AC /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC3BA0CE22ABB59500DDE88B /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		AC3BA0D022AC0E9B00DDE88B /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		AC3BA0D222AC13BA00DDE88B /* ProfileListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListCell.swift; sourceTree = "<group>"; };
+		AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		AC42435E2291F83E008111FB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -533,8 +539,11 @@
 			isa = PBXGroup;
 			children = (
 				AC14FAE022A443F600BC6EF8 /* ProfileViewController.swift */,
-				AC14FAE122A443F600BC6EF8 /* ProfileViewController.xib */,
-				AC14FAE422A4460700BC6EF8 /* TableHeaderView.swift */,
+				AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */,
+				AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */,
+				AC3BA0D022AC0E9B00DDE88B /* ProfileCell.xib */,
+				AC3BA0CE22ABB59500DDE88B /* ProfileCell.swift */,
+				AC3BA0D222AC13BA00DDE88B /* ProfileListCell.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -723,8 +732,9 @@
 				2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */,
 				AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */,
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
+				AC3BA0D122AC0E9B00DDE88B /* ProfileCell.xib in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
-				AC14FAE322A443F600BC6EF8 /* ProfileViewController.xib in Resources */,
+				AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */,
 				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
 				209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */,
 				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
@@ -795,6 +805,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3BA0CF22ABB59500DDE88B /* ProfileCell.swift in Sources */,
+				AC3BA0D322AC13BA00DDE88B /* ProfileListCell.swift in Sources */,
 				208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */,
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
 				ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */,
@@ -820,6 +832,7 @@
 				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */,
 				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
+				AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */,
 				20D8656922A41458005D04FA /* GetNearLocations.swift in Sources */,
 				ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
@@ -829,7 +842,6 @@
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
-				AC14FAE522A4460700BC6EF8 /* TableHeaderView.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
