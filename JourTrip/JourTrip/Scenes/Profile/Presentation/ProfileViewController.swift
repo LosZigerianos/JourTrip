@@ -29,11 +29,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         setupUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         getProfile.invoke(with: "") { (profile) in
             if let error = profile.error {
                 // TODO: show alert
@@ -53,7 +48,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func setupUI() {
-        
         let displayWidth: CGFloat = self.view.frame.width
         let displayHeight: CGFloat = self.view.frame.height
         
@@ -66,11 +60,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         tableView.dataSource = self
         tableView.delegate = self
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Num: \(indexPath.row)")
-        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,9 +103,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let comment = userComments[(indexPath.row - 1)]
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileLocationTableViewCell",
                                                          for: indexPath) as! ProfileLocationTableViewCell
-                //FIXME: quitar user del model comment
-                guard let id = comment.id,
-                    let commentDescription = comment.commentDescription,
+                
+                guard let commentDescription = comment.commentDescription,
                     let location = comment.location,
                     let creationDate = comment.creationDate else {
                         fatalError("comment error!")

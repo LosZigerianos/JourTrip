@@ -22,8 +22,6 @@ class ProfileLocationTableViewCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        setupLayer()
     }
     
     override func prepareForReuse() {
@@ -44,19 +42,13 @@ class ProfileLocationTableViewCell: UITableViewCell {
                tag: String,
                description: String,
                creationDate: String) {
-        
+        self.selectionStyle = .none
         titleLabel.text = title
-//        addressDescriptionLabel.text = address
-//        locationImageView.kf.setImage(with: locationURL)
+        addressDescriptionLabel.text = address
+            locationImageView.kf.setImage(with: locationURL)
+
 //        tagLabel.text = tag
 //        descriptionLabel.text = description
 //        creationDateLabel.text = creationDate
-    }
-    
-    private func setupLayer() {
-        contentView.layer.cornerRadius = 8
-        contentView.layer.borderWidth = 1.0
-        contentView.layer.borderColor = UIColor.clear.cgColor
-        contentView.layer.masksToBounds = true
     }
 }

@@ -23,15 +23,15 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet var followerLabel: UILabel!
     @IBOutlet var postsLabel: UILabel!
 
-    //TODO: localize languages
+    //TODO: localize languages and fix name/account
     func setup(with username: String,
                     account: String,
                     imageURL: URL,
                     following: String,
                     followers: String,
                     posts: String) {
-        nameLabel.text = username
-        accountLabel.text = account
+        nameLabel.text = account
+        accountLabel.text = username
         userImageView.kf.setImage(with: imageURL)
         followingValueLabel.text = following
         followerValueLabel.text = followers
