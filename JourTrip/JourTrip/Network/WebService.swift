@@ -93,8 +93,8 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 				completion(nil, error)
 			}
 
-			if let data = data {
-				let response = try! self.decoder.decode(LocationsResponse.self, from: data)
+			if let data = data,
+				let response = try? self.decoder.decode(LocationsResponse.self, from: data) {
 				completion(response, nil)
 			}
 		}.resume()

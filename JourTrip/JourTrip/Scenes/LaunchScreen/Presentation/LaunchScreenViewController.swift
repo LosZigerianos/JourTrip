@@ -29,18 +29,21 @@ class LaunchScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		let email = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.email) as! String
-		let password = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.password) as! String
-		let credentials = (email: email, password: password)
+		if let email = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.email) as? String,
+			let password = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.password) as? String {
+			let credentials = (email: email, password: password)
 
-        loginService.login(with: credentials)
-			.debug("Login")
-			.observeOn(MainScheduler.instance)
-			.subscribe(
-				onSuccess: { [weak self] isSuccessful in
-					self?.launchScreenNavigator.nextSceneAfterLogin(isSuccessful)
-				},
-				onError: { [weak self] _ in self?.launchScreenNavigator.nextSceneAfterLogin(false) })
-			.disposed(by: disposeBag)
+			loginService.login(with: credentials)
+				.debug("Login")
+				.observeOn(MainScheduler.instance)
+				.subscribe(
+					onSuccess: { [weak self] isSuccessful in
+						self?.launchScreenNavigator.nextSceneAfterLogin(isSuccessful)
+					},
+					onError: { [weak self] _ in self?.launchScreenNavigator.nextSceneAfterLogin(false) })
+				.disposed(by: disposeBag)
+		} else {
+			launchScreenNavigator.nextSceneAfterLogin(false)
+		}
     }
 }

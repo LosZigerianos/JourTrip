@@ -10,11 +10,12 @@ import Foundation
 
 typealias Position = (latitude: Double, longitude: Double)
 
-protocol GetNearLocationsProtocol {
+protocol GetLocationsProtocol {
 	func invoke(with position: Position, completion: @escaping ([Location]) -> ())
+	func invoke(with name: String, completion: @escaping ([Location]) -> ())
 }
 
-struct GetNearLocations: GetNearLocationsProtocol {
+struct GetLocations: GetLocationsProtocol {
 
 	private let repository: LocationsServiceType
 
@@ -24,6 +25,13 @@ struct GetNearLocations: GetNearLocationsProtocol {
 
 	func invoke(with position: Position, completion: @escaping ([Location]) -> ()) {
 		repository.getNearLocations(latitude: position.latitude, longitude: position.longitude) { response, error in
+			guard let locations = response?.data else { return }
+			completion(locations)
+		}
+	}
+
+	func invoke(with name: String, completion: @escaping ([Location]) -> ()) {
+		repository.getLocations(byName: name) { response, error in
 			guard let locations = response?.data else { return }
 			completion(locations)
 		}

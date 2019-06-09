@@ -20,7 +20,7 @@ class SearchAssembly {
 		let viewController = SearchViewController()
 		viewController.dataSource = dataSource()
 		viewController.delegate = delegate()
-		viewController.getNearLocations = getNearLocations()
+		viewController.getLocations = getNearLocations()
 		viewController.getCurrentLocation = getCurrentLocation()
 		return viewController
 	}
@@ -33,8 +33,8 @@ class SearchAssembly {
 		return SearchCollectionViewDelegate()
 	}
 
-	func getNearLocations() -> GetNearLocationsProtocol {
-		return GetNearLocations(repository: repository)
+	func getNearLocations() -> GetLocationsProtocol {
+		return GetLocations(repository: repository)
 	}
 
 	func getCurrentLocation() -> GetCurrentLocationProtocol {

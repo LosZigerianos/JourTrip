@@ -10,7 +10,7 @@ import Foundation
 
 struct UserLogin: Codable {
 	let success: Bool
-	let metadata: Metadata
+	let metadata: Metadata?
 	let token: String
 }
 
@@ -24,7 +24,7 @@ extension UserLogin {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		success = try values.decode(Bool.self, forKey: .success)
-		metadata = try values.decode(Metadata.self, forKey: .metadata)
+		metadata = try values.decodeIfPresent(Metadata.self, forKey: .metadata)
 		token = try values.decode(String.self, forKey: .token)
 	}
 }
@@ -59,9 +59,9 @@ extension Metadata {
 	}
 }
 
-struct UserResponse: Codable {
+struct UserSignUp: Codable {
 	let success: Bool
-	let result: UserModel
+	let data: Metadata
 }
 
 struct UserModel: Codable {

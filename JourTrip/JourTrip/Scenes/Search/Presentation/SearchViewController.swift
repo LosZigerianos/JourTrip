@@ -30,7 +30,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Dependencies
 	var dataSource: SearchCollectionViewDataSource!
 	var delegate: SearchCollectionViewDelegate!
-	var getNearLocations: GetNearLocationsProtocol!
+	var getLocations: GetLocationsProtocol!
 	var getCurrentLocation: GetCurrentLocationProtocol!
 
 	// MARK: - Properties
@@ -51,7 +51,7 @@ private extension SearchViewController {
 	func populateSearchData() {
 		getCurrentLocation.invoke { [weak self] position in
 			guard let self = self else { return }
-			self.getNearLocations.invoke(with: position) { locations in
+			self.getLocations.invoke(with: position) { locations in
 				self.dataSource.locations = locations
 				DispatchQueue.main.async {
 					self.collectionView.reloadData()
@@ -82,10 +82,12 @@ extension SearchViewController: UITextFieldDelegate {
 
 		if text.count > 2 {
 			dataSource.isSearching = true
-			dataSource.filteredLocations = dataSource.locations.filter { location in
-				(location.name?.lowercased().contains(text.lowercased()))!
+			getLocations.invoke(with: text) { [weak self] locations in
+				self?.dataSource.filteredLocations = locations
+				DispatchQueue.main.async {
+					self?.collectionView.reloadData()
+				}
 			}
-			collectionView.reloadData()
 		}
 	}
 }
