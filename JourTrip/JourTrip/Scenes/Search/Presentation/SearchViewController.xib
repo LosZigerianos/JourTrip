@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="JourTrip" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="4Kq-aT-xxv" id="CMj-gF-0LA"/>
+                <outlet property="headerView" destination="AgU-uQ-cu2" id="bMQ-ZY-0co"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4Kq-aT-xxv">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="170" width="375" height="497"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bIi-im-CFw">
                         <size key="itemSize" width="50" height="50"/>
@@ -30,13 +31,23 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgU-uQ-cu2" customClass="HeaderView" customModule="JourTrip" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="20" width="375" height="150"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="mzw-ei-wg4"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4Kq-aT-xxv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="195-kK-nVF"/>
+                <constraint firstItem="4Kq-aT-xxv" firstAttribute="top" secondItem="AgU-uQ-cu2" secondAttribute="bottom" id="4yQ-pI-IqT"/>
                 <constraint firstItem="4Kq-aT-xxv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LYd-PG-hkk"/>
-                <constraint firstItem="4Kq-aT-xxv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PhY-co-Eo4"/>
+                <constraint firstItem="AgU-uQ-cu2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QWe-Qr-gZp"/>
                 <constraint firstItem="4Kq-aT-xxv" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="e4s-zq-bvz"/>
+                <constraint firstItem="AgU-uQ-cu2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fg0-Di-qup"/>
+                <constraint firstItem="AgU-uQ-cu2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pqe-dJ-bRT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="96.799999999999997" y="85.007496251874073"/>
