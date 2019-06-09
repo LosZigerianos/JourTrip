@@ -21,6 +21,19 @@ enum ApiEndpoint {
 }
 
 extension ApiEndpoint {
+	func request<T: Encodable>(with baseURL: URL, andBody body: T) -> URLRequest {
+		let url = baseURL.appendingPathComponent(path)
+
+		let data = try! JSONEncoder().encode(body)
+
+		var request = URLRequest(url: url)
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		request.httpMethod = method.rawValue
+		request.httpBody = data
+
+		return request
+	}
+
 	func request(with baseURL: URL, adding parameters: [String: String] = [:]) -> URLRequest {
 		let url = buildUrl(with: baseURL, adding: parameters)
 
@@ -78,16 +91,10 @@ extension ApiEndpoint {
 				"latitude": String(latitude),
 				"longitude": String(longitude)
 			]
-		case .userSignUp(let credentials):
-			return [
-				"email": credentials.email,
-				"password": credentials.password
-			]
-		case .userLogin(let credentials):
-			return [
-				"email": credentials.email,
-				"password": credentials.password
-			]
+		case .userSignUp:
+			return [:]
+		case .userLogin:
+			return [:]
 		}
 	}
 }

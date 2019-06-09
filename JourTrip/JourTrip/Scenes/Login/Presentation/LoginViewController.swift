@@ -82,6 +82,7 @@ private extension LoginViewController {
             .disposed(by: disposeBag)
 
         outputs.loginSuccessful
+			.debug("LoginSuccessful")
             .drive(onNext: { [weak self] _ in
 				self?.navigator.navigateToTabBar()
             })

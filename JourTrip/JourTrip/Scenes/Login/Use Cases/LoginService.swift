@@ -13,6 +13,6 @@ typealias Credentials = (email: String, password: String)
 
 protocol LoginServiceType {
     func login(with credentials: Credentials,
-               completion: @escaping (_ response: UserLogin?, _ error: Error?) -> Void)
-    func login(with credentials: Credentials) -> Single<Void>
+               completion: @escaping (_ response: Bool?, _ error: Error?) -> Void)
+    func login(with credentials: Credentials) -> Single<Bool>
 }

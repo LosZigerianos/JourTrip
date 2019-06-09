@@ -54,8 +54,10 @@ private extension SearchViewController {
 			guard let self = self else { return }
 			self.getNearLocations.invoke(with: position) { locations in
 				self.dataSource.locations = locations
-				self.collectionView.reloadData()
-				self.collectionView.isHidden = false
+				DispatchQueue.main.async {
+					self.collectionView.reloadData()
+					self.collectionView.isHidden = false
+				}
 			}
 		}
 	}

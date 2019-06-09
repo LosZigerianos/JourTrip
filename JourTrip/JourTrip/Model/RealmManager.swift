@@ -17,7 +17,7 @@ class RealmManager: NSObject {
     fileprivate let realm = try! Realm()
     
     func save(user: UserLogin) -> Void {
-        guard let userModel = user.metadata else { fatalError("no user metadata") }
+        let userModel = user.metadata
         let realmUser: UserRealm = wrapper.userToDB(from: userModel)
         
         try! realm.write { () -> Void in

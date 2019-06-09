@@ -12,6 +12,6 @@ import RxCocoa
 
 protocol RegisterServiceType {
 	func register(with credentials: Credentials,
-				  completion: @escaping (_ response: UserResponse?, _ error: Error?) -> Void)
-	func register(with credentials: Credentials) -> Single<Void>
+				  completion: @escaping (_ response: Bool?, _ error: Error?) -> Void)
+	func register(with credentials: Credentials) -> Single<Bool>
 }
