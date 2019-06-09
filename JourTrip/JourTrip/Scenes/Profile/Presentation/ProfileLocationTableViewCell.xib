@@ -58,11 +58,6 @@
                     <constraint firstItem="3bA-59-KAV" firstAttribute="trailing" secondItem="X5A-hC-A4C" secondAttribute="trailing" id="wZE-gc-eHx"/>
                     <constraint firstItem="oBh-EO-btM" firstAttribute="leading" secondItem="10Y-h2-T7c" secondAttribute="leading" id="yaq-ga-ZpJ"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="subviews">
-                        <exclude reference="oBh-EO-btM"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
