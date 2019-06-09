@@ -70,15 +70,14 @@
 		AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E59229A02320006F2AC /* RealmManager.swift */; };
 		AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5B229A026E0006F2AC /* Wrapper.swift */; };
 		AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */; };
-		AC3BA0CF22ABB59500DDE88B /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BA0CE22ABB59500DDE88B /* ProfileCell.swift */; };
-		AC3BA0D122AC0E9B00DDE88B /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3BA0D022AC0E9B00DDE88B /* ProfileCell.xib */; };
-		AC3BA0D322AC13BA00DDE88B /* ProfileListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BA0D222AC13BA00DDE88B /* ProfileListCell.swift */; };
 		AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */; };
 		AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */; };
 		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
 		AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42435E2291F83E008111FB /* MainTabBarController.swift */; };
 		AC42437922934139008111FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42437822934139008111FB /* SearchViewController.swift */; };
+		AC45B6F022AD5C1E0002E163 /* ProfileLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45B6EE22AD5C1E0002E163 /* ProfileLocationTableViewCell.swift */; };
+		AC45B6F122AD5C1E0002E163 /* ProfileLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45B6EF22AD5C1E0002E163 /* ProfileLocationTableViewCell.xib */; };
 		AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */; };
 		AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */; };
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
@@ -168,15 +167,14 @@
 		AC347E59229A02320006F2AC /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		AC347E5B229A026E0006F2AC /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearCollectionViewCell.swift; sourceTree = "<group>"; };
-		AC3BA0CE22ABB59500DDE88B /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		AC3BA0D022AC0E9B00DDE88B /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
-		AC3BA0D222AC13BA00DDE88B /* ProfileListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListCell.swift; sourceTree = "<group>"; };
 		AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		AC42435E2291F83E008111FB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AC42437822934139008111FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AC45B6EE22AD5C1E0002E163 /* ProfileLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLocationTableViewCell.swift; sourceTree = "<group>"; };
+		AC45B6EF22AD5C1E0002E163 /* ProfileLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileLocationTableViewCell.xib; sourceTree = "<group>"; };
 		AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -541,9 +539,8 @@
 				AC14FAE022A443F600BC6EF8 /* ProfileViewController.swift */,
 				AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */,
 				AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */,
-				AC3BA0D022AC0E9B00DDE88B /* ProfileCell.xib */,
-				AC3BA0CE22ABB59500DDE88B /* ProfileCell.swift */,
-				AC3BA0D222AC13BA00DDE88B /* ProfileListCell.swift */,
+				AC45B6EE22AD5C1E0002E163 /* ProfileLocationTableViewCell.swift */,
+				AC45B6EF22AD5C1E0002E163 /* ProfileLocationTableViewCell.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -731,8 +728,8 @@
 				AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */,
 				2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */,
 				AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */,
+				AC45B6F122AD5C1E0002E163 /* ProfileLocationTableViewCell.xib in Resources */,
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
-				AC3BA0D122AC0E9B00DDE88B /* ProfileCell.xib in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
 				AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */,
 				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
@@ -805,8 +802,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC3BA0CF22ABB59500DDE88B /* ProfileCell.swift in Sources */,
-				AC3BA0D322AC13BA00DDE88B /* ProfileListCell.swift in Sources */,
 				208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */,
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
 				ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */,
@@ -856,6 +851,7 @@
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
 				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
 				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
+				AC45B6F022AD5C1E0002E163 /* ProfileLocationTableViewCell.swift in Sources */,
 				20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,7 +48,7 @@ final class Location: Mappable {
         comments <- map["comments"]
         id <- map["_id"]
         name <- map["name"]
-        address <- map["formattedAddress"]
+        address <- map["formatted_address"]
         postalCode <- map["postalCode"]
         locale <- map["cc"]
         city <- map["city"]

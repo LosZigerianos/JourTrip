@@ -48,7 +48,7 @@ final class Profile: Mappable {
 }
 
 final class Comment: Mappable {
-    var id, user: String?
+    var id: String?
     var location: Location?
     var commentDescription, creationDate: String?
     
@@ -56,9 +56,8 @@ final class Comment: Mappable {
     
     func mapping(map: Map) {
         id <- map["_id"]
-        user <- map["user"]
         location <- map["location"]
         commentDescription <- map["description"]
-        creationDate <- map["creationDate"]
+        creationDate <- map["creation_date"]
     }
 }
