@@ -19,14 +19,6 @@ class SearchCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollec
 		print("User tapped on row \(indexPath)")
 	}
 
-	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		guard let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseIdentifier, for: indexPath) as? HeaderView else {
-			return UICollectionReusableView()
-		}
-//		reusableView.searchBar.delegate = self
-		return reusableView
-	}
-
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let totalSpacing = (2 * Constants.spacing) + ((Constants.columns - 1) * Constants.spacing)
 

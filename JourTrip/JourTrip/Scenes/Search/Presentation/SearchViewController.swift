@@ -15,83 +15,79 @@ final class SearchViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView! {
 		didSet {
 			let nib = UINib(nibName: "NearCollectionViewCell", bundle: nil)
-			collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseIdentifier)
-			collectionView.register(nib, forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
+			collectionView.register(nib,
+									forCellWithReuseIdentifier: NearCollectionViewCell.reuseIdentifier)
 		}
 	}
-    
+	@IBOutlet weak var headerView: HeaderView!
+
 	// MARK: - Constants
 	enum Constants {
 		static let columns: CGFloat = 2
 		static let spacing: CGFloat = 8
 	}
 
-    // MARK: - Properties
-    var locationManager: CLLocationManager?
+    // MARK: - Dependencies
 	var dataSource: SearchCollectionViewDataSource!
 	var delegate: SearchCollectionViewDelegate!
-	var getNearLocations: GetNearLocationsProtocol!
-    var latitude = 41.6560593
-    var longitude = -0.87734
+	var getLocations: GetLocationsProtocol!
+	var getCurrentLocation: GetCurrentLocationProtocol!
+
+	// MARK: - Properties
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 
-    // MARK: - Life cycle
+    // MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-		initializeLocationManager()
-		setupUI()
+		collectionView.isHidden = true
+		setupCollectionView()
+		populateSearchData()
+		headerView.searchBar.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
+    }
+}
+
+// MARK: - Private Methods
+private extension SearchViewController {
+	func populateSearchData() {
+		getCurrentLocation.invoke { [weak self] position in
+			guard let self = self else { return }
+			self.getLocations.invoke(with: position) { locations in
+				self.dataSource.locations = locations
+				DispatchQueue.main.async {
+					self.collectionView.reloadData()
+					self.collectionView.isHidden = false
+				}
+			}
+		}
+	}
+
+	func setupCollectionView() {
 		collectionView.delegate = delegate
 		collectionView.dataSource = dataSource
-		let position = Position(latitude: latitude, longitude: longitude)
-
-		getNearLocations.invoke(with: position) { locations in
-			self.dataSource.locations = locations
-			self.collectionView.reloadData()
-		}
-    }
-    
-    // MARK: - UI
-    func setupUI() {
 		collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.spacing, left: Constants.spacing, bottom: Constants.spacing, right: Constants.spacing)
 		collectionViewLayout.minimumLineSpacing = Constants.spacing
 		collectionViewLayout.minimumInteritemSpacing = Constants.spacing
-		collectionViewLayout.headerReferenceSize = .init(width: view.frame.width, height: 150)
-        collectionView.collectionViewLayout = collectionViewLayout
-    }
-    
-    // MARK: - Location Manager
-    func initializeLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
-    }
-}
-
-// MARK: - LocationManager Delegate
-extension SearchViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // TODO: manage when user not authorize the location
-        if status == .authorizedAlways {
-
-        }
-    }
+		collectionView.collectionViewLayout = collectionViewLayout
+	}
 }
 
 extension SearchViewController: UITextFieldDelegate {
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//		let text = textField.text ?? ""
-//		if text.isEmpty {
-//			isSearching = false
-//			collectionView.reloadData()
-//		}
-//
-//		if text.count > 2 {
-//			isSearching = true
-//			filteredLocations = locations.filter { location in
-//				(location.name?.lowercased().contains(text.lowercased()))!
-//			}
-//		}
-//		textField.resignFirstResponder()
-		return false
+	@objc
+	func textDidChange(_ textField: UITextField) {
+		let text = textField.text ?? ""
+		if text.isEmpty {
+			dataSource.isSearching = false
+			collectionView.reloadData()
+		}
+
+		if text.count > 2 {
+			dataSource.isSearching = true
+			getLocations.invoke(with: text) { [weak self] locations in
+				self?.dataSource.filteredLocations = locations
+				DispatchQueue.main.async {
+					self?.collectionView.reloadData()
+				}
+			}
+		}
 	}
 }

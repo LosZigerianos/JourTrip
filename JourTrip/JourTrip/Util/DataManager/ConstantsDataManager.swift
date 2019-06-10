@@ -7,8 +7,10 @@
 //
 
 struct ConstantsDataManager {
-    static let token = "com.zigerianos.jourtrip.user"
+    static let token = "com.zigerianos.jourtrip.token"
     static let id = "com.zigerianos.jourtrip.id"
+	static let email = "com.zigerianos.jourtrip.email"
+	static let password = "com.zigerianos.jourtrip.password"
 }
 
 

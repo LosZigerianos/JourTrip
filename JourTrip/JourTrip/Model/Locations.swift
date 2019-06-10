@@ -6,83 +6,67 @@
 //  Copyright © 2019 Los Zigerianos. All rights reserved.
 //
 
-import ObjectMapper
+import Foundation
 
-final class LocationsResponse: Mappable {
-    var success: Bool?
-    var count: Int?
-    var data: [Location]?
-    
-    required init?(map: Map){
-    }
-    
-    func mapping(map: Map) {
-        success <- map["success"]
-        count <- map["count"]
-        data <- map["data"]
-        
-    }
+struct LocationsResponse: Codable {
+	let success: Bool
+	let count: Int
+	let data: [Location]
 }
 
-final class Location: Mappable {
-    var geometry: Geometry?
-    var rating: Rating?
-    var description: String?
-    var photos: [String]?
-    var tags: [String] = []
-    var comments: [String] = []
-    var id, name, address: String?
-    var postalCode: String?
-    var locale, city, state, country: String?
-    var formattedAddress: String?
-    
-    required init?(map: Map){
-    }
-    
-    func mapping(map: Map) {
-        geometry <- map["geometry"]
-        rating <- map["rating"]
-        description <- map["description"]
-        photos <- map["photos"]
-        tags <- map["tags"]
-        comments <- map["comments"]
-        id <- map["_id"]
-        name <- map["name"]
-        address <- map["formatted_address"]
-        postalCode <- map["postalCode"]
-        locale <- map["cc"]
-        city <- map["city"]
-        state <- map["state"]
-        country <- map["country"]
-        formattedAddress <- map["formattedAddress"]
-    }
+struct Location: Codable {
+	let geometry: Geometry?
+	let rating: Rating?
+	let description: String?
+	let photos: [String]?
+	let tags: [String]?
+	let comments: [String]?
+	let id, name, address: String?
+	let postalCode: String?
+	let locale: String?
+	let city: String?
+	let state:String?
+	let country: String?
+	let formattedAddress: String?
 }
 
-final class Geometry: Mappable {
-    var type: String?
-    var coordinates: [Double]?
-    
-    required init?(map: Map) {
-    }
-    
-    func mapping(map: Map) {
-        type <- map["type"]
-        coordinates <- map["coordinates"]
-    }
+extension Location {
+	enum CodingKeys: String, CodingKey {
+		case geometry, rating, description
+		case photos, tags, comments
+		case id, name, address
+		case postalCode, city, state
+		case locale = "cc", country, formattedAddress
+	}
+
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		geometry = try values.decodeIfPresent(Geometry.self, forKey: .geometry)
+		rating = try values.decodeIfPresent(Rating.self, forKey: .rating)
+		description = try values.decodeIfPresent(String.self, forKey: .description)
+		photos = try values.decodeIfPresent([String].self, forKey: .photos)
+		tags = try values.decodeIfPresent([String].self, forKey: .tags)
+		comments = try values.decodeIfPresent([String].self, forKey: .comments)
+		id = try values.decodeIfPresent(String.self, forKey: .id)
+		name = try values.decodeIfPresent(String.self, forKey: .name)
+		address = try values.decodeIfPresent(String.self, forKey: .address)
+		postalCode = try values.decodeIfPresent(String.self, forKey: .postalCode)
+		locale = try values.decodeIfPresent(String.self, forKey: .locale)
+		city = try values.decodeIfPresent(String.self, forKey: .city)
+		state = try values.decodeIfPresent(String.self, forKey: .state)
+		country = try values.decodeIfPresent(String.self, forKey: .country)
+		formattedAddress = try values.decodeIfPresent(String.self, forKey: .formattedAddress)
+	}
 }
 
-final class Rating: Mappable {
-    var totalVotes: Int?
-    var totalValues: Int?
-    var value: Int?
-    
-    required init?(map: Map) {
-    }
-    
-    func mapping(map: Map) {
-        totalVotes <- map["totalVotes"]
-        totalValues <- map["totalValues"]
-        value <- map["value"]
-    }
+struct Geometry: Codable {
+	let type: String
+	let coordinates: [Double]
+}
+
+struct Rating: Codable {
+	let totalVotes: Int?
+	let totalValues: Int?
+	let value: Int?
 }
 

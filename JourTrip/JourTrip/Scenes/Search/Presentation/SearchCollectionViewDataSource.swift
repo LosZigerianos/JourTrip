@@ -29,6 +29,7 @@ class SearchCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
 		let nearCell = collectionView.dequeueReusableCell(withReuseIdentifier: NearCollectionViewCell.reuseIdentifier, for: indexPath) as! NearCollectionViewCell
 
+		
 		if let photos = nearLocation.photos,
 			let photo = photos.first,
 			let url = URL(string: photo) {

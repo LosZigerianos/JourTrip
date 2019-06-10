@@ -24,13 +24,13 @@ struct SignUpViewModel {
 	func transform(inputs: Inputs) -> Outputs {
 		let emailValid = inputs.email
 			.distinctUntilChanged()
-			.throttle(0.2, scheduler: MainScheduler.instance)
+			.throttle(.milliseconds(2), scheduler: MainScheduler.instance)
 			.map(validator.validate(email:))
 			.asDriver(onErrorDriveWith: .empty())
 
 		let passwordValid = inputs.password
 			.distinctUntilChanged()
-			.throttle(0.2, scheduler: MainScheduler.instance)
+			.throttle(.milliseconds(2), scheduler: MainScheduler.instance)
 			.map(validator.validate(password:))
 			.asDriver(onErrorDriveWith: .empty())
 
@@ -60,6 +60,6 @@ extension SignUpViewModel {
 
 	struct Outputs {
 		let buttonEnabled: Driver<Bool>
-		let signUpSuccesful: Driver<Void>
+		let signUpSuccesful: Driver<Bool>
 	}
 }

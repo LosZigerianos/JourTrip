@@ -27,7 +27,7 @@ struct LoginViewModel {
         // Email is valid if it has > 2 characters
         let emailValid = inputs.emailText // a
             .distinctUntilChanged()
-            .throttle(0.2, scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(2), scheduler: MainScheduler.instance)
             .map(loginValidator.validate(email:))
             .asDriver(onErrorDriveWith: .empty())
 
@@ -35,7 +35,7 @@ struct LoginViewModel {
         // Password is valid if it has > 2 characters
         let passwordValid = inputs.passwordText
             .distinctUntilChanged()
-            .throttle(0.2, scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(2), scheduler: MainScheduler.instance)
             .map(loginValidator.validate(password:))
             .asDriver(onErrorDriveWith: .empty())
 
@@ -54,7 +54,9 @@ struct LoginViewModel {
         // Otherwise the sequence won't emit any value
         let loginSuccessful = inputs.buttonTap
             .withLatestFrom(credentials)
+			.debug("Credentials")
             .flatMap(loginService.login(with:))
+			.debug("LoginWith")
             .asDriver(onErrorDriveWith: .never())
 
         return Outputs(buttonEnabled: buttonEnabled, loginSuccessful: loginSuccessful)
@@ -74,7 +76,7 @@ extension LoginViewModel {
     struct Outputs {
         /// A sequence with true in case of enabled and false otherwise
         let buttonEnabled: Driver<Bool>
-        /// A sequence with a Void value when the login is successful
-        let loginSuccessful: Driver<Void>
+        /// A sequence with a boolean value when the login is successful
+        let loginSuccessful: Driver<Bool>
     }
 }

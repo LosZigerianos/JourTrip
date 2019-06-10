@@ -9,7 +9,11 @@
 import UIKit
 
 final class AppAssembly {
-    private(set) lazy var initialAssembly: InitialAssembly = InitialAssembly(loginAssembly: loginAssembly,
+	private(set) lazy var launchScreenAssembly: LaunchScreenAssembly = LaunchScreenAssembly(initialAssembly: initialAssembly,
+																							tabBarAssembly: tabBarAssembly,
+																							loginService: webService)
+	private(set) lazy var initialAssembly: InitialAssembly = InitialAssembly(navigationController: navigationController,
+																			 loginAssembly: loginAssembly,
                                                                              signUpAssembly: signUpAssembly)
     private lazy var loginAssembly: LoginAssembly = LoginAssembly(navigationController: navigationController,
 																  loginService: webService,

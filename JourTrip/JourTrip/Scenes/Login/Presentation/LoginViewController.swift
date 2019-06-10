@@ -44,9 +44,6 @@ final class LoginViewController: UIViewController {
         setupNavigationControllerAppareance()
         setupButtonAppareance()
         viewModelBindings()
-        // test purposes
-        self.emailTextField.text = "invitado@example.com"
-        self.passwordTextField.text = "123123"
     }
 }
 
@@ -82,6 +79,7 @@ private extension LoginViewController {
             .disposed(by: disposeBag)
 
         outputs.loginSuccessful
+			.debug("LoginSuccessful")
             .drive(onNext: { [weak self] _ in
 				self?.navigator.navigateToTabBar()
             })

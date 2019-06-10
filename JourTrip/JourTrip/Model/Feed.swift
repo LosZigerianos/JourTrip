@@ -6,18 +6,10 @@
 //  Copyright © 2019 Los Zigerianos. All rights reserved.
 //
 
-import ObjectMapper
+import Foundation
 
-final class FeedResponse: Mappable {
-    var success: Bool?
-    var data: [Comment]?
-    var error: String?
-    
-    required init?(map: Map){}
-    
-    func mapping(map: Map) {
-        success <- map["success"]
-        data <- map["data"]
-        error <- map["error"]
-    }
+struct FeedResponse: Codable {
+	let success: Bool?
+	let data: [Comment]?
+	let error: String?
 }

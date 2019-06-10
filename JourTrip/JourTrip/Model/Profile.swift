@@ -6,60 +6,26 @@
 //  Copyright © 2019 Los Zigerianos. All rights reserved.
 //
 
-import ObjectMapper
+import Foundation
 
-final class ProfileResponse: Mappable {
-    var success: Bool?
-    var data: Profile?
-    var error: String?
-    
-    required init?(map: Map){}
-    
-    func mapping(map: Map) {
-        success <- map["success"]
-        data <- map["data"]
-        error <- map["error"]
-    }
+struct ProfileResponse: Codable {
+	let success: Bool?
+	let data: Profile?
+	let error: String?
 }
 
-final class Profile: Mappable {
-    var fullname: String?
-    var following, followers: Int?
-    var comments: [Comment]?
-    var photo: String?
-    var provider, id, email, creationDate: String?
-    var updatedAt, username: String?
-    
-    required init?(map: Map){}
-    
-    func mapping(map: Map) {
-        fullname <- map["fullname"]
-        following <- map["following"]
-        followers <- map["followers"]
-        comments <- map["comments"]
-        photo <- map["photo"]
-        provider <- map["provider"]
-        id <- map["_id"]
-        email <- map["email"]
-        creationDate <- map["creation_date"]
-        updatedAt <- map["updated_at"]
-        username <- map["username"]
-    }
+struct Profile: Codable {
+	let fullname: String?
+	let following, followers: Int?
+	let comments: [Comment]?
+	let photo: String?
+	let provider, id, email, creationDate: String?
+	let updatedAt, username: String?
 }
 
-final class Comment: Mappable {
-    var id: String?
-    var user: Profile?
-    var location: Location?
-    var commentDescription, creationDate: String?
-    
-    required init?(map: Map){}
-    
-    func mapping(map: Map) {
-        id <- map["_id"]
-        user <- map["user"]
-        location <- map["location"]
-        commentDescription <- map["description"]
-        creationDate <- map["creation_date"]
-    }
+struct Comment: Codable {
+	let id: String?
+	let user: Profile?
+	let location: Location?
+	let commentDescription, creationDate: String?
 }

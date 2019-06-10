@@ -36,9 +36,11 @@ final class FeedViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        getTimeline.invoke(with: "") { (comments) in
-            self.comments = comments
-            self.collectionView.reloadData()
+        getTimeline.invoke(with: "") { [weak self] comments in
+            self?.comments = comments
+			DispatchQueue.main.async {
+				self?.collectionView.reloadData()
+			}
         }
     }
 
@@ -59,7 +61,7 @@ extension FeedViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var feed = comments[indexPath.row]
         
-        let nearCell = collectionView.dequeueReusableCell(withReuseIdentifier: NearCollectionViewCell.reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
+        let nearCell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
         
         if let user = feed.user,
             let location = feed.location,

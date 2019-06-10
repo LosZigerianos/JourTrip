@@ -7,9 +7,7 @@
 
 import UIKit
 
-class HeaderView: UICollectionReusableView {
-	static let reuseIdentifier = String(describing: self)
-
+class HeaderView: UIView {
 	lazy var searchBar: SearchBar = {
 		let searchBar = SearchBar()
 		searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +39,7 @@ private extension HeaderView {
 	func sharedInit() {
 		addSubview(searchBar)
 		NSLayoutConstraint.activate([
-			searchBar.topAnchor.constraint(equalTo: topAnchor),
+			searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
 			searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
 			searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
 			searchBar.heightAnchor.constraint(equalToConstant: 52)

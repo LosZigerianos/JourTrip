@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol InitialViewControllerProvider: class {
+	func viewController() -> InitialViewController
+}
+
 class InitialViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var signUpButton: UIButton! {

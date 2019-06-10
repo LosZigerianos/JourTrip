@@ -16,7 +16,7 @@ class Wrapper: NSObject {
         let realmUser = UserRealm()
         
         realmUser.email = userModel.email ?? ""
-        realmUser.userId = userModel.id ?? ""
+        realmUser.userId = userModel.id
         realmUser.name = userModel.fullname ?? ""
         realmUser.userImage = "todo"
         
@@ -24,9 +24,13 @@ class Wrapper: NSObject {
     }
     
     func userMetadata(from userRealm: UserRealm) -> Metadata {
-        guard let userModel = Metadata(fullname: userRealm.name, following: [], provider: "", id: userRealm.userId!, email: userRealm.email, creationDate: "", updatedAt: "") else {
-            fatalError("userModel error from userRealm")
-        }
+        let userModel = Metadata(fullname: userRealm.name,
+								 following: [],
+								 provider: "",
+								 id: userRealm.userId!,
+								 email: userRealm.email,
+								 creationDate: "",
+								 updatedAt: "")
         return userModel
     }
 }

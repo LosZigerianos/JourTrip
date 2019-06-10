@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		20392471227B777D0061E59B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20392470227B777D0061E59B /* LoginViewController.xib */; };
 		20392473227B81330061E59B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20392472227B81320061E59B /* LoginViewModel.swift */; };
+		2040028622A6F52F005BF21A /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028422A6F52F005BF21A /* LaunchScreenViewController.swift */; };
+		2040028722A6F52F005BF21A /* LaunchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2040028522A6F52F005BF21A /* LaunchScreenViewController.xib */; };
+		2040028922A6F61C005BF21A /* LaunchScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028822A6F61C005BF21A /* LaunchScreenAssembly.swift */; };
+		2040028C22A6F710005BF21A /* InitialNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028B22A6F710005BF21A /* InitialNavigator.swift */; };
+		2040028E22A70248005BF21A /* LaunchScreenNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028D22A70248005BF21A /* LaunchScreenNavigator.swift */; };
+		2070593122AECF75005D17A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070593022AECF75005D17A7 /* CustomTextField.swift */; };
 		208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A16F1227B761B00E36CDF /* LoginViewController.swift */; };
 		2099536E2286D0DD006D6346 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536D2286D0DD006D6346 /* LoginService.swift */; };
 		209953702286D10D006D6346 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536F2286D10D006D6346 /* LoginValidator.swift */; };
@@ -42,7 +48,6 @@
 		209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953BC2288A7B0006D6346 /* LoginAssembly.swift */; };
 		209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C22288AAAE006D6346 /* SignUpViewController.swift */; };
 		209953C52288AAAE006D6346 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 209953C32288AAAE006D6346 /* SignUpViewController.xib */; };
-		209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C62288AB1F006D6346 /* CustomTextField.swift */; };
 		209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953C82288AE0A006D6346 /* SignUpNavigator.swift */; };
 		209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953CA2288AE8A006D6346 /* SignUpAssembly.swift */; };
 		20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */; };
@@ -50,10 +55,11 @@
 		20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D242299E71100D06660 /* SignUpViewModel.swift */; };
 		20A10D282299E7B700D06660 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D272299E7B700D06660 /* RegisterService.swift */; };
 		20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A10D292299E7D600D06660 /* SignUpValidator.swift */; };
-		20D8656922A41458005D04FA /* GetNearLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656822A41458005D04FA /* GetNearLocations.swift */; };
+		20D8656922A41458005D04FA /* GetLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656822A41458005D04FA /* GetLocations.swift */; };
 		20D8656B22A4192D005D04FA /* SearchCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656A22A4192D005D04FA /* SearchCollectionViewDataSource.swift */; };
 		20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656C22A41D9D005D04FA /* SearchCollectionViewDelegate.swift */; };
 		20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8656F22A424F2005D04FA /* SearchAssembly.swift */; };
+		20D8657222A43640005D04FA /* GetCurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8657122A43640005D04FA /* GetCurrentLocation.swift */; };
 		20E7F419229F045500814E71 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F418229F045500814E71 /* HeaderView.swift */; };
 		20E7F41D229F07E700814E71 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F41C229F07E700814E71 /* SearchBar.swift */; };
 		20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */; };
@@ -72,7 +78,6 @@
 		AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */; };
 		AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */; };
 		AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */; };
-		AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4092992272517200BB6F0E /* ConstantNetworking.swift */; };
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
 		AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42435E2291F83E008111FB /* MainTabBarController.swift */; };
 		AC42437922934139008111FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42437822934139008111FB /* SearchViewController.swift */; };
@@ -111,6 +116,12 @@
 /* Begin PBXFileReference section */
 		20392470227B777D0061E59B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		20392472227B81320061E59B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2040028422A6F52F005BF21A /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		2040028522A6F52F005BF21A /* LaunchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreenViewController.xib; sourceTree = "<group>"; };
+		2040028822A6F61C005BF21A /* LaunchScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenAssembly.swift; sourceTree = "<group>"; };
+		2040028B22A6F710005BF21A /* InitialNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigator.swift; sourceTree = "<group>"; };
+		2040028D22A70248005BF21A /* LaunchScreenNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenNavigator.swift; sourceTree = "<group>"; };
+		2070593022AECF75005D17A7 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		208A16F1227B761B00E36CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2099536D2286D0DD006D6346 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		2099536F2286D10D006D6346 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
@@ -146,7 +157,6 @@
 		209953BC2288A7B0006D6346 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		209953C22288AAAE006D6346 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		209953C32288AAAE006D6346 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
-		209953C62288AB1F006D6346 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		209953C82288AE0A006D6346 /* SignUpNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigator.swift; sourceTree = "<group>"; };
 		209953CA2288AE8A006D6346 /* SignUpAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAssembly.swift; sourceTree = "<group>"; };
 		20A10D1F2295DE2A00D06660 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
@@ -154,10 +164,11 @@
 		20A10D242299E71100D06660 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		20A10D272299E7B700D06660 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		20A10D292299E7D600D06660 /* SignUpValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidator.swift; sourceTree = "<group>"; };
-		20D8656822A41458005D04FA /* GetNearLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearLocations.swift; sourceTree = "<group>"; };
+		20D8656822A41458005D04FA /* GetLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocations.swift; sourceTree = "<group>"; };
 		20D8656A22A4192D005D04FA /* SearchCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		20D8656C22A41D9D005D04FA /* SearchCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		20D8656F22A424F2005D04FA /* SearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembly.swift; sourceTree = "<group>"; };
+		20D8657122A43640005D04FA /* GetCurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocation.swift; sourceTree = "<group>"; };
 		20E7F418229F045500814E71 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		20E7F41C229F07E700814E71 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
@@ -177,7 +188,6 @@
 		AC347E5D229A24C40006F2AC /* NearCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
-		AC4092992272517200BB6F0E /* ConstantNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantNetworking.swift; sourceTree = "<group>"; };
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		AC42435E2291F83E008111FB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AC42437822934139008111FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +235,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2040028122A6F4F9005BF21A /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2040028222A6F504005BF21A /* DI */,
+				2040028322A6F509005BF21A /* Presentation */,
+				2070592F22AECCAE005D17A7 /* Navigator */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		2040028222A6F504005BF21A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				2040028822A6F61C005BF21A /* LaunchScreenAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		2040028322A6F509005BF21A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2040028422A6F52F005BF21A /* LaunchScreenViewController.swift */,
+				2040028522A6F52F005BF21A /* LaunchScreenViewController.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2040028A22A6F6FC005BF21A /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				2040028B22A6F710005BF21A /* InitialNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		2050BE8A2295DD980031B903 /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,9 +280,19 @@
 			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
+		2070592F22AECCAE005D17A7 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				2040028D22A70248005BF21A /* LaunchScreenNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		208A16EE227B75E000E36CDF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2070593022AECF75005D17A7 /* CustomTextField.swift */,
+				2040028122A6F4F9005BF21A /* LaunchScreen */,
 				2050BE8A2295DD980031B903 /* Tab Bar */,
 				20995381228880EB006D6346 /* Initial */,
 				2099536B2286CE18006D6346 /* Login */,
@@ -245,7 +300,6 @@
 				AC42437722934126008111FB /* Search */,
 				AC4243602292013F008111FB /* Feed */,
 				AC14FADA22A4430D00BC6EF8 /* Profile */,
-				209953C62288AB1F006D6346 /* CustomTextField.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -295,6 +349,7 @@
 			children = (
 				209953B82288A638006D6346 /* DI */,
 				20995382228880F3006D6346 /* Presentation */,
+				2040028A22A6F6FC005BF21A /* Navigator */,
 			);
 			path = Initial;
 			sourceTree = "<group>";
@@ -470,7 +525,8 @@
 		20E7F42622A13BB100814E71 /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
-				20D8656822A41458005D04FA /* GetNearLocations.swift */,
+				20D8656822A41458005D04FA /* GetLocations.swift */,
+				20D8657122A43640005D04FA /* GetCurrentLocation.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -634,7 +690,6 @@
 		ACDF9A52226FA3E900B65291 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				AC4092992272517200BB6F0E /* ConstantNetworking.swift */,
 				AC40929D2272530200BB6F0E /* ServiceError.swift */,
 				20E7F42022A1210900814E71 /* ApiEndpoint.swift */,
 				20E7F42422A1357E00814E71 /* WebService.swift */,
@@ -728,6 +783,7 @@
 					};
 					AC127E6D226F9CEB0004C0F1 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -776,6 +832,7 @@
 				209953A922888E77006D6346 /* Apercu Pro Mono.otf in Resources */,
 				AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */,
 				2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */,
+				2040028722A6F52F005BF21A /* LaunchScreenViewController.xib in Resources */,
 				AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */,
 				ACF4D7C122AE56F80093BA25 /* FeedCollectionViewCell.xib in Resources */,
 				AC45B6F122AD5C1E0002E163 /* ProfileLocationTableViewCell.xib in Resources */,
@@ -876,31 +933,38 @@
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
 				AC42437922934139008111FB /* SearchViewController.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
-				AC40929A2272517200BB6F0E /* ConstantNetworking.swift in Sources */,
 				20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */,
 				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
 				AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */,
-				20D8656922A41458005D04FA /* GetNearLocations.swift in Sources */,
+				20D8656922A41458005D04FA /* GetLocations.swift in Sources */,
 				ACF4D7B822ADC1990093BA25 /* FeedViewController.swift in Sources */,
 				ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */,
 				ACF4D7BB22ADC2D70093BA25 /* GetTimeline.swift in Sources */,
+				20D8656922A41458005D04FA /* GetLocations.swift in Sources */,
+				2040028922A6F61C005BF21A /* LaunchScreenAssembly.swift in Sources */,
+				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
+				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
+				20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */,
+				2040028E22A70248005BF21A /* LaunchScreenNavigator.swift in Sources */,
 				20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */,
+				2040028C22A6F710005BF21A /* InitialNavigator.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
+				20D8657222A43640005D04FA /* GetCurrentLocation.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
 				ACF4D7B322ADBE4E0093BA25 /* FeedAssembly.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
 				AC14FADF22A4437100BC6EF8 /* ProfileAssembly.swift in Sources */,
 				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,
-				209953C72288AB1F006D6346 /* CustomTextField.swift in Sources */,
 				ACBA440622A6FA540040055B /* Profile.swift in Sources */,
 				AC14FAE222A443F600BC6EF8 /* ProfileViewController.swift in Sources */,
 				20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */,
+				2070593122AECF75005D17A7 /* CustomTextField.swift in Sources */,
 				20D8656B22A4192D005D04FA /* SearchCollectionViewDataSource.swift in Sources */,
 				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
@@ -908,6 +972,7 @@
 				ACF4D7C022AE56F80093BA25 /* FeedCollectionViewCell.swift in Sources */,
 				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
 				AC45B6F022AD5C1E0002E163 /* ProfileLocationTableViewCell.swift in Sources */,
+				2040028622A6F52F005BF21A /* LaunchScreenViewController.swift in Sources */,
 				20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1107,7 +1172,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.loszigerianos.JourTrips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1127,7 +1192,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.loszigerianos.JourTrips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

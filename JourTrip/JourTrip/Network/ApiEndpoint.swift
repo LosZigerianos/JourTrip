@@ -18,21 +18,28 @@ enum ApiEndpoint {
 	case userSignUp(credentials: Credentials)
 	case locations(name: String)
 	case nearLocations(latitude: Double, longitude: Double)
-    case profile(userID: String)
-    case comments(userID: String)
+	case profile(userID: String)
+	case comments(userID: String)
 }
 
 extension ApiEndpoint {
-	func request(with baseURL: URL, adding parameters: [String: String]? = nil) -> URLRequest {
+	func request<T: Encodable>(with baseURL: URL, andBody body: T) -> URLRequest {
 		let url = baseURL.appendingPathComponent(path)
 
-		var newParameters = self.parameters
-		parameters?.forEach { newParameters.updateValue($1, forKey: $0) }
+		let data = try! JSONEncoder().encode(body)
 
-		var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
-		components.queryItems = newParameters.map(URLQueryItem.init)
+		var request = URLRequest(url: url)
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		request.httpMethod = method.rawValue
+		request.httpBody = data
 
-		var request = URLRequest(url: components.url!)
+		return request
+	}
+
+	func request(with baseURL: URL, adding parameters: [String: String] = [:]) -> URLRequest {
+		let url = buildUrl(with: baseURL, adding: parameters)
+
+		var request = URLRequest(url: url)
 		request.httpMethod = method.rawValue
 
 		return request
@@ -50,7 +57,6 @@ extension ApiEndpoint {
 		var request = URLRequest(url: components.url!)
 		return request.url!
 	}
-    
 }
 
 extension ApiEndpoint {
@@ -73,11 +79,11 @@ extension ApiEndpoint {
 			return "/users/login"
 		case .userSignUp:
 			return "/users/signup"
-        case .profile:
-            return "/users/profile/5ceb706146e3c87667d594c2"
-        case .comments:
-            return "/comments/userId/5ceb706146e3c87667d594c2/timeline"
-            // FIXME: testing purposes
+		case .profile:
+			return "/users/profile/5ceb706146e3c87667d594c2"
+		case .comments:
+			return "/comments/userId/5ceb706146e3c87667d594c2/timeline"
+			// FIXME: testing purposes
 		}
 	}
 
@@ -92,24 +98,12 @@ extension ApiEndpoint {
 				"latitude": String(latitude),
 				"longitude": String(longitude)
 			]
-		case .userSignUp(let credentials):
-			return [
-				"email": credentials.email,
-				"password": credentials.password
-			]
-		case .userLogin(let credentials):
-			return [
-				"email": credentials.email,
-				"password": credentials.password
-			]
-        case .profile(let userID):
-            return [
-                "userID": userID
-            ]
-        case .comments(let userID):
-            return [
-                "userID": userID
-            ]
+		case .userSignUp, .userLogin:
+			return [:]
+		case .profile(let userID):
+			return [:]
+		case .comments(let userID):
+			return [:]
 		}
 	}
 }

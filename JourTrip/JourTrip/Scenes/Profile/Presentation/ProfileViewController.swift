@@ -29,7 +29,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         setupUI()
-        getProfile.invoke(with: "") { (profile) in
+        getProfile.invoke(with: "") { [weak self] profile in
+			guard let self = self else { return }
             if let error = profile.error {
                 // TODO: show alert
                 print(error)
@@ -42,7 +43,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.userProfile = profile
                 self.userComments = comments
                 self.isDataReady = true
-                self.tableView.reloadData()
+				DispatchQueue.main.async {
+					self.tableView.reloadData()
+				}
             }
         }
     }
@@ -113,7 +116,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let address = location.address,
                     let photo = location.photos?.first,
                     let url = URL(string: photo),
-                    let tag = location.tags.first else {
+                    let tag = location.tags?.first else {
                         fatalError("location error!")
                 }
                 
