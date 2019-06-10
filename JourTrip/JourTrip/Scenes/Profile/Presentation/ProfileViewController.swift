@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var userProfile: Profile?
     var userComments = [Comment]()
     var location: Location?
-    var dataReady = false
+    var isDataReady = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 self.userProfile = profile
                 self.userComments = comments
-                self.dataReady = true
+                self.isDataReady = true
                 self.tableView.reloadData()
             }
         }
@@ -80,7 +80,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if dataReady {
+        if isDataReady {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
                 guard let username = userProfile?.username,

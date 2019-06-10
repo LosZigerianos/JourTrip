@@ -88,6 +88,14 @@
 		ACBA440622A6FA540040055B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440522A6FA540040055B /* Profile.swift */; };
 		ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */; };
 		ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
+		ACF4D7B322ADBE4E0093BA25 /* FeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7B222ADBE4E0093BA25 /* FeedAssembly.swift */; };
+		ACF4D7B522ADBE9C0093BA25 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7B422ADBE9C0093BA25 /* FeedService.swift */; };
+		ACF4D7B822ADC1990093BA25 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7B622ADC1990093BA25 /* FeedViewController.swift */; };
+		ACF4D7B922ADC1990093BA25 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF4D7B722ADC1990093BA25 /* FeedViewController.xib */; };
+		ACF4D7BB22ADC2D70093BA25 /* GetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7BA22ADC2D70093BA25 /* GetTimeline.swift */; };
+		ACF4D7BD22ADC5250093BA25 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7BC22ADC5250093BA25 /* Feed.swift */; };
+		ACF4D7C022AE56F80093BA25 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7BE22AE56F80093BA25 /* FeedCollectionViewCell.swift */; };
+		ACF4D7C122AE56F80093BA25 /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF4D7BF22AE56F80093BA25 /* FeedCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +193,14 @@
 		ACBA440522A6FA540040055B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripImages.swift; sourceTree = "<group>"; };
 		ACDF9A53226FA44800B65291 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
+		ACF4D7B222ADBE4E0093BA25 /* FeedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAssembly.swift; sourceTree = "<group>"; };
+		ACF4D7B422ADBE9C0093BA25 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		ACF4D7B622ADC1990093BA25 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		ACF4D7B722ADC1990093BA25 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		ACF4D7BA22ADC2D70093BA25 /* GetTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTimeline.swift; sourceTree = "<group>"; };
+		ACF4D7BC22ADC5250093BA25 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		ACF4D7BE22AE56F80093BA25 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		ACF4D7BF22AE56F80093BA25 /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		BCD776594943F6E33C7AC193 /* Pods_JourTrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JourTrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAC084B65722BCEC28A8231 /* Pods-JourTrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.release.xcconfig"; path = "Target Support Files/Pods-JourTrip/Pods-JourTrip.release.xcconfig"; sourceTree = "<group>"; };
 		FAA2BF808463073700D880CC /* Pods-JourTrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JourTrip.debug.xcconfig"; path = "Target Support Files/Pods-JourTrip/Pods-JourTrip.debug.xcconfig"; sourceTree = "<group>"; };
@@ -556,6 +572,9 @@
 		AC4243602292013F008111FB /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				ACF4D7AF22ADBE0C0093BA25 /* DI */,
+				ACF4D7B022ADBE160093BA25 /* Presentation */,
+				ACF4D7B122ADBE1F0093BA25 /* Use Cases */,
 			);
 			name = Feed;
 			path = ../ViewController/Feed;
@@ -607,6 +626,7 @@
 				AC347E59229A02320006F2AC /* RealmManager.swift */,
 				AC347E5B229A026E0006F2AC /* Wrapper.swift */,
 				ACBA440522A6FA540040055B /* Profile.swift */,
+				ACF4D7BC22ADC5250093BA25 /* Feed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -620,8 +640,36 @@
 				20E7F42422A1357E00814E71 /* WebService.swift */,
 				20E7F42722A13BDB00814E71 /* LocationService.swift */,
 				ACBA440322A6F6230040055B /* ProfileService.swift */,
+				ACF4D7B422ADBE9C0093BA25 /* FeedService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		ACF4D7AF22ADBE0C0093BA25 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				ACF4D7B222ADBE4E0093BA25 /* FeedAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		ACF4D7B022ADBE160093BA25 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				ACF4D7B622ADC1990093BA25 /* FeedViewController.swift */,
+				ACF4D7B722ADC1990093BA25 /* FeedViewController.xib */,
+				ACF4D7BE22AE56F80093BA25 /* FeedCollectionViewCell.swift */,
+				ACF4D7BF22AE56F80093BA25 /* FeedCollectionViewCell.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		ACF4D7B122ADBE1F0093BA25 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				ACF4D7BA22ADC2D70093BA25 /* GetTimeline.swift */,
+			);
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -716,6 +764,7 @@
 			files = (
 				20392471227B777D0061E59B /* LoginViewController.xib in Resources */,
 				209953A522888E77006D6346 /* Apercu Pro Light Italic.otf in Resources */,
+				ACF4D7B922ADC1990093BA25 /* FeedViewController.xib in Resources */,
 				209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */,
 				209953A822888E77006D6346 /* Apercu Pro Medium.otf in Resources */,
 				AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */,
@@ -728,6 +777,7 @@
 				AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */,
 				2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */,
 				AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */,
+				ACF4D7C122AE56F80093BA25 /* FeedCollectionViewCell.xib in Resources */,
 				AC45B6F122AD5C1E0002E163 /* ProfileLocationTableViewCell.xib in Resources */,
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
@@ -804,6 +854,7 @@
 			files = (
 				208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */,
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
+				ACF4D7B522ADBE9C0093BA25 /* FeedService.swift in Sources */,
 				ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */,
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				209953B422889872006D6346 /* App.swift in Sources */,
@@ -818,6 +869,7 @@
 				20E7F42522A1357E00814E71 /* WebService.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
 				209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */,
+				ACF4D7BD22ADC5250093BA25 /* Feed.swift in Sources */,
 				20E7F41D229F07E700814E71 /* SearchBar.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */,
@@ -829,16 +881,19 @@
 				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
 				AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */,
 				20D8656922A41458005D04FA /* GetNearLocations.swift in Sources */,
+				ACF4D7B822ADC1990093BA25 /* FeedViewController.swift in Sources */,
 				ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */,
+				ACF4D7BB22ADC2D70093BA25 /* GetTimeline.swift in Sources */,
 				20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
 				209953B72288A619006D6346 /* AppAssembly.swift in Sources */,
 				20A10D232295DE7700D06660 /* TabBarNavigator.swift in Sources */,
+				ACF4D7B322ADBE4E0093BA25 /* FeedAssembly.swift in Sources */,
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
 				AC14FADF22A4437100BC6EF8 /* ProfileAssembly.swift in Sources */,
 				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,
@@ -850,6 +905,7 @@
 				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
 				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
+				ACF4D7C022AE56F80093BA25 /* FeedCollectionViewCell.swift in Sources */,
 				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
 				AC45B6F022AD5C1E0002E163 /* ProfileLocationTableViewCell.swift in Sources */,
 				20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */,

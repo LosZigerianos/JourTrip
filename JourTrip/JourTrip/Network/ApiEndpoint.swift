@@ -19,6 +19,7 @@ enum ApiEndpoint {
 	case locations(name: String)
 	case nearLocations(latitude: Double, longitude: Double)
     case profile(userID: String)
+    case comments(userID: String)
 }
 
 extension ApiEndpoint {
@@ -55,7 +56,7 @@ extension ApiEndpoint {
 extension ApiEndpoint {
 	var method: RequestType {
 		switch self {
-		case .locations, .nearLocations, .profile:
+		case .locations, .nearLocations, .profile, .comments:
 			return .get
 		case .userLogin, .userSignUp:
 			return .post
@@ -73,7 +74,10 @@ extension ApiEndpoint {
 		case .userSignUp:
 			return "/users/signup"
         case .profile:
-            return "/users/profile/5ceb706146e3c87667d594c2" // FIXME: testing purposes
+            return "/users/profile/5ceb706146e3c87667d594c2"
+        case .comments:
+            return "/comments/userId/5ceb706146e3c87667d594c2/timeline"
+            // FIXME: testing purposes
 		}
 	}
 
@@ -99,6 +103,10 @@ extension ApiEndpoint {
 				"password": credentials.password
 			]
         case .profile(let userID):
+            return [
+                "userID": userID
+            ]
+        case .comments(let userID):
             return [
                 "userID": userID
             ]

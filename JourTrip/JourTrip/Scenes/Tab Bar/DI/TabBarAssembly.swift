@@ -11,13 +11,16 @@ import UIKit
 final class TabBarAssembly {
 
 	let navigationController: UINavigationController
+    let homeAssembly: FeedAssembly
 	let searchAssembly: SearchAssembly
     let profileAssembly: ProfileAssembly
 
 	init(navigationController: UINavigationController,
 		 searchAssembly: SearchAssembly,
-         profileAssembly: ProfileAssembly) {
+         profileAssembly: ProfileAssembly,
+         feedAssembly: FeedAssembly) {
 		self.navigationController = navigationController
+        self.homeAssembly = feedAssembly
 		self.searchAssembly = searchAssembly
         self.profileAssembly = profileAssembly
 	}
@@ -32,13 +35,15 @@ final class TabBarAssembly {
 extension TabBarAssembly: TabBarViewControllerProvider {
 	func viewController() -> MainTabBarController {
 		let tabBarController = MainTabBarController()
-		let searchViewController = searchAssembly.viewController()
-		searchViewController.tabBarItem = UITabBarItem(title: "Search", image: EelpImages.searchTabBar(), selectedImage: EelpImages.searchTabBar())
-		let feedViewController = UIViewController()
-		feedViewController.tabBarItem = UITabBarItem(title: "Feed", image: EelpImages.homeTabBar(), selectedImage: EelpImages.homeTabBar())
+	
+		let homeViewController = homeAssembly.viewController()
+		homeViewController.tabBarItem = UITabBarItem(title: "Feed", image: JourTripImages.homeTabBar(), selectedImage: JourTripImages.homeTabBar())
+        let searchViewController = searchAssembly.viewController()
+        searchViewController.tabBarItem = UITabBarItem(title: "Search", image: JourTripImages.searchTabBar(), selectedImage: JourTripImages.searchTabBar())
 		let profileViewController = profileAssembly.viewController()
-		profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: EelpImages.profileTabBar(), selectedImage: EelpImages.profileTabBar())
-		tabBarController.viewControllers = [feedViewController, searchViewController, profileViewController]
+		profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: JourTripImages.profileTabBar(), selectedImage: JourTripImages.profileTabBar())
+        
+		tabBarController.viewControllers = [homeViewController, searchViewController, profileViewController]
 		return tabBarController
 	}
 }
