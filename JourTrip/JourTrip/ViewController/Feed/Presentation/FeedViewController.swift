@@ -31,7 +31,7 @@ final class FeedViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.view.backgroundColor = .yellow
+        
         setupUI()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -40,7 +40,6 @@ final class FeedViewController: UIViewController {
             self.comments = comments
             self.collectionView.reloadData()
         }
-        
     }
 
     // MARK: - UI
@@ -65,11 +64,15 @@ extension FeedViewController: UICollectionViewDataSource, UICollectionViewDelega
         if let user = feed.user,
             let location = feed.location,
             let photo = location.photos?.first,
+            let userPhoto = user.photo,
             let commentDescription = feed.commentDescription,
             let creationDate = feed.creationDate {
             nearCell.locationImageView.kf.setImage(with: URL(string:photo))
             nearCell.cityLabel.text = location.city
             nearCell.nameLabel.text = location.name
+            nearCell.userImageView.kf.setImage(with: URL(string: userPhoto))
+            nearCell.userMessage.text = commentDescription
+            nearCell.userNameLabel.text = user.fullname
             
             return nearCell
         }

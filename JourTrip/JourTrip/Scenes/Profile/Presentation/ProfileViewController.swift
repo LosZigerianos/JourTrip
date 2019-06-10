@@ -91,7 +91,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let url = URL(string: userPhoto) else {
                         return UITableViewCell()
                 }
-                cell.setup(with: username,
+                cell.setup(with: "@\(username)",
                            account: fullName,
                            imageURL: url,
                            following: "\(following)",

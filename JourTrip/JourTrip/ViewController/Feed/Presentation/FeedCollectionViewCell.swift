@@ -15,6 +15,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var locationImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userMessage: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,6 +37,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
         locationImageView.image = nil
         nameLabel.text = nil
         cityLabel.text = nil
+        userImageView.image = nil
+        userNameLabel.text = nil
+        userMessage.text = nil
     }
     
     func setupLayer() {
