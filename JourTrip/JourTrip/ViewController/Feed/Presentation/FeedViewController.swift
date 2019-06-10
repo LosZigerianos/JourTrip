@@ -83,9 +83,9 @@ extension FeedViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      //  let totalSpacing = (2 * Constants.spacing) + ((Constants.columns - 1) * Constants.spacing)
+      let totalSpacing = (2 * Constants.spacing) + ((Constants.columns) * Constants.spacing)
         
-        let width = (collectionView.bounds.width) / Constants.columns
+        let width = (collectionView.bounds.width) - totalSpacing
         return CGSize(width: width, height: width)
     }
 }
