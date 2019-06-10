@@ -15,6 +15,10 @@
 		2040028922A6F61C005BF21A /* LaunchScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028822A6F61C005BF21A /* LaunchScreenAssembly.swift */; };
 		2040028C22A6F710005BF21A /* InitialNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028B22A6F710005BF21A /* InitialNavigator.swift */; };
 		2040028E22A70248005BF21A /* LaunchScreenNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028D22A70248005BF21A /* LaunchScreenNavigator.swift */; };
+		2070592922AD8136005D17A7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070592722AD8136005D17A7 /* FeedViewController.swift */; };
+		2070592A22AD8136005D17A7 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2070592822AD8136005D17A7 /* FeedViewController.xib */; };
+		2070592D22AD822E005D17A7 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070592B22AD822E005D17A7 /* FeedCollectionViewCell.swift */; };
+		2070592E22AD822E005D17A7 /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2070592C22AD822E005D17A7 /* FeedCollectionViewCell.xib */; };
 		208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A16F1227B761B00E36CDF /* LoginViewController.swift */; };
 		2099536E2286D0DD006D6346 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536D2286D0DD006D6346 /* LoginService.swift */; };
 		209953702286D10D006D6346 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536F2286D10D006D6346 /* LoginValidator.swift */; };
@@ -104,6 +108,10 @@
 		2040028822A6F61C005BF21A /* LaunchScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenAssembly.swift; sourceTree = "<group>"; };
 		2040028B22A6F710005BF21A /* InitialNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigator.swift; sourceTree = "<group>"; };
 		2040028D22A70248005BF21A /* LaunchScreenNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenNavigator.swift; sourceTree = "<group>"; };
+		2070592722AD8136005D17A7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2070592822AD8136005D17A7 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		2070592B22AD822E005D17A7 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		2070592C22AD822E005D17A7 /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		208A16F1227B761B00E36CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2099536D2286D0DD006D6346 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		2099536F2286D10D006D6346 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
@@ -244,6 +252,24 @@
 				20A10D1E2295DDFF00D06660 /* Presentation */,
 			);
 			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		2070592522AD8111005D17A7 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		2070592622AD811C005D17A7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2070592722AD8136005D17A7 /* FeedViewController.swift */,
+				2070592822AD8136005D17A7 /* FeedViewController.xib */,
+				2070592B22AD822E005D17A7 /* FeedCollectionViewCell.swift */,
+				2070592C22AD822E005D17A7 /* FeedCollectionViewCell.xib */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		208A16EE227B75E000E36CDF /* Scenes */ = {
@@ -538,6 +564,8 @@
 		AC4243602292013F008111FB /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				2070592522AD8111005D17A7 /* DI */,
+				2070592622AD811C005D17A7 /* Presentation */,
 			);
 			name = Feed;
 			path = ../ViewController/Feed;
@@ -721,10 +749,12 @@
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
 				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
+				2070592E22AD822E005D17A7 /* FeedCollectionViewCell.xib in Resources */,
 				209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */,
 				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
 				2099539E22888E77006D6346 /* Apercu Light.otf in Resources */,
 				209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */,
+				2070592A22AD8136005D17A7 /* FeedViewController.xib in Resources */,
 				209953A022888E77006D6346 /* Apercu Medium.otf in Resources */,
 				2099538622888114006D6346 /* InitialViewController.xib in Resources */,
 				2099539A22888E77006D6346 /* Apercu Bold Italic.otf in Resources */,
@@ -792,6 +822,7 @@
 			files = (
 				208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */,
 				AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */,
+				2070592D22AD822E005D17A7 /* FeedCollectionViewCell.swift in Sources */,
 				ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */,
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				209953B422889872006D6346 /* App.swift in Sources */,
@@ -803,6 +834,7 @@
 				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
 				AC347E5A229A02320006F2AC /* RealmManager.swift in Sources */,
 				20E7F42522A1357E00814E71 /* WebService.swift in Sources */,
+				2070592922AD8136005D17A7 /* FeedViewController.swift in Sources */,
 				AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */,
 				209953CB2288AE8A006D6346 /* SignUpAssembly.swift in Sources */,
 				20E7F41D229F07E700814E71 /* SearchBar.swift in Sources */,
