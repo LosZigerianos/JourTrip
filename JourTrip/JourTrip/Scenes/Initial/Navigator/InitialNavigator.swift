@@ -25,7 +25,7 @@ struct InitialNavigator: InitialNavigatorProtocol {
 
 	func navigateToInitialView() {
 		let viewController = initialViewControllerProvider.viewController()
-		navigationController.pushViewController(viewController, animated: true)
+		navigationController.pushViewController(viewController, animated: false)
 	}
 
 }

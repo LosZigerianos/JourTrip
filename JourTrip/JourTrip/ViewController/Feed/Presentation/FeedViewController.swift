@@ -10,17 +10,12 @@ import UIKit
 
 final class FeedViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            let nib = UINib(nibName: "FeedCollectionViewCell", bundle: nil)
-            collectionView.register(nib, forCellWithReuseIdentifier: FeedCollectionViewCell.reuseIdentifier)
-        }
-    }
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Constants
     enum Constants {
         static let columns: CGFloat = 1
-        static let spacing: CGFloat = 10
+        static let spacing: CGFloat = 8
     }
     
     // MARK: - Properties
@@ -31,7 +26,9 @@ final class FeedViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+		let nib = UINib(nibName: "FeedCollectionViewCell", bundle: nil)
+		collectionView.register(nib, forCellWithReuseIdentifier: FeedCollectionViewCell.reuseIdentifier)
+
         setupUI()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -50,6 +47,7 @@ final class FeedViewController: UIViewController {
 //        collectionViewLayout.minimumLineSpacing = Constants.spacing
 //        collectionViewLayout.minimumInteritemSpacing = Constants.spacing
 //        collectionViewLayout.headerReferenceSize = .init(width: view.frame.width, height: 150)
+//		collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         collectionView.collectionViewLayout = collectionViewLayout
     }
 }
@@ -59,27 +57,14 @@ extension FeedViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var feed = comments[indexPath.row]
+        let comment = comments[indexPath.row]
         
-        let nearCell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
-        
-        if let user = feed.user,
-            let location = feed.location,
-            let photo = location.photos?.first,
-            let userPhoto = user.photo,
-            let commentDescription = feed.commentDescription,
-            let creationDate = feed.creationDate {
-            nearCell.locationImageView.kf.setImage(with: URL(string:photo))
-            nearCell.cityLabel.text = location.city
-            nearCell.nameLabel.text = location.name
-            nearCell.userImageView.kf.setImage(with: URL(string: userPhoto))
-            nearCell.userMessage.text = commentDescription
-            nearCell.userNameLabel.text = user.fullname
-            
-            return nearCell
-        }
-        
-        return FeedCollectionViewCell()
+		guard let nearCell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier,
+																for: indexPath) as? FeedCollectionViewCell else {
+			return UICollectionViewCell()
+		}
+		nearCell.configure(with: comment)
+        return nearCell
     }
     
     // MARK: - Delegate and Flow layout
@@ -88,9 +73,9 @@ extension FeedViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      let totalSpacing = (2 * Constants.spacing) + ((Constants.columns) * Constants.spacing)
+      let totalSpacing = (2 * Constants.spacing) + (Constants.spacing)
         
         let width = (collectionView.bounds.width) - totalSpacing
-        return CGSize(width: width, height: width)
+        return CGSize(width: width, height: width * 1.3)
     }
 }

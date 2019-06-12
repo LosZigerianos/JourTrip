@@ -36,19 +36,28 @@ class ProfileLocationTableViewCell: UITableViewCell {
     }
     
     //TODO: localize languages
-    func setup(with title: String,
-               address: String,
-               locationURL: URL,
-               tag: String,
-               description: String,
-               creationDate: String) {
-        self.selectionStyle = .none
+    func setup(with title: String?,
+               address: String?,
+               locationURL: URL?,
+               tag: String?,
+               description: String?,
+               creationDate: String?) {
+        selectionStyle = .none
         titleLabel.text = title
         addressDescriptionLabel.text = address
-            locationImageView.kf.setImage(with: locationURL)
-
+		locationImageView.kf.setImage(with: locationURL)
+		contentView.layer.cornerRadius = 8
+		contentView.layer.borderWidth = 1.0
+		contentView.layer.borderColor = UIColor.clear.cgColor
+		contentView.layer.masksToBounds = true
 //        tagLabel.text = tag
 //        descriptionLabel.text = description
 //        creationDateLabel.text = creationDate
     }
+
+	override func layoutSubviews() {
+		super.layoutSubviews()
+
+		contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
+	}
 }

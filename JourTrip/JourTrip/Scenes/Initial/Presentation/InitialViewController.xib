@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,7 +66,7 @@
                                 <constraint firstAttribute="height" constant="47" id="RQ0-7D-ifg"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="14"/>
-                            <state key="normal" title="LOG IN">
+                            <state key="normal" title="I HAVE AN ACCOUNT">
                                 <color key="titleColor" red="0.35276341438293457" green="0.38041937351226807" blue="0.45493382215499878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>

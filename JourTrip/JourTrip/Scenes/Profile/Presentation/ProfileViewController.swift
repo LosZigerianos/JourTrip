@@ -9,21 +9,17 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    private var tableView: UITableView! {
-        didSet {
-            let profileCell = UINib(nibName: "ProfileTableViewCell", bundle: nil)
-            tableView.register(profileCell, forCellReuseIdentifier: "ProfileTableViewCell")
-            
-            let locationCell = UINib(nibName: "ProfileLocationTableViewCell", bundle: nil)
-            tableView.register(locationCell, forCellReuseIdentifier: "ProfileLocationTableViewCell")
-        }
-    }
+
+	private lazy var tableView: UITableView = {
+		let tableView = UITableView()
+		tableView.translatesAutoresizingMaskIntoConstraints = false
+		return tableView
+	}()
+
     var getProfile: GetProfileProtocol!
     var userProfile: Profile?
     var userComments = [Comment]()
     var location: Location?
-    var isDataReady = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +38,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 self.userProfile = profile
                 self.userComments = comments
-                self.isDataReady = true
 				DispatchQueue.main.async {
 					self.tableView.reloadData()
 				}
@@ -51,23 +46,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func setupUI() {
-        let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
-        
-        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: displayWidth, height: displayHeight))
-        self.view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+		let profileCell = UINib(nibName: "ProfileTableViewCell", bundle: nil)
+		tableView.register(profileCell, forCellReuseIdentifier: "ProfileTableViewCell")
+		let locationCell = UINib(nibName: "ProfileLocationTableViewCell", bundle: nil)
+		tableView.register(locationCell, forCellReuseIdentifier: "ProfileLocationTableViewCell")
+
+        view.addSubview(tableView)
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         tableView.dataSource = self
         tableView.delegate = self
-
+		tableView.allowsSelection = false
+		tableView.separatorStyle = .none
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+//        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,52 +79,29 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if isDataReady {
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
-                guard let username = userProfile?.username,
-                    let following = userProfile?.following,
-                    let followers = userProfile?.followers,
-                    let fullName = userProfile?.fullname,
-                    let userPhoto = userProfile?.photo,
-                    let url = URL(string: userPhoto) else {
-                        return UITableViewCell()
-                }
-                cell.setup(with: "@\(username)",
-                           account: fullName,
-                           imageURL: url,
-                           following: "\(following)",
-                    followers: "\(followers)",
-                    posts: "0")
-                
-                return cell
-            } else {
-                let comment = userComments[(indexPath.row - 1)]
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileLocationTableViewCell",
-                                                         for: indexPath) as! ProfileLocationTableViewCell
-                
-                guard let commentDescription = comment.commentDescription,
-                    let location = comment.location,
-                    let creationDate = comment.creationDate else {
-                        fatalError("comment error!")
-                }
-                guard let name = location.name,
-                    let address = location.address,
-                    let photo = location.photos?.first,
-                    let url = URL(string: photo),
-                    let tag = location.tags?.first else {
-                        fatalError("location error!")
-                }
-                
-                cell.setup(with: name,
-                           address: address,
-                           locationURL: url,
-                           tag: tag,
-                           description: commentDescription,
-                           creationDate: creationDate)
-            }
-        }
-        
+		if indexPath.row == 0 {
+			let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
+			cell.setup(with: userProfile?.username,
+					   account: userProfile?.fullname,
+					   imageURL: URL(string: userProfile?.photo ?? ""),
+					   following: String(userProfile?.following ?? 0),
+					   followers: String(userProfile?.followers ?? 0),
+					   posts: String(userProfile?.comments?.count ?? 0))
+
+			return cell
+		} else {
+			let comment = userComments[(indexPath.row - 1)]
+			let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileLocationTableViewCell",
+													 for: indexPath) as! ProfileLocationTableViewCell
+
+			cell.setup(with: comment.location?.name,
+					   address: comment.location?.address,
+					   locationURL: URL(string: comment.location?.photos?.first ?? ""),
+					   tag: comment.location?.tags?.first ?? "",
+					   description: comment.commentDescription,
+					   creationDate: comment.creationDate)
+		}
+
         return UITableViewCell()
     }
 }

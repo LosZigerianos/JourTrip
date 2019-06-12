@@ -943,7 +943,6 @@
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
 				20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */,
 				ACF4D7BB22ADC2D70093BA25 /* GetTimeline.swift in Sources */,
-				20D8656922A41458005D04FA /* GetLocations.swift in Sources */,
 				2040028922A6F61C005BF21A /* LaunchScreenAssembly.swift in Sources */,
 				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
 				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
