@@ -25,11 +25,11 @@ final class TabBarAssembly {
         self.profileAssembly = profileAssembly
 	}
 
-	func navigator() -> TabBarNavigator {
+    func navigator() -> TabBarNavigator {
 		return TabBarNavigator(navigationController: navigationController,
 							   tabBarViewControllerProvider: self)
 	}
-	
+
 }
 
 extension TabBarAssembly: TabBarViewControllerProvider {
@@ -43,7 +43,10 @@ extension TabBarAssembly: TabBarViewControllerProvider {
 		let profileViewController = profileAssembly.viewController()
 		profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: JourTripImages.profileTabBar(), selectedImage: JourTripImages.profileTabBar())
         
-		tabBarController.viewControllers = [homeViewController, searchViewController, profileViewController]
+        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
+
+        
+		tabBarController.viewControllers = [homeViewController, searchViewController, profileNavigationController]
 		return tabBarController
 	}
 }

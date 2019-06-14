@@ -8,100 +8,169 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController {
 
-	private lazy var tableView: UITableView = {
-		let tableView = UITableView()
-		tableView.translatesAutoresizingMaskIntoConstraints = false
-		return tableView
-	}()
-
+    // MARK: - Constants
+    enum CellConstants {
+        static let columns: CGFloat = 1
+        static let spacing: CGFloat = 8
+    }
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    // MARK: - Properties
+    let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     var getProfile: GetProfileProtocol!
     var userProfile: Profile?
     var userComments = [Comment]()
     var location: Location?
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
         getProfile.invoke(with: "") { [weak self] profile in
-			guard let self = self else { return }
+            guard let self = self else { return }
             if let error = profile.error {
                 // TODO: show alert
                 print(error)
             } else {
-                // TODO: locationsss
                 guard let profile: Profile = profile.data,
                     let comments = profile.comments else {
                         fatalError("profile data error")
                 }
                 self.userProfile = profile
                 self.userComments = comments
-				DispatchQueue.main.async {
-					self.tableView.reloadData()
-				}
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
     
+    // MARK: - UI
     private func setupUI() {
-		let profileCell = UINib(nibName: "ProfileTableViewCell", bundle: nil)
-		tableView.register(profileCell, forCellReuseIdentifier: "ProfileTableViewCell")
-		let locationCell = UINib(nibName: "ProfileLocationTableViewCell", bundle: nil)
-		tableView.register(locationCell, forCellReuseIdentifier: "ProfileLocationTableViewCell")
+        setupNavigationBar()
+        setupRightBarButtonItems()
+        setupCollectionCells()
+    }
+    
+    private func setupCollectionCells() {
+        let profileCell = UINib(nibName: "ProfileTableViewCell", bundle: nil)
+        collectionView.register(profileCell, forCellWithReuseIdentifier: "ProfileTableViewCell")
+        
+        let nib = UINib(nibName: "FeedCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "FeedCollectionViewCell")
+        
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: CellConstants.spacing,
+                                                         left: CellConstants.spacing,
+                                                         bottom: CellConstants.spacing,
+                                                         right: CellConstants.spacing)
+        
+        collectionView.collectionViewLayout = collectionViewLayout
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+    }
+    
+    private func setupRightBarButtonItems() {
+        // TODO: set button with images
+        let settingsButton = UIButton(type: .custom)
+        settingsButton.setImage(UIImage(named: "back-button"), for: .normal)
+        settingsButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        settingsButton.addTarget(self, action: Selector("test"), for: .touchUpInside)
+//        let item1 = UIBarButtonItem(customView: addFriendsButton)
+        let item1 = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: Selector("test"))
+        
+        let friendsButton = UIButton(type: .custom)
+        friendsButton.setImage(UIImage(named: "back-button"), for: .normal)
+        friendsButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        friendsButton.addTarget(self, action: Selector("test"), for: .touchUpInside)
+//        let item2 = UIBarButtonItem(customView: settingsButton)
+        let item2 = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: Selector("test"))
+        
+        navigationItem.setRightBarButtonItems([item1,item2], animated: true)
+    }
+    
+    // MARK: - Navigation
+    func navigateTest() {
+        print("HOLA")
+    }
+    
+    // MARK: - Actions
+    func alertActionSheet() {
+         //TODO: LocazidedStrings
+        let alertController = UIAlertController(title: "Choose option", message: "What do you want to do?", preferredStyle: .actionSheet)
+        
+       
+        let viewAction = UIAlertAction(title: "View comment", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            print("View")
+        })
+        let removeAction = UIAlertAction(title: "Remove it", style: .destructive, handler: { (alert: UIAlertAction!) -> Void in
+            print("Remove")
+        })
+        
+        alertController.addAction(viewAction)
+        alertController.addAction(removeAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+}
 
-        view.addSubview(tableView)
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        tableView.dataSource = self
-        tableView.delegate = self
-		tableView.allowsSelection = false
-		tableView.separatorStyle = .none
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return userComments.count + 1
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
-            return 268.0
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
+            
+            cell.setup(with: userProfile?.username,
+                       account: userProfile?.fullname,
+                       imageURL: URL(string: userProfile?.photo ?? ""),
+                       following: String(userProfile?.following ?? 0),
+                       followers: String(userProfile?.followers ?? 0),
+                       posts: String(userProfile?.comments?.count ?? 0))
+            
+            return cell
         } else {
-            return 225.0
+            
+            let comment = userComments[(indexPath.row - 1)]
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCollectionViewCell", for: indexPath) as! FeedCollectionViewCell
+
+            cell.configure(with: comment)
+            
+            return cell
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if indexPath.row == 0 {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
-			cell.setup(with: userProfile?.username,
-					   account: userProfile?.fullname,
-					   imageURL: URL(string: userProfile?.photo ?? ""),
-					   following: String(userProfile?.following ?? 0),
-					   followers: String(userProfile?.followers ?? 0),
-					   posts: String(userProfile?.comments?.count ?? 0))
-
-			return cell
-		} else {
-			let comment = userComments[(indexPath.row - 1)]
-			let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileLocationTableViewCell",
-													 for: indexPath) as! ProfileLocationTableViewCell
-
-			cell.setup(with: comment.location?.name,
-					   address: comment.location?.address,
-					   locationURL: URL(string: comment.location?.photos?.first ?? ""),
-					   tag: comment.location?.tags?.first ?? "",
-					   description: comment.commentDescription,
-					   creationDate: comment.creationDate)
-		}
-
-        return UITableViewCell()
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("User tapped on row \(indexPath)")
+        alertActionSheet()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.bounds.width)
+        
+        if indexPath.row == 0 {
+            return CGSize(width: width, height: width)
+        } else {
+            let totalSpacing = (2 * CellConstants.spacing) + (CellConstants.spacing)
+            
+            let commentWidth = width - totalSpacing
+            return CGSize(width: commentWidth, height: commentWidth * 1.3)
+        }
     }
 }

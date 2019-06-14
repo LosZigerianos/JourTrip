@@ -1,15 +1,15 @@
-////
-////  ProfileTableViewCell.swift
-////  JourTrip
-////
-////  Created by Alexandre on 08/06/2019.
-////  Copyright © 2019 Los Zigerianos. All rights reserved.
-////
+//
+//  ProfileTableViewCell.swift
+//  JourTrip
+//
+//  Created by Alexandre on 08/06/2019.
+//  Copyright © 2019 Los Zigerianos. All rights reserved.
+//
 
 import UIKit
 import Kingfisher
-
-class ProfileTableViewCell: UITableViewCell {
+//TODO: Refactor name
+class ProfileTableViewCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: self)
     
     // MARK: - Outlets
@@ -19,19 +19,12 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet var followingValueLabel: UILabel!
     @IBOutlet var followerValueLabel: UILabel!
     @IBOutlet var postsValueLabel: UILabel!
-    @IBOutlet var followLabel: UILabel!
-    @IBOutlet var followerLabel: UILabel!
-    @IBOutlet var postsLabel: UILabel!
-
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
-	}
-
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-	}
-
-
+    @IBOutlet var followingStackView: UIStackView!
+    @IBOutlet var followersStackView: UIStackView!
+    @IBOutlet var postsStackView: UIStackView!
+    
+    var profileViewController: ProfileViewController?
+    
     //TODO: localize languages and fix name/account
     func setup(with username: String?,
                     account: String?,
@@ -47,5 +40,34 @@ class ProfileTableViewCell: UITableViewCell {
         followingValueLabel.text = following
         followerValueLabel.text = followers
         postsValueLabel.text = posts
+
+        prepareStackView()
     }
+    
+    @objc func prepareStackView() {
+        followingStackView.isUserInteractionEnabled = true
+        followersStackView.isUserInteractionEnabled = true
+        postsStackView.isUserInteractionEnabled = true
+        
+        let followingTap = UITapGestureRecognizer(target: self, action: #selector(followingStackViewTapped))
+        followingStackView.addGestureRecognizer(followingTap)
+        let followersTap = UITapGestureRecognizer(target: self, action: #selector(followersStackViewTapped))
+        followersStackView.addGestureRecognizer(followersTap)
+        let postsTap = UITapGestureRecognizer(target: self, action: #selector(postsStackViewTapped))
+        postsStackView.addGestureRecognizer(postsTap)
+    }
+    
+     // FIXME: stackViewActions!
+    @objc func followingStackViewTapped() {
+        profileViewController?.navigateTest()
+    }
+    
+    @objc func followersStackViewTapped() {
+        print("followingAction")
+    }
+    
+    @objc func postsStackViewTapped() {
+        print("posts")
+    }
+
 }
