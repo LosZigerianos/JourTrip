@@ -40,7 +40,6 @@
 		209953A922888E77006D6346 /* Apercu Pro Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099538822888E6E006D6346 /* Apercu Pro Mono.otf */; };
 		209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539622888E6F006D6346 /* Apercu Pro Regular.otf */; };
 		209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2099539822888E6F006D6346 /* Apercu Regular.otf */; };
-		209953B02288941C006D6346 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953AF2288941C006D6346 /* LoginNavigator.swift */; };
 		209953B22288965C006D6346 /* InitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B12288965C006D6346 /* InitialViewModel.swift */; };
 		209953B422889872006D6346 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B322889872006D6346 /* App.swift */; };
 		209953B72288A619006D6346 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953B62288A619006D6346 /* AppAssembly.swift */; };
@@ -65,7 +64,6 @@
 		20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F41E22A07F5900814E71 /* UIColor+CustomColors.swift */; };
 		20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F42022A1210900814E71 /* ApiEndpoint.swift */; };
 		20E7F42522A1357E00814E71 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F42422A1357E00814E71 /* WebService.swift */; };
-		20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F42722A13BDB00814E71 /* LocationService.swift */; };
 		A927776C2B256C4143FA00C3 /* Pods_JourTrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD776594943F6E33C7AC193 /* Pods_JourTrip.framework */; };
 		AC127E72226F9CEB0004C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC127E71226F9CEB0004C0F1 /* AppDelegate.swift */; };
 		AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC127E78226F9CED0004C0F1 /* Assets.xcassets */; };
@@ -81,18 +79,19 @@
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
 		AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42435E2291F83E008111FB /* MainTabBarController.swift */; };
 		AC42437922934139008111FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42437822934139008111FB /* SearchViewController.swift */; };
-		AC45B6F022AD5C1E0002E163 /* ProfileLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45B6EE22AD5C1E0002E163 /* ProfileLocationTableViewCell.swift */; };
-		AC45B6F122AD5C1E0002E163 /* ProfileLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC45B6EF22AD5C1E0002E163 /* ProfileLocationTableViewCell.xib */; };
 		AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */; };
 		AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */; };
+		ACAFEF7F22B23039002A611F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
+		ACAFEF8022B23039002A611F /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953AF2288941C006D6346 /* LoginNavigator.swift */; };
+		ACAFEF8122B23039002A611F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F42722A13BDB00814E71 /* LocationService.swift */; };
 		ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31522735D9A006EB545 /* DataManager.swift */; };
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
 		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
+		ACB0FA8E22B2BA5300EAA11F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FA8D22B2BA5300EAA11F /* ProfileViewController.xib */; };
 		ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440122A6F5A90040055B /* GetProfile.swift */; };
 		ACBA440422A6F6230040055B /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440322A6F6230040055B /* ProfileService.swift */; };
 		ACBA440622A6FA540040055B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440522A6FA540040055B /* Profile.swift */; };
 		ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */; };
-		ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
 		ACF4D7B322ADBE4E0093BA25 /* FeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7B222ADBE4E0093BA25 /* FeedAssembly.swift */; };
 		ACF4D7B522ADBE9C0093BA25 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7B422ADBE9C0093BA25 /* FeedService.swift */; };
 		ACF4D7B822ADC1990093BA25 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7B622ADC1990093BA25 /* FeedViewController.swift */; };
@@ -191,13 +190,12 @@
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		AC42435E2291F83E008111FB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AC42437822934139008111FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		AC45B6EE22AD5C1E0002E163 /* ProfileLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLocationTableViewCell.swift; sourceTree = "<group>"; };
-		AC45B6EF22AD5C1E0002E163 /* ProfileLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileLocationTableViewCell.xib; sourceTree = "<group>"; };
 		AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		ACB0FA8D22B2BA5300EAA11F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		ACBA440122A6F5A90040055B /* GetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfile.swift; sourceTree = "<group>"; };
 		ACBA440322A6F6230040055B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		ACBA440522A6FA540040055B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -300,6 +298,7 @@
 				AC42437722934126008111FB /* Search */,
 				AC4243602292013F008111FB /* Feed */,
 				AC14FADA22A4430D00BC6EF8 /* Profile */,
+				ACB0FA9722B431F300EAA11F /* Comments */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -609,10 +608,9 @@
 			isa = PBXGroup;
 			children = (
 				AC14FAE022A443F600BC6EF8 /* ProfileViewController.swift */,
+				ACB0FA8D22B2BA5300EAA11F /* ProfileViewController.xib */,
 				AC3BA0D422AC260C00DDE88B /* ProfileTableViewCell.swift */,
 				AC3BA0D522AC260C00DDE88B /* ProfileTableViewCell.xib */,
-				AC45B6EE22AD5C1E0002E163 /* ProfileLocationTableViewCell.swift */,
-				AC45B6EF22AD5C1E0002E163 /* ProfileLocationTableViewCell.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -663,6 +661,23 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		ACB0FA9422B3C13400EAA11F /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				AC347E5B229A026E0006F2AC /* Wrapper.swift */,
+				ACDF9A53226FA44800B65291 /* UserRealm.swift */,
+				AC347E59229A02320006F2AC /* RealmManager.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		ACB0FA9722B431F300EAA11F /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
 		ACCE2DD4229DD40700A9EE20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,11 +691,9 @@
 		ACDF9A51226FA3DF00B65291 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACDF9A53226FA44800B65291 /* UserRealm.swift */,
+				ACB0FA9422B3C13400EAA11F /* DB */,
 				ACB0F31722747C41006EB545 /* User.swift */,
 				ACB0F31B2277A1CA006EB545 /* Locations.swift */,
-				AC347E59229A02320006F2AC /* RealmManager.swift */,
-				AC347E5B229A026E0006F2AC /* Wrapper.swift */,
 				ACBA440522A6FA540040055B /* Profile.swift */,
 				ACF4D7BC22ADC5250093BA25 /* Feed.swift */,
 			);
@@ -774,7 +787,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Los Zigerianos";
 				TargetAttributes = {
 					209953742286D374006D6346 = {
@@ -818,6 +831,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB0FA8E22B2BA5300EAA11F /* ProfileViewController.xib in Resources */,
 				20392471227B777D0061E59B /* LoginViewController.xib in Resources */,
 				209953A522888E77006D6346 /* Apercu Pro Light Italic.otf in Resources */,
 				ACF4D7B922ADC1990093BA25 /* FeedViewController.xib in Resources */,
@@ -835,7 +849,6 @@
 				2040028722A6F52F005BF21A /* LaunchScreenViewController.xib in Resources */,
 				AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */,
 				ACF4D7C122AE56F80093BA25 /* FeedCollectionViewCell.xib in Resources */,
-				AC45B6F122AD5C1E0002E163 /* ProfileLocationTableViewCell.xib in Resources */,
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
 				AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */,
@@ -939,14 +952,11 @@
 				20D8656922A41458005D04FA /* GetLocations.swift in Sources */,
 				ACF4D7B822ADC1990093BA25 /* FeedViewController.swift in Sources */,
 				ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */,
-				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
-				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
-				20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */,
+				ACAFEF7F22B23039002A611F /* UserRealm.swift in Sources */,
+				ACAFEF8022B23039002A611F /* LoginNavigator.swift in Sources */,
+				ACAFEF8122B23039002A611F /* LocationService.swift in Sources */,
 				ACF4D7BB22ADC2D70093BA25 /* GetTimeline.swift in Sources */,
 				2040028922A6F61C005BF21A /* LaunchScreenAssembly.swift in Sources */,
-				ACDF9A54226FA44800B65291 /* UserRealm.swift in Sources */,
-				209953B02288941C006D6346 /* LoginNavigator.swift in Sources */,
-				20E7F42822A13BDB00814E71 /* LocationService.swift in Sources */,
 				2040028E22A70248005BF21A /* LaunchScreenNavigator.swift in Sources */,
 				20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
@@ -970,7 +980,6 @@
 				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
 				ACF4D7C022AE56F80093BA25 /* FeedCollectionViewCell.swift in Sources */,
 				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
-				AC45B6F022AD5C1E0002E163 /* ProfileLocationTableViewCell.swift in Sources */,
 				2040028622A6F52F005BF21A /* LaunchScreenViewController.swift in Sources */,
 				20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */,
 			);
@@ -1171,7 +1180,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.loszigerianos.JourTrips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1191,7 +1200,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.loszigerianos.JourTrips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -11,6 +11,7 @@ import Foundation
 enum RequestType: String {
 	case get
 	case post
+    case delete
 }
 
 enum ApiEndpoint {
@@ -20,6 +21,7 @@ enum ApiEndpoint {
 	case nearLocations(latitude: Double, longitude: Double)
 	case profile(userID: String)
 	case comments(userID: String)
+    case deleteComment(commentID: String)
 }
 
 extension ApiEndpoint {
@@ -66,6 +68,8 @@ extension ApiEndpoint {
 			return .get
 		case .userLogin, .userSignUp:
 			return .post
+        case .deleteComment:
+            return .delete
 		}
 	}
 
@@ -83,6 +87,8 @@ extension ApiEndpoint {
 			return "/users/profile/5ceb706146e3c87667d594c2"
 		case .comments:
 			return "/comments/userId/5ceb706146e3c87667d594c2/timeline"
+        case .deleteComment:
+            return "/comments/5d03b4e2609e1666530f01ac/delete"
 			// FIXME: testing purposes
 		}
 	}
@@ -104,6 +110,8 @@ extension ApiEndpoint {
 			return [:]
 		case .comments(let userID):
 			return [:]
+        case .deleteComment(let commentID):
+            return [:]
 		}
 	}
 }
