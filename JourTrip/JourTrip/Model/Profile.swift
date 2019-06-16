@@ -27,5 +27,5 @@ struct Comment: Codable {
 	let id: String?
 	let user: Profile?
 	let location: Location?
-	let commentDescription, creationDate: String?
+	let description, creationDate: String?
 }

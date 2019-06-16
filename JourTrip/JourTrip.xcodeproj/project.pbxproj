@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2008B3AD22B6A5570051E49E /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008B3AB22B6A5570051E49E /* TagCollectionViewCell.swift */; };
+		2008B3AE22B6A5570051E49E /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2008B3AC22B6A5570051E49E /* TagCollectionViewCell.xib */; };
 		20392471227B777D0061E59B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20392470227B777D0061E59B /* LoginViewController.xib */; };
 		20392473227B81330061E59B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20392472227B81320061E59B /* LoginViewModel.swift */; };
 		2040028622A6F52F005BF21A /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028422A6F52F005BF21A /* LaunchScreenViewController.swift */; };
@@ -113,6 +115,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2008B3AB22B6A5570051E49E /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		2008B3AC22B6A5570051E49E /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		20392470227B777D0061E59B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		20392472227B81320061E59B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2040028422A6F52F005BF21A /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
@@ -712,6 +716,8 @@
 				ACF4D7B722ADC1990093BA25 /* FeedViewController.xib */,
 				ACF4D7BE22AE56F80093BA25 /* FeedCollectionViewCell.swift */,
 				ACF4D7BF22AE56F80093BA25 /* FeedCollectionViewCell.xib */,
+				2008B3AB22B6A5570051E49E /* TagCollectionViewCell.swift */,
+				2008B3AC22B6A5570051E49E /* TagCollectionViewCell.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -837,6 +843,7 @@
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
 				AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */,
 				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
+				2008B3AE22B6A5570051E49E /* TagCollectionViewCell.xib in Resources */,
 				209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */,
 				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
 				2099539E22888E77006D6346 /* Apercu Light.otf in Resources */,
@@ -927,6 +934,7 @@
 				20E7F41D229F07E700814E71 /* SearchBar.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */,
+				2008B3AD22B6A5570051E49E /* TagCollectionViewCell.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
 				AC42437922934139008111FB /* SearchViewController.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
