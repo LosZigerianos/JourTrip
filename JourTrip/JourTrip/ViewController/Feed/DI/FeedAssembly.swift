@@ -11,16 +11,18 @@ import Foundation
 class FeedAssembly {
     
     private let repository: FeedService
+	private let feedDetailAssembly: FeedDetailAssembly
     
-    init(repository: FeedService) {
+    init(repository: FeedService,
+		 feedDetailAssembly: FeedDetailAssembly) {
         self.repository = repository
+		self.feedDetailAssembly = feedDetailAssembly
     }
     
     func viewController() -> FeedViewController {
         let viewController = FeedViewController()
-//        viewController.dataSource = dataSource()
-//        viewController.delegate = delegate()
         viewController.getTimeline = getTimeline()
+		viewController.detailNavigator = feedDetailAssembly.navigator()
         return viewController
     }
     

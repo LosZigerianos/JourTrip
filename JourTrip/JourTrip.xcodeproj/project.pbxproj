@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2008B3AD22B6A5570051E49E /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008B3AB22B6A5570051E49E /* TagCollectionViewCell.swift */; };
 		2008B3AE22B6A5570051E49E /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2008B3AC22B6A5570051E49E /* TagCollectionViewCell.xib */; };
+		2008B3B422B6BD8E0051E49E /* FeedDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008B3B322B6BD8E0051E49E /* FeedDetailAssembly.swift */; };
+		2008B3B722B6BDA90051E49E /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008B3B522B6BDA90051E49E /* FeedDetailViewController.swift */; };
+		2008B3B822B6BDA90051E49E /* FeedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2008B3B622B6BDA90051E49E /* FeedDetailViewController.xib */; };
+		2008B3BA22B6C3A30051E49E /* FeedDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008B3B922B6C3A30051E49E /* FeedDetailNavigator.swift */; };
+		2008B3BC22B6CF910051E49E /* CommentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008B3BB22B6CF910051E49E /* CommentCardView.swift */; };
 		20392471227B777D0061E59B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20392470227B777D0061E59B /* LoginViewController.xib */; };
 		20392473227B81330061E59B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20392472227B81320061E59B /* LoginViewModel.swift */; };
 		2040028622A6F52F005BF21A /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028422A6F52F005BF21A /* LaunchScreenViewController.swift */; };
@@ -117,6 +122,11 @@
 /* Begin PBXFileReference section */
 		2008B3AB22B6A5570051E49E /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		2008B3AC22B6A5570051E49E /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		2008B3B322B6BD8E0051E49E /* FeedDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailAssembly.swift; sourceTree = "<group>"; };
+		2008B3B522B6BDA90051E49E /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
+		2008B3B622B6BDA90051E49E /* FeedDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailViewController.xib; sourceTree = "<group>"; };
+		2008B3B922B6C3A30051E49E /* FeedDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailNavigator.swift; sourceTree = "<group>"; };
+		2008B3BB22B6CF910051E49E /* CommentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardView.swift; sourceTree = "<group>"; };
 		20392470227B777D0061E59B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		20392472227B81320061E59B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2040028422A6F52F005BF21A /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +247,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2008B3AF22B6BBCF0051E49E /* Feed Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2008B3B222B6BD750051E49E /* DI */,
+				2008B3B122B6BD700051E49E /* Navigator */,
+				2008B3B022B6BD660051E49E /* Presentation */,
+			);
+			path = "Feed Detail";
+			sourceTree = "<group>";
+		};
+		2008B3B022B6BD660051E49E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2008B3B522B6BDA90051E49E /* FeedDetailViewController.swift */,
+				2008B3B622B6BDA90051E49E /* FeedDetailViewController.xib */,
+				2008B3BB22B6CF910051E49E /* CommentCardView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2008B3B122B6BD700051E49E /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				2008B3B922B6C3A30051E49E /* FeedDetailNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		2008B3B222B6BD750051E49E /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				2008B3B322B6BD8E0051E49E /* FeedDetailAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		2040028122A6F4F9005BF21A /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +348,7 @@
 				AC42437722934126008111FB /* Search */,
 				AC4243602292013F008111FB /* Feed */,
 				AC14FADA22A4430D00BC6EF8 /* Profile */,
+				2008B3AF22B6BBCF0051E49E /* Feed Detail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -840,6 +887,7 @@
 				AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */,
 				ACF4D7C122AE56F80093BA25 /* FeedCollectionViewCell.xib in Resources */,
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
+				2008B3B822B6BDA90051E49E /* FeedDetailViewController.xib in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
 				AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */,
 				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
@@ -919,6 +967,7 @@
 				ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */,
 				ACB0F31622735D9A006EB545 /* DataManager.swift in Sources */,
 				209953B422889872006D6346 /* App.swift in Sources */,
+				2008B3BC22B6CF910051E49E /* CommentCardView.swift in Sources */,
 				20E7F419229F045500814E71 /* HeaderView.swift in Sources */,
 				ACBA440422A6F6230040055B /* ProfileService.swift in Sources */,
 				20A10D282299E7B700D06660 /* RegisterService.swift in Sources */,
@@ -935,6 +984,7 @@
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */,
 				2008B3AD22B6A5570051E49E /* TagCollectionViewCell.swift in Sources */,
+				2008B3B422B6BD8E0051E49E /* FeedDetailAssembly.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
 				AC42437922934139008111FB /* SearchViewController.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
@@ -950,6 +1000,7 @@
 				ACF4D7BB22ADC2D70093BA25 /* GetTimeline.swift in Sources */,
 				2040028922A6F61C005BF21A /* LaunchScreenAssembly.swift in Sources */,
 				2040028E22A70248005BF21A /* LaunchScreenNavigator.swift in Sources */,
+				2008B3BA22B6C3A30051E49E /* FeedDetailNavigator.swift in Sources */,
 				20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */,
@@ -973,6 +1024,7 @@
 				ACF4D7C022AE56F80093BA25 /* FeedCollectionViewCell.swift in Sources */,
 				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
 				2040028622A6F52F005BF21A /* LaunchScreenViewController.swift in Sources */,
+				2008B3B722B6BDA90051E49E /* FeedDetailViewController.swift in Sources */,
 				20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

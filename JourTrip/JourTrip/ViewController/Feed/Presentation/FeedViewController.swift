@@ -20,6 +20,7 @@ final class FeedViewController: UIViewController {
     
     // MARK: - Properties
     var getTimeline: GetTimelineProtocol!
+	var detailNavigator: FeedDetailNavigatorProtocol!
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     var comments = [Comment]()
     
@@ -44,10 +45,6 @@ final class FeedViewController: UIViewController {
     // MARK: - UI
     func setupUI() {
         collectionViewLayout.sectionInset = UIEdgeInsets(top: Constants.spacing, left: Constants.spacing, bottom: Constants.spacing, right: Constants.spacing)
-//        collectionViewLayout.minimumLineSpacing = Constants.spacing
-//        collectionViewLayout.minimumInteritemSpacing = Constants.spacing
-//        collectionViewLayout.headerReferenceSize = .init(width: view.frame.width, height: 150)
-//		collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         collectionView.collectionViewLayout = collectionViewLayout
     }
 }
@@ -69,7 +66,8 @@ extension FeedViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     // MARK: - Delegate and Flow layout
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("User tapped on row \(indexPath)")
+		let comment = comments[indexPath.row]
+		detailNavigator.presentDetail(with: comment)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
