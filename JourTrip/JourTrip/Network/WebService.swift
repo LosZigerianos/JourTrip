@@ -26,7 +26,7 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 			if let data = data,
 				let response = try? self.decoder.decode(UserLogin.self, from: data) {
 				completion(response.success, nil)
-				self.saveLoginCredentials(credentials, for: response.metadata?.id)
+				self.saveLoginCredentials(credentials, for: response.metadata?.id, with: response.token)
 			}
 		}.resume()
 	}
@@ -35,7 +35,7 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 		let user = UserModel(email: credentials.email, password: credentials.password)
 		return load(UserLogin.self, from: .userLogin(credentials: credentials), withBody: user)
 			.do(onNext: { user in
-				self.saveLoginCredentials(credentials, for: user.metadata?.id)
+				self.saveLoginCredentials(credentials, for: user.metadata?.id, with: user.token)
 			})
 			.map { $0.success }
 			.asSingle()
@@ -69,9 +69,8 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 	
     // MARK: - Feed Service
     func getTimeline(completion: @escaping (FeedResponse?, Error?) -> Void) {
-		let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as! String
-		let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as! String
-		print(token)
+		guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String,
+			let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as? String else { return }
 		let request = ApiEndpoint.comments(userID: userId).request(with: baseUrl, adding: ["token": token])
 		session.dataTask(with: request) { data, _, error in
 			if let error = error {
@@ -172,11 +171,15 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 		}.resume()
 	}
 
-	private func saveLoginCredentials(_ credentials: Credentials, for userId: String?) {
+	private func saveLoginCredentials(_ credentials: Credentials, for userId: String?, with token: String? = nil) {
 		DataManager.sharedInstance.save(value: credentials.email, key: ConstantsDataManager.email)
 		DataManager.sharedInstance.save(value: credentials.password, key: ConstantsDataManager.password)
 		if let id = userId {
 			DataManager.sharedInstance.save(value: id, key: ConstantsDataManager.id)
+		}
+
+		if let token = token {
+			DataManager.sharedInstance.save(value: token, key: ConstantsDataManager.token)
 		}
 	}
 
