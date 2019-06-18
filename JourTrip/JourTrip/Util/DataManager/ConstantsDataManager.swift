@@ -13,4 +13,8 @@ struct ConstantsDataManager {
 	static let password = "com.zigerianos.jourtrip.password"
 }
 
+struct Constants {
+    static let jourTripURL = "https://api.jourtrip.ml/apiv1"
+}
+
 

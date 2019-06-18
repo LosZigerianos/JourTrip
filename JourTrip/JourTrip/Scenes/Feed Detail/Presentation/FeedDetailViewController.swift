@@ -21,7 +21,6 @@ class FeedDetailViewController: UIViewController {
 	init(comment: Comment,
 		 addCommentViewController: AddCommentViewController) {
 		self.comment = comment
-		print(comment.location?.id)
 		self.addCommentViewController = addCommentViewController
 		super.init(nibName: nil, bundle: nil)
 	}

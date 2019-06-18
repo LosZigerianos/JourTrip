@@ -34,7 +34,7 @@ extension Location {
 	enum CodingKeys: String, CodingKey {
 		case geometry, rating, description
 		case photos, tags, comments
-		case id, name, address
+		case id = "_id", name, address
 		case postalCode, city, state
 		case locale = "cc", country, formattedAddress
 	}

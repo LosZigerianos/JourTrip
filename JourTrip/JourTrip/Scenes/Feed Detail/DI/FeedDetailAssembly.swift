@@ -27,6 +27,6 @@ class FeedDetailAssembly {
 extension FeedDetailAssembly: FeedDetailViewControllerProvider {
 	func viewController(with model: Comment) -> FeedDetailViewController {
 		return FeedDetailViewController(comment: model,
-										addCommentViewController: addCommentAssembly.viewController())
+										addCommentViewController: addCommentAssembly.viewController(with: model))
 	}
 }

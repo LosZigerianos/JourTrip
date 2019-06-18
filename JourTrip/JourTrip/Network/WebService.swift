@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 import Simple_KeychainSwift
 
-final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceType, ProfileService, FeedService {
-	let baseUrl = URL(string: "https://api.jourtrip.ml/apiv1")!
+final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceType, ProfileService, FeedService, CommentService {
+	let baseUrl = URL(string: Constants.jourTripURL)!
 	let session = URLSession.shared
 	let decoder = JSONDecoder()
 
@@ -87,8 +87,8 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
     
     // MARK: - Profile Service
     func getProfile(completion: @escaping (ProfileResponse?, Error?) -> Void) {
-		let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as! String
-		let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as! String
+		guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String,
+			let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as? String else { return }
         let request = ApiEndpoint.profile(userID: userId).request(with: baseUrl, adding: ["token": token])
 		session.dataTask(with: request) { data, _, error in
 			if let error = error {
@@ -100,8 +100,25 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 				completion(response, nil)
 			}
 		}.resume()
+	}
+    
+    func deleteComment(with commentID: String,
+					   completion: @escaping (ProfileResponse?, Error?) -> Void) {
+        guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String else {
+            // FIXME: retrieve token
+            return
+        }
+        let request = ApiEndpoint.deleteComment(commentId: commentID).request(with: baseUrl, adding: ["token": token])
+        session.dataTask(with: request) { data, _, error in
+            guard let data = data,
+                let response = try? self.decoder.decode(ProfileResponse.self, from: data) else {
+                    completion(nil, error)
+                    return
+            }
+            completion(response, nil)
+            }.resume()
     }
-
+    
     // MARK: - Locations Service
 	func getLocations(byName name: String,
 					  completion: @escaping (LocationsResponse?, Error?) -> Void) {
@@ -122,7 +139,7 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 	func getNearLocations(latitude: Double,
 						  longitude: Double,
 						  completion: @escaping (_ response: LocationsResponse?, _ error: Error?) -> Void) {
-		let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as! String
+		guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String else { return }
 		let request = ApiEndpoint.nearLocations(latitude: latitude, longitude: longitude).request(with: baseUrl, adding: ["token": token])
 		session.dataTask(with: request) { data, _, error in
 			if let error = error {
@@ -131,6 +148,25 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 
 			if let data = data,
 				let response = try? self.decoder.decode(LocationsResponse.self, from: data) {
+				completion(response, nil)
+			}
+		}.resume()
+	}
+
+	func postComment(_ description: String,
+					 locationId: String,
+					 completion: @escaping (CommentResponse?, Error?) -> Void) {
+		guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String else { return }
+		let request = ApiEndpoint.postComment.request(with: baseUrl, andBody: ["token": token,
+																			   "locationId": locationId,
+																			   "description": description])
+		session.dataTask(with: request) { data, _, error in
+			if let error = error {
+				completion(nil, error)
+			}
+
+			if let data = data,
+				let response = try? self.decoder.decode(CommentResponse.self, from: data) {
 				completion(response, nil)
 			}
 		}.resume()
@@ -155,31 +191,31 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 
 
 private extension Reactive where Base: URLSession {
-	func send(request: URLRequest) -> Observable<Data> {
-		return Observable<Data>.create { observer in
-			let task = self.base.dataTask(with: request) { data, response, error in
-				if let error = error {
-					observer.onError(error)
-				} else {
-					guard let httpResponse = response as? HTTPURLResponse else {
-						fatalError("Unsupported protocol")
-					}
-
-					if 200 ..< 300 ~= httpResponse.statusCode {
-						if let data = data {
-							observer.onNext(data)
-						}
-						observer.onCompleted()
-					}
-				}
-			}
-
-			task.resume()
-
-			return Disposables.create {
-				task.cancel()
-			}
-		}
-	}
-
+    func send(request: URLRequest) -> Observable<Data> {
+        return Observable<Data>.create { observer in
+            let task = self.base.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    observer.onError(error)
+                } else {
+                    guard let httpResponse = response as? HTTPURLResponse else {
+                        fatalError("Unsupported protocol")
+                    }
+                    
+                    if 200 ..< 300 ~= httpResponse.statusCode {
+                        if let data = data {
+                            observer.onNext(data)
+                        }
+                        observer.onCompleted()
+                    }
+                }
+            }
+            
+            task.resume()
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+    }
+    
 }

@@ -30,7 +30,8 @@ final class AppAssembly {
 
 	private lazy var feedAssembly: FeedAssembly = FeedAssembly(repository: webService,
 															   feedDetailAssembly: feedDetailAssembly)
-	private lazy var addCommentAssembly: AddCommentAssembly = AddCommentAssembly(navigationController: navigationController)
+	private lazy var addCommentAssembly: AddCommentAssembly = AddCommentAssembly(navigationController: navigationController,
+																				 webService: webService)
 	private lazy var searchAssembly: SearchAssembly = SearchAssembly(repository: webService)
     private lazy var profileAssembly: ProfileAssembly = ProfileAssembly(repository: webService)
     private lazy var webService: WebService = WebService()

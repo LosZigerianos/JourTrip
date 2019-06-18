@@ -23,8 +23,6 @@ class ProfileTableViewCell: UICollectionViewCell {
     @IBOutlet var followersStackView: UIStackView!
     @IBOutlet var postsStackView: UIStackView!
     
-    var profileViewController: ProfileViewController?
-    
     //TODO: localize languages and fix name/account
     func setup(with username: String?,
                     account: String?,
@@ -59,7 +57,7 @@ class ProfileTableViewCell: UICollectionViewCell {
     
      // FIXME: stackViewActions!
     @objc func followingStackViewTapped() {
-        profileViewController?.navigateTest()
+        
     }
     
     @objc func followersStackViewTapped() {

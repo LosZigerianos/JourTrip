@@ -10,14 +10,22 @@ import UIKit
 
 class AddCommentAssembly {
 	let navigationController: UINavigationController
+	let webService: WebService
 
-	init(navigationController: UINavigationController) {
+	init(navigationController: UINavigationController,
+		 webService: WebService) {
 		self.navigationController = navigationController
+		self.webService = webService
+	}
+
+	func addComment() -> AddReviewProtocol {
+		return AddReview(repository: webService)
 	}
 }
 
 extension AddCommentAssembly: AddCommentViewControllerProvider {
-	func viewController() -> AddCommentViewController {
-		return AddCommentViewController()
+	func viewController(with comment: Comment) -> AddCommentViewController {
+		return AddCommentViewController(addComment: addComment(),
+										comment: comment)
 	}
 }

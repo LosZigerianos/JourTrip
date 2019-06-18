@@ -9,5 +9,7 @@
 import Foundation
 
 protocol CommentService {
-//	func postProfile(completion: @escaping (_ response: ))
+	func postComment(_ description: String,
+					 locationId: String,
+					 completion: @escaping (_ response: CommentResponse?, _ error: Error?) -> Void)
 }

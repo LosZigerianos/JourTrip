@@ -9,11 +9,25 @@
 import UIKit
 
 protocol AddCommentViewControllerProvider: class {
-	func viewController() -> AddCommentViewController
+	func viewController(with comment: Comment) -> AddCommentViewController
 }
 
 class AddCommentViewController: UIViewController {
 
+	private let addComment: AddReviewProtocol
+	private let comment: Comment
+
+	init(addComment: AddReviewProtocol,
+		 comment: Comment) {
+		self.addComment = addComment
+		self.comment = comment
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	@IBOutlet weak var commentTextView: UITextView!
 	@IBOutlet weak var submitButton: UIButton! {
 		didSet {
@@ -32,7 +46,13 @@ class AddCommentViewController: UIViewController {
 	}
 
 	@IBAction func submitAction(_ sender: UIButton) {
-		dismiss(animated: true)
+		addComment.invoke(comment: commentTextView.text, locationId: comment.location?.id ?? "") { [weak self] _, error in
+			if let _ = error {
+				print("Error")
+			}
+
+			self?.dismiss(animated: true)
+		}
 	}
 
 }

@@ -24,8 +24,42 @@ struct Profile: Codable {
 }
 
 struct Comment: Codable {
-	let id: String?
-	let user: Profile?
-	let location: Location?
-	let description, creationDate: String?
+	let id: String
+    let user: Profile?
+    let location: Location?
+    let description, creationDate: String?
+}
+
+extension Comment {
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case user
+        case location
+        case description
+        case creationDate = "creation_date"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decodeIfPresent(String.self, forKey: .id) ?? ""
+        user = try values.decodeIfPresent(Profile.self, forKey: .user)
+        location = try values.decodeIfPresent(Location.self, forKey: .location)
+        description = try values.decodeIfPresent(String.self, forKey: .description)
+        creationDate = try values.decodeIfPresent(String.self, forKey: .creationDate)
+    }
+    
+    var proxyForEquality: String {
+        return "\(id)"
+    }
+}
+
+extension Comment: Equatable {
+    static func ==(lhs: Comment, rhs: Comment) -> Bool {
+        return lhs.proxyForEquality == rhs.proxyForEquality
+    }
+}
+
+struct CommentResponse: Codable {
+	let success: Bool
+	let data: Metadata?
 }
