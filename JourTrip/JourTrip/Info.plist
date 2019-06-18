@@ -31,6 +31,10 @@
 	<string>JourTrip needs your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>JourTrip needs your location</string>
+	<key>NSCameraUsageDescription</key>
+	<string>JourTrip wants to take a pictures</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>JourTrip wants to upload photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Apercu Bold Italic.otf</string>

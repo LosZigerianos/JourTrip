@@ -17,7 +17,7 @@ class HeaderView: UIView {
 
 	lazy var headerLabel: UILabel = {
 		let label = UILabel()
-		label.font = UIFont(name: "ApercuPro-Bold", size: 24)
+		label.font = JourTripFont.fontBold(ofSize: 24)
 		label.textColor = .tundora
 		label.text = "Nearby"
 		label.translatesAutoresizingMaskIntoConstraints = false
