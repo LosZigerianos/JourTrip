@@ -89,43 +89,64 @@ class ProfileViewController: UIViewController {
         settingsButton.setImage(UIImage(named: "back-button"), for: .normal)
         settingsButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         settingsButton.addTarget(self, action: Selector("test"), for: .touchUpInside)
-//        let item1 = UIBarButtonItem(customView: addFriendsButton)
-        let item1 = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: Selector("test"))
+        //        let item1 = UIBarButtonItem(customView: addFriendsButton)
+        let settingItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: Selector("test"))
         
         let friendsButton = UIButton(type: .custom)
         friendsButton.setImage(UIImage(named: "back-button"), for: .normal)
         friendsButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         friendsButton.addTarget(self, action: Selector("test"), for: .touchUpInside)
 //        let item2 = UIBarButtonItem(customView: settingsButton)
-        let item2 = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: Selector("test"))
+        let friendItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: Selector("test"))
         
-        navigationItem.setRightBarButtonItems([item1,item2], animated: true)
+        navigationItem.setRightBarButtonItems([settingItem, friendItem], animated: true)
     }
     
-    // MARK: - Navigation
-    func navigateTest() {
-        print("HOLA")
+    // MARK: - Services
+    func deleteComment(with comment: Comment, indexPath: IndexPath) {
+        getProfile.deleteComment(with: comment.id) { (response) in
+            // TODO: show alert when something is wrong
+            if response.data != nil {
+                DispatchQueue.main.async {
+                    self.collectionView.performBatchUpdates({
+                        if let index = self.userComments.index(of: comment) {
+                            self.userComments.remove(at: index)
+                            let commentIndexPath = IndexPath(row: indexPath.row - 1, section: 0)
+                            self.collectionView.deleteItems(at: [commentIndexPath])
+                            self.collectionView.reloadItems(at: [indexPath])
+                        }
+                    }) { (finished) in
+                        print(finished)
+                    }
+                }
+            } else {
+                print("\(String(describing: response.error))")
+            }
+        }
     }
     
     // MARK: - Actions
-    func alertActionSheet() {
-         //TODO: LocazidedStrings
-        let alertController = UIAlertController(title: "Choose option", message: "What do you want to do?", preferredStyle: .actionSheet)
+    func alertActionSheet(with comment: Comment, indexPath: IndexPath) {
+        //TODO: LocazidedStrings
+        let alertController = UIAlertController(title: "Choose an option", message: "What do you want to do?", preferredStyle: .actionSheet)
         
-       
         let viewAction = UIAlertAction(title: "View comment", style: .default, handler: { (alert: UIAlertAction!) -> Void in
             print("View")
+            
         })
         let removeAction = UIAlertAction(title: "Remove it", style: .destructive, handler: { (alert: UIAlertAction!) -> Void in
-            print("Remove")
+            self.deleteComment(with: comment, indexPath: indexPath)
         })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert) in
+            print(alert)
+        }
         
         alertController.addAction(viewAction)
         alertController.addAction(removeAction)
+        alertController.addAction(cancelAction)
         
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
-    
 }
 
 extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -149,7 +170,6 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             
             let comment = userComments[(indexPath.row - 1)]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCollectionViewCell", for: indexPath) as! FeedCollectionViewCell
-
             cell.configure(with: comment)
             
             return cell
@@ -157,8 +177,10 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("User tapped on row \(indexPath)")
-        alertActionSheet()
+        if indexPath.row != 0 {
+            print("User tapped on row \(String(describing: userComments[(indexPath.row - 1)].id))")
+            alertActionSheet(with: userComments[indexPath.row - 1], indexPath: indexPath)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

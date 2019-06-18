@@ -298,6 +298,7 @@
 				AC42437722934126008111FB /* Search */,
 				AC4243602292013F008111FB /* Feed */,
 				AC14FADA22A4430D00BC6EF8 /* Profile */,
+				ACB0FA9722B431F300EAA11F /* Comments */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -660,6 +661,23 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		ACB0FA9422B3C13400EAA11F /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				AC347E5B229A026E0006F2AC /* Wrapper.swift */,
+				ACDF9A53226FA44800B65291 /* UserRealm.swift */,
+				AC347E59229A02320006F2AC /* RealmManager.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		ACB0FA9722B431F300EAA11F /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
 		ACCE2DD4229DD40700A9EE20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -673,11 +691,9 @@
 		ACDF9A51226FA3DF00B65291 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACDF9A53226FA44800B65291 /* UserRealm.swift */,
+				ACB0FA9422B3C13400EAA11F /* DB */,
 				ACB0F31722747C41006EB545 /* User.swift */,
 				ACB0F31B2277A1CA006EB545 /* Locations.swift */,
-				AC347E59229A02320006F2AC /* RealmManager.swift */,
-				AC347E5B229A026E0006F2AC /* Wrapper.swift */,
 				ACBA440522A6FA540040055B /* Profile.swift */,
 				ACF4D7BC22ADC5250093BA25 /* Feed.swift */,
 			);
