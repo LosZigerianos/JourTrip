@@ -23,6 +23,11 @@
 		2040028E22A70248005BF21A /* LaunchScreenNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040028D22A70248005BF21A /* LaunchScreenNavigator.swift */; };
 		2070593122AECF75005D17A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2070593022AECF75005D17A7 /* CustomTextField.swift */; };
 		208A16F2227B761B00E36CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A16F1227B761B00E36CDF /* LoginViewController.swift */; };
+		2093801322B95D5500EEF108 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093801122B95D5500EEF108 /* AddCommentViewController.swift */; };
+		2093801422B95D5500EEF108 /* AddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2093801222B95D5500EEF108 /* AddCommentViewController.xib */; };
+		2093801622B9601700EEF108 /* AddCommentAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093801522B9601700EEF108 /* AddCommentAssembly.swift */; };
+		2093801C22B9654C00EEF108 /* AddReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093801B22B9654C00EEF108 /* AddReview.swift */; };
+		2093801E22B96AE900EEF108 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093801D22B96AE900EEF108 /* CommentService.swift */; };
 		2099536E2286D0DD006D6346 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536D2286D0DD006D6346 /* LoginService.swift */; };
 		209953702286D10D006D6346 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099536F2286D10D006D6346 /* LoginValidator.swift */; };
 		209953782286D374006D6346 /* JourTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953772286D374006D6346 /* JourTripTests.swift */; };
@@ -136,6 +141,11 @@
 		2040028D22A70248005BF21A /* LaunchScreenNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenNavigator.swift; sourceTree = "<group>"; };
 		2070593022AECF75005D17A7 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		208A16F1227B761B00E36CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2093801122B95D5500EEF108 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
+		2093801222B95D5500EEF108 /* AddCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCommentViewController.xib; sourceTree = "<group>"; };
+		2093801522B9601700EEF108 /* AddCommentAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentAssembly.swift; sourceTree = "<group>"; };
+		2093801B22B9654C00EEF108 /* AddReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReview.swift; sourceTree = "<group>"; };
+		2093801D22B96AE900EEF108 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		2099536D2286D0DD006D6346 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		2099536F2286D10D006D6346 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
 		209953752286D374006D6346 /* JourTripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JourTripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,6 +293,16 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		2008B3BD22B95CED0051E49E /* Add Comment */ = {
+			isa = PBXGroup;
+			children = (
+				2093801922B9653400EEF108 /* Use Cases */,
+				2093801022B95D2100EEF108 /* DI */,
+				2093800F22B95D1B00EEF108 /* Presentation */,
+			);
+			path = "Add Comment";
+			sourceTree = "<group>";
+		};
 		2040028122A6F4F9005BF21A /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +359,7 @@
 		208A16EE227B75E000E36CDF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2008B3BD22B95CED0051E49E /* Add Comment */,
 				2070593022AECF75005D17A7 /* CustomTextField.swift */,
 				2040028122A6F4F9005BF21A /* LaunchScreen */,
 				2050BE8A2295DD980031B903 /* Tab Bar */,
@@ -361,6 +382,31 @@
 				20392472227B81320061E59B /* LoginViewModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2093800F22B95D1B00EEF108 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2093801122B95D5500EEF108 /* AddCommentViewController.swift */,
+				2093801222B95D5500EEF108 /* AddCommentViewController.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2093801022B95D2100EEF108 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				2093801522B9601700EEF108 /* AddCommentAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		2093801922B9653400EEF108 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				2093801B22B9654C00EEF108 /* AddReview.swift */,
+			);
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 		2099536B2286CE18006D6346 /* Login */ = {
@@ -744,6 +790,7 @@
 				20E7F42722A13BDB00814E71 /* LocationService.swift */,
 				ACBA440322A6F6230040055B /* ProfileService.swift */,
 				ACF4D7B422ADBE9C0093BA25 /* FeedService.swift */,
+				2093801D22B96AE900EEF108 /* CommentService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -895,6 +942,7 @@
 				209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */,
 				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
 				2099539E22888E77006D6346 /* Apercu Light.otf in Resources */,
+				2093801422B95D5500EEF108 /* AddCommentViewController.xib in Resources */,
 				209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */,
 				209953A022888E77006D6346 /* Apercu Medium.otf in Resources */,
 				2099538622888114006D6346 /* InitialViewController.xib in Resources */,
@@ -983,6 +1031,7 @@
 				20E7F41D229F07E700814E71 /* SearchBar.swift in Sources */,
 				ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */,
 				AC347E5E229A24C40006F2AC /* NearCollectionViewCell.swift in Sources */,
+				2093801322B95D5500EEF108 /* AddCommentViewController.swift in Sources */,
 				2008B3AD22B6A5570051E49E /* TagCollectionViewCell.swift in Sources */,
 				2008B3B422B6BD8E0051E49E /* FeedDetailAssembly.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
@@ -991,6 +1040,7 @@
 				20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */,
 				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
 				AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */,
+				2093801E22B96AE900EEF108 /* CommentService.swift in Sources */,
 				20D8656922A41458005D04FA /* GetLocations.swift in Sources */,
 				ACF4D7B822ADC1990093BA25 /* FeedViewController.swift in Sources */,
 				ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */,
@@ -1004,6 +1054,7 @@
 				20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */,
+				2093801622B9601700EEF108 /* AddCommentAssembly.swift in Sources */,
 				2040028C22A6F710005BF21A /* InitialNavigator.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
 				20D8657222A43640005D04FA /* GetCurrentLocation.swift in Sources */,
@@ -1024,6 +1075,7 @@
 				ACF4D7C022AE56F80093BA25 /* FeedCollectionViewCell.swift in Sources */,
 				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
 				2040028622A6F52F005BF21A /* LaunchScreenViewController.swift in Sources */,
+				2093801C22B9654C00EEF108 /* AddReview.swift in Sources */,
 				2008B3B722B6BDA90051E49E /* FeedDetailViewController.swift in Sources */,
 				20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */,
 			);

@@ -21,7 +21,7 @@ struct GetTimeline: GetTimelineProtocol {
     }
     
     func invoke(with userID: String, completion: @escaping ([Comment]) -> ()) {
-        repository.getTimeline(by: userID) { response, error in
+        repository.getTimeline() { response, error in
             guard let locations = response?.data else { return }
             completion(locations)
         }

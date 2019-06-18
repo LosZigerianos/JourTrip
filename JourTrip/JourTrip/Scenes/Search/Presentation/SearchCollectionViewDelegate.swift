@@ -15,10 +15,6 @@ class SearchCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollec
 		static let spacing: CGFloat = 8
 	}
 
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print("User tapped on row \(indexPath)")
-	}
-
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let totalSpacing = (2 * Constants.spacing) + ((Constants.columns - 1) * Constants.spacing)
 

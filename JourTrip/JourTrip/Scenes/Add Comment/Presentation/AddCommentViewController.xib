@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Apercu Medium.otf">
+            <string>Apercu-Medium</string>
+        </array>
+        <array key="Apercu Pro Bold.otf">
+            <string>ApercuPro-Bold</string>
+        </array>
+        <array key="Apercu Regular.otf">
+            <string>Apercu-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCommentViewController" customModule="JourTrip" customModuleProvider="target">
+            <connections>
+                <outlet property="commentTextView" destination="Ggo-2s-zgf" id="2Vx-v6-UDe"/>
+                <outlet property="submitButton" destination="PUl-iT-WGr" id="9TJ-5n-uvt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="It is a nice place for having tacos! 🌮" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Ggo-2s-zgf">
+                    <rect key="frame" x="16" y="108" width="382" height="285"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" red="0.46529946170000003" green="0.46990638699999998" blue="0.46990638699999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Apercu-Regular" family="Apercu" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUl-iT-WGr">
+                    <rect key="frame" x="16" y="425" width="382" height="46"/>
+                    <color key="backgroundColor" red="0.35276341439999997" green="0.38041937349999999" blue="0.4549338222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="BfQ-XF-2Dh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="14"/>
+                    <state key="normal" title="SUBMIT">
+                        <color key="titleColor" red="0.93317931890000005" green="0.94125384089999997" blue="0.94944435360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="lcL-rJ-6a4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muM-4F-fmb">
+                    <rect key="frame" x="366" y="44" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="WCa-az-PEr"/>
+                        <constraint firstAttribute="width" constant="32" id="i4u-Iq-sE7"/>
+                    </constraints>
+                    <state key="normal" image="Image"/>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="eSY-pj-sJd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-vW-Zef">
+                    <rect key="frame" x="148.5" y="50" width="117.5" height="22.5"/>
+                    <fontDescription key="fontDescription" name="ApercuPro-Bold" family="Apercu Pro" pointSize="19"/>
+                    <color key="textColor" red="0.35276341439999997" green="0.38041937349999999" blue="0.4549338222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="PUl-iT-WGr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="7i7-37-SVZ"/>
+                <constraint firstItem="PUl-iT-WGr" firstAttribute="top" secondItem="Ggo-2s-zgf" secondAttribute="bottom" constant="32" id="Ggl-Vu-Fwu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="muM-4F-fmb" secondAttribute="trailing" constant="16" id="RJw-42-Sw8"/>
+                <constraint firstItem="PUl-iT-WGr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TfW-3q-oRA"/>
+                <constraint firstItem="jQn-vW-Zef" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WN3-63-kux"/>
+                <constraint firstItem="muM-4F-fmb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="efv-j4-kzp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PUl-iT-WGr" secondAttribute="trailing" constant="16" id="fOb-IP-imp"/>
+                <constraint firstItem="Ggo-2s-zgf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iqz-HF-Hvo"/>
+                <constraint firstItem="jQn-vW-Zef" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="kgi-gi-4rv"/>
+                <constraint firstItem="Ggo-2s-zgf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="pXe-Xj-h6K"/>
+                <constraint firstItem="PUl-iT-WGr" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="u77-az-6nr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ggo-2s-zgf" secondAttribute="trailing" constant="16" id="zDY-oA-dub"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Image" width="51.5" height="51.5"/>
+    </resources>
+</document>

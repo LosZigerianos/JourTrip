@@ -9,7 +9,6 @@
 import Foundation
 
 protocol FeedService {
-    func getTimeline(by userID: String,
-                      completion: @escaping (_ response: FeedResponse?, _ error: Error?) -> Void)
+    func getTimeline(completion: @escaping (_ response: FeedResponse?, _ error: Error?) -> Void)
 }
 

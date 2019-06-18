@@ -90,6 +90,7 @@ class CommentCardView: UIView {
 		let label = UILabel()
 		label.font = UIFont(name: "Apercu-Regular", size: 12)
 		label.translatesAutoresizingMaskIntoConstraints = false
+		label.numberOfLines = 0
 		return label
 	}()
 

@@ -21,7 +21,7 @@ struct GetProfile: GetProfileProtocol{
     }
     
     func invoke(with userID: String, completion: @escaping (ProfileResponse) -> ()) {
-        repository.getProfile(by: userID) { (response, error) in
+        repository.getProfile() { (response, error) in
             guard let profile = response else { return }
             completion(profile)
         }

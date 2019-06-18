@@ -25,10 +25,12 @@ final class AppAssembly {
                                                                      searchAssembly: searchAssembly,
                                                                      profileAssembly: profileAssembly,
                                                                      feedAssembly: feedAssembly)
-	private lazy var feedDetailAssembly: FeedDetailAssembly = FeedDetailAssembly(navigationController: navigationController)
+	private lazy var feedDetailAssembly: FeedDetailAssembly = FeedDetailAssembly(navigationController: navigationController,
+																				 addCommentAssembly: addCommentAssembly)
 
 	private lazy var feedAssembly: FeedAssembly = FeedAssembly(repository: webService,
 															   feedDetailAssembly: feedDetailAssembly)
+	private lazy var addCommentAssembly: AddCommentAssembly = AddCommentAssembly(navigationController: navigationController)
 	private lazy var searchAssembly: SearchAssembly = SearchAssembly(repository: webService)
     private lazy var profileAssembly: ProfileAssembly = ProfileAssembly(repository: webService)
     private lazy var webService: WebService = WebService()

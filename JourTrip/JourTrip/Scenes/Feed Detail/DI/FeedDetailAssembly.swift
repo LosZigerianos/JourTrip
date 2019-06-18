@@ -10,9 +10,12 @@ import UIKit
 
 class FeedDetailAssembly {
 	let navigationController: UINavigationController
+	let addCommentAssembly: AddCommentAssembly
 
-	init(navigationController: UINavigationController) {
+	init(navigationController: UINavigationController,
+		 addCommentAssembly: AddCommentAssembly) {
 		self.navigationController = navigationController
+		self.addCommentAssembly = addCommentAssembly
 	}
 
 	func navigator() -> FeedDetailNavigatorProtocol {
@@ -23,6 +26,7 @@ class FeedDetailAssembly {
 
 extension FeedDetailAssembly: FeedDetailViewControllerProvider {
 	func viewController(with model: Comment) -> FeedDetailViewController {
-		return FeedDetailViewController(comment: model)
+		return FeedDetailViewController(comment: model,
+										addCommentViewController: addCommentAssembly.viewController())
 	}
 }

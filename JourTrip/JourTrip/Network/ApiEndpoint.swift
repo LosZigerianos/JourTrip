@@ -79,11 +79,10 @@ extension ApiEndpoint {
 			return "/users/login"
 		case .userSignUp:
 			return "/users/signup"
-		case .profile:
-			return "/users/profile/5ceb706146e3c87667d594c2"
-		case .comments:
-			return "/comments/userId/5ceb706146e3c87667d594c2/timeline"
-			// FIXME: testing purposes
+		case .profile(let userId):
+			return "/users/profile/\(userId)"
+		case .comments(let userId):
+			return "/comments/userId/\(userId)/timeline"
 		}
 	}
 
@@ -98,11 +97,7 @@ extension ApiEndpoint {
 				"latitude": String(latitude),
 				"longitude": String(longitude)
 			]
-		case .userSignUp, .userLogin:
-			return [:]
-		case .profile(let userID):
-			return [:]
-		case .comments(let userID):
+		default:
 			return [:]
 		}
 	}

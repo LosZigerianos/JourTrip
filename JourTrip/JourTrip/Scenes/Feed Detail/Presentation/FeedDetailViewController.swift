@@ -14,11 +14,15 @@ protocol FeedDetailViewControllerProvider: class {
 
 class FeedDetailViewController: UIViewController {
 	private let comment: Comment
+	private let addCommentViewController: AddCommentViewController
 
 	@IBOutlet weak var commentView: CommentCardView!
 
-	init(comment: Comment) {
+	init(comment: Comment,
+		 addCommentViewController: AddCommentViewController) {
 		self.comment = comment
+		print(comment.location?.id)
+		self.addCommentViewController = addCommentViewController
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -32,8 +36,12 @@ class FeedDetailViewController: UIViewController {
         commentView.configure(with: comment)
     }
 
-	@IBAction func closeButtonAction(_ sender: Any) {
+	@IBAction func closeButtonAction(_ sender: UIButton) {
 		dismiss(animated: true)
+	}
+
+	@IBAction func addCommentAction(_ sender: UIButton) {
+		present(addCommentViewController, animated: true)
 	}
 
 	override var preferredStatusBarStyle: UIStatusBarStyle {

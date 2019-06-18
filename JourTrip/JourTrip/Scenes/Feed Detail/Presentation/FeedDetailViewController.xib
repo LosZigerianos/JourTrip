@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Apercu Pro Regular.otf">
+            <string>ApercuPro-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedDetailViewController" customModule="JourTrip" customModuleProvider="target">
             <connections>
@@ -25,6 +30,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DF-o5-vv5">
+                    <rect key="frame" x="16" y="56" width="86" height="31"/>
+                    <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="16"/>
+                    <state key="normal" title="Add Review">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="addCommentAction:" destination="-1" eventType="touchUpInside" id="i2n-Rz-d5D"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVn-JQ-EnS">
                     <rect key="frame" x="366" y="52" width="32" height="32"/>
                     <constraints>
@@ -41,9 +56,11 @@
             <constraints>
                 <constraint firstItem="DQp-Tk-dfA" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="52L-AO-QYa"/>
                 <constraint firstItem="DQp-Tk-dfA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9tX-0T-LSb"/>
+                <constraint firstItem="3DF-o5-vv5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="9zS-ti-gLA"/>
                 <constraint firstAttribute="bottom" secondItem="DQp-Tk-dfA" secondAttribute="bottom" id="NRM-WJ-Smb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OVn-JQ-EnS" secondAttribute="trailing" constant="16" id="VhN-Pq-2ZT"/>
                 <constraint firstItem="OVn-JQ-EnS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Zxb-hX-SHq"/>
+                <constraint firstItem="3DF-o5-vv5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pHU-Iv-CHh"/>
                 <constraint firstItem="DQp-Tk-dfA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wAR-Ls-Y5c"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
