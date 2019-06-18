@@ -24,6 +24,9 @@ class DataManager: NSObject {
     }
     
     func loadValue(key: String) -> Any {
+        guard let key = key as String? else {
+            return ""
+        }
         return self.defaults?.value(forKey: key) as Any
     }
     

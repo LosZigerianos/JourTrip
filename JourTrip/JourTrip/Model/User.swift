@@ -6,86 +6,65 @@
 //  Copyright © 2019 Los Zigerianos. All rights reserved.
 //
 
-import ObjectMapper
+import Foundation
 
-final class UserLogin: Mappable {
-    var success: Bool?
-    var metadata: Metadata?
-    var token: String?
-    
-    required init?(map: Map){
-    }
-    
-    func mapping(map: Map) {
-        success <- map["success"]
-        metadata <- map["metadata"]
-        token <- map["data"]
-    }
+struct UserLogin: Codable {
+	let success: Bool
+	let metadata: Metadata?
+	let token: String
 }
 
-final class Metadata: Mappable {
-    var fullname: String?
-    var following: [String]?
-    var provider: String?
-    var id: String?
-    var email: String?
-    var creationDate: String?
-    var updatedAt: String?
+extension UserLogin {
+	enum CodingKeys: String, CodingKey {
+		case success
+		case metadata
+		case token = "data"
+	}
 
-    required init?(map: Map){
-    }
-    
-    func mapping(map: Map) {
-        fullname <- map["fullname"]
-        following <- map["following"]
-        provider <- map["provider"]
-        id <- map["_id"]
-        email <- map["email"]
-        creationDate <- map["creation_date"]
-        updatedAt <- map["updated_at"]
-    }
-    
-    convenience init?(fullname: String,
-                      following: [String],
-                      provider: String,
-                      id: String,
-                      email: String,
-                      creationDate: String,
-                      updatedAt: String) {
-        self.init(map: Map(mappingType: .fromJSON, JSON: [:]))
-        self.fullname = fullname
-        self.following = following
-        self.provider = provider
-        self.id = id
-        self.email = email
-        self.creationDate = creationDate
-        self.updatedAt = updatedAt
-    }
-
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		success = try values.decode(Bool.self, forKey: .success)
+		metadata = try values.decodeIfPresent(Metadata.self, forKey: .metadata)
+		token = try values.decode(String.self, forKey: .token)
+	}
 }
 
-final class UserResponse: Mappable {
-    var success: Bool?
-    var result: UserModel?
-    
-    required init?(map: Map){
-    }
-    
-    func mapping(map: Map) {
-        success <- map["success"]
-        result <- map["result"]
-    }
+struct Metadata: Codable {
+	let fullname: String?
+	let following: [String]?
+	let provider: String?
+	let id: String?
+	let email: String?
+	let creationDate: String?
+	let updatedAt: String?
 }
 
-final class UserModel: Mappable {
-    var email: String?
-    var password: String?
-    
-    required init?(map: Map){
-    }
-    
-    func mapping(map: Map) {
-        email <- map["email"]
-        password <- map["password"]
-    }
+extension Metadata {
+	enum CodingKeys: String, CodingKey {
+		case fullname, following, provider, email
+		case id = "_id"
+		case creationDate = "creation_date"
+		case updatedAt = "updated_at"
+	}
+
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		fullname = try values.decodeIfPresent(String.self, forKey: .fullname)
+		following = try values.decodeIfPresent([String].self, forKey: .following)
+		provider = try values.decodeIfPresent(String.self, forKey: .provider)
+		id = try values.decodeIfPresent(String.self, forKey: .id)
+		email = try values.decodeIfPresent(String.self, forKey: .email)
+		creationDate = try values.decodeIfPresent(String.self, forKey: .creationDate)
+		updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
+	}
+}
+
+struct UserSignUp: Codable {
+	let success: Bool
+	let data: Metadata
+}
+
+struct UserModel: Codable {
+	let email: String
+	let password: String
 }

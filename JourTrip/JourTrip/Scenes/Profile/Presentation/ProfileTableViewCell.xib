@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Apercu Pro Bold.otf">
+            <string>ApercuPro-Bold</string>
+        </array>
+        <array key="Apercu Pro Medium.otf">
+            <string>ApercuPro-Medium</string>
+        </array>
+        <array key="Apercu Pro Regular.otf">
+            <string>ApercuPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="274" id="KGk-i7-Jjw" customClass="ProfileTableViewCell" customModule="JourTrip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="290"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="368" height="289.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-SU-hWl">
+                        <rect key="frame" x="113" y="8" width="142" height="199"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X25-hR-W1B">
+                                <rect key="frame" x="0.0" y="0.0" width="142" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="O9c-xa-bOG"/>
+                                    <constraint firstAttribute="width" constant="142" id="wdE-Ak-llm"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zon-O4-bm5" userLabel="User Stack View">
+                                <rect key="frame" x="0.0" y="148" width="142" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Invitado" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xll-NQ-ghI">
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Bold" family="Apercu Pro" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Guest account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYb-TR-8kf">
+                                        <rect key="frame" x="0.0" y="31.5" width="142" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Medium" family="Apercu Pro" pointSize="16"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="DRV-lL-AlK" userLabel="Postureo Stack View">
+                        <rect key="frame" x="50" y="227" width="268" height="38.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AMl-ez-6Lt" userLabel="Following Stack View">
+                                <rect key="frame" x="0.0" y="0.0" width="59.5" height="38.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUl-3M-YuU">
+                                        <rect key="frame" x="22" y="0.0" width="15" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQM-K5-tS6">
+                                        <rect key="frame" x="0.0" y="21.5" width="59" height="17"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5VQ-2J-jFC" userLabel="Followers Stack View">
+                                <rect key="frame" x="104.5" y="0.0" width="59" height="38.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGJ-f1-8rn">
+                                        <rect key="frame" x="22" y="0.0" width="15" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3x-DV-K02" userLabel="Followers">
+                                        <rect key="frame" x="0.0" y="21.5" width="59" height="17"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Go-0v-CxN" userLabel="Posts Stack View">
+                                <rect key="frame" x="208.5" y="0.0" width="59.5" height="38.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4Q-Ou-3Iy">
+                                        <rect key="frame" x="22.5" y="0.0" width="15" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYG-IJ-Tf2" userLabel="posts">
+                                        <rect key="frame" x="12.5" y="21.5" width="34.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cpu-SU-hWl" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="3Z7-MD-jro"/>
+                    <constraint firstItem="DRV-lL-AlK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="MW3-mn-YZt"/>
+                    <constraint firstItem="cpu-SU-hWl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="NEz-LL-5eU"/>
+                    <constraint firstAttribute="bottom" secondItem="DRV-lL-AlK" secondAttribute="bottom" constant="24" id="VJ9-hP-Fi5"/>
+                    <constraint firstAttribute="trailing" secondItem="DRV-lL-AlK" secondAttribute="trailing" constant="50" id="d6V-9z-e4d"/>
+                    <constraint firstItem="DRV-lL-AlK" firstAttribute="top" secondItem="cpu-SU-hWl" secondAttribute="bottom" constant="20" id="mlz-fm-pY3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="accountLabel" destination="rYb-TR-8kf" id="v4L-tc-EmZ"/>
+                <outlet property="followerValueLabel" destination="qGJ-f1-8rn" id="rx3-dB-8Ot"/>
+                <outlet property="followersStackView" destination="5VQ-2J-jFC" id="mcP-fp-6Ts"/>
+                <outlet property="followingStackView" destination="AMl-ez-6Lt" id="s80-V6-dQW"/>
+                <outlet property="followingValueLabel" destination="AUl-3M-YuU" id="Lu7-fw-kJg"/>
+                <outlet property="nameLabel" destination="xll-NQ-ghI" id="zog-yB-z1f"/>
+                <outlet property="postsStackView" destination="9Go-0v-CxN" id="Jcj-l5-9Sf"/>
+                <outlet property="postsValueLabel" destination="V4Q-Ou-3Iy" id="CQU-hq-wLJ"/>
+                <outlet property="userImageView" destination="X25-hR-W1B" id="YWG-8L-Wdj"/>
+            </connections>
+            <point key="canvasLocation" x="-198.40000000000001" y="44.07796101949026"/>
+        </tableViewCell>
+    </objects>
+</document>

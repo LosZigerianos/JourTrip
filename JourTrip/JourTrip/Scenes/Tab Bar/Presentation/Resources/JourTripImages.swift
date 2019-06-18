@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EelpImages: UIImage {
+class JourTripImages: UIImage {
     class func homeTabBar() -> UIImage {
         return UIImage(named: "home")!
     }

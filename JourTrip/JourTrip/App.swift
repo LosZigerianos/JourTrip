@@ -10,12 +10,16 @@ import UIKit
 
 final class App {
     private let window: UIWindow = UIWindow(frame: UIScreen.main.bounds)
-    private lazy var rootViewController = UINavigationController()
+	private lazy var rootViewController: UINavigationController = {
+		let navigationController = UINavigationController()
+		navigationController.navigationBar.isHidden = true
+		return navigationController
+	}()
     private lazy var appAssembly = AppAssembly(navigationController: rootViewController)
 
     func setupRootViewController() {
-        let initialViewController = appAssembly.initialAssembly.initialViewController()
-        rootViewController.viewControllers = [initialViewController]
+        let launchScreenViewController = appAssembly.launchScreenAssembly.viewController()
+        rootViewController.viewControllers = [launchScreenViewController]
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
     }
