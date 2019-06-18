@@ -79,6 +79,7 @@
 		AC40929E2272530200BB6F0E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC40929D2272530200BB6F0E /* ServiceError.swift */; };
 		AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42435E2291F83E008111FB /* MainTabBarController.swift */; };
 		AC42437922934139008111FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42437822934139008111FB /* SearchViewController.swift */; };
+		AC55D82322B9732100875BE6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55D82222B9732100875BE6 /* ImagePicker.swift */; };
 		AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */; };
 		AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */; };
 		ACAFEF7F22B23039002A611F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
@@ -88,6 +89,17 @@
 		ACB0F31822747C41006EB545 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31722747C41006EB545 /* User.swift */; };
 		ACB0F31C2277A1CA006EB545 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0F31B2277A1CA006EB545 /* Locations.swift */; };
 		ACB0FA8E22B2BA5300EAA11F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FA8D22B2BA5300EAA11F /* ProfileViewController.xib */; };
+		ACB0FAA222B8F5FF00EAA11F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FAA022B8F5FF00EAA11F /* SettingsViewController.swift */; };
+		ACB0FAA322B8F5FF00EAA11F /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FAA122B8F5FF00EAA11F /* SettingsViewController.xib */; };
+		ACB0FAA722B8F84A00EAA11F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FAA522B8F84A00EAA11F /* FriendsViewController.swift */; };
+		ACB0FAA822B8F84A00EAA11F /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FAA622B8F84A00EAA11F /* FriendsViewController.xib */; };
+		ACB0FAAB22B904AF00EAA11F /* JourTripFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FAAA22B904AF00EAA11F /* JourTripFont.swift */; };
+		ACB0FAB022B91C6200EAA11F /* PhotoSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FAAE22B91C6200EAA11F /* PhotoSettingsTableViewCell.swift */; };
+		ACB0FAB122B91C6200EAA11F /* PhotoSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FAAF22B91C6200EAA11F /* PhotoSettingsTableViewCell.xib */; };
+		ACB0FAB422B92E3900EAA11F /* UserSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FAB222B92E3900EAA11F /* UserSettingsTableViewCell.swift */; };
+		ACB0FAB522B92E3900EAA11F /* UserSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FAB322B92E3900EAA11F /* UserSettingsTableViewCell.xib */; };
+		ACB0FAB822B94B5E00EAA11F /* ChangePasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FAB622B94B5E00EAA11F /* ChangePasswordTableViewCell.swift */; };
+		ACB0FAB922B94B5E00EAA11F /* ChangePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FAB722B94B5E00EAA11F /* ChangePasswordTableViewCell.xib */; };
 		ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440122A6F5A90040055B /* GetProfile.swift */; };
 		ACBA440422A6F6230040055B /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440322A6F6230040055B /* ProfileService.swift */; };
 		ACBA440622A6FA540040055B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440522A6FA540040055B /* Profile.swift */; };
@@ -190,12 +202,24 @@
 		AC40929D2272530200BB6F0E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		AC42435E2291F83E008111FB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AC42437822934139008111FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AC55D82222B9732100875BE6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		ACB0FA8D22B2BA5300EAA11F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		ACB0FAA022B8F5FF00EAA11F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ACB0FAA122B8F5FF00EAA11F /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		ACB0FAA522B8F84A00EAA11F /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		ACB0FAA622B8F84A00EAA11F /* FriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
+		ACB0FAAA22B904AF00EAA11F /* JourTripFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripFont.swift; sourceTree = "<group>"; };
+		ACB0FAAE22B91C6200EAA11F /* PhotoSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		ACB0FAAF22B91C6200EAA11F /* PhotoSettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoSettingsTableViewCell.xib; sourceTree = "<group>"; };
+		ACB0FAB222B92E3900EAA11F /* UserSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		ACB0FAB322B92E3900EAA11F /* UserSettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSettingsTableViewCell.xib; sourceTree = "<group>"; };
+		ACB0FAB622B94B5E00EAA11F /* ChangePasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordTableViewCell.swift; sourceTree = "<group>"; };
+		ACB0FAB722B94B5E00EAA11F /* ChangePasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordTableViewCell.xib; sourceTree = "<group>"; };
 		ACBA440122A6F5A90040055B /* GetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfile.swift; sourceTree = "<group>"; };
 		ACBA440322A6F6230040055B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		ACBA440522A6FA540040055B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -298,7 +322,6 @@
 				AC42437722934126008111FB /* Search */,
 				AC4243602292013F008111FB /* Feed */,
 				AC14FADA22A4430D00BC6EF8 /* Profile */,
-				ACB0FA9722B431F300EAA11F /* Comments */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -572,6 +595,8 @@
 			children = (
 				209953B52288A5F7006D6346 /* DI */,
 				208A16EE227B75E000E36CDF /* Scenes */,
+				ACB0FA9F22B8F5C200EAA11F /* New Group */,
+				ACB0FAA422B8F81E00EAA11F /* New Group1 */,
 				ACDF9A52226FA3E900B65291 /* Network */,
 				ACCE2DD4229DD40700A9EE20 /* Resources */,
 				ACDF9A51226FA3DF00B65291 /* Model */,
@@ -671,11 +696,31 @@
 			path = DB;
 			sourceTree = "<group>";
 		};
-		ACB0FA9722B431F300EAA11F /* Comments */ = {
+		ACB0FA9F22B8F5C200EAA11F /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				AC55D82222B9732100875BE6 /* ImagePicker.swift */,
+				ACB0FAA022B8F5FF00EAA11F /* SettingsViewController.swift */,
+				ACB0FAA122B8F5FF00EAA11F /* SettingsViewController.xib */,
+				ACB0FAAE22B91C6200EAA11F /* PhotoSettingsTableViewCell.swift */,
+				ACB0FAAF22B91C6200EAA11F /* PhotoSettingsTableViewCell.xib */,
+				ACB0FAB222B92E3900EAA11F /* UserSettingsTableViewCell.swift */,
+				ACB0FAB322B92E3900EAA11F /* UserSettingsTableViewCell.xib */,
+				ACB0FAB622B94B5E00EAA11F /* ChangePasswordTableViewCell.swift */,
+				ACB0FAB722B94B5E00EAA11F /* ChangePasswordTableViewCell.xib */,
 			);
-			path = Comments;
+			name = "New Group";
+			path = "Scenes/Profile/New Group";
+			sourceTree = "<group>";
+		};
+		ACB0FAA422B8F81E00EAA11F /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0FAA522B8F84A00EAA11F /* FriendsViewController.swift */,
+				ACB0FAA622B8F84A00EAA11F /* FriendsViewController.xib */,
+			);
+			name = "New Group1";
+			path = "Scenes/New Group1";
 			sourceTree = "<group>";
 		};
 		ACCE2DD4229DD40700A9EE20 /* Resources */ = {
@@ -683,6 +728,7 @@
 			children = (
 				AC127E78226F9CED0004C0F1 /* Assets.xcassets */,
 				ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */,
+				ACB0FAAA22B904AF00EAA11F /* JourTripFont.swift */,
 			);
 			name = Resources;
 			path = "Scenes/Tab Bar/Presentation/Resources";
@@ -833,6 +879,7 @@
 			files = (
 				ACB0FA8E22B2BA5300EAA11F /* ProfileViewController.xib in Resources */,
 				20392471227B777D0061E59B /* LoginViewController.xib in Resources */,
+				ACB0FAB922B94B5E00EAA11F /* ChangePasswordTableViewCell.xib in Resources */,
 				209953A522888E77006D6346 /* Apercu Pro Light Italic.otf in Resources */,
 				ACF4D7B922ADC1990093BA25 /* FeedViewController.xib in Resources */,
 				209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */,
@@ -842,7 +889,9 @@
 				2099539C22888E77006D6346 /* Apercu Italic.otf in Resources */,
 				AC127E79226F9CED0004C0F1 /* Assets.xcassets in Resources */,
 				209953A722888E77006D6346 /* Apercu Pro Medium Italic.otf in Resources */,
+				ACB0FAB522B92E3900EAA11F /* UserSettingsTableViewCell.xib in Resources */,
 				209953A322888E77006D6346 /* Apercu Pro Bold.otf in Resources */,
+				ACB0FAB122B91C6200EAA11F /* PhotoSettingsTableViewCell.xib in Resources */,
 				209953A922888E77006D6346 /* Apercu Pro Mono.otf in Resources */,
 				AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */,
 				2099539D22888E77006D6346 /* Apercu Light Italic.otf in Resources */,
@@ -851,11 +900,13 @@
 				ACF4D7C122AE56F80093BA25 /* FeedCollectionViewCell.xib in Resources */,
 				209953A222888E77006D6346 /* Apercu Pro Bold Italic.otf in Resources */,
 				2099539B22888E77006D6346 /* Apercu Bold.otf in Resources */,
+				ACB0FAA822B8F84A00EAA11F /* FriendsViewController.xib in Resources */,
 				AC3BA0D722AC260C00DDE88B /* ProfileTableViewCell.xib in Resources */,
 				2099539F22888E77006D6346 /* Apercu Medium Italic.otf in Resources */,
 				209953A622888E77006D6346 /* Apercu Pro Light.otf in Resources */,
 				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
 				2099539E22888E77006D6346 /* Apercu Light.otf in Resources */,
+				ACB0FAA322B8F5FF00EAA11F /* SettingsViewController.xib in Resources */,
 				209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */,
 				209953A022888E77006D6346 /* Apercu Medium.otf in Resources */,
 				2099538622888114006D6346 /* InitialViewController.xib in Resources */,
@@ -932,6 +983,7 @@
 				ACBA440422A6F6230040055B /* ProfileService.swift in Sources */,
 				20A10D282299E7B700D06660 /* RegisterService.swift in Sources */,
 				209953C92288AE0A006D6346 /* SignUpNavigator.swift in Sources */,
+				AC55D82322B9732100875BE6 /* ImagePicker.swift in Sources */,
 				209953C42288AAAE006D6346 /* SignUpViewController.swift in Sources */,
 				20A10D252299E71100D06660 /* SignUpViewModel.swift in Sources */,
 				209953B22288965C006D6346 /* InitialViewModel.swift in Sources */,
@@ -950,6 +1002,7 @@
 				20A10D2A2299E7D600D06660 /* SignUpValidator.swift in Sources */,
 				AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */,
 				20D8656922A41458005D04FA /* GetLocations.swift in Sources */,
+				ACB0FAA222B8F5FF00EAA11F /* SettingsViewController.swift in Sources */,
 				ACF4D7B822ADC1990093BA25 /* FeedViewController.swift in Sources */,
 				ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */,
 				ACAFEF7F22B23039002A611F /* UserRealm.swift in Sources */,
@@ -958,6 +1011,7 @@
 				ACF4D7BB22ADC2D70093BA25 /* GetTimeline.swift in Sources */,
 				2040028922A6F61C005BF21A /* LaunchScreenAssembly.swift in Sources */,
 				2040028E22A70248005BF21A /* LaunchScreenNavigator.swift in Sources */,
+				ACB0FAAB22B904AF00EAA11F /* JourTripFont.swift in Sources */,
 				20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
 				20D8657022A424F2005D04FA /* SearchAssembly.swift in Sources */,
@@ -970,16 +1024,20 @@
 				2099536E2286D0DD006D6346 /* LoginService.swift in Sources */,
 				AC14FADF22A4437100BC6EF8 /* ProfileAssembly.swift in Sources */,
 				AC347E5C229A026E0006F2AC /* Wrapper.swift in Sources */,
+				ACB0FAB022B91C6200EAA11F /* PhotoSettingsTableViewCell.swift in Sources */,
 				ACBA440622A6FA540040055B /* Profile.swift in Sources */,
 				AC14FAE222A443F600BC6EF8 /* ProfileViewController.swift in Sources */,
+				ACB0FAB822B94B5E00EAA11F /* ChangePasswordTableViewCell.swift in Sources */,
 				20A10D202295DE2A00D06660 /* TabBarAssembly.swift in Sources */,
 				2070593122AECF75005D17A7 /* CustomTextField.swift in Sources */,
 				20D8656B22A4192D005D04FA /* SearchCollectionViewDataSource.swift in Sources */,
 				209953BA2288A641006D6346 /* InitialAssembly.swift in Sources */,
 				2099538522888114006D6346 /* InitialViewController.swift in Sources */,
+				ACB0FAA722B8F84A00EAA11F /* FriendsViewController.swift in Sources */,
 				209953BD2288A7B0006D6346 /* LoginAssembly.swift in Sources */,
 				ACF4D7C022AE56F80093BA25 /* FeedCollectionViewCell.swift in Sources */,
 				AC347E58229A016A0006F2AC /* ConstantsDataManager.swift in Sources */,
+				ACB0FAB422B92E3900EAA11F /* UserSettingsTableViewCell.swift in Sources */,
 				2040028622A6F52F005BF21A /* LaunchScreenViewController.swift in Sources */,
 				20E7F42122A1210900814E71 /* ApiEndpoint.swift in Sources */,
 			);

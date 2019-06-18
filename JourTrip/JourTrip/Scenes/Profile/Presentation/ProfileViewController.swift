@@ -85,19 +85,14 @@ class ProfileViewController: UIViewController {
     
     private func setupRightBarButtonItems() {
         // TODO: set button with images
-        let settingsButton = UIButton(type: .custom)
-        settingsButton.setImage(UIImage(named: "back-button"), for: .normal)
-        settingsButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        settingsButton.addTarget(self, action: Selector("test"), for: .touchUpInside)
-        //        let item1 = UIBarButtonItem(customView: addFriendsButton)
-        let settingItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: Selector("test"))
+        let settingItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(settingsAction(sender:)))
         
-        let friendsButton = UIButton(type: .custom)
-        friendsButton.setImage(UIImage(named: "back-button"), for: .normal)
-        friendsButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        friendsButton.addTarget(self, action: Selector("test"), for: .touchUpInside)
+//        let friendsButton = UIButton(type: .custom)
+//        friendsButton.setImage(UIImage(named: "back-button"), for: .normal)
+//        friendsButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+//        friendsButton.addTarget(self, action: #selector(friendsAction(sender:)), for: .touchUpInside)
 //        let item2 = UIBarButtonItem(customView: settingsButton)
-        let friendItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: Selector("test"))
+        let friendItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(friendsAction(sender:)))
         
         navigationItem.setRightBarButtonItems([settingItem, friendItem], animated: true)
     }
@@ -126,7 +121,19 @@ class ProfileViewController: UIViewController {
     }
     
     // MARK: - Actions
-    func alertActionSheet(with comment: Comment, indexPath: IndexPath) {
+    @objc func friendsAction(sender: UIBarButtonItem) {
+        let friendsViewController = FriendsViewController()
+        navigationController?.pushViewController(friendsViewController, animated: true)
+    }
+    
+    @objc func settingsAction(sender: UIBarButtonItem) {
+        let settingsViewController = SettingsViewController()
+        settingsViewController.userProfile = userProfile
+        let nc = UINavigationController(rootViewController: settingsViewController)
+        present(nc, animated: true, completion: nil)
+    }
+    
+    private func alertActionSheet(with comment: Comment, indexPath: IndexPath) {
         //TODO: LocazidedStrings
         let alertController = UIAlertController(title: "Choose an option", message: "What do you want to do?", preferredStyle: .actionSheet)
         
