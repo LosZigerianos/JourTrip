@@ -107,7 +107,7 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
             // FIXME: retrieve token
             return
         }
-        let request = ApiEndpoint.deleteComment(commentId: commentID).request(with: baseUrl, adding: ["token": token])
+        let request = ApiEndpoint.deleteComment(commentID: commentID).request(with: baseUrl, adding: ["token": token])
         session.dataTask(with: request) { data, _, error in
             guard let data = data,
                 let response = try? self.decoder.decode(ProfileResponse.self, from: data) else {

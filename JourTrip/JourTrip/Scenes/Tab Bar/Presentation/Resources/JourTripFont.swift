@@ -11,9 +11,7 @@ import UIKit
 class JourTripFont: UIFont {
     
     class func fontBold(ofSize: CGFloat) -> UIFont {
-        //        titleLabel.font = UIFont(name: "Apercu Pro Bold", size: 18)
-
-        return UIFont(name: "Apercu Pro Bold", size: ofSize)!
+        return UIFont(name: "ApercuPro-Bold", size: ofSize)!
     }
     
     class func fontMedium(ofSize: CGFloat) -> UIFont {
