@@ -57,7 +57,7 @@ private extension LoginViewController {
     func setupNavigationControllerAppareance() {
         let titleLabel = UILabel()
         titleLabel.text = NSLocalizedString("Welcome Back", comment: "")
-        titleLabel.font = UIFont(name: "Apercu Pro Bold", size: 18)
+        titleLabel.font = UIFont(name: "Apercu Pro Bold", size: 18) //JourTripFont.fontBold(ofSize: 18)
         titleLabel.textColor = #colorLiteral(red: 0.4117260575, green: 0.4117894173, blue: 0.4117122293, alpha: 1)
         navigationItem.titleView = titleLabel
         navigationController?.navigationBar.isTranslucent = true

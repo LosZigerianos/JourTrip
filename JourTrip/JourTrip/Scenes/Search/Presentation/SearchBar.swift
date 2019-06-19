@@ -29,7 +29,7 @@ private extension SearchBar {
 	}
 
 	func setupText() {
-		font = UIFont(name: "Apercu-Medium", size: 16)
+		font = JourTripFont.fontMedium(ofSize: 16)
 		textColor = .dustyGray
 		tintColor = .dustyGray
 		backgroundColor = .white

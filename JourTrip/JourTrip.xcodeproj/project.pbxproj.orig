@@ -405,8 +405,11 @@
 				AC42437722934126008111FB /* Search */,
 				AC4243602292013F008111FB /* Feed */,
 				AC14FADA22A4430D00BC6EF8 /* Profile */,
+<<<<<<< HEAD
 				2008B3AF22B6BBCF0051E49E /* Feed Detail */,
 				ACB0FA9722B431F300EAA11F /* Comments */,
+=======
+>>>>>>> Feature/Settings
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1045,7 +1048,10 @@
 				209953AB22888E77006D6346 /* Apercu Regular.otf in Resources */,
 				AC30DBF622BA492E00EB3624 /* LogOutTableViewCell.xib in Resources */,
 				2099539E22888E77006D6346 /* Apercu Light.otf in Resources */,
+<<<<<<< HEAD
 				2093801422B95D5500EEF108 /* AddCommentViewController.xib in Resources */,
+=======
+>>>>>>> Feature/Settings
 				ACB0FAA322B8F5FF00EAA11F /* SettingsViewController.xib in Resources */,
 				209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */,
 				209953A022888E77006D6346 /* Apercu Medium.otf in Resources */,
@@ -1149,7 +1155,10 @@
 				AC3BA0D622AC260C00DDE88B /* ProfileTableViewCell.swift in Sources */,
 				2093801E22B96AE900EEF108 /* CommentService.swift in Sources */,
 				20D8656922A41458005D04FA /* GetLocations.swift in Sources */,
+<<<<<<< HEAD
+=======
 				AC30DBF122BA420400EB3624 /* PasswordTableViewCell.swift in Sources */,
+>>>>>>> Feature/Settings
 				ACB0FAA222B8F5FF00EAA11F /* SettingsViewController.swift in Sources */,
 				ACF4D7B822ADC1990093BA25 /* FeedViewController.swift in Sources */,
 				ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */,
@@ -1159,7 +1168,10 @@
 				ACF4D7BB22ADC2D70093BA25 /* GetTimeline.swift in Sources */,
 				2040028922A6F61C005BF21A /* LaunchScreenAssembly.swift in Sources */,
 				2040028E22A70248005BF21A /* LaunchScreenNavigator.swift in Sources */,
+<<<<<<< HEAD
 				2008B3BA22B6C3A30051E49E /* FeedDetailNavigator.swift in Sources */,
+=======
+>>>>>>> Feature/Settings
 				ACB0FAAB22B904AF00EAA11F /* JourTripFont.swift in Sources */,
 				20D8656D22A41D9D005D04FA /* SearchCollectionViewDelegate.swift in Sources */,
 				ACB0F31822747C41006EB545 /* User.swift in Sources */,
