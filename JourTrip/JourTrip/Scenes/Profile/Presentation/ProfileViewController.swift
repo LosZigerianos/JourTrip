@@ -22,8 +22,12 @@ class ProfileViewController: UIViewController {
     // MARK: - Properties
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     var getProfile: GetProfileProtocol!
+    var getFollowers: GetFollowersProtocol!
     var userProfile: Profile?
     var userComments = [Comment]()
+    var followers = [Profile]()
+    var detailNavigator: FeedDetailNavigatorProtocol!
+    
     var location: Location?
     
     // MARK: - Life cycle
@@ -34,6 +38,19 @@ class ProfileViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+//        getFollowers.invoke() { [weak self] profile in
+//            guard let self = self else { return }
+//            if let profiles = profile.data {
+//               self.followers = [profiles]
+//            } else {
+//                self.followers = []
+//            }
+//        }
+        Spinner.start(from: self.view,
+                      style: .whiteLarge,
+                      backgroundColor: .clear,
+                      baseColor: .blue)
         
         getProfile.invoke(with: "") { [weak self] profile in
             guard let self = self else { return }
@@ -48,6 +65,7 @@ class ProfileViewController: UIViewController {
                 self.userProfile = profile
                 self.userComments = comments
                 DispatchQueue.main.async {
+                    Spinner.stop()
                     self.collectionView.reloadData()
                 }
             }
@@ -86,12 +104,12 @@ class ProfileViewController: UIViewController {
     private func setupRightBarButtonItems() {
         let settingButton = UIButton(type: .custom)
         settingButton.setImage(UIImage(named: "settings"), for: .normal)
-        settingButton.addTarget(self, action: #selector(settingsAction(sender:)), for: .touchUpInside)
+        //settingButton.addTarget(self, action: #selector(settingsAction(sender:)), for: .touchUpInside)
         let settingItem = UIBarButtonItem(customView: settingButton)
         
         let friendsButton = UIButton(type: .custom)
         friendsButton.setImage(UIImage(named: "search"), for: .normal)
-        friendsButton.addTarget(self, action: #selector(friendsAction(sender:)), for: .touchUpInside)
+      //  friendsButton.addTarget(self, action: #selector(friendsAction(sender:)), for: .touchUpInside)
         let friendItem = UIBarButtonItem(customView: friendsButton)
         friendItem.tintColor = .yellow
         
@@ -101,7 +119,6 @@ class ProfileViewController: UIViewController {
     // MARK: - Services
     func deleteComment(with comment: Comment, indexPath: IndexPath) {
         getProfile.deleteComment(with: comment.id) { (response) in
-            // TODO: show alert when something is wrong
             if response.data != nil {
                 DispatchQueue.main.async {
                     self.collectionView.performBatchUpdates({
@@ -138,9 +155,9 @@ class ProfileViewController: UIViewController {
         //TODO: LocazidedStrings
         let alertController = UIAlertController(title: "Choose an option", message: "What do you want to do?", preferredStyle: .actionSheet)
         
-        let viewAction = UIAlertAction(title: "View comment", style: .default, handler: { (alert: UIAlertAction!) -> Void in
-            print("View")
-        })
+//        let viewAction = UIAlertAction(title: "View comment", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+//            //self.detailNavigator.presentDetail(with: comment)
+//        })
         let removeAction = UIAlertAction(title: "Remove it", style: .destructive, handler: { (alert: UIAlertAction!) -> Void in
             self.deleteComment(with: comment, indexPath: indexPath)
         })
@@ -148,7 +165,7 @@ class ProfileViewController: UIViewController {
             print(alert)
         }
         
-        alertController.addAction(viewAction)
+//        alertController.addAction(viewAction)
         alertController.addAction(removeAction)
         alertController.addAction(cancelAction)
         

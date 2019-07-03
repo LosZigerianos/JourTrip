@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ChangePasswordViewController: UIViewController {
+final class ChangePasswordViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+     var getPasswordProtocol: GetPasswordProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,13 @@ class ChangePasswordViewController: UIViewController {
         tableView.separatorStyle = .none
     }
     
+    // MARK: - Services
+    func updatePassword(insteadOf: String, changeTo new: String) {
+        
+//        getPasswordProtocol.updatePassword(with: new, insteadOf: insteadOf) { (response) in
+//            print(response)
+//        }
+    }
 }
 
 extension ChangePasswordViewController: UITableViewDelegate {

@@ -26,6 +26,8 @@ enum ApiEndpoint {
     case deleteComment(commentID: String)
     case uploadPhoto(userID: String)
     case updateUser(userID: String)
+    case updatePassword(userID: String)
+    case getFollowing(userID: String)
 }
 
 extension ApiEndpoint {
@@ -70,11 +72,11 @@ extension ApiEndpoint {
 extension ApiEndpoint {
 	var method: RequestType {
 		switch self {
-		case .locations, .nearLocations, .profile, .comments:
+		case .locations, .nearLocations, .profile, .comments, .getFollowing:
 			return .get
 		case .userLogin, .userSignUp, .postComment:
 			return .post
-        case .uploadPhoto, .updateUser:
+        case .uploadPhoto, .updateUser, .updatePassword:
             return .put
         case .deleteComment:
             return .delete
@@ -83,6 +85,8 @@ extension ApiEndpoint {
 
 	var path: String {
 		switch self {
+        case .getFollowing(let userId):
+            return "/users/userId/\(userId)/following"
 		case .locations:
 			return "/locations"
 		case .nearLocations:
@@ -103,6 +107,8 @@ extension ApiEndpoint {
             return "/users/userId/5ceb706146e3c87667d594c2/photo"
         case .updateUser:
             return "/users/me/userId/5ceb706146e3c87667d594c2/update"
+        case .updatePassword(let userId):
+            return "/users/me/userId/\(userId)/update"
 			// FIXME: testing purposes
 		}
 	}

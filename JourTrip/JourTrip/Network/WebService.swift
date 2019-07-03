@@ -10,7 +10,15 @@ import Foundation
 import RxSwift
 import Simple_KeychainSwift
 
-final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceType, ProfileService, FeedService, CommentService {
+final class WebService: LoginServiceType,
+                        RegisterServiceType,
+                        LocationsServiceType,
+                        ProfileService,
+                        FeedService,
+                        CommentService,
+                        PasswordService,
+                        SettingsService {
+    
 	let baseUrl = URL(string: Constants.jourTripURL)!
 	let session = URLSession.shared
 	let decoder = JSONDecoder()
@@ -67,6 +75,25 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 			.asSingle()
 	}
 	
+    func updatePassword(newPassword: String,
+                        oldPassword: String,
+                        completion: @escaping (UserSignUp?, Error?) -> Void) {
+        guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String,
+            let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as? String else { return }
+        let request = ApiEndpoint.updatePassword(userID: userId).request(with: baseUrl, andBody: ["token": token,
+                                                                                          "oldPassword": oldPassword,
+                                                                                          "newPassword": newPassword])
+        session.dataTask(with: request) { data, _, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            if let data = data,
+                let response = try? self.decoder.decode(UserSignUp.self, from: data) {
+                completion(response, nil)
+            }
+            }.resume()
+    }
+    
     // MARK: - Feed Service
     func getTimeline(completion: @escaping (FeedResponse?, Error?) -> Void) {
 		guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String,
@@ -85,6 +112,22 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
     }
     
     // MARK: - Profile Service
+    func getFollowers(completion: @escaping (ProfileResponse?, Error?) -> Void) {
+        guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String,
+            let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as? String else { return }
+        let request = ApiEndpoint.getFollowing(userID: userId).request(with: baseUrl, adding: ["token": token])
+        session.dataTask(with: request) { data, _, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            
+            if let data = data,
+                let response = try? self.decoder.decode(ProfileResponse.self, from: data) {
+                completion(response, nil)
+            }
+            }.resume()
+    }
+    
     func getProfile(completion: @escaping (ProfileResponse?, Error?) -> Void) {
 		guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String,
 			let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as? String else { return }
@@ -134,6 +177,26 @@ final class WebService: LoginServiceType, RegisterServiceType, LocationsServiceT
 			}
 		}.resume()
 	}
+    
+    func putUserData(username: String, fullname: String, email: String, completion: @escaping (ProfileResponse?, Error?) -> Void) {
+        guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String,
+            let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as? String else { return }
+        let request = ApiEndpoint.updateUser(userID: userId).request(with: baseUrl, andBody: ["token": token,
+                                                                               "username": username,
+                                                                               "email": email,
+                                                                               "fullname": fullname])
+        session.dataTask(with: request) { data, _, error in
+            if let error = error {
+                completion(nil, error)
+            }
+            
+            if let data = data,
+                let response = try? self.decoder.decode(ProfileResponse.self, from: data) {
+                completion(response, nil)
+            }
+            }.resume()
+    }
+    
 
 	func getNearLocations(latitude: Double,
 						  longitude: Double,

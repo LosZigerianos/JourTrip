@@ -49,11 +49,16 @@ final class SearchViewController: UIViewController {
 // MARK: - Private Methods
 private extension SearchViewController {
 	func populateSearchData() {
+        Spinner.start(from: self.view,
+                      style: .whiteLarge,
+                      backgroundColor: .clear,
+                      baseColor: .blue)
 		getCurrentLocation.invoke { [weak self] position in
 			guard let self = self else { return }
 			self.getLocations.invoke(with: position) { locations in
 				self.dataSource.locations = locations
 				DispatchQueue.main.async {
+                    Spinner.stop()
 					self.collectionView.reloadData()
 					self.collectionView.isHidden = false
 				}

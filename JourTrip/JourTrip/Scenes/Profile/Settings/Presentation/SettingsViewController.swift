@@ -8,10 +8,11 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, ImagePickerDelegate {
+
+final class SettingsViewController: UIViewController, ImagePickerDelegate {
     
     func didSelect(image: UIImage?) {
-        print(image)
+        print(image!)
     }
     
     // MARK: - IBOutlets
@@ -20,6 +21,7 @@ class SettingsViewController: UIViewController, ImagePickerDelegate {
     // MARK: - Properties
     var userProfile: Profile? = nil
     var imagePicker: ImagePicker!
+    var putUserData: PutUserDataProtocol!
     var onImageTap: ((_ image: String) -> Void)?
     
     // MARK: - Life cycle
@@ -66,7 +68,13 @@ class SettingsViewController: UIViewController, ImagePickerDelegate {
     }
     
     // MARK: - Services
-    func updateUserData(with comment: Comment, indexPath: IndexPath) {
+//    func updateUserData(with comment: Comment, indexPath: IndexPath) {
+    func updateUserData(with fullname: String , username: String, email: String) {
+        print("HOOLA")
+        
+        putUserData.updateData(with: username, fullname: fullname, emai: email) { (response) in
+            print(response)
+        }
         
 //        getProfile.deleteComment(with: comment.id) { (response) in
 //            // TODO: show alert when something is wrong
@@ -114,29 +122,8 @@ extension SettingsViewController: UITableViewDataSource {
         return titleInSection
     }
     
-//    func selectPicker() {
-//        let pickerController = UIImagePickerController()
-//        pickerController.delegate = self
-//        pickerController.allowsEditing = true
-//        pickerController.mediaTypes = ["public.image"]
-//        pickerController.sourceType = .camera
-//    }
-    
-//    func dataSourceRows() -> NSArray {
-//
-//        let data = [[["Test 1" : JourTripImages.profileTabBar()]] as [Any]
-//
-//        return data as NSArray
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // section 1= 1 row
             return 1
-//
-//        let data = dataSourceRows()
-//        let section = data[section] as! NSArray
-//
-//        return section.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -184,10 +171,6 @@ extension SettingsViewController: UITableViewDataSource {
         
         return UITableViewCell()
     }
-    
-    /*
- 
- */
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {

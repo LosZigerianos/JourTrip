@@ -32,9 +32,9 @@ class UserSettingsTableViewCell: UITableViewCell {
     }
     
     @IBAction func updateDataAction(_ sender: UIButton) {
-        
-        print(settings.dataSourceSection())
-        
+        settings.updateUserData(with: fullnameCustomTextfield.text ?? "",
+                                      username: usernameCustomTextfield.text ?? "",
+                                      email: emailCustomTextfield.text ?? "")
     }
     
 

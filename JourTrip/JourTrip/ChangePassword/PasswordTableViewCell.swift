@@ -9,7 +9,10 @@
 import UIKit
 
 class PasswordTableViewCell: UITableViewCell {
-
+    // MARK: - Parameters
+    let changePasswordViewController = ChangePasswordViewController()
+    
+    // MARK: - Outlets
     @IBOutlet var oldCustomTextField: CustomTextField! {
         didSet {
             oldCustomTextField.layer.cornerRadius = 10
@@ -27,7 +30,17 @@ class PasswordTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Actions
+    @IBAction func updatePasswordAction(_ sender: UIButton) {
+        guard let oldPassword = oldCustomTextField?.text,
+            let newPassword = newCustomTextField.text else {
+                return
+        }
+        
+        changePasswordViewController.updatePassword(insteadOf: oldPassword, changeTo: newPassword)
+    }
     
+    // MARK: - UI
     class func preferredHeight() -> CGFloat {
         return PasswordTableViewCell().contentView.frame.width
     }

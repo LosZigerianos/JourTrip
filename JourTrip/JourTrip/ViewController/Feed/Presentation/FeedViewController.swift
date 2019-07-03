@@ -34,9 +34,15 @@ final class FeedViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        Spinner.start(from: self.view,
+                      style: .whiteLarge,
+                      backgroundColor: .clear,
+                      baseColor: .blue)
+        
         getTimeline.invoke(with: "") { [weak self] comments in
             self?.comments = comments
 			DispatchQueue.main.async {
+                Spinner.stop()
 				self?.collectionView.reloadData()
 			}
         }
