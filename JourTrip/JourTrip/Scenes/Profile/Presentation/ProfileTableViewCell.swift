@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+
 //TODO: Refactor name
 class ProfileTableViewCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: self)
@@ -38,34 +39,6 @@ class ProfileTableViewCell: UICollectionViewCell {
         followingValueLabel.text = following
         followerValueLabel.text = followers
         postsValueLabel.text = posts
-
-        prepareStackView()
-    }
-    
-    @objc func prepareStackView() {
-        followingStackView.isUserInteractionEnabled = true
-        followersStackView.isUserInteractionEnabled = true
-        postsStackView.isUserInteractionEnabled = true
-        
-        let followingTap = UITapGestureRecognizer(target: self, action: #selector(followingStackViewTapped))
-        followingStackView.addGestureRecognizer(followingTap)
-        let followersTap = UITapGestureRecognizer(target: self, action: #selector(followersStackViewTapped))
-        followersStackView.addGestureRecognizer(followersTap)
-        let postsTap = UITapGestureRecognizer(target: self, action: #selector(postsStackViewTapped))
-        postsStackView.addGestureRecognizer(postsTap)
-    }
-    
-     // FIXME: stackViewActions!
-    @objc func followingStackViewTapped() {
-        
-    }
-    
-    @objc func followersStackViewTapped() {
-        print("followingAction")
-    }
-    
-    @objc func postsStackViewTapped() {
-        print("posts")
     }
 
 }

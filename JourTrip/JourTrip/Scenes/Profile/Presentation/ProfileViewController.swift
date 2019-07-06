@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
     var getFollowers: GetFollowersProtocol!
     var userProfile: Profile?
     var userComments = [Comment]()
-    var followers = [Profile]()
+    var following = [Profile]()
     var detailNavigator: FeedDetailNavigatorProtocol!
     
     var location: Location?
@@ -39,14 +39,15 @@ class ProfileViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-//        getFollowers.invoke() { [weak self] profile in
-//            guard let self = self else { return }
-//            if let profiles = profile.data {
-//               self.followers = [profiles]
-//            } else {
-//                self.followers = []
-//            }
-//        }
+        getFollowers.invoke() { [weak self] profile in
+            guard let self = self else { return }
+            if let profiles = profile.data {
+                self.following = profiles
+            } else {
+                self.following = []
+            }
+        }
+        
         Spinner.start(from: self.view,
                       style: .whiteLarge,
                       backgroundColor: .clear,
@@ -171,9 +172,26 @@ class ProfileViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    // MARK: stackViewActions!
+    @objc func followingStackViewTapped() {
+        let followingViewController = FollowingViewController()
+        followingViewController.followingUsers = following
+        navigationController?.pushViewController(followingViewController, animated: true)
+    }
+    
+    @objc func followersStackViewTapped() {
+        print("followersAction")
+    }
+    
+    @objc func postsStackViewTapped() {
+        print("posts")
+    }
+    
 }
 
 extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return userComments.count + 1
     }
@@ -188,8 +206,16 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
                        following: String(userProfile?.following ?? 0),
                        followers: String(userProfile?.followers ?? 0),
                        posts: String(userProfile?.comments?.count ?? 0))
+
+            let followingTap = UITapGestureRecognizer(target: self, action: #selector(followingStackViewTapped))
+            cell.followingStackView.addGestureRecognizer(followingTap)
+            let followersTap = UITapGestureRecognizer(target: self, action: #selector(followersStackViewTapped))
+            cell.followersStackView.addGestureRecognizer(followersTap)
+            let postsTap = UITapGestureRecognizer(target: self, action: #selector(postsStackViewTapped))
+            cell.postsStackView.addGestureRecognizer(postsTap)
             
             return cell
+            
         } else {
             
             let comment = userComments[(indexPath.row - 1)]

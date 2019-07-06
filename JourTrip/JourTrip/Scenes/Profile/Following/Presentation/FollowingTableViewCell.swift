@@ -7,18 +7,32 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FollowingTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    // MARK: - IBOutlets
+    @IBOutlet var userImageView: UIImageView! {
+        didSet {
+            userImageView.layer.cornerRadius = 18
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet var userLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        userImageView.image = nil
+        userLabel.text = nil
     }
     
+    // MARK: - Instance methods
+    func setup(with userName: String, userImage: String) {
+        userLabel.text = "@\(userName)"
+        userImageView.kf.setImage(with: URL(string: userImage))
+    }
+    
+    class func preferredHeight() -> CGFloat {
+        return FollowingTableViewCell().contentView.frame.height
+    }
+
 }
