@@ -206,7 +206,7 @@ extension CommentCardView: UICollectionViewDelegate, UICollectionViewDataSource,
 
 		let textSize = tag
 			.uppercased()
-			.size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Apercu-Medium", size: 13)])
+            .size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Apercu-Medium", size: 13) as Any])
 		return .init(width: textSize.width * 1.35, height: 32)
 	}
 }

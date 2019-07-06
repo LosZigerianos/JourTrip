@@ -9,10 +9,10 @@
 import Foundation
 
 protocol GetFollowersProtocol {
-    func invoke(completion: @escaping (ProfileResponse) -> ())
+    func invoke(completion: @escaping (ProfilesResponse) -> ())
 }
 
-struct GetFollowers: GetFollowersProtocol{
+struct GetFollowers: GetFollowersProtocol {
     
     private let repository: ProfileService
     
@@ -20,7 +20,7 @@ struct GetFollowers: GetFollowersProtocol{
         self.repository = repository
     }
     
-    func invoke(completion: @escaping (ProfileResponse) -> ()) {
+    func invoke(completion: @escaping (ProfilesResponse) -> ()) {
         repository.getFollowers() { (response, error) in
             guard let profile = response else { return }
             completion(profile)

@@ -9,8 +9,10 @@
 import Foundation
 
 protocol ProfileService {
-    func getFollowers(completion: @escaping (_ response: ProfileResponse?, _ error: Error?) -> Void)
+    func getFollowers(completion: @escaping (_ response: ProfilesResponse?, _ error: Error?) -> Void)
     func getProfile(completion: @escaping (_ response: ProfileResponse?, _ error: Error?) -> Void)
     func deleteComment(with commentID: String,
 					   completion: @escaping (_ response: ProfileResponse?, _ error: Error?) -> Void)
 }
+
+

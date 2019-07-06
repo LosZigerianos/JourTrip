@@ -14,6 +14,12 @@ struct ProfileResponse: Codable {
 	let error: String?
 }
 
+struct ProfilesResponse: Codable {
+    let success: Bool?
+    let data: [Profile]?
+    let error: String?
+}
+
 struct Profile: Codable {
 	let fullname: String?
 	let following, followers: Int?

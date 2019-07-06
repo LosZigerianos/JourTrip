@@ -108,6 +108,11 @@
 		AC9E5C2D229A8A7800B7A5C6 /* NearCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */; };
 		AC9E5C2F229A8D4E00B7A5C6 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */; };
 		ACA0146222CD0F8F004D1409 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0146122CD0F8F004D1409 /* ActivityIndicator.swift */; };
+		ACA0146822CE9AB4004D1409 /* FollowingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0146722CE9AB4004D1409 /* FollowingAssembly.swift */; };
+		ACA0146B22CE9B13004D1409 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0146922CE9B13004D1409 /* FollowingViewController.swift */; };
+		ACA0146C22CE9B13004D1409 /* FollowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA0146A22CE9B13004D1409 /* FollowingViewController.xib */; };
+		ACA0146F22CE9E76004D1409 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0146D22CE9E76004D1409 /* FollowingTableViewCell.swift */; };
+		ACA0147022CE9E76004D1409 /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA0146E22CE9E76004D1409 /* FollowingTableViewCell.xib */; };
 		ACAFEF7F22B23039002A611F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDF9A53226FA44800B65291 /* UserRealm.swift */; };
 		ACAFEF8022B23039002A611F /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209953AF2288941C006D6346 /* LoginNavigator.swift */; };
 		ACAFEF8122B23039002A611F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F42722A13BDB00814E71 /* LocationService.swift */; };
@@ -257,6 +262,11 @@
 		AC9E5C2C229A8A7800B7A5C6 /* NearCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC9E5C2E229A8D4E00B7A5C6 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		ACA0146122CD0F8F004D1409 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		ACA0146722CE9AB4004D1409 /* FollowingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingAssembly.swift; sourceTree = "<group>"; };
+		ACA0146922CE9B13004D1409 /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
+		ACA0146A22CE9B13004D1409 /* FollowingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingViewController.xib; sourceTree = "<group>"; };
+		ACA0146D22CE9E76004D1409 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
+		ACA0146E22CE9E76004D1409 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
@@ -412,7 +422,6 @@
 			isa = PBXGroup;
 			children = (
 				2008B3BD22B95CED0051E49E /* Add Comment */,
-				2070593022AECF75005D17A7 /* CustomTextField.swift */,
 				2040028122A6F4F9005BF21A /* LaunchScreen */,
 				2050BE8A2295DD980031B903 /* Tab Bar */,
 				20995381228880EB006D6346 /* Initial */,
@@ -739,6 +748,7 @@
 		AC14FADA22A4430D00BC6EF8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				ACA0146322CE96D4004D1409 /* Following */,
 				AC14FADB22A4432400BC6EF8 /* DI */,
 				AC14FADC22A4432D00BC6EF8 /* Presentation */,
 				AC14FADD22A4433800BC6EF8 /* Use Cases */,
@@ -866,11 +876,48 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		ACA0146322CE96D4004D1409 /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0146422CE9700004D1409 /* DI */,
+				ACA0146522CE9709004D1409 /* Presentation */,
+				ACA0146622CE9711004D1409 /* Use Cases */,
+			);
+			path = Following;
+			sourceTree = "<group>";
+		};
+		ACA0146422CE9700004D1409 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0146722CE9AB4004D1409 /* FollowingAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		ACA0146522CE9709004D1409 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0146922CE9B13004D1409 /* FollowingViewController.swift */,
+				ACA0146A22CE9B13004D1409 /* FollowingViewController.xib */,
+				ACA0146D22CE9E76004D1409 /* FollowingTableViewCell.swift */,
+				ACA0146E22CE9E76004D1409 /* FollowingTableViewCell.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		ACA0146622CE9711004D1409 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
 		ACB0F31322735D5B006EB545 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				ACB0F31422735D6F006EB545 /* DataManager */,
 				ACA0146122CD0F8F004D1409 /* ActivityIndicator.swift */,
+				2070593022AECF75005D17A7 /* CustomTextField.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1083,6 +1130,7 @@
 				209953AA22888E77006D6346 /* Apercu Pro Regular.otf in Resources */,
 				209953A822888E77006D6346 /* Apercu Pro Medium.otf in Resources */,
 				AC127E7C226F9CED0004C0F1 /* LaunchScreen.storyboard in Resources */,
+				ACA0147022CE9E76004D1409 /* FollowingTableViewCell.xib in Resources */,
 				209953C52288AAAE006D6346 /* SignUpViewController.xib in Resources */,
 				2099539C22888E77006D6346 /* Apercu Italic.otf in Resources */,
 				AC30DBF222BA420400EB3624 /* PasswordTableViewCell.xib in Resources */,
@@ -1113,6 +1161,7 @@
 				209953A422888E77006D6346 /* Apercu Pro Italic.otf in Resources */,
 				209953A022888E77006D6346 /* Apercu Medium.otf in Resources */,
 				2099538622888114006D6346 /* InitialViewController.xib in Resources */,
+				ACA0146C22CE9B13004D1409 /* FollowingViewController.xib in Resources */,
 				2099539A22888E77006D6346 /* Apercu Bold Italic.otf in Resources */,
 				AC30DBEE22BA38FC00EB3624 /* ChangePasswordViewController.xib in Resources */,
 				209953A122888E77006D6346 /* Apercu Mono.otf in Resources */,
@@ -1206,7 +1255,9 @@
 				2008B3AD22B6A5570051E49E /* TagCollectionViewCell.swift in Sources */,
 				2008B3B422B6BD8E0051E49E /* FeedDetailAssembly.swift in Sources */,
 				AC35828022BAB54200942C3D /* GetFollowers.swift in Sources */,
+				ACA0146B22CE9B13004D1409 /* FollowingViewController.swift in Sources */,
 				20392473227B81330061E59B /* LoginViewModel.swift in Sources */,
+				ACA0146F22CE9E76004D1409 /* FollowingTableViewCell.swift in Sources */,
 				AC42437922934139008111FB /* SearchViewController.swift in Sources */,
 				209953702286D10D006D6346 /* LoginValidator.swift in Sources */,
 				20E7F41F22A07F5900814E71 /* UIColor+CustomColors.swift in Sources */,
@@ -1236,6 +1287,7 @@
 				2093801622B9601700EEF108 /* AddCommentAssembly.swift in Sources */,
 				AC35827A22BA83DA00942C3D /* SettingsService.swift in Sources */,
 				2040028C22A6F710005BF21A /* InitialNavigator.swift in Sources */,
+				ACA0146822CE9AB4004D1409 /* FollowingAssembly.swift in Sources */,
 				AC42435F2291F83E008111FB /* MainTabBarController.swift in Sources */,
 				AC30DBED22BA38FC00EB3624 /* ChangePasswordViewController.swift in Sources */,
 				20D8657222A43640005D04FA /* GetCurrentLocation.swift in Sources */,

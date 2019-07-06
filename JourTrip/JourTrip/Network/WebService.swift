@@ -112,7 +112,7 @@ final class WebService: LoginServiceType,
     }
     
     // MARK: - Profile Service
-    func getFollowers(completion: @escaping (ProfileResponse?, Error?) -> Void) {
+    func getFollowers(completion: @escaping (ProfilesResponse?, Error?) -> Void) {
         guard let token = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.token) as? String,
             let userId = DataManager.sharedInstance.loadValue(key: ConstantsDataManager.id) as? String else { return }
         let request = ApiEndpoint.getFollowing(userID: userId).request(with: baseUrl, adding: ["token": token])
@@ -120,9 +120,8 @@ final class WebService: LoginServiceType,
             if let error = error {
                 completion(nil, error)
             }
-            
             if let data = data,
-                let response = try? self.decoder.decode(ProfileResponse.self, from: data) {
+                let response = try? self.decoder.decode(ProfilesResponse.self, from: data) {
                 completion(response, nil)
             }
             }.resume()
