@@ -21,14 +21,16 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Properties
     let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    var getProfile: GetProfileProtocol!
-    var getFollowers: GetFollowersProtocol!
+    var location: Location?
     var userProfile: Profile?
     var userComments = [Comment]()
     var following = [Profile]()
-    var detailNavigator: FeedDetailNavigatorProtocol!
+    var followers = [Profile]()
+//    var detailNavigator: FeedDetailNavigatorProtocol!
     
-    var location: Location?
+    // MARK: - Dependencies
+    var profileProtocol: ProfileProtocol!
+    var followerProtocol: FollowerProtocol!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -36,24 +38,26 @@ class ProfileViewController: UIViewController {
         
         setupUI()
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-        getFollowers.invoke() { [weak self] profile in
-            guard let self = self else { return }
-            if let profiles = profile.data {
-                self.following = profiles
-            } else {
-                self.following = []
-            }
-        }
-        
         Spinner.start(from: self.view,
                       style: .whiteLarge,
                       backgroundColor: .clear,
                       baseColor: .blue)
         
-        getProfile.invoke(with: "") { [weak self] profile in
+        //TODO: refactor
+        followerProtocol.getFollowing() { [weak self] profile in
+            guard let self = self else { return }
+            if let profiles = profile.data {
+                self.following = profiles
+            }
+        }
+        
+        followerProtocol.getFollowers() { profile in
+            if let profiles = profile.data {
+                self.followers = profiles
+            }
+        }
+        
+        profileProtocol.invoke() { [weak self] profile in
             guard let self = self else { return }
             if let error = profile.error {
                 // TODO: show alert
@@ -81,6 +85,9 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupCollectionCells() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
         let profileCell = UINib(nibName: "ProfileTableViewCell", bundle: nil)
         collectionView.register(profileCell, forCellWithReuseIdentifier: "ProfileTableViewCell")
         
@@ -119,7 +126,7 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Services
     func deleteComment(with comment: Comment, indexPath: IndexPath) {
-        getProfile.deleteComment(with: comment.id) { (response) in
+        profileProtocol.deleteComment(with: comment.id) { (response) in
             if response.data != nil {
                 DispatchQueue.main.async {
                     self.collectionView.performBatchUpdates({
@@ -176,12 +183,16 @@ class ProfileViewController: UIViewController {
     // MARK: stackViewActions!
     @objc func followingStackViewTapped() {
         let followingViewController = FollowingViewController()
+        followingViewController.title = "Following"
         followingViewController.followingUsers = following
         navigationController?.pushViewController(followingViewController, animated: true)
     }
     
     @objc func followersStackViewTapped() {
-        print("followersAction")
+        let followingViewController = FollowingViewController()
+        followingViewController.title = "Followers"
+        followingViewController.followingUsers = followers
+        navigationController?.pushViewController(followingViewController, animated: true)
     }
     
     @objc func postsStackViewTapped() {

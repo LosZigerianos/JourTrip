@@ -8,11 +8,12 @@
 
 import Foundation
 
-protocol GetFollowersProtocol {
-    func invoke(completion: @escaping (ProfilesResponse) -> ())
+protocol FollowerProtocol {
+    func getFollowing(completion: @escaping (ProfilesResponse) -> ())
+    func getFollowers(completion: @escaping (ProfilesResponse) -> ())
 }
 
-struct GetFollowers: GetFollowersProtocol {
+struct GetFollowers: FollowerProtocol {
     
     private let repository: ProfileService
     
@@ -20,10 +21,19 @@ struct GetFollowers: GetFollowersProtocol {
         self.repository = repository
     }
     
-    func invoke(completion: @escaping (ProfilesResponse) -> ()) {
+    func getFollowing(completion: @escaping (ProfilesResponse) -> ()) {
+        repository.getFollowing() { (response, error) in
+            guard let profile = response else { return }
+            completion(profile)
+        }
+    }
+    
+    func getFollowers(completion: @escaping (ProfilesResponse) -> ()) {
         repository.getFollowers() { (response, error) in
             guard let profile = response else { return }
             completion(profile)
         }
     }
+    
+    
 }

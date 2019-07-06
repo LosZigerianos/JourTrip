@@ -17,17 +17,17 @@ class ProfileAssembly {
     
     func viewController() -> ProfileViewController {
         let viewController = ProfileViewController()
-        viewController.getProfile = getProfile()
-        viewController.getFollowers = getFollowers()
+        viewController.profileProtocol = getProfile()
+        viewController.followerProtocol = getFollowers()
         
         return viewController
     }
 
-    func getProfile() -> GetProfileProtocol {
+    func getProfile() -> ProfileProtocol {
         return GetProfile(repository: repository)
     }
     
-    func getFollowers() -> GetFollowersProtocol {
+    func getFollowers() -> FollowerProtocol {
         return GetFollowers(repository: repository)
     }
 }

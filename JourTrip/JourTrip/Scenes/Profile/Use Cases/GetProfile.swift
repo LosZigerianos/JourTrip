@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol GetProfileProtocol {
-    func invoke(with userID: String, completion: @escaping (ProfileResponse) -> ())
+protocol ProfileProtocol {
+    func invoke(completion: @escaping (ProfileResponse) -> ())
     func deleteComment(with commentID: String, completion: @escaping (ProfileResponse) -> ())
 }
 
-struct GetProfile: GetProfileProtocol{
+struct GetProfile: ProfileProtocol{
     
     private let repository: ProfileService
     
@@ -21,7 +21,7 @@ struct GetProfile: GetProfileProtocol{
         self.repository = repository
     }
     // TODO: error handling
-    func invoke(with userID: String, completion: @escaping (ProfileResponse) -> ()) {
+    func invoke(completion: @escaping (ProfileResponse) -> ()) {
         repository.getProfile() { (response, error) in
             guard let profile = response else { return }
             completion(profile)

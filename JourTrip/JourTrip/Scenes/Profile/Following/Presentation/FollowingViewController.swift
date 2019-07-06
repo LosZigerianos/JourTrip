@@ -32,7 +32,7 @@ class FollowingViewController: UIViewController {
         //        navigationController?.navigationBar.titleTextAttributes =
         //            [NSAttributedString.Key.foregroundColor: UIColor.darkGray,
         //             NSAttributedString.Key.font: JourTripFont.fontMedium(ofSize: 21)]
-        title = "Following"
+        
         
         //        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelAction(sender:)))
         
