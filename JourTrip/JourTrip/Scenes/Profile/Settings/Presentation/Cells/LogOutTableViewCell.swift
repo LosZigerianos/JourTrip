@@ -9,7 +9,15 @@
 import UIKit
 
 class LogOutTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet var logOutButton: UIButton! {
+        didSet {
+            logOutButton.layer.cornerRadius = 18
+            logOutButton.layer.borderWidth = 2.0
+            logOutButton.layer.borderColor = UIColor.jourtripGray.cgColor
+        }
+    }
+    
     class func preferredHeight() -> CGFloat {
         return LogOutTableViewCell().contentView.frame.width
     }

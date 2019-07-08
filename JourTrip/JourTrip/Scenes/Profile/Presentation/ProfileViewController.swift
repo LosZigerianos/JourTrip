@@ -26,7 +26,6 @@ class ProfileViewController: UIViewController {
     var userComments = [Comment]()
     var following = [Profile]()
     var followers = [Profile]()
-//    var detailNavigator: FeedDetailNavigatorProtocol!
     
     // MARK: - Dependencies
     var profileProtocol: ProfileProtocol!
@@ -112,7 +111,7 @@ class ProfileViewController: UIViewController {
     private func setupRightBarButtonItems() {
         let settingButton = UIButton(type: .custom)
         settingButton.setImage(UIImage(named: "settings"), for: .normal)
-        //settingButton.addTarget(self, action: #selector(settingsAction(sender:)), for: .touchUpInside)
+        settingButton.addTarget(self, action: #selector(settingsAction(sender:)), for: .touchUpInside)
         let settingItem = UIBarButtonItem(customView: settingButton)
         
         let friendsButton = UIButton(type: .custom)

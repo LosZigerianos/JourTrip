@@ -26,13 +26,13 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hm-i9-0cU">
                         <rect key="frame" x="16" y="1" width="288" height="46"/>
-                        <color key="backgroundColor" red="0.35276341439999997" green="0.38041937349999999" blue="0.4549338222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="46" id="yYd-Vu-poh"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Apercu-Medium" family="Apercu" pointSize="14"/>
                         <state key="normal" title="LOG OUT">
-                            <color key="titleColor" red="0.93317931890000005" green="0.94125384089999997" blue="0.94944435360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" red="0.31372549019607843" green="0.33725490196078434" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                 </subviews>
@@ -43,6 +43,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="logOutButton" destination="1Hm-i9-0cU" id="JpN-wL-yVt"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

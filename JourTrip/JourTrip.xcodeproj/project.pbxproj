@@ -267,6 +267,8 @@
 		ACA0146A22CE9B13004D1409 /* FollowingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingViewController.xib; sourceTree = "<group>"; };
 		ACA0146D22CE9E76004D1409 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		ACA0146E22CE9E76004D1409 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
+		ACA0147122D3E737004D1409 /* ChangePasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ChangePasswordCell.xib; path = /Users/alexandre/JourTrip/JourTrip/JourTrip/ChangePassword/ChangePasswordCell.xib; sourceTree = "<absolute>"; };
+		ACA0147222D3E737004D1409 /* ChangePasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangePasswordCell.swift; path = /Users/alexandre/JourTrip/JourTrip/JourTrip/ChangePassword/ChangePasswordCell.swift; sourceTree = "<absolute>"; };
 		ACB0F31522735D9A006EB545 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		ACB0F31722747C41006EB545 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ACB0F31B2277A1CA006EB545 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
@@ -787,6 +789,8 @@
 		AC35826E22BA6D4E00942C3D /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
+				ACA0147222D3E737004D1409 /* ChangePasswordCell.swift */,
+				ACA0147122D3E737004D1409 /* ChangePasswordCell.xib */,
 				AC35826F22BA6D6F00942C3D /* PasswordProtocol.swift */,
 			);
 			path = "Use Cases";
