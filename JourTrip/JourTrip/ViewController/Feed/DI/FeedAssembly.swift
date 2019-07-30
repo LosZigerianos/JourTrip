@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FeedAssembly {
+final class FeedAssembly {
     
     private let repository: FeedService
 	private let feedDetailAssembly: FeedDetailAssembly

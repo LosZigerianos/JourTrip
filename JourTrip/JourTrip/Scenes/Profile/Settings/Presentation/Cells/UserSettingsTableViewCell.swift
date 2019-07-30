@@ -20,8 +20,6 @@ class UserSettingsTableViewCell: UITableViewCell {
         }
     }
     
-    var settings = SettingsViewController()
-    
     func setup(with fullName: String,
                userName: String,
                email: String) {
@@ -31,13 +29,12 @@ class UserSettingsTableViewCell: UITableViewCell {
         emailCustomTextfield.text = email
     }
     
-    @IBAction func updateDataAction(_ sender: UIButton) {
-        settings.updateUserData(with: fullnameCustomTextfield.text ?? "",
-                                      username: usernameCustomTextfield.text ?? "",
-                                      email: emailCustomTextfield.text ?? "")
-    }
+//    @IBAction func updateDataAction(_ sender: UIButton) {
+//        settings.updateUserData(with: fullnameCustomTextfield.text ?? "",
+//                                      username: usernameCustomTextfield.text ?? "",
+//                                      email: emailCustomTextfield.text ?? "")
+//    }
     
-
     class func preferredHeight() -> CGFloat {
         return UserSettingsTableViewCell().contentView.frame.width
     }

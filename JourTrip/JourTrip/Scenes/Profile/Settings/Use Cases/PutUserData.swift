@@ -12,7 +12,7 @@ protocol PutUserDataProtocol {
     func updateData(with username: String,
                     fullname: String,
                     emai: String,
-                     completion: @escaping ([ProfileResponse]) -> ())
+                     completion: @escaping (ProfileResponse) -> ())
 }
 
 struct PutUserData: PutUserDataProtocol {
@@ -23,10 +23,10 @@ struct PutUserData: PutUserDataProtocol {
         self.repository = repository
     }
     
-    func updateData(with username: String, fullname: String, emai: String, completion: @escaping ([ProfileResponse]) -> ()) {
+    func updateData(with username: String, fullname: String, emai: String, completion: @escaping (ProfileResponse) -> ()) {
         repository.putUserData(username: username, fullname: fullname, email: emai) { (response, error) in
             guard let updateDataResponse = response else { return }
-            completion([updateDataResponse])
+            completion(updateDataResponse)
         }
         
     }

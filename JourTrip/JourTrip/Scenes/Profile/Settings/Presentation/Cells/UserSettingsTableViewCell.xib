@@ -84,9 +84,6 @@
                                 <state key="normal" title="UPDATE DATA">
                                     <color key="titleColor" red="0.93317931890000005" green="0.94125384089999997" blue="0.94944435360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="updateDataAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dpW-8d-mR9"/>
-                                </connections>
                             </button>
                         </subviews>
                     </stackView>

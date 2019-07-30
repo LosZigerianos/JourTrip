@@ -21,7 +21,7 @@ final class SettingsViewController: UIViewController, ImagePickerDelegate {
     // MARK: - Properties
     var userProfile: Profile? = nil
     var imagePicker: ImagePicker!
-    var putUserData: PutUserDataProtocol!
+    var putUserDataProtocol: PutUserDataProtocol!
     var onImageTap: ((_ image: String) -> Void)?
     
     // MARK: - Life cycle
@@ -68,11 +68,12 @@ final class SettingsViewController: UIViewController, ImagePickerDelegate {
     }
     
     // MARK: - Services
-//    func updateUserData(with comment: Comment, indexPath: IndexPath) {
-    func updateUserData(with fullname: String , username: String, email: String) {
+//    @objc func updateUserData(with fullname: String , username: String, email: String) {
+    @objc func updateUserData(_ sender: UIButton) {
+        //_ sender: UIButton
         print("HOOLA")
         
-        putUserData.updateData(with: username, fullname: fullname, emai: email) { (response) in
+        putUserDataProtocol.updateData(with: "username", fullname: "fullname", emai: "invitado@example.com") { (response) in
             print(response)
         }
         
@@ -142,6 +143,7 @@ extension SettingsViewController: UITableViewDataSource {
                 cell.setup(with: userProfile?.fullname ?? "",
                            userName: userProfile?.username ?? "",
                            email: userProfile?.email ?? "")
+                cell.updateDataButton.addTarget(self, action: #selector(updateUserData(_:)), for: .touchUpInside)
                 cell.selectionStyle = .none
                 
                 return cell

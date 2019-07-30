@@ -10,9 +10,11 @@ import Foundation
 
 class ProfileAssembly {
     private let repository: ProfileService
+    private let settingsAssembly: SettingsAssembly
     
-    init(repository: ProfileService) {
+    init(repository: ProfileService, settingsAssembly: SettingsAssembly) {
         self.repository = repository
+        self.settingsAssembly = settingsAssembly
     }
     
     func viewController() -> ProfileViewController {

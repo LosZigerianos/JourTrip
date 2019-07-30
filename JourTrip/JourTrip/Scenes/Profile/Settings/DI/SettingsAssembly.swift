@@ -6,19 +6,21 @@
 //  Copyright © 2019 Los Zigerianos. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SettingsAssembly {
+    private let repository: WebService
+    private let navigationController: UINavigationController
     
-    private let repository: SettingsService
     
-    init(repository: SettingsService) {
-        self.repository = repository
+    init(webService: WebService, navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        self.repository = webService
     }
     
     func viewController() -> SettingsViewController {
         let viewController = SettingsViewController()
-        viewController.putUserData = putUserData()
+        viewController.putUserDataProtocol = putUserData()
 
         return viewController
     }
