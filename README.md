@@ -20,4 +20,4 @@ Open `JourTrip.xcworkspace` with XCode 10.2 or greater
 - SwiftLint
 
 ### inVision iOS design
-[a link](https://projects.invisionapp.com/share/QHRRO8M6KS9#/screens/360606949)
+[invisionApp](https://projects.invisionapp.com/share/QHRRO8M6KS9#/screens/360606949)
