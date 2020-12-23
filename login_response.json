@@ -1,0 +1,14 @@
+{
+	"success": true,
+	"metadata": {
+		"fullname": "Guest Account",
+		"photo": "https://jourtrip-app.s3.amazonaws.com/5d9b64eaf9dc864c803256a5",
+		"provider": "local",
+		"_id": "5d9b64eaf9dc864c803256a5",
+		"email": "invitado@example.com",
+		"creation_date": "2019-10-07T16:16:42.517Z",
+		"updated_at": "2019-10-07T16:16:42.517Z",
+		"username": "Invitado"
+	},
+	"data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWQ5YjY0ZWFmOWRjODY0YzgwMzI1NmE1IiwiaWF0IjoxNjA3Mzc0NTU3LCJleHAiOjE2Mzg5MTA1NTd9.pwKRxNaKMmvT3ED4HaUHLcTCSQK_ceBzYEQWcHTe4f0"
+}

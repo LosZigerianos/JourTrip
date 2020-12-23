@@ -50,4 +50,20 @@ class LoginValidatorTests: XCTestCase {
 
         XCTAssertFalse(loginResult)
     }
+    
+    func test_DecodeLoginResponse() {
+        guard let path = Bundle(for: type(of: self)).path(forResource: "login_response", ofType: "json") else {
+            XCTFail()
+            return
+        }
+        
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            let decoder = JSONDecoder()
+            let login = try decoder.decode(UserLogin.self, from: data)
+            XCTAssertNotNil(login)
+        } catch {
+            XCTFail()
+        }
+    }
 }

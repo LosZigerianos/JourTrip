@@ -121,6 +121,13 @@
 		ACBA440222A6F5A90040055B /* GetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440122A6F5A90040055B /* GetProfile.swift */; };
 		ACBA440422A6F6230040055B /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440322A6F6230040055B /* ProfileService.swift */; };
 		ACBA440622A6FA540040055B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA440522A6FA540040055B /* Profile.swift */; };
+		ACCCCF6C2579274800455991 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCCF6B2579274800455991 /* LocationTests.swift */; };
+		ACCCCF71257A274500455991 /* profile_response.json in Resources */ = {isa = PBXBuildFile; fileRef = ACCCCF70257A274500455991 /* profile_response.json */; };
+		ACCCCF73257A274E00455991 /* locations_response.json in Resources */ = {isa = PBXBuildFile; fileRef = ACCCCF72257A274E00455991 /* locations_response.json */; };
+		ACCCCF75257A275A00455991 /* feed_response.json in Resources */ = {isa = PBXBuildFile; fileRef = ACCCCF74257A275A00455991 /* feed_response.json */; };
+		ACCCCF77257A2ABC00455991 /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCCF76257A2ABC00455991 /* FeedTests.swift */; };
+		ACCCCF79257A313A00455991 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCCF78257A313A00455991 /* ProfileTests.swift */; };
+		ACCCCF7C257ED06400455991 /* login_response.json in Resources */ = {isa = PBXBuildFile; fileRef = ACCCCF7B257ED06400455991 /* login_response.json */; };
 		ACCE2DD6229DD78200A9EE20 /* JourTripImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */; };
 		ACF4D7B322ADBE4E0093BA25 /* FeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7B222ADBE4E0093BA25 /* FeedAssembly.swift */; };
 		ACF4D7B522ADBE9C0093BA25 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF4D7B422ADBE9C0093BA25 /* FeedService.swift */; };
@@ -259,6 +266,13 @@
 		ACBA440122A6F5A90040055B /* GetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfile.swift; sourceTree = "<group>"; };
 		ACBA440322A6F6230040055B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		ACBA440522A6FA540040055B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		ACCCCF6B2579274800455991 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		ACCCCF70257A274500455991 /* profile_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = profile_response.json; path = ../../../profile_response.json; sourceTree = "<group>"; };
+		ACCCCF72257A274E00455991 /* locations_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations_response.json; path = ../../../locations_response.json; sourceTree = "<group>"; };
+		ACCCCF74257A275A00455991 /* feed_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = feed_response.json; path = ../../../feed_response.json; sourceTree = "<group>"; };
+		ACCCCF76257A2ABC00455991 /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
+		ACCCCF78257A313A00455991 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		ACCCCF7B257ED06400455991 /* login_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = login_response.json; path = ../../../login_response.json; sourceTree = "<group>"; };
 		ACCE2DD5229DD78200A9EE20 /* JourTripImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourTripImages.swift; sourceTree = "<group>"; };
 		ACDF9A53226FA44800B65291 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 		ACF4D7B222ADBE4E0093BA25 /* FeedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAssembly.swift; sourceTree = "<group>"; };
@@ -406,7 +420,6 @@
 				AC4243602292013F008111FB /* Feed */,
 				AC14FADA22A4430D00BC6EF8 /* Profile */,
 				2008B3AF22B6BBCF0051E49E /* Feed Detail */,
-				ACB0FA9722B431F300EAA11F /* Comments */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -469,9 +482,12 @@
 		209953762286D374006D6346 /* JourTripTests */ = {
 			isa = PBXGroup;
 			children = (
+				ACCCCF7E257ED3CB00455991 /* Comments */,
+				ACCCCF7F257ED3E000455991 /* Locations */,
+				ACCCCF7A257ECF3600455991 /* Users */,
+				ACCCCF6D25792A9600455991 /* Resources */,
 				209953772286D374006D6346 /* JourTripTests.swift */,
 				209953792286D374006D6346 /* Info.plist */,
-				2099537F2286D403006D6346 /* LoginValidatorTests.swift */,
 			);
 			path = JourTripTests;
 			sourceTree = "<group>";
@@ -855,6 +871,50 @@
 			path = Scenes/Friends;
 			sourceTree = "<group>";
 		};
+		ACCCCF6D25792A9600455991 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCCF7B257ED06400455991 /* login_response.json */,
+				ACCCCF74257A275A00455991 /* feed_response.json */,
+				ACCCCF72257A274E00455991 /* locations_response.json */,
+				ACCCCF70257A274500455991 /* profile_response.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ACCCCF7A257ECF3600455991 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCCF7D257ED3B100455991 /* Profile */,
+				2099537F2286D403006D6346 /* LoginValidatorTests.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		ACCCCF7D257ED3B100455991 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCCF78257A313A00455991 /* ProfileTests.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		ACCCCF7E257ED3CB00455991 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCCF76257A2ABC00455991 /* FeedTests.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		ACCCCF7F257ED3E000455991 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCCF6B2579274800455991 /* LocationTests.swift */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
 		ACCE2DD4229DD40700A9EE20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,6 +1065,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACCCCF75257A275A00455991 /* feed_response.json in Resources */,
+				ACCCCF73257A274E00455991 /* locations_response.json in Resources */,
+				ACCCCF7C257ED06400455991 /* login_response.json in Resources */,
+				ACCCCF71257A274500455991 /* profile_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1106,7 +1170,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				209953802286D403006D6346 /* LoginValidatorTests.swift in Sources */,
+				ACCCCF77257A2ABC00455991 /* FeedTests.swift in Sources */,
+				ACCCCF6C2579274800455991 /* LocationTests.swift in Sources */,
 				209953782286D374006D6346 /* JourTripTests.swift in Sources */,
+				ACCCCF79257A313A00455991 /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

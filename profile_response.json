@@ -1,0 +1,97 @@
+{
+	"success": true,
+	"data": {
+		"fullname": "Guest Account",
+		"following": 1,
+		"followers": 0,
+		"comments": [{
+			"_id": "5d9c5d6aaae5ec612d48cc75",
+			"location": {
+				"geometry": {
+					"type": "Point",
+					"coordinates": [2.1533531066221143, 41.375257219069276]
+				},
+				"rating": {
+					"total_votes": 0,
+					"total_values": 0,
+					"value": 0
+				},
+				"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit quisque, cras eros tempor dictumst nostra aptent conubia, a mus habitant libero augue convallis faucibus.",
+				"photos": ["https://fastly.4sqi.net/img/general/612x612/4189440_tfA12_JJyhZs7ZvV-PBLUQ1O6oGu_wvJSDMLcuZKBx4.jpg", "https://fastly.4sqi.net/img/general/960x720/88036_aVd3RS7aEP98snzQmhs6e_-SWtdofBAe6NilL1RY7d0.jpg"],
+				"tags": ["Airport Gate"],
+				"comments": [],
+				"_id": "5d9b88e5aae5ec612d48cc3c",
+				"name": "El Prat Terminal B28",
+				"address": "El Prat Airport",
+				"cc": "ES",
+				"country": "Spain",
+				"formatted_address": "El Prat Airport, Spain"
+			},
+			"description": "It is a nice place for having tacos! 🌮Hello",
+			"creation_date": "2019-10-08T09:56:58.857Z"
+		}, {
+			"_id": "5d9b99faaae5ec612d48cc74",
+			"location": {
+				"geometry": {
+					"type": "Point",
+					"coordinates": [2.158765, 41.38865]
+				},
+				"rating": {
+					"total_votes": 0,
+					"total_values": 0,
+					"value": 0
+				},
+				"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit quisque, cras eros tempor dictumst nostra aptent conubia, a mus habitant libero augue convallis faucibus.",
+				"photos": ["https://fastly.4sqi.net/img/general/612x612/4189440_tfA12_JJyhZs7ZvV-PBLUQ1O6oGu_wvJSDMLcuZKBx4.jpg", "https://fastly.4sqi.net/img/general/960x720/88036_aVd3RS7aEP98snzQmhs6e_-SWtdofBAe6NilL1RY7d0.jpg"],
+				"tags": ["Pharmacy"],
+				"comments": [],
+				"_id": "5d9b88e5aae5ec612d48cc3b",
+				"name": "Farmacia Abierta 24h",
+				"address": "Aribau, 62",
+				"cc": "ES",
+				"city": "Barcelona",
+				"state": "Catalonia",
+				"country": "Spain",
+				"formatted_address": "Aribau, 62 (Aribau 62), Barcelona Catalonia, Spain"
+			},
+			"description": "This is the best farmacy from Barcelona ",
+			"creation_date": "2019-10-07T20:03:06.388Z"
+		}, {
+			"_id": "5d9b918daae5ec612d48cc51",
+			"location": {
+				"geometry": {
+					"type": "Point",
+					"coordinates": [-71.24916098780741, -29.904577206603854]
+				},
+				"rating": {
+					"total_votes": 0,
+					"total_values": 0,
+					"value": 0
+				},
+				"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit quisque, cras eros tempor dictumst nostra aptent conubia, a mus habitant libero augue convallis faucibus.",
+				"photos": ["https://fastly.4sqi.net/img/general/720x960/28091033_Ms8MhHSemNyWXqlu56YDUJ3ns95fwaWpQPOcOYVJDUk.jpg", "https://fastly.4sqi.net/img/general/1920x1440/63285957_KecZ7MVh4Ny3Qgf_OWGwnGlmUTbZzW1eTD5DJXy7pDk.jpg"],
+				"tags": ["Pub"],
+				"comments": [],
+				"_id": "5cf8781adee96f6431b61be0",
+				"name": "La Rocca",
+				"address": "Eduardo de la Barra #569",
+				"cc": "CL",
+				"city": "La Serena",
+				"state": "Coquimbo",
+				"country": "Chile",
+				"formatted_address": "Eduardo de la Barra #569 (Balmaceda), La Serena, Coquimbo, Chile"
+			},
+			"description": "Excelente lugar!",
+			"creation_date": "2019-10-07T19:27:09.187Z"
+		}],
+		"photo": "https://jourtrip-app.s3.amazonaws.com/5d9b64eaf9dc864c803256a5",
+		"provider": "local",
+		"_id": "5d9b64eaf9dc864c803256a5",
+		"email": "invitado@example.com",
+		"creation_date": "2019-10-07T16:16:42.517Z",
+		"updated_at": "2019-10-07T16:16:42.517Z",
+		"username": "Invitado",
+		"comments_count": 3,
+		"is_following_user": null
+	}
+}

@@ -1,0 +1,74 @@
+{
+	"success": true,
+	"data": [{
+		"_id": "5d9b99baaae5ec612d48cc73",
+		"user": {
+			"fullname": "Admin System",
+			"photo": "https://jourtrip-app.s3.amazonaws.com/5d9b64eaf9dc864c803256a4",
+			"provider": "local",
+			"_id": "5d9b64eaf9dc864c803256a4",
+			"username": "admin_system",
+			"email": "admin@example.com",
+			"creation_date": "2019-10-07T16:16:42.509Z",
+			"updated_at": "2019-10-07T16:16:42.510Z"
+		},
+		"location": {
+			"geometry": {
+				"type": "Point",
+				"coordinates": [2.1533531066221143, 41.375257219069276]
+			},
+			"rating": {
+				"total_votes": 0,
+				"total_values": 0,
+				"value": 0
+			},
+			"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit quisque, cras eros tempor dictumst nostra aptent conubia, a mus habitant libero augue convallis faucibus.",
+			"photos": ["https://fastly.4sqi.net/img/general/612x612/4189440_tfA12_JJyhZs7ZvV-PBLUQ1O6oGu_wvJSDMLcuZKBx4.jpg", "https://fastly.4sqi.net/img/general/960x720/88036_aVd3RS7aEP98snzQmhs6e_-SWtdofBAe6NilL1RY7d0.jpg"],
+			"tags": ["Airport Gate"],
+			"comments": [],
+			"_id": "5d9b88e5aae5ec612d48cc3c",
+			"name": "El Prat Terminal B28",
+			"address": "El Prat Airport",
+			"cc": "ES",
+			"country": "Spain",
+			"formatted_address": "El Prat Airport, Spain"
+		},
+		"description": "Very nice airport ",
+		"creation_date": "2019-10-07T20:02:02.204Z"
+	}, {
+		"_id": "5d9b983aaae5ec612d48cc72",
+		"user": {
+			"fullname": "Admin System",
+			"photo": "https://jourtrip-app.s3.amazonaws.com/5d9b64eaf9dc864c803256a4",
+			"provider": "local",
+			"_id": "5d9b64eaf9dc864c803256a4",
+			"username": "admin_system",
+			"email": "admin@example.com",
+			"creation_date": "2019-10-07T16:16:42.509Z",
+			"updated_at": "2019-10-07T16:16:42.510Z"
+		},
+		"location": {
+			"geometry": {
+				"type": "Point",
+				"coordinates": [2.146337580249694, 41.37530938837626]
+			},
+			"rating": {
+				"total_votes": 0,
+				"total_values": 0,
+				"value": 0
+			},
+			"description": "Lorem ipsum dolor sit amet consectetur adipiscing elit quisque, cras eros tempor dictumst nostra aptent conubia, a mus habitant libero augue convallis faucibus.",
+			"photos": ["https://fastly.4sqi.net/img/general/612x612/4189440_tfA12_JJyhZs7ZvV-PBLUQ1O6oGu_wvJSDMLcuZKBx4.jpg", "https://fastly.4sqi.net/img/general/960x720/88036_aVd3RS7aEP98snzQmhs6e_-SWtdofBAe6NilL1RY7d0.jpg"],
+			"tags": ["Café"],
+			"comments": [],
+			"_id": "5d9b973eaae5ec612d48cc62",
+			"name": "Audrey Brunch & Coffee",
+			"cc": "ES",
+			"country": "Spain",
+			"formatted_address": "Spain"
+		},
+		"description": "Best coffe inTown",
+		"creation_date": "2019-10-07T19:55:38.965Z"
+	}],
+	"count": 2
+}
